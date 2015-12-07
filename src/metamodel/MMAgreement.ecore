@@ -49,6 +49,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Metric">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Datatype"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="domain" eType="#//Domain"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Domain" abstract="true" eSuperTypes="#//Range #//Enumerated"/>
   <eClassifiers xsi:type="ecore:EClass" name="Range">
@@ -78,6 +79,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="slo" eType="#//SLO"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qc" eType="#//QualifyingCondition"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="compensations" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -93,6 +95,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scope" eType="#//Scope"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="definitionReference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="feature" eType="#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigurationProperty">
     <eAnnotations/>
