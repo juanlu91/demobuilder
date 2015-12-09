@@ -1,0 +1,27 @@
+@namespace(uri="es.us.lsi.sma.demobuilder", prefix="es.us.lsi.sma.demobuilder")
+package scenarioDiagram;
+
+class Customer {
+  ref ServiceNeed[*] serviceNeeds;
+}
+
+class Provider {
+  ref ServiceOffer[*] serviceOffers;
+}
+
+class ServiceNeed {
+  ref Agreement agreement;
+}
+
+class ServiceOffer {
+  ref Agreement agreement;
+}
+
+class Scenario {
+  val Customer customers;
+  val Provider providers;
+}
+
+class Agreement {
+}
+

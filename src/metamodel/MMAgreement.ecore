@@ -17,9 +17,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Actor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="#//Role" defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="#//Role" defaultValueLiteral="PROVIDER"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roleType" eType="#//RoleType"
-        defaultValueLiteral="1"/>
+        defaultValueLiteral="RESPONDER"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Role">
     <eLiterals name="PROVIDER"/>
