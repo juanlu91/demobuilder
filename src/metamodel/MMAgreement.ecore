@@ -12,10 +12,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Context">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actor" lowerBound="2" upperBound="-1"
-        eType="#//Actor" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="metrics" upperBound="-1"
-        eType="#//Metric" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metrics" eType="#//Metric"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actors" eType="#//Actor"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Actor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -51,50 +49,45 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Enumerated">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AgreementTerm">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="service" eType="#//ServiceConfiguration"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorableProperties"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guaranteeTerms" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceConfigurarion" eType="#//ServiceConfiguration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guaranteeTerms" eType="#//GuaranteeTerm"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="monitorableProperties"
+        eType="#//MonitorableProperty"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceConfiguration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endpointReference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="definitionReference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorReference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="features" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configurationProperties"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configurationProperties"
+        eType="#//ConfigurationProperty"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GuaranteeTerm">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="#//Role"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="slo" eType="#//SLO"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qc" eType="#//QualifyingCondition"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compensations" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="slo" eType="#//SLO"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifyingCondition" eType="#//QualifyingCondition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compensations" eType="#//Compensation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
-        <eTypeArguments/>
-      </eGenericType>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" eType="#//Parameter"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Property">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metric" eType="#//Metric"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scope" eType="#//Scope"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="definitionReference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="feature" eType="#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metric" eType="#//Metric"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationProperty">
-    <eAnnotations/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MonitorableProperty">
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationProperty" eSuperTypes="#//Property"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MonitorableProperty" eSuperTypes="#//Property">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorReference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SLO">
@@ -107,12 +100,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Compensation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" eType="#//AssessmentInterval"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//CompensationType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elements">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-        <eTypeArguments/>
-        <eTypeArguments/>
-      </eGenericType>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compensationElements" eType="#//CompensationElement"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QualifyingCondition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -132,4 +121,5 @@
     <eLiterals name="PENALTY"/>
     <eLiterals name="REWARD" value="1"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter"/>
 </ecore:EPackage>
