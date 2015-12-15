@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="scenarioDiagram">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ServiceNeedLinkFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ServiceOfferLinkFigureTargetDecoration"/>
+    <descriptors name="CustomerFigure">
+      <actualFigure xsi:type="gmfgraph:SVGFigure" name="CustomerFigure" documentURI="platform:/plugin/demobuilder/icons/Customer.svg">
+        <preferredSize dx="100" dy="100"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="CustomerLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="CustomerLabelFigure" text="Customer"/>
+    </descriptors>
+    <descriptors name="ProviderFigure">
+      <actualFigure xsi:type="gmfgraph:SVGFigure" name="ProviderFigure" documentURI="platform:/plugin/demobuilder/icons/Provider.svg">
+        <preferredSize dx="100" dy="100"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ProviderLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ProviderLabelFigure" text="Provider"/>
+    </descriptors>
+    <descriptors name="ServiceNeedFigure">
+      <actualFigure xsi:type="gmfgraph:SVGFigure" name="ServiceNeedFigure" documentURI="platform:/plugin/demobuilder/icons/serviceNeed.svg">
+        <preferredSize dx="50" dy="50"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ServiceNeedLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ServiceNeedLabelFigure" text="ServiceNeed"/>
+    </descriptors>
+    <descriptors name="ServiceOfferFigure">
+      <actualFigure xsi:type="gmfgraph:SVGFigure" name="ServiceOfferFigure" documentURI="platform:/plugin/demobuilder/icons/serviceOffer.svg">
+        <preferredSize dx="50" dy="50"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ServiceOfferLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ServiceOfferLabelFigure" text="ServiceOffer"/>
+    </descriptors>
+    <descriptors name="AgreementLinkFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="AgreementLinkFigure" lineKind="LINE_DASH">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="AgreementLinkLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AgreementLinkLabelLabel" text="AgreementLink"/>
+    </descriptors>
+    <descriptors name="ServiceNeedLinkFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ServiceNeedLinkFigure" lineWidth="2" targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ServiceOfferLinkFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ServiceOfferLinkFigure" lineWidth="2" targetDecoration="//@figures.0/@figures.1">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+  </figures>
+  <nodes name="Customer" figure="CustomerFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="100" dy="100"/>
+    </facets>
+  </nodes>
+  <nodes name="Provider" figure="ProviderFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="100" dy="100"/>
+    </facets>
+  </nodes>
+  <nodes name="ServiceNeed" figure="ServiceNeedFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="50" dy="50"/>
+    </facets>
+  </nodes>
+  <nodes name="ServiceOffer" figure="ServiceOfferFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="50" dy="50"/>
+    </facets>
+  </nodes>
+  <connections name="AgreementLink" figure="AgreementLinkFigure"/>
+  <connections name="ServiceNeedLink" figure="ServiceNeedLinkFigure"/>
+  <connections name="ServiceOfferLink" figure="ServiceOfferLinkFigure"/>
+  <labels name="CustomerLabel" figure="CustomerLabelFigure" elementIcon="false"/>
+  <labels name="ProviderLabel" figure="ProviderLabelFigure" elementIcon="false"/>
+  <labels name="ServiceNeedLabel" figure="ServiceNeedLabelFigure" elementIcon="false"/>
+  <labels name="ServiceOfferLabel" figure="ServiceOfferLabelFigure" elementIcon="false"/>
+  <labels name="AgreementLinkLabel" figure="AgreementLinkLabelFigure" elementIcon="false"/>
+</gmfgraph:Canvas>
