@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/demobuilder/src" modelPluginID="demobuilder"
     modelName="ScenarioDiagram" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
     copyrightFields="false">
-  <foreignModel>MMScenario.emf</foreignModel>
+  <foreignModel>MMScenario.ecore</foreignModel>
   <genPackages prefix="ScenarioDiagram" disposableProviderFactory="true" ecorePackage="MMScenario.ecore#/">
     <genClasses ecoreClass="MMScenario.ecore#//Scenario">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMScenario.ecore#//Scenario/scenarioElement"/>
