@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition">
+  <gmfgraph:Canvas name="AgreementMetamodel">
+    <figures name="Default">
+      <descriptors name="ContextFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="ContextFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Rectangle" name="ContextActorsCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="ContextMetricsCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getContextActorsCompartmentFigure" figure="/0/@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+        <accessors accessor="getContextMetricsCompartmentFigure" figure="/0/@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      </descriptors>
+      <descriptors name="ActorFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="ActorFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="ActorLabelFigure" text="Actor"/>
+        </actualFigure>
+        <accessors accessor="getFigureActorLabelFigure" figure="/0/@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="MetricFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="MetricFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="MetricLabelFigure" text="Metric">
+            <maximumSize dx="10000" dy="50"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="MetricDomainCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getFigureMetricLabelFigure" figure="/0/@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+        <accessors accessor="getMetricDomainCompartmentFigure" figure="/0/@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+      </descriptors>
+      <descriptors name="RangeFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="RangeFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="RangeLabelFigure" text="Range"/>
+        </actualFigure>
+        <accessors accessor="getFigureRangeLabelFigure" figure="/0/@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="EnumeratedFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="EnumeratedFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Rectangle" name="EnumeratedValuesCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getEnumeratedValuesCompartmentFigure" figure="/0/@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="AgreementTermFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="AgreementTermFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Rectangle" name="AgreementTermServiceConfigurarionCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="AgreementTermMonitorablePropertiesCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="AgreementTermGuaranteeTermsCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getAgreementTermServiceConfigurarionCompartmentFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+        <accessors accessor="getAgreementTermMonitorablePropertiesCompartmentFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+        <accessors accessor="getAgreementTermGuaranteeTermsCompartmentFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.2"/>
+      </descriptors>
+      <descriptors name="ServiceConfigurationFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="ServiceConfigurationFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="ServiceConfigurationLabelFigure" text="ServiceConfiguration">
+            <maximumSize dx="10000" dy="50"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="ServiceConfigurationFeaturesCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="ServiceConfigurationConfigurationPropertiesCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getFigureServiceConfigurationLabelFigure" figure="/0/@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+        <accessors accessor="getServiceConfigurationFeaturesCompartmentFigure" figure="/0/@figures.0/@descriptors.6/@actualFigure/@children.1"/>
+        <accessors accessor="getServiceConfigurationConfigurationPropertiesCompartmentFigure" figure="/0/@figures.0/@descriptors.6/@actualFigure/@children.2"/>
+      </descriptors>
+      <descriptors name="GuaranteeTermFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="GuaranteeTermFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="GuaranteeTermLabelFigure" text="GuaranteeTerm">
+            <maximumSize dx="10000" dy="50"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="GuaranteeTermSloCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="GuaranteeTermQualifyingConditionCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="GuaranteeTermCompensationsCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getFigureGuaranteeTermLabelFigure" figure="/0/@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+        <accessors accessor="getGuaranteeTermSloCompartmentFigure" figure="/0/@figures.0/@descriptors.7/@actualFigure/@children.1"/>
+        <accessors accessor="getGuaranteeTermQualifyingConditionCompartmentFigure" figure="/0/@figures.0/@descriptors.7/@actualFigure/@children.2"/>
+        <accessors accessor="getGuaranteeTermCompensationsCompartmentFigure" figure="/0/@figures.0/@descriptors.7/@actualFigure/@children.3"/>
+      </descriptors>
+      <descriptors name="FeatureFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="FeatureFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="FeatureLabelFigure" text="Feature">
+            <maximumSize dx="10000" dy="50"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="FeatureParametersCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getFigureFeatureLabelFigure" figure="/0/@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+        <accessors accessor="getFeatureParametersCompartmentFigure" figure="/0/@figures.0/@descriptors.8/@actualFigure/@children.1"/>
+      </descriptors>
+      <descriptors name="ConfigurationPropertyFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="ConfigurationPropertyFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="ConfigurationPropertyLabelFigure" text="ConfigurationProperty"/>
+        </actualFigure>
+        <accessors accessor="getFigureConfigurationPropertyLabelFigure" figure="/0/@figures.0/@descriptors.9/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="MonitorablePropertyFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="MonitorablePropertyFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="MonitorablePropertyLabelFigure" text="MonitorableProperty"/>
+        </actualFigure>
+        <accessors accessor="getFigureMonitorablePropertyLabelFigure" figure="/0/@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="SLOFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="SLOFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="SLOLabelFigure" text="SLO"/>
+        </actualFigure>
+        <accessors accessor="getFigureSLOLabelFigure" figure="/0/@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="CompensationFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="CompensationFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="CompensationLabelFigure" text="Compensation">
+            <maximumSize dx="10000" dy="50"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="CompensationCompensationElementsCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getFigureCompensationLabelFigure" figure="/0/@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+        <accessors accessor="getCompensationCompensationElementsCompartmentFigure" figure="/0/@figures.0/@descriptors.12/@actualFigure/@children.1"/>
+      </descriptors>
+      <descriptors name="QualifyingConditionFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="QualifyingConditionFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="QualifyingConditionLabelFigure" text="QualifyingCondition"/>
+        </actualFigure>
+        <accessors accessor="getFigureQualifyingConditionLabelFigure" figure="/0/@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="CompensationElementFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="CompensationElementFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="CompensationElementLabelFigure" text="CompensationElement"/>
+        </actualFigure>
+        <accessors accessor="getFigureCompensationElementLabelFigure" figure="/0/@figures.0/@descriptors.14/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="ParameterFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="ParameterFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="ParameterLabelFigure" text="Parameter"/>
+        </actualFigure>
+        <accessors accessor="getFigureParameterLabelFigure" figure="/0/@figures.0/@descriptors.15/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="ValueFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="ValueFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="ValueLabelFigure" text="Value"/>
+        </actualFigure>
+        <accessors accessor="getFigureValueLabelFigure" figure="/0/@figures.0/@descriptors.16/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="PropertyFeaturesFigure">
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="PropertyFeaturesFigure"/>
+      </descriptors>
+      <descriptors name="PropertyFeaturesExternalLabelFigure">
+        <actualFigure xsi:type="gmfgraph:Label" name="PropertyFeaturesExternalLabel"/>
+      </descriptors>
+      <descriptors name="PropertyMetricFigure">
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="PropertyMetricFigure"/>
+      </descriptors>
+      <descriptors name="PropertyMetricExternalLabelFigure">
+        <actualFigure xsi:type="gmfgraph:Label" name="PropertyMetricExternalLabel"/>
+      </descriptors>
+    </figures>
+    <nodes name="Context" figure="ContextFigure"/>
+    <nodes name="Actor" figure="ActorFigure"/>
+    <nodes name="Metric" figure="MetricFigure"/>
+    <nodes name="Range" figure="RangeFigure"/>
+    <nodes name="Enumerated" figure="EnumeratedFigure"/>
+    <nodes name="AgreementTerm" figure="AgreementTermFigure"/>
+    <nodes name="ServiceConfiguration" figure="ServiceConfigurationFigure"/>
+    <nodes name="GuaranteeTerm" figure="GuaranteeTermFigure"/>
+    <nodes name="Feature" figure="FeatureFigure"/>
+    <nodes name="ConfigurationProperty" figure="ConfigurationPropertyFigure"/>
+    <nodes name="MonitorableProperty" figure="MonitorablePropertyFigure"/>
+    <nodes name="SLO" figure="SLOFigure"/>
+    <nodes name="Compensation" figure="CompensationFigure"/>
+    <nodes name="QualifyingCondition" figure="QualifyingConditionFigure"/>
+    <nodes name="CompensationElement" figure="CompensationElementFigure"/>
+    <nodes name="Parameter" figure="ParameterFigure"/>
+    <nodes name="Value" figure="ValueFigure"/>
+    <connections name="PropertyFeatures" figure="PropertyFeaturesFigure"/>
+    <connections name="PropertyMetric" figure="PropertyMetricFigure"/>
+    <compartments name="ContextActorsCompartment" figure="ContextFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.0/@accessors.0"/>
+    <compartments name="ContextMetricsCompartment" figure="ContextFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.0/@accessors.1"/>
+    <compartments name="MetricDomainCompartment" figure="MetricFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.2/@accessors.1"/>
+    <compartments name="EnumeratedValuesCompartment" figure="EnumeratedFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.4/@accessors.0"/>
+    <compartments name="AgreementTermServiceConfigurarionCompartment" figure="AgreementTermFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.5/@accessors.0"/>
+    <compartments name="AgreementTermMonitorablePropertiesCompartment" figure="AgreementTermFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.5/@accessors.1"/>
+    <compartments name="AgreementTermGuaranteeTermsCompartment" figure="AgreementTermFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.5/@accessors.2"/>
+    <compartments name="ServiceConfigurationFeaturesCompartment" figure="ServiceConfigurationFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.6/@accessors.1"/>
+    <compartments name="ServiceConfigurationConfigurationPropertiesCompartment" figure="ServiceConfigurationFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.6/@accessors.2"/>
+    <compartments name="GuaranteeTermSloCompartment" figure="GuaranteeTermFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.7/@accessors.1"/>
+    <compartments name="GuaranteeTermQualifyingConditionCompartment" figure="GuaranteeTermFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.7/@accessors.2"/>
+    <compartments name="GuaranteeTermCompensationsCompartment" figure="GuaranteeTermFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.7/@accessors.3"/>
+    <compartments name="FeatureParametersCompartment" figure="FeatureFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.8/@accessors.1"/>
+    <compartments name="CompensationCompensationElementsCompartment" figure="CompensationFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.12/@accessors.1"/>
+    <labels name="ActorLabel" figure="ActorFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.1/@accessors.0"/>
+    <labels name="MetricLabel" figure="MetricFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.2/@accessors.0"/>
+    <labels name="RangeLabel" figure="RangeFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.3/@accessors.0"/>
+    <labels name="ServiceConfigurationLabel" figure="ServiceConfigurationFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.6/@accessors.0"/>
+    <labels name="GuaranteeTermLabel" figure="GuaranteeTermFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.7/@accessors.0"/>
+    <labels name="FeatureLabel" figure="FeatureFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.8/@accessors.0"/>
+    <labels name="ConfigurationPropertyLabel" figure="ConfigurationPropertyFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.9/@accessors.0"/>
+    <labels name="MonitorablePropertyLabel" figure="MonitorablePropertyFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.10/@accessors.0"/>
+    <labels name="SLOLabel" figure="SLOFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.11/@accessors.0"/>
+    <labels name="CompensationLabel" figure="CompensationFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.12/@accessors.0"/>
+    <labels name="QualifyingConditionLabel" figure="QualifyingConditionFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.13/@accessors.0"/>
+    <labels name="CompensationElementLabel" figure="CompensationElementFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.14/@accessors.0"/>
+    <labels name="ParameterLabel" figure="ParameterFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.15/@accessors.0"/>
+    <labels name="ValueLabel" figure="ValueFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.16/@accessors.0"/>
+    <labels name="PropertyFeaturesExternalLabel" figure="PropertyFeaturesExternalLabelFigure" elementIcon="false"/>
+    <labels name="PropertyMetricExternalLabel" figure="PropertyMetricExternalLabelFigure" elementIcon="false"/>
+  </gmfgraph:Canvas>
+  <gmfgraph:Label name="ContextLabelFigure" text="Context">
+    <maximumSize dx="10000" dy="50"/>
+  </gmfgraph:Label>
+  <gmfgraph:Label name="EnumeratedLabelFigure" text="Enumerated">
+    <maximumSize dx="10000" dy="50"/>
+  </gmfgraph:Label>
+  <gmfgraph:Label name="AgreementTermLabelFigure" text="AgreementTerm">
+    <maximumSize dx="10000" dy="50"/>
+  </gmfgraph:Label>
+</xmi:XMI>
