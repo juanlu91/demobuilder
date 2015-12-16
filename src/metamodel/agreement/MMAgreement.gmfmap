@@ -15,7 +15,7 @@
           href="MMAgreement.ecore#//Context"/>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="MMAgreement.gmftool#//@palette/@tools.1/@tools.1"/>
+          href="MMAgreement.gmftool#//@palette/@tools.0/@tools.5"/>
       <diagramNode
           href="MMAgreement.gmfgraph#Context"/>
       <children
@@ -34,7 +34,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="MMAgreement.gmftool#//@palette/@tools.1/@tools.0"/>
+              href="MMAgreement.gmftool#//@palette/@tools.0/@tools.0"/>
           <diagramNode
               href="MMAgreement.gmfgraph#Actor"/>
         </ownedChild>
@@ -56,7 +56,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="MMAgreement.gmftool#//@palette/@tools.6/@tools.0"/>
+              href="MMAgreement.gmftool#//@palette/@tools.0/@tools.9"/>
           <diagramNode
               href="MMAgreement.gmfgraph#Metric"/>
           <children
@@ -80,7 +80,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.5/@tools.1"/>
+                  href="MMAgreement.gmftool#//@palette/@tools.0/@tools.13"/>
               <diagramNode
                   href="MMAgreement.gmfgraph#Range"/>
             </ownedChild>
@@ -95,7 +95,7 @@
                   href="MMAgreement.ecore#//Enumerated"/>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.5/@tools.0"/>
+                  href="MMAgreement.gmftool#//@palette/@tools.0/@tools.6"/>
               <diagramNode
                   href="MMAgreement.gmfgraph#Enumerated"/>
               <children
@@ -114,7 +114,7 @@
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
-                      href="MMAgreement.gmftool#//@palette/@tools.6/@tools.2"/>
+                      href="MMAgreement.gmftool#//@palette/@tools.0/@tools.16"/>
                   <diagramNode
                       href="MMAgreement.gmfgraph#Value"/>
                 </ownedChild>
@@ -154,7 +154,7 @@
           href="MMAgreement.ecore#//AgreementTerm"/>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="MMAgreement.gmftool#//@palette/@tools.2/@tools.0"/>
+          href="MMAgreement.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode
           href="MMAgreement.gmfgraph#AgreementTerm"/>
       <children
@@ -173,7 +173,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="MMAgreement.gmftool#//@palette/@tools.4/@tools.1"/>
+              href="MMAgreement.gmftool#//@palette/@tools.0/@tools.10"/>
           <diagramNode
               href="MMAgreement.gmfgraph#MonitorableProperty"/>
         </ownedChild>
@@ -195,7 +195,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="MMAgreement.gmftool#//@palette/@tools.2/@tools.1"/>
+              href="MMAgreement.gmftool#//@palette/@tools.0/@tools.15"/>
           <diagramNode
               href="MMAgreement.gmfgraph#ServiceConfiguration"/>
           <children
@@ -214,7 +214,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.4/@tools.0"/>
+                  href="MMAgreement.gmftool#//@palette/@tools.0/@tools.4"/>
               <diagramNode
                   href="MMAgreement.gmfgraph#ConfigurationProperty"/>
             </ownedChild>
@@ -236,7 +236,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.6/@tools.1"/>
+                  href="MMAgreement.gmftool#//@palette/@tools.0/@tools.7"/>
               <diagramNode
                   href="MMAgreement.gmfgraph#Feature"/>
               <children
@@ -255,7 +255,7 @@
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
-                      href="MMAgreement.gmftool#//@palette/@tools.6/@tools.3"/>
+                      href="MMAgreement.gmftool#//@palette/@tools.0/@tools.11"/>
                   <diagramNode
                       href="MMAgreement.gmfgraph#Parameter"/>
                 </ownedChild>
@@ -301,7 +301,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="MMAgreement.gmftool#//@palette/@tools.3/@tools.0"/>
+              href="MMAgreement.gmftool#//@palette/@tools.0/@tools.8"/>
           <diagramNode
               href="MMAgreement.gmfgraph#GuaranteeTerm"/>
           <children
@@ -320,7 +320,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.3/@tools.1"/>
+                  href="MMAgreement.gmftool#//@palette/@tools.0/@tools.14"/>
               <diagramNode
                   href="MMAgreement.gmfgraph#SLO"/>
             </ownedChild>
@@ -344,7 +344,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.3/@tools.2"/>
+                  href="MMAgreement.gmftool#//@palette/@tools.0/@tools.12"/>
               <diagramNode
                   href="MMAgreement.gmfgraph#QualifyingCondition"/>
             </ownedChild>
@@ -371,7 +371,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.3/@tools.3"/>
+                  href="MMAgreement.gmftool#//@palette/@tools.0/@tools.2"/>
               <diagramNode
                   href="MMAgreement.gmfgraph#Compensation"/>
               <children
@@ -395,7 +395,7 @@
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
-                      href="MMAgreement.gmftool#//@palette/@tools.3/@tools.4"/>
+                      href="MMAgreement.gmftool#//@palette/@tools.0/@tools.3"/>
                   <diagramNode
                       href="MMAgreement.gmfgraph#CompensationElement"/>
                 </ownedChild>
@@ -450,7 +450,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="MMAgreement.gmftool#//@palette/@tools.0/@tools.0"/>
+        href="MMAgreement.gmftool#//@palette/@tools.1/@tools.0"/>
     <diagramLink
         href="MMAgreement.gmfgraph#PropertyFeatures"/>
     <linkMetaFeature
@@ -466,7 +466,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="MMAgreement.gmftool#//@palette/@tools.0/@tools.1"/>
+        href="MMAgreement.gmftool#//@palette/@tools.1/@tools.1"/>
     <diagramLink
         href="MMAgreement.gmfgraph#PropertyMetric"/>
     <linkMetaFeature
