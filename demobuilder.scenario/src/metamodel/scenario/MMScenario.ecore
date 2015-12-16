@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="scenarioDiagram" nsURI="es.us.lsi.sma.demobuilder" nsPrefix="es.us.lsi.sma.demobuilder">
+  <eClassifiers xsi:type="ecore:EClass" name="Scenario">
+    <eAnnotations source="gmf"/>
+    <eAnnotations source="gmf.diagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenarioElement" upperBound="-1"
+        eType="#//ScenarioElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//ScenarioElement">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="svg.uri" value="platform:/plugin/demobuilder/icons/Customer.svg"/>
+      <details key="label" value="name"/>
+      <details key="tool.description" value="Customer"/>
+      <details key="label.placement" value="external"/>
+      <details key="label.icon" value="false"/>
+      <details key="size" value="100,100"/>
+      <details key="tool.small.bundle" value="demobuilder.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/Customer.gif"/>
+      <details key="tool.large.bundle" value="demobuilder.edit"/>
+      <details key="tool.large.path" value="/icons/full/obj32/Customer.gif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceNeedLinks" upperBound="-1"
+        eType="#//ServiceNeedLink" eOpposite="#//ServiceNeedLink/customer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Provider" eSuperTypes="#//ScenarioElement">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="svg.uri" value="platform:/plugin/demobuilder/icons/Provider.svg"/>
+      <details key="label" value="name"/>
+      <details key="tool.description" value="Provider"/>
+      <details key="label.placement" value="external"/>
+      <details key="label.icon" value="false"/>
+      <details key="size" value="100,100"/>
+      <details key="tool.small.bundle" value="demobuilder.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/Provider.gif"/>
+      <details key="tool.large.bundle" value="demobuilder.edit"/>
+      <details key="tool.large.path" value="/icons/full/obj32/Provider.gif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceOfferLinks" upperBound="-1"
+        eType="#//ServiceOfferLink"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceNeed" eSuperTypes="#//ScenarioElement">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="svg.uri" value="platform:/plugin/demobuilder/icons/serviceNeed.svg"/>
+      <details key="label" value="name"/>
+      <details key="label.placement" value="external"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.description" value="Service Need"/>
+      <details key="size" value="50,50"/>
+      <details key="tool.small.bundle" value="demobuilder.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/ServiceNeed.gif"/>
+      <details key="tool.large.bundle" value="demobuilder.edit"/>
+      <details key="tool.large.path" value="/icons/full/obj32/ServiceNeed.gif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceNeedLink" eType="#//ServiceNeedLink"
+        eOpposite="#//ServiceNeedLink/serviceNeed"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agreementLink" eType="#//AgreementLink"
+        eOpposite="#//AgreementLink/serviceNeed"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceOffer" eSuperTypes="#//ScenarioElement">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="svg.uri" value="platform:/plugin/demobuilder/icons/serviceOffer.svg"/>
+      <details key="label" value="name"/>
+      <details key="label.placement" value="external"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.description" value="Service Offer"/>
+      <details key="size" value="50,50"/>
+      <details key="tool.small.bundle" value="demobuilder.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/ServiceOffer.gif"/>
+      <details key="tool.large.bundle" value="demobuilder.edit"/>
+      <details key="tool.large.path" value="/icons/full/obj32/ServiceOffer.gif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agreementLink" eType="#//AgreementLink"
+        eOpposite="#//AgreementLink/serviceOffer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceOfferLinks" upperBound="-1"
+        eType="#//ServiceOfferLink" eOpposite="#//ServiceOfferLink/serviceOffer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AgreementLink" eSuperTypes="#//ScenarioElement">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="serviceNeed"/>
+      <details key="label" value="name"/>
+      <details key="target" value="serviceOffer"/>
+      <details key="width" value="1"/>
+      <details key="style" value="dash"/>
+      <details key="tool.description" value="Agreement link"/>
+      <details key="color" value="0,0,0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceNeed" eType="#//ServiceNeed"
+        eOpposite="#//ServiceNeed/agreementLink"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceOffer" eType="#//ServiceOffer"
+        eOpposite="#//ServiceOffer/agreementLink"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceNeedLink" eSuperTypes="#//ScenarioElement">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="customer"/>
+      <details key="label.placement" value="none"/>
+      <details key="target" value="serviceNeed"/>
+      <details key="target.decoration" value="arrow"/>
+      <details key="width" value="2"/>
+      <details key="style" value="solid"/>
+      <details key="tool.description" value="Service needs link"/>
+      <details key="color" value="0,0,0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceNeed" eType="#//ServiceNeed"
+        eOpposite="#//ServiceNeed/serviceNeedLink"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customer" eType="#//Customer"
+        eOpposite="#//Customer/serviceNeedLinks"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceOfferLink" eSuperTypes="#//ScenarioElement">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="provider"/>
+      <details key="label.placement" value="none"/>
+      <details key="target" value="serviceOffer"/>
+      <details key="target.decoration" value="arrow"/>
+      <details key="width" value="2"/>
+      <details key="style" value="solid"/>
+      <details key="tool.description" value="Service offers link"/>
+      <details key="color" value="0,0,0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceOffer" eType="#//ServiceOffer"
+        eOpposite="#//ServiceOffer/serviceOfferLinks"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provider" eType="#//Provider"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScenarioElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
