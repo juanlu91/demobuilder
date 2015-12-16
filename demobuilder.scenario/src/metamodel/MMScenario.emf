@@ -1,4 +1,4 @@
-@namespace(uri="es.us.lsi.sma.demobuilder", prefix="es.us.lsi.sma.demobuilder")
+@namespace(uri="es.us.lsi.sma.demobuilder.scenario", prefix="es.us.lsi.sma.demobuilder.scenario")
 package scenarioDiagram;
 
 @gmf
@@ -7,23 +7,23 @@ class Scenario {
   val ScenarioElement[*] scenarioElement;
 }
 
-@gmf.node(figure="svg", svg.uri="platform:/plugin/demobuilder/icons/Customer.svg", label="name", tool.description="Customer", label.placement="external", label.icon="false", size="100,100", tool.small.bundle="demobuilder.edit", tool.small.path="/icons/full/obj16/Customer.gif", tool.large.bundle="demobuilder.edit", tool.large.path="/icons/full/obj32/Customer.gif")
+@gmf.node(figure="svg", svg.uri="platform:/plugin/demobuilder.scenario/icons/Customer.svg", label="name", tool.description="Customer", label.placement="external", label.icon="false", size="100,100", tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/Customer.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/Customer.gif")
 class Customer extends ScenarioElement {
   ref ServiceNeedLink[*]#customer serviceNeedLinks;
 }
 
-@gmf.node(figure="svg", svg.uri="platform:/plugin/demobuilder/icons/Provider.svg", label="name", tool.description="Provider", label.placement="external", label.icon="false", size="100,100",tool.small.bundle="demobuilder.edit", tool.small.path="/icons/full/obj16/Provider.gif", tool.large.bundle="demobuilder.edit", tool.large.path="/icons/full/obj32/Provider.gif")
+@gmf.node(figure="svg", svg.uri="platform:/plugin/demobuilder.scenario/icons/Provider.svg", label="name", tool.description="Provider", label.placement="external", label.icon="false", size="100,100",tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/Provider.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/Provider.gif")
 class Provider extends ScenarioElement {
   ref ServiceOfferLink[*] serviceOfferLinks;
 }
 
-@gmf.node(figure="svg", svg.uri="platform:/plugin/demobuilder/icons/serviceNeed.svg", label="name", label.placement="external", label.icon="false", tool.description="Service Need", size="50,50",tool.small.bundle="demobuilder.edit", tool.small.path="/icons/full/obj16/ServiceNeed.gif", tool.large.bundle="demobuilder.edit", tool.large.path="/icons/full/obj32/ServiceNeed.gif")
+@gmf.node(figure="svg", svg.uri="platform:/plugin/demobuilder.scenario/icons/serviceNeed.svg", label="name", label.placement="external", label.icon="false", tool.description="Service Need", size="50,50",tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/ServiceNeed.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/ServiceNeed.gif")
 class ServiceNeed extends ScenarioElement {
   ref ServiceNeedLink#serviceNeed serviceNeedLink;
   ref AgreementLink#serviceNeed agreementLink;
 }
 
-@gmf.node(figure="svg", svg.uri="platform:/plugin/demobuilder/icons/serviceOffer.svg", label="name", label.placement="external", label.icon="false", tool.description="Service Offer", size="50,50",tool.small.bundle="demobuilder.edit", tool.small.path="/icons/full/obj16/ServiceOffer.gif", tool.large.bundle="demobuilder.edit", tool.large.path="/icons/full/obj32/ServiceOffer.gif")
+@gmf.node(figure="svg", svg.uri="platform:/plugin/demobuilder.scenario/icons/serviceOffer.svg", label="name", label.placement="external", label.icon="false", tool.description="Service Offer", size="50,50",tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/ServiceOffer.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/ServiceOffer.gif")
 class ServiceOffer extends ScenarioElement {
   ref AgreementLink#serviceOffer agreementLink;
   ref ServiceOfferLink[*]#serviceOffer serviceOfferLinks;

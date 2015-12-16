@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="scenarioDiagram" nsURI="es.us.lsi.sma.demobuilder" nsPrefix="es.us.lsi.sma.demobuilder">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="scenarioDiagram" nsURI="es.us.lsi.sma.demobuilder.scenario"
+    nsPrefix="es.us.lsi.sma.demobuilder.scenario">
   <eClassifiers xsi:type="ecore:EClass" name="Scenario">
     <eAnnotations source="gmf"/>
     <eAnnotations source="gmf.diagram"/>
@@ -10,15 +11,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//ScenarioElement">
     <eAnnotations source="gmf.node">
       <details key="figure" value="svg"/>
-      <details key="svg.uri" value="platform:/plugin/demobuilder/icons/Customer.svg"/>
+      <details key="svg.uri" value="platform:/plugin/demobuilder.scenario/icons/Customer.svg"/>
       <details key="label" value="name"/>
       <details key="tool.description" value="Customer"/>
       <details key="label.placement" value="external"/>
       <details key="label.icon" value="false"/>
       <details key="size" value="100,100"/>
-      <details key="tool.small.bundle" value="demobuilder.edit"/>
+      <details key="tool.small.bundle" value="demobuilder.scenario.edit"/>
       <details key="tool.small.path" value="/icons/full/obj16/Customer.gif"/>
-      <details key="tool.large.bundle" value="demobuilder.edit"/>
+      <details key="tool.large.bundle" value="demobuilder.scenario.edit"/>
       <details key="tool.large.path" value="/icons/full/obj32/Customer.gif"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceNeedLinks" upperBound="-1"
@@ -27,15 +28,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="Provider" eSuperTypes="#//ScenarioElement">
     <eAnnotations source="gmf.node">
       <details key="figure" value="svg"/>
-      <details key="svg.uri" value="platform:/plugin/demobuilder/icons/Provider.svg"/>
+      <details key="svg.uri" value="platform:/plugin/demobuilder.scenario/icons/Provider.svg"/>
       <details key="label" value="name"/>
       <details key="tool.description" value="Provider"/>
       <details key="label.placement" value="external"/>
       <details key="label.icon" value="false"/>
       <details key="size" value="100,100"/>
-      <details key="tool.small.bundle" value="demobuilder.edit"/>
+      <details key="tool.small.bundle" value="demobuilder.scenario.edit"/>
       <details key="tool.small.path" value="/icons/full/obj16/Provider.gif"/>
-      <details key="tool.large.bundle" value="demobuilder.edit"/>
+      <details key="tool.large.bundle" value="demobuilder.scenario.edit"/>
       <details key="tool.large.path" value="/icons/full/obj32/Provider.gif"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceOfferLinks" upperBound="-1"
@@ -44,15 +45,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="ServiceNeed" eSuperTypes="#//ScenarioElement">
     <eAnnotations source="gmf.node">
       <details key="figure" value="svg"/>
-      <details key="svg.uri" value="platform:/plugin/demobuilder/icons/serviceNeed.svg"/>
+      <details key="svg.uri" value="platform:/plugin/demobuilder.scenario/icons/serviceNeed.svg"/>
       <details key="label" value="name"/>
       <details key="label.placement" value="external"/>
       <details key="label.icon" value="false"/>
       <details key="tool.description" value="Service Need"/>
       <details key="size" value="50,50"/>
-      <details key="tool.small.bundle" value="demobuilder.edit"/>
+      <details key="tool.small.bundle" value="demobuilder.scenario.edit"/>
       <details key="tool.small.path" value="/icons/full/obj16/ServiceNeed.gif"/>
-      <details key="tool.large.bundle" value="demobuilder.edit"/>
+      <details key="tool.large.bundle" value="demobuilder.scenario.edit"/>
       <details key="tool.large.path" value="/icons/full/obj32/ServiceNeed.gif"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceNeedLink" eType="#//ServiceNeedLink"
@@ -63,15 +64,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="ServiceOffer" eSuperTypes="#//ScenarioElement">
     <eAnnotations source="gmf.node">
       <details key="figure" value="svg"/>
-      <details key="svg.uri" value="platform:/plugin/demobuilder/icons/serviceOffer.svg"/>
+      <details key="svg.uri" value="platform:/plugin/demobuilder.scenario/icons/serviceOffer.svg"/>
       <details key="label" value="name"/>
       <details key="label.placement" value="external"/>
       <details key="label.icon" value="false"/>
       <details key="tool.description" value="Service Offer"/>
       <details key="size" value="50,50"/>
-      <details key="tool.small.bundle" value="demobuilder.edit"/>
+      <details key="tool.small.bundle" value="demobuilder.scenario.edit"/>
       <details key="tool.small.path" value="/icons/full/obj16/ServiceOffer.gif"/>
-      <details key="tool.large.bundle" value="demobuilder.edit"/>
+      <details key="tool.large.bundle" value="demobuilder.scenario.edit"/>
       <details key="tool.large.path" value="/icons/full/obj32/ServiceOffer.gif"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="agreementLink" eType="#//AgreementLink"
