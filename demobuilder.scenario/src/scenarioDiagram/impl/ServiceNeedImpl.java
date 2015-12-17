@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import scenarioDiagram.AgreementLink;
 import scenarioDiagram.ScenarioDiagramPackage;
+import scenarioDiagram.ScenarioElement;
 import scenarioDiagram.ServiceNeed;
-import scenarioDiagram.ServiceNeedLink;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,23 +22,33 @@ import scenarioDiagram.ServiceNeedLink;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link scenarioDiagram.impl.ServiceNeedImpl#getServiceNeedLink <em>Service Need Link</em>}</li>
+ *   <li>{@link scenarioDiagram.impl.ServiceNeedImpl#getName <em>Name</em>}</li>
  *   <li>{@link scenarioDiagram.impl.ServiceNeedImpl#getAgreementLink <em>Agreement Link</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ServiceNeedImpl extends ScenarioElementImpl implements ServiceNeed {
+public class ServiceNeedImpl extends ServiceElementImpl implements ServiceNeed {
 	/**
-	 * The cached value of the '{@link #getServiceNeedLink() <em>Service Need Link</em>}' reference.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getServiceNeedLink()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceNeedLink serviceNeedLink;
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getAgreementLink() <em>Agreement Link</em>}' reference.
@@ -74,16 +84,8 @@ public class ServiceNeedImpl extends ScenarioElementImpl implements ServiceNeed 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceNeedLink getServiceNeedLink() {
-		if (serviceNeedLink != null && serviceNeedLink.eIsProxy()) {
-			InternalEObject oldServiceNeedLink = (InternalEObject)serviceNeedLink;
-			serviceNeedLink = (ServiceNeedLink)eResolveProxy(oldServiceNeedLink);
-			if (serviceNeedLink != oldServiceNeedLink) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScenarioDiagramPackage.SERVICE_NEED__SERVICE_NEED_LINK, oldServiceNeedLink, serviceNeedLink));
-			}
-		}
-		return serviceNeedLink;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -91,42 +93,11 @@ public class ServiceNeedImpl extends ScenarioElementImpl implements ServiceNeed 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceNeedLink basicGetServiceNeedLink() {
-		return serviceNeedLink;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetServiceNeedLink(ServiceNeedLink newServiceNeedLink, NotificationChain msgs) {
-		ServiceNeedLink oldServiceNeedLink = serviceNeedLink;
-		serviceNeedLink = newServiceNeedLink;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.SERVICE_NEED__SERVICE_NEED_LINK, oldServiceNeedLink, newServiceNeedLink);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setServiceNeedLink(ServiceNeedLink newServiceNeedLink) {
-		if (newServiceNeedLink != serviceNeedLink) {
-			NotificationChain msgs = null;
-			if (serviceNeedLink != null)
-				msgs = ((InternalEObject)serviceNeedLink).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_NEED_LINK__SERVICE_NEED, ServiceNeedLink.class, msgs);
-			if (newServiceNeedLink != null)
-				msgs = ((InternalEObject)newServiceNeedLink).eInverseAdd(this, ScenarioDiagramPackage.SERVICE_NEED_LINK__SERVICE_NEED, ServiceNeedLink.class, msgs);
-			msgs = basicSetServiceNeedLink(newServiceNeedLink, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.SERVICE_NEED__SERVICE_NEED_LINK, newServiceNeedLink, newServiceNeedLink));
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.SERVICE_NEED__NAME, oldName, name));
 	}
 
 	/**
@@ -179,9 +150,9 @@ public class ServiceNeedImpl extends ScenarioElementImpl implements ServiceNeed 
 		if (newAgreementLink != agreementLink) {
 			NotificationChain msgs = null;
 			if (agreementLink != null)
-				msgs = ((InternalEObject)agreementLink).eInverseRemove(this, ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_NEED, AgreementLink.class, msgs);
+				msgs = ((InternalEObject)agreementLink).eInverseRemove(this, ScenarioDiagramPackage.AGREEMENT_LINK__SOURCE, AgreementLink.class, msgs);
 			if (newAgreementLink != null)
-				msgs = ((InternalEObject)newAgreementLink).eInverseAdd(this, ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_NEED, AgreementLink.class, msgs);
+				msgs = ((InternalEObject)newAgreementLink).eInverseAdd(this, ScenarioDiagramPackage.AGREEMENT_LINK__SOURCE, AgreementLink.class, msgs);
 			msgs = basicSetAgreementLink(newAgreementLink, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -197,13 +168,9 @@ public class ServiceNeedImpl extends ScenarioElementImpl implements ServiceNeed 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.SERVICE_NEED__SERVICE_NEED_LINK:
-				if (serviceNeedLink != null)
-					msgs = ((InternalEObject)serviceNeedLink).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_NEED_LINK__SERVICE_NEED, ServiceNeedLink.class, msgs);
-				return basicSetServiceNeedLink((ServiceNeedLink)otherEnd, msgs);
 			case ScenarioDiagramPackage.SERVICE_NEED__AGREEMENT_LINK:
 				if (agreementLink != null)
-					msgs = ((InternalEObject)agreementLink).eInverseRemove(this, ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_NEED, AgreementLink.class, msgs);
+					msgs = ((InternalEObject)agreementLink).eInverseRemove(this, ScenarioDiagramPackage.AGREEMENT_LINK__SOURCE, AgreementLink.class, msgs);
 				return basicSetAgreementLink((AgreementLink)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -217,8 +184,6 @@ public class ServiceNeedImpl extends ScenarioElementImpl implements ServiceNeed 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.SERVICE_NEED__SERVICE_NEED_LINK:
-				return basicSetServiceNeedLink(null, msgs);
 			case ScenarioDiagramPackage.SERVICE_NEED__AGREEMENT_LINK:
 				return basicSetAgreementLink(null, msgs);
 		}
@@ -233,9 +198,8 @@ public class ServiceNeedImpl extends ScenarioElementImpl implements ServiceNeed 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.SERVICE_NEED__SERVICE_NEED_LINK:
-				if (resolve) return getServiceNeedLink();
-				return basicGetServiceNeedLink();
+			case ScenarioDiagramPackage.SERVICE_NEED__NAME:
+				return getName();
 			case ScenarioDiagramPackage.SERVICE_NEED__AGREEMENT_LINK:
 				if (resolve) return getAgreementLink();
 				return basicGetAgreementLink();
@@ -251,8 +215,8 @@ public class ServiceNeedImpl extends ScenarioElementImpl implements ServiceNeed 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.SERVICE_NEED__SERVICE_NEED_LINK:
-				setServiceNeedLink((ServiceNeedLink)newValue);
+			case ScenarioDiagramPackage.SERVICE_NEED__NAME:
+				setName((String)newValue);
 				return;
 			case ScenarioDiagramPackage.SERVICE_NEED__AGREEMENT_LINK:
 				setAgreementLink((AgreementLink)newValue);
@@ -269,8 +233,8 @@ public class ServiceNeedImpl extends ScenarioElementImpl implements ServiceNeed 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.SERVICE_NEED__SERVICE_NEED_LINK:
-				setServiceNeedLink((ServiceNeedLink)null);
+			case ScenarioDiagramPackage.SERVICE_NEED__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case ScenarioDiagramPackage.SERVICE_NEED__AGREEMENT_LINK:
 				setAgreementLink((AgreementLink)null);
@@ -287,12 +251,60 @@ public class ServiceNeedImpl extends ScenarioElementImpl implements ServiceNeed 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.SERVICE_NEED__SERVICE_NEED_LINK:
-				return serviceNeedLink != null;
+			case ScenarioDiagramPackage.SERVICE_NEED__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ScenarioDiagramPackage.SERVICE_NEED__AGREEMENT_LINK:
 				return agreementLink != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == ScenarioElement.class) {
+			switch (derivedFeatureID) {
+				case ScenarioDiagramPackage.SERVICE_NEED__NAME: return ScenarioDiagramPackage.SCENARIO_ELEMENT__NAME;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == ScenarioElement.class) {
+			switch (baseFeatureID) {
+				case ScenarioDiagramPackage.SCENARIO_ELEMENT__NAME: return ScenarioDiagramPackage.SERVICE_NEED__NAME;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ServiceNeedImpl

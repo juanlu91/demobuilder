@@ -4,22 +4,29 @@ package scenarioDiagram.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import scenarioDiagram.Actor;
 import scenarioDiagram.AgreementLink;
-import scenarioDiagram.Customer;
+import scenarioDiagram.AssessmentInterval;
+import scenarioDiagram.CompensationType;
+import scenarioDiagram.Consumer;
+import scenarioDiagram.GuaranteeTerm;
 import scenarioDiagram.Provider;
+import scenarioDiagram.Role;
 import scenarioDiagram.Scenario;
 import scenarioDiagram.ScenarioDiagramFactory;
 import scenarioDiagram.ScenarioDiagramPackage;
 import scenarioDiagram.ScenarioElement;
+import scenarioDiagram.ServiceConfiguration;
+import scenarioDiagram.ServiceElement;
+import scenarioDiagram.ServiceLink;
 import scenarioDiagram.ServiceNeed;
-import scenarioDiagram.ServiceNeedLink;
 import scenarioDiagram.ServiceOffer;
-import scenarioDiagram.ServiceOfferLink;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +47,14 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass customerEClass = null;
+	private EClass consumerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass guaranteeTermEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,6 +82,13 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass serviceConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass agreementLinkEClass = null;
 
 	/**
@@ -75,14 +96,7 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceNeedLinkEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass serviceOfferLinkEClass = null;
+	private EClass serviceLinkEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,6 +104,41 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * @generated
 	 */
 	private EClass scenarioElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass actorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum roleEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum assessmentIntervalEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum compensationTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -175,8 +224,8 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCustomer() {
-		return customerEClass;
+	public EClass getConsumer() {
+		return consumerEClass;
 	}
 
 	/**
@@ -184,8 +233,62 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCustomer_ServiceNeedLinks() {
-		return (EReference)customerEClass.getEStructuralFeatures().get(0);
+	public EClass getGuaranteeTerm() {
+		return guaranteeTermEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGuaranteeTerm_Expression() {
+		return (EAttribute)guaranteeTermEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGuaranteeTerm_Condition() {
+		return (EAttribute)guaranteeTermEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGuaranteeTerm_CompensationInterval() {
+		return (EAttribute)guaranteeTermEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGuaranteeTerm_CompensationType() {
+		return (EAttribute)guaranteeTermEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGuaranteeTerm_CompensationExpression() {
+		return (EAttribute)guaranteeTermEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGuaranteeTerm_CompensationCondition() {
+		return (EAttribute)guaranteeTermEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -202,15 +305,6 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProvider_ServiceOfferLinks() {
-		return (EReference)providerEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getServiceNeed() {
 		return serviceNeedEClass;
 	}
@@ -220,17 +314,8 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getServiceNeed_ServiceNeedLink() {
-		return (EReference)serviceNeedEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getServiceNeed_AgreementLink() {
-		return (EReference)serviceNeedEClass.getEStructuralFeatures().get(1);
+		return (EReference)serviceNeedEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -247,7 +332,7 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getServiceOffer_AgreementLink() {
+	public EReference getServiceOffer_ServiceConfiguration() {
 		return (EReference)serviceOfferEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -256,8 +341,62 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getServiceOffer_ServiceOfferLinks() {
+	public EReference getServiceOffer_AgreementLink() {
 		return (EReference)serviceOfferEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getServiceConfiguration() {
+		return serviceConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getServiceConfiguration_EndpointReference() {
+		return (EAttribute)serviceConfigurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getServiceConfiguration_DefinitionReference() {
+		return (EAttribute)serviceConfigurationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getServiceConfiguration_MonitorReference() {
+		return (EAttribute)serviceConfigurationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getServiceConfiguration_ServiceName() {
+		return (EAttribute)serviceConfigurationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getServiceConfiguration_GuaranteTerms() {
+		return (EReference)serviceConfigurationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -274,7 +413,7 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAgreementLink_ServiceNeed() {
+	public EReference getAgreementLink_Source() {
 		return (EReference)agreementLinkEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -283,7 +422,7 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAgreementLink_ServiceOffer() {
+	public EReference getAgreementLink_Target() {
 		return (EReference)agreementLinkEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -292,8 +431,8 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getServiceNeedLink() {
-		return serviceNeedLinkEClass;
+	public EClass getServiceLink() {
+		return serviceLinkEClass;
 	}
 
 	/**
@@ -301,8 +440,8 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getServiceNeedLink_ServiceNeed() {
-		return (EReference)serviceNeedLinkEClass.getEStructuralFeatures().get(0);
+	public EReference getServiceLink_Actor() {
+		return (EReference)serviceLinkEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -310,35 +449,8 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getServiceNeedLink_Customer() {
-		return (EReference)serviceNeedLinkEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getServiceOfferLink() {
-		return serviceOfferLinkEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getServiceOfferLink_ServiceOffer() {
-		return (EReference)serviceOfferLinkEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getServiceOfferLink_Provider() {
-		return (EReference)serviceOfferLinkEClass.getEStructuralFeatures().get(1);
+	public EReference getServiceLink_ServiceElement() {
+		return (EReference)serviceLinkEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -357,6 +469,69 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 */
 	public EAttribute getScenarioElement_Name() {
 		return (EAttribute)scenarioElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getServiceElement() {
+		return serviceElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getServiceElement_ServiceLinks() {
+		return (EReference)serviceElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getActor() {
+		return actorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActor_ServiceLinks() {
+		return (EReference)actorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getRole() {
+		return roleEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getAssessmentInterval() {
+		return assessmentIntervalEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getCompensationType() {
+		return compensationTypeEEnum;
 	}
 
 	/**
@@ -390,34 +565,53 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 		scenarioEClass = createEClass(SCENARIO);
 		createEReference(scenarioEClass, SCENARIO__SCENARIO_ELEMENT);
 
-		customerEClass = createEClass(CUSTOMER);
-		createEReference(customerEClass, CUSTOMER__SERVICE_NEED_LINKS);
+		consumerEClass = createEClass(CONSUMER);
+
+		guaranteeTermEClass = createEClass(GUARANTEE_TERM);
+		createEAttribute(guaranteeTermEClass, GUARANTEE_TERM__EXPRESSION);
+		createEAttribute(guaranteeTermEClass, GUARANTEE_TERM__CONDITION);
+		createEAttribute(guaranteeTermEClass, GUARANTEE_TERM__COMPENSATION_INTERVAL);
+		createEAttribute(guaranteeTermEClass, GUARANTEE_TERM__COMPENSATION_TYPE);
+		createEAttribute(guaranteeTermEClass, GUARANTEE_TERM__COMPENSATION_EXPRESSION);
+		createEAttribute(guaranteeTermEClass, GUARANTEE_TERM__COMPENSATION_CONDITION);
 
 		providerEClass = createEClass(PROVIDER);
-		createEReference(providerEClass, PROVIDER__SERVICE_OFFER_LINKS);
 
 		serviceNeedEClass = createEClass(SERVICE_NEED);
-		createEReference(serviceNeedEClass, SERVICE_NEED__SERVICE_NEED_LINK);
 		createEReference(serviceNeedEClass, SERVICE_NEED__AGREEMENT_LINK);
 
 		serviceOfferEClass = createEClass(SERVICE_OFFER);
+		createEReference(serviceOfferEClass, SERVICE_OFFER__SERVICE_CONFIGURATION);
 		createEReference(serviceOfferEClass, SERVICE_OFFER__AGREEMENT_LINK);
-		createEReference(serviceOfferEClass, SERVICE_OFFER__SERVICE_OFFER_LINKS);
+
+		serviceConfigurationEClass = createEClass(SERVICE_CONFIGURATION);
+		createEAttribute(serviceConfigurationEClass, SERVICE_CONFIGURATION__ENDPOINT_REFERENCE);
+		createEAttribute(serviceConfigurationEClass, SERVICE_CONFIGURATION__DEFINITION_REFERENCE);
+		createEAttribute(serviceConfigurationEClass, SERVICE_CONFIGURATION__MONITOR_REFERENCE);
+		createEAttribute(serviceConfigurationEClass, SERVICE_CONFIGURATION__SERVICE_NAME);
+		createEReference(serviceConfigurationEClass, SERVICE_CONFIGURATION__GUARANTE_TERMS);
 
 		agreementLinkEClass = createEClass(AGREEMENT_LINK);
-		createEReference(agreementLinkEClass, AGREEMENT_LINK__SERVICE_NEED);
-		createEReference(agreementLinkEClass, AGREEMENT_LINK__SERVICE_OFFER);
+		createEReference(agreementLinkEClass, AGREEMENT_LINK__SOURCE);
+		createEReference(agreementLinkEClass, AGREEMENT_LINK__TARGET);
 
-		serviceNeedLinkEClass = createEClass(SERVICE_NEED_LINK);
-		createEReference(serviceNeedLinkEClass, SERVICE_NEED_LINK__SERVICE_NEED);
-		createEReference(serviceNeedLinkEClass, SERVICE_NEED_LINK__CUSTOMER);
-
-		serviceOfferLinkEClass = createEClass(SERVICE_OFFER_LINK);
-		createEReference(serviceOfferLinkEClass, SERVICE_OFFER_LINK__SERVICE_OFFER);
-		createEReference(serviceOfferLinkEClass, SERVICE_OFFER_LINK__PROVIDER);
+		serviceLinkEClass = createEClass(SERVICE_LINK);
+		createEReference(serviceLinkEClass, SERVICE_LINK__ACTOR);
+		createEReference(serviceLinkEClass, SERVICE_LINK__SERVICE_ELEMENT);
 
 		scenarioElementEClass = createEClass(SCENARIO_ELEMENT);
 		createEAttribute(scenarioElementEClass, SCENARIO_ELEMENT__NAME);
+
+		serviceElementEClass = createEClass(SERVICE_ELEMENT);
+		createEReference(serviceElementEClass, SERVICE_ELEMENT__SERVICE_LINKS);
+
+		actorEClass = createEClass(ACTOR);
+		createEReference(actorEClass, ACTOR__SERVICE_LINKS);
+
+		// Create enums
+		roleEEnum = createEEnum(ROLE);
+		assessmentIntervalEEnum = createEEnum(ASSESSMENT_INTERVAL);
+		compensationTypeEEnum = createEEnum(COMPENSATION_TYPE);
 	}
 
 	/**
@@ -448,46 +642,81 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		customerEClass.getESuperTypes().add(this.getScenarioElement());
+		consumerEClass.getESuperTypes().add(this.getScenarioElement());
+		consumerEClass.getESuperTypes().add(this.getActor());
+		guaranteeTermEClass.getESuperTypes().add(this.getScenarioElement());
 		providerEClass.getESuperTypes().add(this.getScenarioElement());
+		providerEClass.getESuperTypes().add(this.getActor());
+		serviceNeedEClass.getESuperTypes().add(this.getServiceElement());
 		serviceNeedEClass.getESuperTypes().add(this.getScenarioElement());
+		serviceOfferEClass.getESuperTypes().add(this.getServiceElement());
 		serviceOfferEClass.getESuperTypes().add(this.getScenarioElement());
+		serviceConfigurationEClass.getESuperTypes().add(this.getScenarioElement());
 		agreementLinkEClass.getESuperTypes().add(this.getScenarioElement());
-		serviceNeedLinkEClass.getESuperTypes().add(this.getScenarioElement());
-		serviceOfferLinkEClass.getESuperTypes().add(this.getScenarioElement());
+		serviceLinkEClass.getESuperTypes().add(this.getScenarioElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(scenarioEClass, Scenario.class, "Scenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getScenario_ScenarioElement(), this.getScenarioElement(), null, "scenarioElement", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCustomer_ServiceNeedLinks(), this.getServiceNeedLink(), this.getServiceNeedLink_Customer(), "serviceNeedLinks", null, 0, -1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(consumerEClass, Consumer.class, "Consumer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(guaranteeTermEClass, GuaranteeTerm.class, "GuaranteeTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGuaranteeTerm_Expression(), ecorePackage.getEString(), "expression", null, 0, 1, GuaranteeTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGuaranteeTerm_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, GuaranteeTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGuaranteeTerm_CompensationInterval(), this.getAssessmentInterval(), "compensationInterval", "MONTHLY", 0, 1, GuaranteeTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGuaranteeTerm_CompensationType(), this.getCompensationType(), "compensationType", "REWARD", 0, 1, GuaranteeTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGuaranteeTerm_CompensationExpression(), ecorePackage.getEString(), "compensationExpression", null, 0, 1, GuaranteeTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGuaranteeTerm_CompensationCondition(), ecorePackage.getEString(), "compensationCondition", null, 0, 1, GuaranteeTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(providerEClass, Provider.class, "Provider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProvider_ServiceOfferLinks(), this.getServiceOfferLink(), null, "serviceOfferLinks", null, 0, -1, Provider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceNeedEClass, ServiceNeed.class, "ServiceNeed", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceNeed_ServiceNeedLink(), this.getServiceNeedLink(), this.getServiceNeedLink_ServiceNeed(), "serviceNeedLink", null, 0, 1, ServiceNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServiceNeed_AgreementLink(), this.getAgreementLink(), this.getAgreementLink_ServiceNeed(), "agreementLink", null, 0, 1, ServiceNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceNeed_AgreementLink(), this.getAgreementLink(), this.getAgreementLink_Source(), "agreementLink", null, 0, 1, ServiceNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceOfferEClass, ServiceOffer.class, "ServiceOffer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceOffer_AgreementLink(), this.getAgreementLink(), this.getAgreementLink_ServiceOffer(), "agreementLink", null, 0, 1, ServiceOffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServiceOffer_ServiceOfferLinks(), this.getServiceOfferLink(), this.getServiceOfferLink_ServiceOffer(), "serviceOfferLinks", null, 0, -1, ServiceOffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceOffer_ServiceConfiguration(), this.getServiceConfiguration(), null, "serviceConfiguration", null, 0, 1, ServiceOffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceOffer_AgreementLink(), this.getAgreementLink(), this.getAgreementLink_Target(), "agreementLink", null, 0, 1, ServiceOffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(serviceConfigurationEClass, ServiceConfiguration.class, "ServiceConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceConfiguration_EndpointReference(), ecorePackage.getEString(), "endpointReference", null, 0, 1, ServiceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceConfiguration_DefinitionReference(), ecorePackage.getEString(), "definitionReference", null, 0, 1, ServiceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceConfiguration_MonitorReference(), ecorePackage.getEString(), "monitorReference", null, 0, 1, ServiceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceConfiguration_ServiceName(), ecorePackage.getEString(), "serviceName", null, 0, 1, ServiceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceConfiguration_GuaranteTerms(), this.getGuaranteeTerm(), null, "guaranteTerms", null, 0, -1, ServiceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(agreementLinkEClass, AgreementLink.class, "AgreementLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAgreementLink_ServiceNeed(), this.getServiceNeed(), this.getServiceNeed_AgreementLink(), "serviceNeed", null, 0, 1, AgreementLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgreementLink_ServiceOffer(), this.getServiceOffer(), this.getServiceOffer_AgreementLink(), "serviceOffer", null, 0, 1, AgreementLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementLink_Source(), this.getServiceNeed(), this.getServiceNeed_AgreementLink(), "source", null, 0, 1, AgreementLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementLink_Target(), this.getServiceOffer(), this.getServiceOffer_AgreementLink(), "target", null, 0, 1, AgreementLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(serviceNeedLinkEClass, ServiceNeedLink.class, "ServiceNeedLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceNeedLink_ServiceNeed(), this.getServiceNeed(), this.getServiceNeed_ServiceNeedLink(), "serviceNeed", null, 0, 1, ServiceNeedLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServiceNeedLink_Customer(), this.getCustomer(), this.getCustomer_ServiceNeedLinks(), "customer", null, 0, 1, ServiceNeedLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(serviceOfferLinkEClass, ServiceOfferLink.class, "ServiceOfferLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceOfferLink_ServiceOffer(), this.getServiceOffer(), this.getServiceOffer_ServiceOfferLinks(), "serviceOffer", null, 0, 1, ServiceOfferLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServiceOfferLink_Provider(), this.getProvider(), null, "provider", null, 0, 1, ServiceOfferLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(serviceLinkEClass, ServiceLink.class, "ServiceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getServiceLink_Actor(), this.getActor(), this.getActor_ServiceLinks(), "actor", null, 0, 1, ServiceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceLink_ServiceElement(), this.getServiceElement(), this.getServiceElement_ServiceLinks(), "serviceElement", null, 0, 1, ServiceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(scenarioElementEClass, ScenarioElement.class, "ScenarioElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getScenarioElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ScenarioElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(serviceElementEClass, ServiceElement.class, "ServiceElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getServiceElement_ServiceLinks(), this.getServiceLink(), this.getServiceLink_ServiceElement(), "serviceLinks", null, 0, -1, ServiceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActor_ServiceLinks(), this.getServiceLink(), this.getServiceLink_Actor(), "serviceLinks", null, 0, -1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(roleEEnum, Role.class, "Role");
+		addEEnumLiteral(roleEEnum, Role.PROVIDER);
+		addEEnumLiteral(roleEEnum, Role.CONSUMER);
+
+		initEEnum(assessmentIntervalEEnum, AssessmentInterval.class, "AssessmentInterval");
+		addEEnumLiteral(assessmentIntervalEEnum, AssessmentInterval.YEARLY);
+		addEEnumLiteral(assessmentIntervalEEnum, AssessmentInterval.MONTHLY);
+		addEEnumLiteral(assessmentIntervalEEnum, AssessmentInterval.WEEKLY);
+		addEEnumLiteral(assessmentIntervalEEnum, AssessmentInterval.DAILY);
+		addEEnumLiteral(assessmentIntervalEEnum, AssessmentInterval.HOURLY);
+
+		initEEnum(compensationTypeEEnum, CompensationType.class, "CompensationType");
+		addEEnumLiteral(compensationTypeEEnum, CompensationType.PENALTY);
+		addEEnumLiteral(compensationTypeEEnum, CompensationType.REWARD);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -499,8 +728,10 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 		createGmf_1Annotations();
 		// gmf.node
 		createGmf_2Annotations();
-		// gmf.link
+		// gmf.affixed
 		createGmf_3Annotations();
+		// gmf.link
+		createGmf_4Annotations();
 	}
 
 	/**
@@ -542,20 +773,36 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	protected void createGmf_2Annotations() {
 		String source = "gmf.node";	
 		addAnnotation
-		  (customerEClass, 
+		  (consumerEClass, 
 		   source, 
 		   new String[] {
 			 "figure", "svg",
-			 "svg.uri", "platform:/plugin/demobuilder.scenario/icons/Customer.svg",
+			 "svg.uri", "platform:/plugin/demobuilder.scenario/icons/Consumer.svg",
 			 "label", "name",
-			 "tool.description", "Customer",
+			 "tool.name", "Consumer",
+			 "tool.description", "Creates a consumer",
 			 "label.placement", "external",
 			 "label.icon", "false",
 			 "size", "100,100",
 			 "tool.small.bundle", "demobuilder.scenario.edit",
-			 "tool.small.path", "/icons/full/obj16/Customer.gif",
+			 "tool.small.path", "/icons/full/obj16/Consumer.gif",
 			 "tool.large.bundle", "demobuilder.scenario.edit",
-			 "tool.large.path", "/icons/full/obj32/Customer.gif"
+			 "tool.large.path", "/icons/full/obj32/Consumer.gif"
+		   });	
+		addAnnotation
+		  (guaranteeTermEClass, 
+		   source, 
+		   new String[] {
+			 "label.placement", "none",
+			 "label.icon", "false",
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/demobuilder.scenario/icons/GuaranteeTerm.svg",
+			 "tool.name", "Guarantee Term",
+			 "tool.description", "Creates a new guarantee term",
+			 "tool.small.bundle", "demobuilder.scenario.edit",
+			 "tool.small.path", "/icons/full/obj16/GuaranteeTerm.gif",
+			 "tool.large.bundle", "demobuilder.scenario.edit",
+			 "tool.large.path", "/icons/full/obj32/GuaranteeTerm.gif"
 		   });	
 		addAnnotation
 		  (providerEClass, 
@@ -564,7 +811,8 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 			 "figure", "svg",
 			 "svg.uri", "platform:/plugin/demobuilder.scenario/icons/Provider.svg",
 			 "label", "name",
-			 "tool.description", "Provider",
+			 "tool.name", "Provider",
+			 "tool.description", "Creates a provider",
 			 "label.placement", "external",
 			 "label.icon", "false",
 			 "size", "100,100",
@@ -582,7 +830,8 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 			 "label", "name",
 			 "label.placement", "external",
 			 "label.icon", "false",
-			 "tool.description", "Service Need",
+			 "tool.name", "Service Need",
+			 "tool.description", "Creates a service need",
 			 "size", "50,50",
 			 "tool.small.bundle", "demobuilder.scenario.edit",
 			 "tool.small.path", "/icons/full/obj16/ServiceNeed.gif",
@@ -598,12 +847,48 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 			 "label", "name",
 			 "label.placement", "external",
 			 "label.icon", "false",
-			 "tool.description", "Service Offer",
+			 "tool.name", "Service Offer",
+			 "tool.description", "Creates a service offer",
 			 "size", "50,50",
 			 "tool.small.bundle", "demobuilder.scenario.edit",
 			 "tool.small.path", "/icons/full/obj16/ServiceOffer.gif",
 			 "tool.large.bundle", "demobuilder.scenario.edit",
 			 "tool.large.path", "/icons/full/obj32/ServiceOffer.gif"
+		   });	
+		addAnnotation
+		  (serviceConfigurationEClass, 
+		   source, 
+		   new String[] {
+			 "label.placement", "none",
+			 "label.icon", "false",
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/demobuilder.scenario/icons/serviceConfiguration.svg",
+			 "tool.name", "Service Configuration",
+			 "tool.description", "Creates a service configuration section",
+			 "tool.small.bundle", "demobuilder.scenario.edit",
+			 "tool.small.path", "/icons/full/obj16/ServiceConfiguration.gif",
+			 "tool.large.bundle", "demobuilder.scenario.edit",
+			 "tool.large.path", "/icons/full/obj32/ServiceConfiguration.gif"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.affixed</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_3Annotations() {
+		String source = "gmf.affixed";	
+		addAnnotation
+		  (getServiceOffer_ServiceConfiguration(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getServiceConfiguration_GuaranteTerms(), 
+		   source, 
+		   new String[] {
 		   });
 	}
 
@@ -613,44 +898,32 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createGmf_3Annotations() {
+	protected void createGmf_4Annotations() {
 		String source = "gmf.link";	
 		addAnnotation
 		  (agreementLinkEClass, 
 		   source, 
 		   new String[] {
-			 "source", "serviceNeed",
+			 "source", "source",
+			 "target", "target",
 			 "label", "name",
-			 "target", "serviceOffer",
 			 "width", "1",
 			 "style", "dash",
-			 "tool.description", "Agreement link",
+			 "tool.name", "Agreement Link",
+			 "tool.description", "Creates an agreement link",
 			 "color", "0,0,0"
 		   });	
 		addAnnotation
-		  (serviceNeedLinkEClass, 
+		  (serviceLinkEClass, 
 		   source, 
 		   new String[] {
-			 "source", "customer",
+			 "source", "actor",
+			 "target", "serviceElement",
 			 "label.placement", "none",
-			 "target", "serviceNeed",
-			 "target.decoration", "arrow",
 			 "width", "2",
 			 "style", "solid",
-			 "tool.description", "Service needs link",
-			 "color", "0,0,0"
-		   });	
-		addAnnotation
-		  (serviceOfferLinkEClass, 
-		   source, 
-		   new String[] {
-			 "source", "provider",
-			 "label.placement", "none",
-			 "target", "serviceOffer",
-			 "target.decoration", "arrow",
-			 "width", "2",
-			 "style", "solid",
-			 "tool.description", "Service offers link",
+			 "tool.name", "Service Link",
+			 "tool.description", "Creates a service link",
 			 "color", "0,0,0"
 		   });
 	}

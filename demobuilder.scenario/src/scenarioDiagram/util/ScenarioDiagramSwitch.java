@@ -72,10 +72,18 @@ public class ScenarioDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ScenarioDiagramPackage.CUSTOMER: {
-				Customer customer = (Customer)theEObject;
-				T result = caseCustomer(customer);
-				if (result == null) result = caseScenarioElement(customer);
+			case ScenarioDiagramPackage.CONSUMER: {
+				Consumer consumer = (Consumer)theEObject;
+				T result = caseConsumer(consumer);
+				if (result == null) result = caseScenarioElement(consumer);
+				if (result == null) result = caseActor(consumer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ScenarioDiagramPackage.GUARANTEE_TERM: {
+				GuaranteeTerm guaranteeTerm = (GuaranteeTerm)theEObject;
+				T result = caseGuaranteeTerm(guaranteeTerm);
+				if (result == null) result = caseScenarioElement(guaranteeTerm);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -83,12 +91,14 @@ public class ScenarioDiagramSwitch<T> extends Switch<T> {
 				Provider provider = (Provider)theEObject;
 				T result = caseProvider(provider);
 				if (result == null) result = caseScenarioElement(provider);
+				if (result == null) result = caseActor(provider);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ScenarioDiagramPackage.SERVICE_NEED: {
 				ServiceNeed serviceNeed = (ServiceNeed)theEObject;
 				T result = caseServiceNeed(serviceNeed);
+				if (result == null) result = caseServiceElement(serviceNeed);
 				if (result == null) result = caseScenarioElement(serviceNeed);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -96,7 +106,15 @@ public class ScenarioDiagramSwitch<T> extends Switch<T> {
 			case ScenarioDiagramPackage.SERVICE_OFFER: {
 				ServiceOffer serviceOffer = (ServiceOffer)theEObject;
 				T result = caseServiceOffer(serviceOffer);
+				if (result == null) result = caseServiceElement(serviceOffer);
 				if (result == null) result = caseScenarioElement(serviceOffer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ScenarioDiagramPackage.SERVICE_CONFIGURATION: {
+				ServiceConfiguration serviceConfiguration = (ServiceConfiguration)theEObject;
+				T result = caseServiceConfiguration(serviceConfiguration);
+				if (result == null) result = caseScenarioElement(serviceConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -107,23 +125,28 @@ public class ScenarioDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ScenarioDiagramPackage.SERVICE_NEED_LINK: {
-				ServiceNeedLink serviceNeedLink = (ServiceNeedLink)theEObject;
-				T result = caseServiceNeedLink(serviceNeedLink);
-				if (result == null) result = caseScenarioElement(serviceNeedLink);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScenarioDiagramPackage.SERVICE_OFFER_LINK: {
-				ServiceOfferLink serviceOfferLink = (ServiceOfferLink)theEObject;
-				T result = caseServiceOfferLink(serviceOfferLink);
-				if (result == null) result = caseScenarioElement(serviceOfferLink);
+			case ScenarioDiagramPackage.SERVICE_LINK: {
+				ServiceLink serviceLink = (ServiceLink)theEObject;
+				T result = caseServiceLink(serviceLink);
+				if (result == null) result = caseScenarioElement(serviceLink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ScenarioDiagramPackage.SCENARIO_ELEMENT: {
 				ScenarioElement scenarioElement = (ScenarioElement)theEObject;
 				T result = caseScenarioElement(scenarioElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ScenarioDiagramPackage.SERVICE_ELEMENT: {
+				ServiceElement serviceElement = (ServiceElement)theEObject;
+				T result = caseServiceElement(serviceElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ScenarioDiagramPackage.ACTOR: {
+				Actor actor = (Actor)theEObject;
+				T result = caseActor(actor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -147,17 +170,32 @@ public class ScenarioDiagramSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Customer</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Consumer</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Customer</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Consumer</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCustomer(Customer object) {
+	public T caseConsumer(Consumer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Guarantee Term</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Guarantee Term</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGuaranteeTerm(GuaranteeTerm object) {
 		return null;
 	}
 
@@ -207,6 +245,21 @@ public class ScenarioDiagramSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Configuration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceConfiguration(ServiceConfiguration object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Agreement Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -222,32 +275,17 @@ public class ScenarioDiagramSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service Need Link</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Service Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service Need Link</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Service Link</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseServiceNeedLink(ServiceNeedLink object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service Offer Link</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service Offer Link</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseServiceOfferLink(ServiceOfferLink object) {
+	public T caseServiceLink(ServiceLink object) {
 		return null;
 	}
 
@@ -263,6 +301,36 @@ public class ScenarioDiagramSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseScenarioElement(ScenarioElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceElement(ServiceElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Actor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Actor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActor(Actor object) {
 		return null;
 	}
 

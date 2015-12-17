@@ -4,15 +4,20 @@ package scenarioDiagram.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
+import scenarioDiagram.Actor;
 import scenarioDiagram.Provider;
 import scenarioDiagram.ScenarioDiagramPackage;
-import scenarioDiagram.ServiceOfferLink;
+import scenarioDiagram.ServiceLink;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +26,7 @@ import scenarioDiagram.ServiceOfferLink;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link scenarioDiagram.impl.ProviderImpl#getServiceOfferLinks <em>Service Offer Links</em>}</li>
+ *   <li>{@link scenarioDiagram.impl.ProviderImpl#getServiceLinks <em>Service Links</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,14 +34,14 @@ import scenarioDiagram.ServiceOfferLink;
  */
 public class ProviderImpl extends ScenarioElementImpl implements Provider {
 	/**
-	 * The cached value of the '{@link #getServiceOfferLinks() <em>Service Offer Links</em>}' reference list.
+	 * The cached value of the '{@link #getServiceLinks() <em>Service Links</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getServiceOfferLinks()
+	 * @see #getServiceLinks()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceOfferLink> serviceOfferLinks;
+	protected EList<ServiceLink> serviceLinks;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,11 +67,40 @@ public class ProviderImpl extends ScenarioElementImpl implements Provider {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ServiceOfferLink> getServiceOfferLinks() {
-		if (serviceOfferLinks == null) {
-			serviceOfferLinks = new EObjectResolvingEList<ServiceOfferLink>(ServiceOfferLink.class, this, ScenarioDiagramPackage.PROVIDER__SERVICE_OFFER_LINKS);
+	public EList<ServiceLink> getServiceLinks() {
+		if (serviceLinks == null) {
+			serviceLinks = new EObjectWithInverseResolvingEList<ServiceLink>(ServiceLink.class, this, ScenarioDiagramPackage.PROVIDER__SERVICE_LINKS, ScenarioDiagramPackage.SERVICE_LINK__ACTOR);
 		}
-		return serviceOfferLinks;
+		return serviceLinks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ScenarioDiagramPackage.PROVIDER__SERVICE_LINKS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getServiceLinks()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ScenarioDiagramPackage.PROVIDER__SERVICE_LINKS:
+				return ((InternalEList<?>)getServiceLinks()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -77,8 +111,8 @@ public class ProviderImpl extends ScenarioElementImpl implements Provider {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.PROVIDER__SERVICE_OFFER_LINKS:
-				return getServiceOfferLinks();
+			case ScenarioDiagramPackage.PROVIDER__SERVICE_LINKS:
+				return getServiceLinks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -92,9 +126,9 @@ public class ProviderImpl extends ScenarioElementImpl implements Provider {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.PROVIDER__SERVICE_OFFER_LINKS:
-				getServiceOfferLinks().clear();
-				getServiceOfferLinks().addAll((Collection<? extends ServiceOfferLink>)newValue);
+			case ScenarioDiagramPackage.PROVIDER__SERVICE_LINKS:
+				getServiceLinks().clear();
+				getServiceLinks().addAll((Collection<? extends ServiceLink>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -108,8 +142,8 @@ public class ProviderImpl extends ScenarioElementImpl implements Provider {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.PROVIDER__SERVICE_OFFER_LINKS:
-				getServiceOfferLinks().clear();
+			case ScenarioDiagramPackage.PROVIDER__SERVICE_LINKS:
+				getServiceLinks().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -123,10 +157,42 @@ public class ProviderImpl extends ScenarioElementImpl implements Provider {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.PROVIDER__SERVICE_OFFER_LINKS:
-				return serviceOfferLinks != null && !serviceOfferLinks.isEmpty();
+			case ScenarioDiagramPackage.PROVIDER__SERVICE_LINKS:
+				return serviceLinks != null && !serviceLinks.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Actor.class) {
+			switch (derivedFeatureID) {
+				case ScenarioDiagramPackage.PROVIDER__SERVICE_LINKS: return ScenarioDiagramPackage.ACTOR__SERVICE_LINKS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Actor.class) {
+			switch (baseFeatureID) {
+				case ScenarioDiagramPackage.ACTOR__SERVICE_LINKS: return ScenarioDiagramPackage.PROVIDER__SERVICE_LINKS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //ProviderImpl

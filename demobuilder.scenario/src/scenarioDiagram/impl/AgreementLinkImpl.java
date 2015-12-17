@@ -2,15 +2,23 @@
  */
 package scenarioDiagram.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import scenarioDiagram.AgreementLink;
+import scenarioDiagram.GuaranteeTerm;
 import scenarioDiagram.ScenarioDiagramPackage;
 import scenarioDiagram.ServiceNeed;
 import scenarioDiagram.ServiceOffer;
@@ -22,8 +30,8 @@ import scenarioDiagram.ServiceOffer;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link scenarioDiagram.impl.AgreementLinkImpl#getServiceNeed <em>Service Need</em>}</li>
- *   <li>{@link scenarioDiagram.impl.AgreementLinkImpl#getServiceOffer <em>Service Offer</em>}</li>
+ *   <li>{@link scenarioDiagram.impl.AgreementLinkImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link scenarioDiagram.impl.AgreementLinkImpl#getTarget <em>Target</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,24 +39,24 @@ import scenarioDiagram.ServiceOffer;
  */
 public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementLink {
 	/**
-	 * The cached value of the '{@link #getServiceNeed() <em>Service Need</em>}' reference.
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getServiceNeed()
+	 * @see #getSource()
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceNeed serviceNeed;
+	protected ServiceNeed source;
 
 	/**
-	 * The cached value of the '{@link #getServiceOffer() <em>Service Offer</em>}' reference.
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getServiceOffer()
+	 * @see #getTarget()
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceOffer serviceOffer;
+	protected ServiceOffer target;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,16 +82,16 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceNeed getServiceNeed() {
-		if (serviceNeed != null && serviceNeed.eIsProxy()) {
-			InternalEObject oldServiceNeed = (InternalEObject)serviceNeed;
-			serviceNeed = (ServiceNeed)eResolveProxy(oldServiceNeed);
-			if (serviceNeed != oldServiceNeed) {
+	public ServiceNeed getSource() {
+		if (source != null && source.eIsProxy()) {
+			InternalEObject oldSource = (InternalEObject)source;
+			source = (ServiceNeed)eResolveProxy(oldSource);
+			if (source != oldSource) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_NEED, oldServiceNeed, serviceNeed));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScenarioDiagramPackage.AGREEMENT_LINK__SOURCE, oldSource, source));
 			}
 		}
-		return serviceNeed;
+		return source;
 	}
 
 	/**
@@ -91,8 +99,8 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceNeed basicGetServiceNeed() {
-		return serviceNeed;
+	public ServiceNeed basicGetSource() {
+		return source;
 	}
 
 	/**
@@ -100,11 +108,11 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetServiceNeed(ServiceNeed newServiceNeed, NotificationChain msgs) {
-		ServiceNeed oldServiceNeed = serviceNeed;
-		serviceNeed = newServiceNeed;
+	public NotificationChain basicSetSource(ServiceNeed newSource, NotificationChain msgs) {
+		ServiceNeed oldSource = source;
+		source = newSource;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_NEED, oldServiceNeed, newServiceNeed);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.AGREEMENT_LINK__SOURCE, oldSource, newSource);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -115,18 +123,18 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setServiceNeed(ServiceNeed newServiceNeed) {
-		if (newServiceNeed != serviceNeed) {
+	public void setSource(ServiceNeed newSource) {
+		if (newSource != source) {
 			NotificationChain msgs = null;
-			if (serviceNeed != null)
-				msgs = ((InternalEObject)serviceNeed).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_NEED__AGREEMENT_LINK, ServiceNeed.class, msgs);
-			if (newServiceNeed != null)
-				msgs = ((InternalEObject)newServiceNeed).eInverseAdd(this, ScenarioDiagramPackage.SERVICE_NEED__AGREEMENT_LINK, ServiceNeed.class, msgs);
-			msgs = basicSetServiceNeed(newServiceNeed, msgs);
+			if (source != null)
+				msgs = ((InternalEObject)source).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_NEED__AGREEMENT_LINK, ServiceNeed.class, msgs);
+			if (newSource != null)
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, ScenarioDiagramPackage.SERVICE_NEED__AGREEMENT_LINK, ServiceNeed.class, msgs);
+			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_NEED, newServiceNeed, newServiceNeed));
+			eNotify(new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.AGREEMENT_LINK__SOURCE, newSource, newSource));
 	}
 
 	/**
@@ -134,16 +142,16 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceOffer getServiceOffer() {
-		if (serviceOffer != null && serviceOffer.eIsProxy()) {
-			InternalEObject oldServiceOffer = (InternalEObject)serviceOffer;
-			serviceOffer = (ServiceOffer)eResolveProxy(oldServiceOffer);
-			if (serviceOffer != oldServiceOffer) {
+	public ServiceOffer getTarget() {
+		if (target != null && target.eIsProxy()) {
+			InternalEObject oldTarget = (InternalEObject)target;
+			target = (ServiceOffer)eResolveProxy(oldTarget);
+			if (target != oldTarget) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_OFFER, oldServiceOffer, serviceOffer));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScenarioDiagramPackage.AGREEMENT_LINK__TARGET, oldTarget, target));
 			}
 		}
-		return serviceOffer;
+		return target;
 	}
 
 	/**
@@ -151,8 +159,8 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceOffer basicGetServiceOffer() {
-		return serviceOffer;
+	public ServiceOffer basicGetTarget() {
+		return target;
 	}
 
 	/**
@@ -160,11 +168,11 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetServiceOffer(ServiceOffer newServiceOffer, NotificationChain msgs) {
-		ServiceOffer oldServiceOffer = serviceOffer;
-		serviceOffer = newServiceOffer;
+	public NotificationChain basicSetTarget(ServiceOffer newTarget, NotificationChain msgs) {
+		ServiceOffer oldTarget = target;
+		target = newTarget;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_OFFER, oldServiceOffer, newServiceOffer);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.AGREEMENT_LINK__TARGET, oldTarget, newTarget);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -175,18 +183,18 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setServiceOffer(ServiceOffer newServiceOffer) {
-		if (newServiceOffer != serviceOffer) {
+	public void setTarget(ServiceOffer newTarget) {
+		if (newTarget != target) {
 			NotificationChain msgs = null;
-			if (serviceOffer != null)
-				msgs = ((InternalEObject)serviceOffer).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK, ServiceOffer.class, msgs);
-			if (newServiceOffer != null)
-				msgs = ((InternalEObject)newServiceOffer).eInverseAdd(this, ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK, ServiceOffer.class, msgs);
-			msgs = basicSetServiceOffer(newServiceOffer, msgs);
+			if (target != null)
+				msgs = ((InternalEObject)target).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK, ServiceOffer.class, msgs);
+			if (newTarget != null)
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK, ServiceOffer.class, msgs);
+			msgs = basicSetTarget(newTarget, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_OFFER, newServiceOffer, newServiceOffer));
+			eNotify(new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.AGREEMENT_LINK__TARGET, newTarget, newTarget));
 	}
 
 	/**
@@ -197,14 +205,14 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_NEED:
-				if (serviceNeed != null)
-					msgs = ((InternalEObject)serviceNeed).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_NEED__AGREEMENT_LINK, ServiceNeed.class, msgs);
-				return basicSetServiceNeed((ServiceNeed)otherEnd, msgs);
-			case ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_OFFER:
-				if (serviceOffer != null)
-					msgs = ((InternalEObject)serviceOffer).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK, ServiceOffer.class, msgs);
-				return basicSetServiceOffer((ServiceOffer)otherEnd, msgs);
+			case ScenarioDiagramPackage.AGREEMENT_LINK__SOURCE:
+				if (source != null)
+					msgs = ((InternalEObject)source).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_NEED__AGREEMENT_LINK, ServiceNeed.class, msgs);
+				return basicSetSource((ServiceNeed)otherEnd, msgs);
+			case ScenarioDiagramPackage.AGREEMENT_LINK__TARGET:
+				if (target != null)
+					msgs = ((InternalEObject)target).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK, ServiceOffer.class, msgs);
+				return basicSetTarget((ServiceOffer)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -217,10 +225,10 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_NEED:
-				return basicSetServiceNeed(null, msgs);
-			case ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_OFFER:
-				return basicSetServiceOffer(null, msgs);
+			case ScenarioDiagramPackage.AGREEMENT_LINK__SOURCE:
+				return basicSetSource(null, msgs);
+			case ScenarioDiagramPackage.AGREEMENT_LINK__TARGET:
+				return basicSetTarget(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -233,12 +241,12 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_NEED:
-				if (resolve) return getServiceNeed();
-				return basicGetServiceNeed();
-			case ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_OFFER:
-				if (resolve) return getServiceOffer();
-				return basicGetServiceOffer();
+			case ScenarioDiagramPackage.AGREEMENT_LINK__SOURCE:
+				if (resolve) return getSource();
+				return basicGetSource();
+			case ScenarioDiagramPackage.AGREEMENT_LINK__TARGET:
+				if (resolve) return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -248,14 +256,15 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_NEED:
-				setServiceNeed((ServiceNeed)newValue);
+			case ScenarioDiagramPackage.AGREEMENT_LINK__SOURCE:
+				setSource((ServiceNeed)newValue);
 				return;
-			case ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_OFFER:
-				setServiceOffer((ServiceOffer)newValue);
+			case ScenarioDiagramPackage.AGREEMENT_LINK__TARGET:
+				setTarget((ServiceOffer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -269,11 +278,11 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_NEED:
-				setServiceNeed((ServiceNeed)null);
+			case ScenarioDiagramPackage.AGREEMENT_LINK__SOURCE:
+				setSource((ServiceNeed)null);
 				return;
-			case ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_OFFER:
-				setServiceOffer((ServiceOffer)null);
+			case ScenarioDiagramPackage.AGREEMENT_LINK__TARGET:
+				setTarget((ServiceOffer)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -287,10 +296,10 @@ public class AgreementLinkImpl extends ScenarioElementImpl implements AgreementL
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_NEED:
-				return serviceNeed != null;
-			case ScenarioDiagramPackage.AGREEMENT_LINK__SERVICE_OFFER:
-				return serviceOffer != null;
+			case ScenarioDiagramPackage.AGREEMENT_LINK__SOURCE:
+				return source != null;
+			case ScenarioDiagramPackage.AGREEMENT_LINK__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="300"
+   height="300"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r"
+   sodipodi:docname="Version 3 ANIMATION LETTER G.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.805"
+     inkscape:cx="0.04024617"
+     inkscape:cy="180.86891"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="1173"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       orientation="1,0"
+       position="-132.95798,263.49855"
+       id="guide3819" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="-180.82285,291.05711"
+       id="guide3839" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="-56.084094,256.24629"
+       id="guide3861" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-752.36218)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Hilfslinien">
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:14.53938961;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path3115"
+       sodipodi:cx="-156.85091"
+       sodipodi:cy="185.31856"
+       sodipodi:rx="100.76682"
+       sodipodi:ry="144.59834"
+       d="m -56.084084,185.31856 a 100.76682,144.59834 0 1 1 -201.533646,0 100.76682,144.59834 0 1 1 201.533646,0 z"
+       transform="matrix(1.1613187,0,0,0.78789186,337.92883,-1.2786199)" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="path3885-0"
+       sodipodi:cx="-235.84079"
+       sodipodi:cy="101.10803"
+       sodipodi:rx="66.098267"
+       sodipodi:ry="82.548477"
+       d="M -203.70175,173.24139 A 66.098267,82.548477 0 1 1 -259.87918,24.212038"
+       sodipodi:start="1.0630248"
+       sodipodi:end="4.3401773"
+       sodipodi:open="true"
+       transform="matrix(-1.6436584,-0.49278153,0.61956944,-1.1551884,-235.00514,46.795168)" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="rect3980"
+       width="137.5894"
+       height="133.37659"
+       x="147.41159"
+       y="-349.24811"
+       transform="matrix(-0.02907996,0.99957709,-0.99713378,0.07565864,0,0)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:13;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 153.26694,152.12995 62.98412,0"
+       id="path3191"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:13;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 202.0554,247.68768 0,-95.92938"
+       id="path3191-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

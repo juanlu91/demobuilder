@@ -31,13 +31,22 @@ public interface ScenarioDiagramFactory extends EFactory {
 	Scenario createScenario();
 
 	/**
-	 * Returns a new object of class '<em>Customer</em>'.
+	 * Returns a new object of class '<em>Consumer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Customer</em>'.
+	 * @return a new object of class '<em>Consumer</em>'.
 	 * @generated
 	 */
-	Customer createCustomer();
+	Consumer createConsumer();
+
+	/**
+	 * Returns a new object of class '<em>Guarantee Term</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Guarantee Term</em>'.
+	 * @generated
+	 */
+	GuaranteeTerm createGuaranteeTerm();
 
 	/**
 	 * Returns a new object of class '<em>Provider</em>'.
@@ -67,6 +76,15 @@ public interface ScenarioDiagramFactory extends EFactory {
 	ServiceOffer createServiceOffer();
 
 	/**
+	 * Returns a new object of class '<em>Service Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Service Configuration</em>'.
+	 * @generated
+	 */
+	ServiceConfiguration createServiceConfiguration();
+
+	/**
 	 * Returns a new object of class '<em>Agreement Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,22 +94,13 @@ public interface ScenarioDiagramFactory extends EFactory {
 	AgreementLink createAgreementLink();
 
 	/**
-	 * Returns a new object of class '<em>Service Need Link</em>'.
+	 * Returns a new object of class '<em>Service Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Need Link</em>'.
+	 * @return a new object of class '<em>Service Link</em>'.
 	 * @generated
 	 */
-	ServiceNeedLink createServiceNeedLink();
-
-	/**
-	 * Returns a new object of class '<em>Service Offer Link</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Offer Link</em>'.
-	 * @generated
-	 */
-	ServiceOfferLink createServiceOfferLink();
+	ServiceLink createServiceLink();
 
 	/**
 	 * Returns a new object of class '<em>Scenario Element</em>'.
@@ -101,6 +110,24 @@ public interface ScenarioDiagramFactory extends EFactory {
 	 * @generated
 	 */
 	ScenarioElement createScenarioElement();
+
+	/**
+	 * Returns a new object of class '<em>Service Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Service Element</em>'.
+	 * @generated
+	 */
+	ServiceElement createServiceElement();
+
+	/**
+	 * Returns a new object of class '<em>Actor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Actor</em>'.
+	 * @generated
+	 */
+	Actor createActor();
 
 	/**
 	 * Returns the package supported by this factory.

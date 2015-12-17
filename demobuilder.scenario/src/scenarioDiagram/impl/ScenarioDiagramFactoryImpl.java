@@ -3,6 +3,7 @@
 package scenarioDiagram.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -57,16 +58,57 @@ public class ScenarioDiagramFactoryImpl extends EFactoryImpl implements Scenario
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ScenarioDiagramPackage.SCENARIO: return createScenario();
-			case ScenarioDiagramPackage.CUSTOMER: return createCustomer();
+			case ScenarioDiagramPackage.CONSUMER: return createConsumer();
+			case ScenarioDiagramPackage.GUARANTEE_TERM: return createGuaranteeTerm();
 			case ScenarioDiagramPackage.PROVIDER: return createProvider();
 			case ScenarioDiagramPackage.SERVICE_NEED: return createServiceNeed();
 			case ScenarioDiagramPackage.SERVICE_OFFER: return createServiceOffer();
+			case ScenarioDiagramPackage.SERVICE_CONFIGURATION: return createServiceConfiguration();
 			case ScenarioDiagramPackage.AGREEMENT_LINK: return createAgreementLink();
-			case ScenarioDiagramPackage.SERVICE_NEED_LINK: return createServiceNeedLink();
-			case ScenarioDiagramPackage.SERVICE_OFFER_LINK: return createServiceOfferLink();
+			case ScenarioDiagramPackage.SERVICE_LINK: return createServiceLink();
 			case ScenarioDiagramPackage.SCENARIO_ELEMENT: return createScenarioElement();
+			case ScenarioDiagramPackage.SERVICE_ELEMENT: return createServiceElement();
+			case ScenarioDiagramPackage.ACTOR: return createActor();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case ScenarioDiagramPackage.ROLE:
+				return createRoleFromString(eDataType, initialValue);
+			case ScenarioDiagramPackage.ASSESSMENT_INTERVAL:
+				return createAssessmentIntervalFromString(eDataType, initialValue);
+			case ScenarioDiagramPackage.COMPENSATION_TYPE:
+				return createCompensationTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case ScenarioDiagramPackage.ROLE:
+				return convertRoleToString(eDataType, instanceValue);
+			case ScenarioDiagramPackage.ASSESSMENT_INTERVAL:
+				return convertAssessmentIntervalToString(eDataType, instanceValue);
+			case ScenarioDiagramPackage.COMPENSATION_TYPE:
+				return convertCompensationTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -85,9 +127,19 @@ public class ScenarioDiagramFactoryImpl extends EFactoryImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Customer createCustomer() {
-		CustomerImpl customer = new CustomerImpl();
-		return customer;
+	public Consumer createConsumer() {
+		ConsumerImpl consumer = new ConsumerImpl();
+		return consumer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GuaranteeTerm createGuaranteeTerm() {
+		GuaranteeTermImpl guaranteeTerm = new GuaranteeTermImpl();
+		return guaranteeTerm;
 	}
 
 	/**
@@ -125,6 +177,16 @@ public class ScenarioDiagramFactoryImpl extends EFactoryImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ServiceConfiguration createServiceConfiguration() {
+		ServiceConfigurationImpl serviceConfiguration = new ServiceConfigurationImpl();
+		return serviceConfiguration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AgreementLink createAgreementLink() {
 		AgreementLinkImpl agreementLink = new AgreementLinkImpl();
 		return agreementLink;
@@ -135,19 +197,9 @@ public class ScenarioDiagramFactoryImpl extends EFactoryImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceNeedLink createServiceNeedLink() {
-		ServiceNeedLinkImpl serviceNeedLink = new ServiceNeedLinkImpl();
-		return serviceNeedLink;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceOfferLink createServiceOfferLink() {
-		ServiceOfferLinkImpl serviceOfferLink = new ServiceOfferLinkImpl();
-		return serviceOfferLink;
+	public ServiceLink createServiceLink() {
+		ServiceLinkImpl serviceLink = new ServiceLinkImpl();
+		return serviceLink;
 	}
 
 	/**
@@ -158,6 +210,86 @@ public class ScenarioDiagramFactoryImpl extends EFactoryImpl implements Scenario
 	public ScenarioElement createScenarioElement() {
 		ScenarioElementImpl scenarioElement = new ScenarioElementImpl();
 		return scenarioElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceElement createServiceElement() {
+		ServiceElementImpl serviceElement = new ServiceElementImpl();
+		return serviceElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Actor createActor() {
+		ActorImpl actor = new ActorImpl();
+		return actor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Role createRoleFromString(EDataType eDataType, String initialValue) {
+		Role result = Role.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRoleToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AssessmentInterval createAssessmentIntervalFromString(EDataType eDataType, String initialValue) {
+		AssessmentInterval result = AssessmentInterval.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertAssessmentIntervalToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CompensationType createCompensationTypeFromString(EDataType eDataType, String initialValue) {
+		CompensationType result = CompensationType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCompensationTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

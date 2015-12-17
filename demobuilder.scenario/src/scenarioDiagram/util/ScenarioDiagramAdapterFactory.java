@@ -72,8 +72,12 @@ public class ScenarioDiagramAdapterFactory extends AdapterFactoryImpl {
 				return createScenarioAdapter();
 			}
 			@Override
-			public Adapter caseCustomer(Customer object) {
-				return createCustomerAdapter();
+			public Adapter caseConsumer(Consumer object) {
+				return createConsumerAdapter();
+			}
+			@Override
+			public Adapter caseGuaranteeTerm(GuaranteeTerm object) {
+				return createGuaranteeTermAdapter();
 			}
 			@Override
 			public Adapter caseProvider(Provider object) {
@@ -88,20 +92,28 @@ public class ScenarioDiagramAdapterFactory extends AdapterFactoryImpl {
 				return createServiceOfferAdapter();
 			}
 			@Override
+			public Adapter caseServiceConfiguration(ServiceConfiguration object) {
+				return createServiceConfigurationAdapter();
+			}
+			@Override
 			public Adapter caseAgreementLink(AgreementLink object) {
 				return createAgreementLinkAdapter();
 			}
 			@Override
-			public Adapter caseServiceNeedLink(ServiceNeedLink object) {
-				return createServiceNeedLinkAdapter();
-			}
-			@Override
-			public Adapter caseServiceOfferLink(ServiceOfferLink object) {
-				return createServiceOfferLinkAdapter();
+			public Adapter caseServiceLink(ServiceLink object) {
+				return createServiceLinkAdapter();
 			}
 			@Override
 			public Adapter caseScenarioElement(ScenarioElement object) {
 				return createScenarioElementAdapter();
+			}
+			@Override
+			public Adapter caseServiceElement(ServiceElement object) {
+				return createServiceElementAdapter();
+			}
+			@Override
+			public Adapter caseActor(Actor object) {
+				return createActorAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -138,16 +150,30 @@ public class ScenarioDiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link scenarioDiagram.Customer <em>Customer</em>}'.
+	 * Creates a new adapter for an object of class '{@link scenarioDiagram.Consumer <em>Consumer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see scenarioDiagram.Customer
+	 * @see scenarioDiagram.Consumer
 	 * @generated
 	 */
-	public Adapter createCustomerAdapter() {
+	public Adapter createConsumerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link scenarioDiagram.GuaranteeTerm <em>Guarantee Term</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see scenarioDiagram.GuaranteeTerm
+	 * @generated
+	 */
+	public Adapter createGuaranteeTermAdapter() {
 		return null;
 	}
 
@@ -194,6 +220,20 @@ public class ScenarioDiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link scenarioDiagram.ServiceConfiguration <em>Service Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see scenarioDiagram.ServiceConfiguration
+	 * @generated
+	 */
+	public Adapter createServiceConfigurationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link scenarioDiagram.AgreementLink <em>Agreement Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -208,30 +248,16 @@ public class ScenarioDiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link scenarioDiagram.ServiceNeedLink <em>Service Need Link</em>}'.
+	 * Creates a new adapter for an object of class '{@link scenarioDiagram.ServiceLink <em>Service Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see scenarioDiagram.ServiceNeedLink
+	 * @see scenarioDiagram.ServiceLink
 	 * @generated
 	 */
-	public Adapter createServiceNeedLinkAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link scenarioDiagram.ServiceOfferLink <em>Service Offer Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see scenarioDiagram.ServiceOfferLink
-	 * @generated
-	 */
-	public Adapter createServiceOfferLinkAdapter() {
+	public Adapter createServiceLinkAdapter() {
 		return null;
 	}
 
@@ -246,6 +272,34 @@ public class ScenarioDiagramAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createScenarioElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link scenarioDiagram.ServiceElement <em>Service Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see scenarioDiagram.ServiceElement
+	 * @generated
+	 */
+	public Adapter createServiceElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link scenarioDiagram.Actor <em>Actor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see scenarioDiagram.Actor
+	 * @generated
+	 */
+	public Adapter createActorAdapter() {
 		return null;
 	}
 
