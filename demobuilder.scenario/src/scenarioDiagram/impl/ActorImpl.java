@@ -11,8 +11,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,7 +31,7 @@ import scenarioDiagram.ServiceLink;
  *
  * @generated
  */
-public class ActorImpl extends EObjectImpl implements Actor {
+public class ActorImpl extends ScenarioElementImpl implements Actor {
 	/**
 	 * The cached value of the '{@link #getServiceLinks() <em>Service Links</em>}' reference list.
 	 * <!-- begin-user-doc -->

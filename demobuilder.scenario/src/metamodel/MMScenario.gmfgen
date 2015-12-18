@@ -7,25 +7,44 @@
     <containsShortcutsTo>scenarioDiagram</containsShortcutsTo>
     <shortcutsProvidedFor>scenarioDiagram</shortcutsProvidedFor>
     <domainDiagramElement href="MMScenario.genmodel#//scenarioDiagram/Scenario"/>
-    <childNodes xsi:type="gmfgen:GenChildSideAffixedNode" visualID="3001" editPartClassName="ServiceConfiguration2EditPart" itemSemanticEditPolicyClassName="ServiceConfiguration2ItemSemanticEditPolicy" canonicalEditPolicyClassName="ServiceConfiguration2CanonicalEditPolicy" childNodes="//@diagram/@childNodes.1" graphicalNodeEditPolicyClassName="ServiceConfiguration2GraphicalNodeEditPolicy" createCommandClassName="ServiceConfiguration2CreateCommand" containers="//@diagram/@topLevelNodes.3" preferredSideName="NORTH">
+    <childNodes visualID="3001" editPartClassName="PricingPlanEditPart" itemSemanticEditPolicyClassName="PricingPlanItemSemanticEditPolicy" canonicalEditPolicyClassName="PricingPlanCanonicalEditPolicy" compartments="//@diagram/@compartments.1" graphicalNodeEditPolicyClassName="PricingPlanGraphicalNodeEditPolicy" createCommandClassName="PricingPlanCreateCommand" containers="//@diagram/@compartments.0">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ServiceConfigurationEditHelper"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ServiceConfigurationFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ServiceConfigurationFigure extends org.eclipse.gmf.runtime.lite.svg.SVGFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ServiceConfigurationFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setURI(&quot;platform:/plugin/demobuilder.scenario/icons/serviceConfiguration.svg&quot;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="PricingPlanEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="PricingPlanFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PricingPlanFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePricingPlanLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fPricingPlanPricingPlanElementsCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PricingPlanFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePricingPlanLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePricingPlanLabelFigure.setText(&quot;PricingPlan&quot;);&#xA;fFigurePricingPlanLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigurePricingPlanLabelFigure);&#xA;&#xA;&#xA;&#xA;fPricingPlanPricingPlanElementsCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fPricingPlanPricingPlanElementsCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fPricingPlanPricingPlanElementsCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePricingPlanLabelFigure() {&#xA;&#x9;&#x9;return fFigurePricingPlanLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getPricingPlanPricingPlanElementsCompartmentFigure() {&#xA;&#x9;&#x9;return fPricingPlanPricingPlanElementsCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
       <modelFacet>
-        <metaClass href="MMScenario.genmodel#//scenarioDiagram/ServiceConfiguration"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/ServiceOffer/serviceConfiguration"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/ServiceOffer/serviceConfiguration"/>
+        <metaClass href="MMScenario.genmodel#//scenarioDiagram/PricingPlan"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/ServiceOffer/guaranteeTerms"/>
+        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/ServiceOffer/guaranteeTerms"/>
       </modelFacet>
+      <labels visualID="5005" editPartClassName="PricingPlanNameEditPart" itemSemanticEditPolicyClassName="PricingPlanNameItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigurePricingPlanLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="MMScenario.genmodel#//scenarioDiagram/PricingPlan/name"/>
+        </modelFacet>
+      </labels>
     </childNodes>
-    <childNodes xsi:type="gmfgen:GenChildSideAffixedNode" visualID="3002" editPartClassName="GuaranteeTerm2EditPart" itemSemanticEditPolicyClassName="GuaranteeTerm2ItemSemanticEditPolicy" canonicalEditPolicyClassName="GuaranteeTerm2CanonicalEditPolicy" graphicalNodeEditPolicyClassName="GuaranteeTerm2GraphicalNodeEditPolicy" createCommandClassName="GuaranteeTerm2CreateCommand" containers="//@diagram/@childNodes.0 //@diagram/@topLevelNodes.5" preferredSideName="NORTH">
+    <childNodes visualID="3002" editPartClassName="PricingPlanElementEditPart" itemSemanticEditPolicyClassName="PricingPlanElementItemSemanticEditPolicy" canonicalEditPolicyClassName="PricingPlanElementCanonicalEditPolicy" graphicalNodeEditPolicyClassName="PricingPlanElementGraphicalNodeEditPolicy" createCommandClassName="PricingPlanElementCreateCommand" containers="//@diagram/@compartments.1">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="GuaranteeTermEditHelper"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="GuaranteeTermFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class GuaranteeTermFigure extends org.eclipse.gmf.runtime.lite.svg.SVGFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public GuaranteeTermFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setURI(&quot;platform:/plugin/demobuilder.scenario/icons/GuaranteeTerm.svg&quot;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="PricingPlanElementEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="PricingPlanElementFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PricingPlanElementFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePricingPlanElementLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PricingPlanElementFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DOT);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePricingPlanElementLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePricingPlanElementLabelFigure.setText(&quot;PricingPlanElement&quot;);&#xA;&#xA;this.add(fFigurePricingPlanElementLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePricingPlanElementLabelFigure() {&#xA;&#x9;&#x9;return fFigurePricingPlanElementLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
       <modelFacet>
-        <metaClass href="MMScenario.genmodel#//scenarioDiagram/GuaranteeTerm"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/ServiceConfiguration/guaranteTerms"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/ServiceConfiguration/guaranteTerms"/>
+        <metaClass href="MMScenario.genmodel#//scenarioDiagram/PricingPlanElement"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/PricingPlan/pricingPlanElements"/>
+        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/PricingPlan/pricingPlanElements"/>
       </modelFacet>
+      <labels visualID="5004" editPartClassName="PricingPlanElementSLOExpressionEditPart" itemSemanticEditPolicyClassName="PricingPlanElementSLOExpressionItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigurePricingPlanElementLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="MMScenario.genmodel#//scenarioDiagram/PricingPlanElement/SLOExpression"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <topLevelNodes visualID="2001" editPartClassName="ConsumerEditPart" itemSemanticEditPolicyClassName="ConsumerItemSemanticEditPolicy" canonicalEditPolicyClassName="ConsumerCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ConsumerGraphicalNodeEditPolicy" createCommandClassName="ConsumerCreateCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -35,8 +54,8 @@
       </viewmap>
       <modelFacet>
         <metaClass href="MMScenario.genmodel#//scenarioDiagram/Consumer"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
+        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
       </modelFacet>
       <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5001" editPartClassName="ConsumerNameEditPart" itemSemanticEditPolicyClassName="ConsumerNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -54,8 +73,8 @@
       </viewmap>
       <modelFacet>
         <metaClass href="MMScenario.genmodel#//scenarioDiagram/Provider"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
+        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
       </modelFacet>
       <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5002" editPartClassName="ProviderNameEditPart" itemSemanticEditPolicyClassName="ProviderNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -73,8 +92,8 @@
       </viewmap>
       <modelFacet>
         <metaClass href="MMScenario.genmodel#//scenarioDiagram/ServiceNeed"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
+        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
       </modelFacet>
       <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5003" editPartClassName="ServiceNeedNameEditPart" itemSemanticEditPolicyClassName="ServiceNeedNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -84,44 +103,26 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
-    <topLevelNodes visualID="2004" editPartClassName="ServiceOfferEditPart" itemSemanticEditPolicyClassName="ServiceOfferItemSemanticEditPolicy" canonicalEditPolicyClassName="ServiceOfferCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" graphicalNodeEditPolicyClassName="ServiceOfferGraphicalNodeEditPolicy" createCommandClassName="ServiceOfferCreateCommand">
+    <topLevelNodes visualID="2004" editPartClassName="ServiceOfferEditPart" itemSemanticEditPolicyClassName="ServiceOfferItemSemanticEditPolicy" canonicalEditPolicyClassName="ServiceOfferCanonicalEditPolicy" compartments="//@diagram/@compartments.0" graphicalNodeEditPolicyClassName="ServiceOfferGraphicalNodeEditPolicy" createCommandClassName="ServiceOfferCreateCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ServiceOfferEditHelper"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ServiceOfferFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ServiceOfferFigure extends org.eclipse.gmf.runtime.lite.svg.SVGFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ServiceOfferFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setURI(&quot;platform:/plugin/demobuilder.scenario/icons/serviceOffer.svg&quot;);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(50)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ServiceOfferFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ServiceOfferFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureServiceOfferLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fServiceOfferGuaranteeTermsCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ServiceOfferFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setLineWidth(2);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(50)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureServiceOfferLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureServiceOfferLabelFigure.setText(&quot;ServiceOffer&quot;);&#xA;fFigureServiceOfferLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureServiceOfferLabelFigure);&#xA;&#xA;&#xA;&#xA;fServiceOfferGuaranteeTermsCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fServiceOfferGuaranteeTermsCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fServiceOfferGuaranteeTermsCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureServiceOfferLabelFigure() {&#xA;&#x9;&#x9;return fFigureServiceOfferLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getServiceOfferGuaranteeTermsCompartmentFigure() {&#xA;&#x9;&#x9;return fServiceOfferGuaranteeTermsCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
         <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="50" height="50"/>
       </viewmap>
+      <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
       <modelFacet>
         <metaClass href="MMScenario.genmodel#//scenarioDiagram/ServiceOffer"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
+        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
       </modelFacet>
-      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5004" editPartClassName="ServiceOfferNameEditPart" itemSemanticEditPolicyClassName="ServiceOfferNameItemSemanticEditPolicy">
+      <labels visualID="5006" editPartClassName="ServiceOfferNameEditPart" itemSemanticEditPolicyClassName="ServiceOfferNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ServiceOfferLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ServiceOfferLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ServiceOfferLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;ServiceOffer&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureServiceOfferLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
           <metaFeatures href="MMScenario.genmodel#//scenarioDiagram/ScenarioElement/name"/>
         </modelFacet>
       </labels>
-    </topLevelNodes>
-    <topLevelNodes visualID="2005" editPartClassName="GuaranteeTermEditPart" itemSemanticEditPolicyClassName="GuaranteeTermItemSemanticEditPolicy" canonicalEditPolicyClassName="GuaranteeTermCanonicalEditPolicy" graphicalNodeEditPolicyClassName="GuaranteeTermGraphicalNodeEditPolicy" createCommandClassName="GuaranteeTermCreateCommand">
-      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType xsi:type="gmfgen:SpecializationType" metamodelType="//@diagram/@childNodes.1/@elementType"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="GuaranteeTermFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class GuaranteeTermFigure extends org.eclipse.gmf.runtime.lite.svg.SVGFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public GuaranteeTermFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setURI(&quot;platform:/plugin/demobuilder.scenario/icons/GuaranteeTerm.svg&quot;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass href="MMScenario.genmodel#//scenarioDiagram/GuaranteeTerm"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
-      </modelFacet>
-    </topLevelNodes>
-    <topLevelNodes visualID="2006" editPartClassName="ServiceConfigurationEditPart" itemSemanticEditPolicyClassName="ServiceConfigurationItemSemanticEditPolicy" canonicalEditPolicyClassName="ServiceConfigurationCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1" graphicalNodeEditPolicyClassName="ServiceConfigurationGraphicalNodeEditPolicy" createCommandClassName="ServiceConfigurationCreateCommand">
-      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType xsi:type="gmfgen:SpecializationType" metamodelType="//@diagram/@childNodes.0/@elementType"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ServiceConfigurationFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ServiceConfigurationFigure extends org.eclipse.gmf.runtime.lite.svg.SVGFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ServiceConfigurationFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setURI(&quot;platform:/plugin/demobuilder.scenario/icons/serviceConfiguration.svg&quot;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass href="MMScenario.genmodel#//scenarioDiagram/ServiceConfiguration"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
-      </modelFacet>
     </topLevelNodes>
     <links visualID="4001" editPartClassName="AgreementLinkEditPart" itemSemanticEditPolicyClassName="AgreementLinkItemSemanticEditPolicy" createCommandClassName="AgreementLinkCreateCommand" reorientCommandClassName="AgreementLinkReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
@@ -131,8 +132,8 @@
       </viewmap>
       <modelFacet xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass href="MMScenario.genmodel#//scenarioDiagram/AgreementLink"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/agreementLinks"/>
+        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/agreementLinks"/>
         <sourceMetaFeature href="MMScenario.genmodel#//scenarioDiagram/AgreementLink/source"/>
         <targetMetaFeature href="MMScenario.genmodel#//scenarioDiagram/AgreementLink/target"/>
       </modelFacet>
@@ -142,7 +143,7 @@
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
         </viewmap>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="MMScenario.genmodel#//scenarioDiagram/ScenarioElement/name"/>
+          <metaFeatures href="MMScenario.genmodel#//scenarioDiagram/AgreementLink/name"/>
         </modelFacet>
       </labels>
     </links>
@@ -154,24 +155,36 @@
       </viewmap>
       <modelFacet xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass href="MMScenario.genmodel#//scenarioDiagram/ServiceLink"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElement"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/serviceLinks"/>
+        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/serviceLinks"/>
         <sourceMetaFeature href="MMScenario.genmodel#//scenarioDiagram/ServiceLink/actor"/>
         <targetMetaFeature href="MMScenario.genmodel#//scenarioDiagram/ServiceLink/serviceElement"/>
       </modelFacet>
     </links>
+    <compartments visualID="7001" editPartClassName="ServiceOfferServiceOfferGuaranteeTermsCompartmentEditPart" itemSemanticEditPolicyClassName="ServiceOfferServiceOfferGuaranteeTermsCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ServiceOfferServiceOfferGuaranteeTermsCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="ServiceOfferGuaranteeTermsCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.3" listLayout="false">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getServiceOfferGuaranteeTermsCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments visualID="7002" editPartClassName="PricingPlanPricingPlanPricingPlanElementsCompartmentEditPart" itemSemanticEditPolicyClassName="PricingPlanPricingPlanPricingPlanElementsCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="PricingPlanPricingPlanPricingPlanElementsCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1" title="PricingPlanPricingPlanElementsCompartment" needsTitle="false" node="//@diagram/@childNodes.0" listLayout="false">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getPricingPlanPricingPlanElementsCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
     <palette>
-      <groups title="Objects" collapse="true">
-        <entries xsi:type="gmfgen:ToolEntry" title="Consumer" description="Creates a consumer" largeIconPath="/demobuilder.scenario.edit/icons/full/obj32/Consumer.gif" smallIconPath="/demobuilder.scenario.edit/icons/full/obj16/Consumer.gif" genNodes="//@diagram/@topLevelNodes.0"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Guarantee Term" description="Creates a new guarantee term" largeIconPath="/demobuilder.scenario.edit/icons/full/obj32/GuaranteeTerm.gif" smallIconPath="/demobuilder.scenario.edit/icons/full/obj16/GuaranteeTerm.gif" genNodes="//@diagram/@childNodes.1 //@diagram/@topLevelNodes.4"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Provider" description="Creates a provider" largeIconPath="/demobuilder.scenario.edit/icons/full/obj32/Provider.gif" smallIconPath="/demobuilder.scenario.edit/icons/full/obj16/Provider.gif" genNodes="//@diagram/@topLevelNodes.1"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Service Configuration" description="Creates a service configuration section" largeIconPath="/demobuilder.scenario.edit/icons/full/obj32/ServiceConfiguration.gif" smallIconPath="/demobuilder.scenario.edit/icons/full/obj16/ServiceConfiguration.gif" genNodes="//@diagram/@childNodes.0 //@diagram/@topLevelNodes.5"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Service Need" description="Creates a service need" largeIconPath="/demobuilder.scenario.edit/icons/full/obj32/ServiceNeed.gif" smallIconPath="/demobuilder.scenario.edit/icons/full/obj16/ServiceNeed.gif" genNodes="//@diagram/@topLevelNodes.2"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Service Offer" description="Creates a service offer" largeIconPath="/demobuilder.scenario.edit/icons/full/obj32/ServiceOffer.gif" smallIconPath="/demobuilder.scenario.edit/icons/full/obj16/ServiceOffer.gif" genNodes="//@diagram/@topLevelNodes.3"/>
-      </groups>
       <groups title="Connections" collapse="true">
         <entries xsi:type="gmfgen:ToolEntry" title="Agreement Link" description="Creates an agreement link" genLinks="//@diagram/@links.0"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Service Link" description="Creates a service link" genLinks="//@diagram/@links.1"/>
+      </groups>
+      <groups title="Actors" collapse="true">
+        <entries xsi:type="gmfgen:ToolEntry" title="Consumer" description="Creates a consumer" largeIconPath="/demobuilder.scenario.edit/icons/full/obj32/Consumer.gif" smallIconPath="/demobuilder.scenario.edit/icons/full/obj16/Consumer.gif" genNodes="//@diagram/@topLevelNodes.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Provider" description="Creates a provider" largeIconPath="/demobuilder.scenario.edit/icons/full/obj32/Provider.gif" smallIconPath="/demobuilder.scenario.edit/icons/full/obj16/Provider.gif" genNodes="//@diagram/@topLevelNodes.1"/>
+      </groups>
+      <groups title="Services" collapse="true">
+        <entries xsi:type="gmfgen:ToolEntry" title="Service Need" description="Creates a service need" largeIconPath="/demobuilder.scenario.edit/icons/full/obj32/ServiceNeed.gif" smallIconPath="/demobuilder.scenario.edit/icons/full/obj16/ServiceNeed.gif" genNodes="//@diagram/@topLevelNodes.2"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Service Offer" description="Creates a service offer" largeIconPath="/demobuilder.scenario.edit/icons/full/obj32/ServiceOffer.gif" smallIconPath="/demobuilder.scenario.edit/icons/full/obj16/ServiceOffer.gif" genNodes="//@diagram/@topLevelNodes.3"/>
+      </groups>
+      <groups title="Pricing plans" collapse="true">
+        <entries xsi:type="gmfgen:ToolEntry" title="Pricing Plan" description="Creates a new pricing plan" largeIconPath="/demobuilder.scenario.edit/icons/full/obj32/PricingPlan.gif" smallIconPath="/demobuilder.scenario.edit/icons/full/obj16/PricingPlan.gif" genNodes="//@diagram/@childNodes.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Pricing Plan Element" description="Creates a new pricing plan" largeIconPath="/demobuilder.scenario.edit/icons/full/obj32/PricingPlanElement.gif" smallIconPath="/demobuilder.scenario.edit/icons/full/obj16/PricingPlanElement.gif" genNodes="//@diagram/@childNodes.1"/>
       </groups>
     </palette>
     <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="demobuilder.scenario.diagram.general" name="ScenarioDiagram Diagram">
@@ -196,12 +209,9 @@
     <childReferences parent="//@diagram/@childNodes.0" child="//@diagram/@childNodes.1"/>
     <childReferences parent="//@diagram/@topLevelNodes.3" child="//@diagram/@childNodes.0"/>
     <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.3"/>
-    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.4"/>
-    <childReferences parent="//@diagram/@topLevelNodes.5" child="//@diagram/@childNodes.1"/>
-    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.5"/>
     <childReferences parent="//@diagram" child="//@diagram/@links.0" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.3" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@topLevelNodes.3" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.0" child="//@diagram/@childNodes.0" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.0" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.2" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@topLevelNodes.2" child="//@diagram/@links.0" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram" child="//@diagram/@links.1" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
@@ -228,7 +238,7 @@
   </propertySheet>
   <domainGenModel href="MMScenario.genmodel#/"/>
   <labelParsers extensibleViaService="true">
-    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet"/>
+    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet"/>
   </labelParsers>
   <contextMenus context="//@diagram">
     <items xsi:type="gmfgen:LoadResourceAction"/>

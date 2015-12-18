@@ -2,18 +2,24 @@
  */
 package scenarioDiagram.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import scenarioDiagram.AgreementLink;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import scenarioDiagram.PricingPlan;
 import scenarioDiagram.ScenarioDiagramPackage;
 import scenarioDiagram.ScenarioElement;
-import scenarioDiagram.ServiceConfiguration;
 import scenarioDiagram.ServiceOffer;
 
 /**
@@ -24,8 +30,8 @@ import scenarioDiagram.ServiceOffer;
  * The following features are implemented:
  * <ul>
  *   <li>{@link scenarioDiagram.impl.ServiceOfferImpl#getName <em>Name</em>}</li>
- *   <li>{@link scenarioDiagram.impl.ServiceOfferImpl#getServiceConfiguration <em>Service Configuration</em>}</li>
- *   <li>{@link scenarioDiagram.impl.ServiceOfferImpl#getAgreementLink <em>Agreement Link</em>}</li>
+ *   <li>{@link scenarioDiagram.impl.ServiceOfferImpl#getEndpoint <em>Endpoint</em>}</li>
+ *   <li>{@link scenarioDiagram.impl.ServiceOfferImpl#getGuaranteeTerms <em>Guarantee Terms</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,24 +59,34 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getServiceConfiguration() <em>Service Configuration</em>}' containment reference.
+	 * The default value of the '{@link #getEndpoint() <em>Endpoint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getServiceConfiguration()
+	 * @see #getEndpoint()
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceConfiguration serviceConfiguration;
+	protected static final String ENDPOINT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAgreementLink() <em>Agreement Link</em>}' reference.
+	 * The cached value of the '{@link #getEndpoint() <em>Endpoint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAgreementLink()
+	 * @see #getEndpoint()
 	 * @generated
 	 * @ordered
 	 */
-	protected AgreementLink agreementLink;
+	protected String endpoint = ENDPOINT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getGuaranteeTerms() <em>Guarantee Terms</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGuaranteeTerms()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PricingPlan> guaranteeTerms;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,8 +133,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceConfiguration getServiceConfiguration() {
-		return serviceConfiguration;
+	public String getEndpoint() {
+		return endpoint;
 	}
 
 	/**
@@ -126,14 +142,23 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetServiceConfiguration(ServiceConfiguration newServiceConfiguration, NotificationChain msgs) {
-		ServiceConfiguration oldServiceConfiguration = serviceConfiguration;
-		serviceConfiguration = newServiceConfiguration;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_CONFIGURATION, oldServiceConfiguration, newServiceConfiguration);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public void setEndpoint(String newEndpoint) {
+		String oldEndpoint = endpoint;
+		endpoint = newEndpoint;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.SERVICE_OFFER__ENDPOINT, oldEndpoint, endpoint));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<PricingPlan> getGuaranteeTerms() {
+		if (guaranteeTerms == null) {
+			guaranteeTerms = new EObjectContainmentWithInverseEList<PricingPlan>(PricingPlan.class, this, ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS, ScenarioDiagramPackage.PRICING_PLAN__SERVICE_OFFER);
 		}
-		return msgs;
+		return guaranteeTerms;
 	}
 
 	/**
@@ -141,92 +166,12 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setServiceConfiguration(ServiceConfiguration newServiceConfiguration) {
-		if (newServiceConfiguration != serviceConfiguration) {
-			NotificationChain msgs = null;
-			if (serviceConfiguration != null)
-				msgs = ((InternalEObject)serviceConfiguration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_CONFIGURATION, null, msgs);
-			if (newServiceConfiguration != null)
-				msgs = ((InternalEObject)newServiceConfiguration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_CONFIGURATION, null, msgs);
-			msgs = basicSetServiceConfiguration(newServiceConfiguration, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_CONFIGURATION, newServiceConfiguration, newServiceConfiguration));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AgreementLink getAgreementLink() {
-		if (agreementLink != null && agreementLink.eIsProxy()) {
-			InternalEObject oldAgreementLink = (InternalEObject)agreementLink;
-			agreementLink = (AgreementLink)eResolveProxy(oldAgreementLink);
-			if (agreementLink != oldAgreementLink) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK, oldAgreementLink, agreementLink));
-			}
-		}
-		return agreementLink;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AgreementLink basicGetAgreementLink() {
-		return agreementLink;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAgreementLink(AgreementLink newAgreementLink, NotificationChain msgs) {
-		AgreementLink oldAgreementLink = agreementLink;
-		agreementLink = newAgreementLink;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK, oldAgreementLink, newAgreementLink);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAgreementLink(AgreementLink newAgreementLink) {
-		if (newAgreementLink != agreementLink) {
-			NotificationChain msgs = null;
-			if (agreementLink != null)
-				msgs = ((InternalEObject)agreementLink).eInverseRemove(this, ScenarioDiagramPackage.AGREEMENT_LINK__TARGET, AgreementLink.class, msgs);
-			if (newAgreementLink != null)
-				msgs = ((InternalEObject)newAgreementLink).eInverseAdd(this, ScenarioDiagramPackage.AGREEMENT_LINK__TARGET, AgreementLink.class, msgs);
-			msgs = basicSetAgreementLink(newAgreementLink, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK, newAgreementLink, newAgreementLink));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK:
-				if (agreementLink != null)
-					msgs = ((InternalEObject)agreementLink).eInverseRemove(this, ScenarioDiagramPackage.AGREEMENT_LINK__TARGET, AgreementLink.class, msgs);
-				return basicSetAgreementLink((AgreementLink)otherEnd, msgs);
+			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getGuaranteeTerms()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -239,10 +184,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_CONFIGURATION:
-				return basicSetServiceConfiguration(null, msgs);
-			case ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK:
-				return basicSetAgreementLink(null, msgs);
+			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
+				return ((InternalEList<?>)getGuaranteeTerms()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -257,11 +200,10 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 		switch (featureID) {
 			case ScenarioDiagramPackage.SERVICE_OFFER__NAME:
 				return getName();
-			case ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_CONFIGURATION:
-				return getServiceConfiguration();
-			case ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK:
-				if (resolve) return getAgreementLink();
-				return basicGetAgreementLink();
+			case ScenarioDiagramPackage.SERVICE_OFFER__ENDPOINT:
+				return getEndpoint();
+			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
+				return getGuaranteeTerms();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -271,17 +213,19 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ScenarioDiagramPackage.SERVICE_OFFER__NAME:
 				setName((String)newValue);
 				return;
-			case ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_CONFIGURATION:
-				setServiceConfiguration((ServiceConfiguration)newValue);
+			case ScenarioDiagramPackage.SERVICE_OFFER__ENDPOINT:
+				setEndpoint((String)newValue);
 				return;
-			case ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK:
-				setAgreementLink((AgreementLink)newValue);
+			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
+				getGuaranteeTerms().clear();
+				getGuaranteeTerms().addAll((Collection<? extends PricingPlan>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -298,11 +242,11 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 			case ScenarioDiagramPackage.SERVICE_OFFER__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_CONFIGURATION:
-				setServiceConfiguration((ServiceConfiguration)null);
+			case ScenarioDiagramPackage.SERVICE_OFFER__ENDPOINT:
+				setEndpoint(ENDPOINT_EDEFAULT);
 				return;
-			case ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK:
-				setAgreementLink((AgreementLink)null);
+			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
+				getGuaranteeTerms().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -318,10 +262,10 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 		switch (featureID) {
 			case ScenarioDiagramPackage.SERVICE_OFFER__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_CONFIGURATION:
-				return serviceConfiguration != null;
-			case ScenarioDiagramPackage.SERVICE_OFFER__AGREEMENT_LINK:
-				return agreementLink != null;
+			case ScenarioDiagramPackage.SERVICE_OFFER__ENDPOINT:
+				return ENDPOINT_EDEFAULT == null ? endpoint != null : !ENDPOINT_EDEFAULT.equals(endpoint);
+			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
+				return guaranteeTerms != null && !guaranteeTerms.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -370,6 +314,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", endpoint: ");
+		result.append(endpoint);
 		result.append(')');
 		return result.toString();
 	}

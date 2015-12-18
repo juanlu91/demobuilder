@@ -21,35 +21,37 @@
       <genEnumLiterals ecoreEnumLiteral="MMScenario.ecore#//CompensationType/REWARD"/>
     </genEnums>
     <genClasses ecoreClass="MMScenario.ecore#//Scenario">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMScenario.ecore#//Scenario/scenarioElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMScenario.ecore#//Scenario/scenarioElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMScenario.ecore#//Scenario/agreementLinks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMScenario.ecore#//Scenario/serviceLinks"/>
     </genClasses>
     <genClasses ecoreClass="MMScenario.ecore#//Consumer"/>
-    <genClasses ecoreClass="MMScenario.ecore#//GuaranteeTerm">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//GuaranteeTerm/expression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//GuaranteeTerm/condition"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//GuaranteeTerm/compensationInterval"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//GuaranteeTerm/compensationType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//GuaranteeTerm/compensationExpression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//GuaranteeTerm/compensationCondition"/>
+    <genClasses ecoreClass="MMScenario.ecore#//PricingPlan">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMScenario.ecore#//PricingPlan/pricingPlanElements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MMScenario.ecore#//PricingPlan/agreementLink"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MMScenario.ecore#//PricingPlan/serviceOffer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//PricingPlan/name"/>
+    </genClasses>
+    <genClasses ecoreClass="MMScenario.ecore#//PricingPlanElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//PricingPlanElement/SLOExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//PricingPlanElement/qualifyingCondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//PricingPlanElement/compensationInterval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//PricingPlanElement/compensationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//PricingPlanElement/compensationExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//PricingPlanElement/compensationCondition"/>
     </genClasses>
     <genClasses ecoreClass="MMScenario.ecore#//Provider"/>
     <genClasses ecoreClass="MMScenario.ecore#//ServiceNeed">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MMScenario.ecore#//ServiceNeed/agreementLink"/>
     </genClasses>
     <genClasses ecoreClass="MMScenario.ecore#//ServiceOffer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMScenario.ecore#//ServiceOffer/serviceConfiguration"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MMScenario.ecore#//ServiceOffer/agreementLink"/>
-    </genClasses>
-    <genClasses ecoreClass="MMScenario.ecore#//ServiceConfiguration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//ServiceConfiguration/endpointReference"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//ServiceConfiguration/definitionReference"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//ServiceConfiguration/monitorReference"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//ServiceConfiguration/serviceName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMScenario.ecore#//ServiceConfiguration/guaranteTerms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//ServiceOffer/endpoint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMScenario.ecore#//ServiceOffer/guaranteeTerms"/>
     </genClasses>
     <genClasses ecoreClass="MMScenario.ecore#//AgreementLink">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MMScenario.ecore#//AgreementLink/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MMScenario.ecore#//AgreementLink/target"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//AgreementLink/name"/>
     </genClasses>
     <genClasses ecoreClass="MMScenario.ecore#//ServiceLink">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MMScenario.ecore#//ServiceLink/actor"/>
@@ -59,7 +61,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//ScenarioElement/name"/>
     </genClasses>
     <genClasses ecoreClass="MMScenario.ecore#//ServiceElement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MMScenario.ecore#//ServiceElement/serviceLinks"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MMScenario.ecore#//ServiceElement/serviceLink"/>
     </genClasses>
     <genClasses ecoreClass="MMScenario.ecore#//Actor">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MMScenario.ecore#//Actor/serviceLinks"/>

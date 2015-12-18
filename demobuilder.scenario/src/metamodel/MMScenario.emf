@@ -1,14 +1,17 @@
+@Ecore(invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot")
 @namespace(uri="es.us.lsi.sma.demobuilder.scenario", prefix="es.us.lsi.sma.demobuilder.scenario")
 package scenarioDiagram;
 
 @gmf
 @gmf.diagram
 class Scenario {
-  val ScenarioElement[*] scenarioElement;
+  val ScenarioElement[*] scenarioElements;
+  val AgreementLink[*] agreementLinks;
+  val ServiceLink[*] serviceLinks;
 }
 
 @gmf.node(figure="svg", svg.uri="platform:/plugin/demobuilder.scenario/icons/Consumer.svg", label="name", tool.name="Consumer", tool.description="Creates a consumer", label.placement="external", label.icon="false", size="100,100", tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/Consumer.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/Consumer.gif")
-class Consumer extends ScenarioElement, Actor {
+class Consumer extends Actor {
 }
 
 enum Role {
@@ -29,10 +32,20 @@ enum CompensationType {
   REWARD = 1;
 }
 
-@gmf.node(label.placement="none", label.icon="false", figure="svg", svg.uri="platform:/plugin/demobuilder.scenario/icons/GuaranteeTerm.svg", tool.name="Guarantee Term", tool.description="Creates a new guarantee term", tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/GuaranteeTerm.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/GuaranteeTerm.gif")
-class GuaranteeTerm extends ScenarioElement {
-  attr String expression;
-  attr String condition;
+@gmf.node(label="name", border.color="0,0,0", border.width="1", border.style="solid", label.icon="false", figure="rectangle", tool.name="Pricing Plan", tool.description="Creates a new pricing plan", tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/PricingPlan.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/PricingPlan.gif")
+class PricingPlan {
+
+  @gmf.compartment
+  val PricingPlanElement[*] pricingPlanElements;
+  ref AgreementLink#target agreementLink;
+  ref ServiceOffer#guaranteeTerms serviceOffer;
+  attr String name;
+}
+
+@gmf.node(label="SLOExpression", label.icon="false", border.color="0,0,0", figure="rectangle", border.width="1", border.style="dot", tool.name="Pricing Plan Element", tool.description="Creates a new pricing plan", tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/PricingPlanElement.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/PricingPlanElement.gif")
+class PricingPlanElement {
+  attr String SLOExpression;
+  attr String qualifyingCondition;
   attr AssessmentInterval compensationInterval = "MONTHLY";
   attr CompensationType compensationType = "REWARD";
   attr String compensationExpression;
@@ -40,7 +53,7 @@ class GuaranteeTerm extends ScenarioElement {
 }
 
 @gmf.node(figure="svg", svg.uri="platform:/plugin/demobuilder.scenario/icons/Provider.svg", label="name", tool.name="Provider", tool.description="Creates a provider", label.placement="external", label.icon="false", size="100,100", tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/Provider.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/Provider.gif")
-class Provider extends ScenarioElement, Actor {
+class Provider extends Actor {
 }
 
 @gmf.node(figure="svg", svg.uri="platform:/plugin/demobuilder.scenario/icons/serviceNeed.svg", label="name", label.placement="external", label.icon="false", tool.name="Service Need", tool.description="Creates a service need", size="50,50", tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/ServiceNeed.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/ServiceNeed.gif")
@@ -48,35 +61,27 @@ class ServiceNeed extends ServiceElement, ScenarioElement {
   ref AgreementLink#source agreementLink;
 }
 
-@gmf.node(figure="svg", svg.uri="platform:/plugin/demobuilder.scenario/icons/serviceOffer.svg", label="name", label.placement="external", label.icon="false", tool.name="Service Offer", tool.description="Creates a service offer", size="50,50", tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/ServiceOffer.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/ServiceOffer.gif")
+@gmf.node(figure="rectangle", border.color="0,0,0", border.width="2", border.style="solid", size="50,50", label="name", label.icon="false", tool.name="Service Offer", tool.description="Creates a service offer", tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/ServiceOffer.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/ServiceOffer.gif")
 class ServiceOffer extends ServiceElement, ScenarioElement {
+  attr String endpoint;
 
-  @gmf.affixed
-  val ServiceConfiguration serviceConfiguration;
-  ref AgreementLink#target agreementLink;
-}
-
-@gmf.node(label.placement="none", label.icon="false", figure="svg", svg.uri="platform:/plugin/demobuilder.scenario/icons/serviceConfiguration.svg", tool.name="Service Configuration", tool.description="Creates a service configuration section", tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/ServiceConfiguration.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/ServiceConfiguration.gif")
-class ServiceConfiguration extends ScenarioElement {
-  attr String endpointReference;
-  attr String definitionReference;
-  attr String monitorReference;
-  attr String serviceName;
-
-  @gmf.affixed
-  val GuaranteeTerm[*] guaranteTerms;
+  @gmf.compartment
+  val PricingPlan[*]#serviceOffer guaranteeTerms;
 }
 
 @gmf.link(source="source", target="target", label="name", width="1", style="dash", tool.name="Agreement Link", tool.description="Creates an agreement link", color="0,0,0")
-class AgreementLink extends ScenarioElement {
+class AgreementLink {
   ref ServiceNeed#agreementLink source;
-  ref ServiceOffer#agreementLink target;
+  ref PricingPlan#agreementLink target;
+
+  @"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(derivation="self.target.serviceOffer.serviceLink.actor.name.concat('_').concat(self.target.name).concat('-').concat(self.source.serviceLink.actor.name)")
+  readonly derived attr String name;
 }
 
 @gmf.link(source="actor", target="serviceElement", label.placement="none", width="2", style="solid", tool.name="Service Link", tool.description="Creates a service link", color="0,0,0")
-class ServiceLink extends ScenarioElement {
+class ServiceLink {
   ref Actor#serviceLinks actor;
-  ref ServiceElement#serviceLinks serviceElement;
+  ref ServiceElement#serviceLink serviceElement;
 }
 
 class ScenarioElement {
@@ -84,10 +89,10 @@ class ScenarioElement {
 }
 
 class ServiceElement {
-  ref ServiceLink[*]#serviceElement serviceLinks;
+  ref ServiceLink#serviceElement serviceLink;
 }
 
-class Actor {
+class Actor extends ScenarioElement {
   ref ServiceLink[*]#actor serviceLinks;
 }
 

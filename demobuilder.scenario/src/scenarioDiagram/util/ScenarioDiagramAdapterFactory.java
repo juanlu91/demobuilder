@@ -76,8 +76,12 @@ public class ScenarioDiagramAdapterFactory extends AdapterFactoryImpl {
 				return createConsumerAdapter();
 			}
 			@Override
-			public Adapter caseGuaranteeTerm(GuaranteeTerm object) {
-				return createGuaranteeTermAdapter();
+			public Adapter casePricingPlan(PricingPlan object) {
+				return createPricingPlanAdapter();
+			}
+			@Override
+			public Adapter casePricingPlanElement(PricingPlanElement object) {
+				return createPricingPlanElementAdapter();
 			}
 			@Override
 			public Adapter caseProvider(Provider object) {
@@ -90,10 +94,6 @@ public class ScenarioDiagramAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseServiceOffer(ServiceOffer object) {
 				return createServiceOfferAdapter();
-			}
-			@Override
-			public Adapter caseServiceConfiguration(ServiceConfiguration object) {
-				return createServiceConfigurationAdapter();
 			}
 			@Override
 			public Adapter caseAgreementLink(AgreementLink object) {
@@ -164,16 +164,30 @@ public class ScenarioDiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link scenarioDiagram.GuaranteeTerm <em>Guarantee Term</em>}'.
+	 * Creates a new adapter for an object of class '{@link scenarioDiagram.PricingPlan <em>Pricing Plan</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see scenarioDiagram.GuaranteeTerm
+	 * @see scenarioDiagram.PricingPlan
 	 * @generated
 	 */
-	public Adapter createGuaranteeTermAdapter() {
+	public Adapter createPricingPlanAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link scenarioDiagram.PricingPlanElement <em>Pricing Plan Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see scenarioDiagram.PricingPlanElement
+	 * @generated
+	 */
+	public Adapter createPricingPlanElementAdapter() {
 		return null;
 	}
 
@@ -216,20 +230,6 @@ public class ScenarioDiagramAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServiceOfferAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link scenarioDiagram.ServiceConfiguration <em>Service Configuration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see scenarioDiagram.ServiceConfiguration
-	 * @generated
-	 */
-	public Adapter createServiceConfigurationAdapter() {
 		return null;
 	}
 

@@ -40,13 +40,22 @@ public interface ScenarioDiagramFactory extends EFactory {
 	Consumer createConsumer();
 
 	/**
-	 * Returns a new object of class '<em>Guarantee Term</em>'.
+	 * Returns a new object of class '<em>Pricing Plan</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Guarantee Term</em>'.
+	 * @return a new object of class '<em>Pricing Plan</em>'.
 	 * @generated
 	 */
-	GuaranteeTerm createGuaranteeTerm();
+	PricingPlan createPricingPlan();
+
+	/**
+	 * Returns a new object of class '<em>Pricing Plan Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pricing Plan Element</em>'.
+	 * @generated
+	 */
+	PricingPlanElement createPricingPlanElement();
 
 	/**
 	 * Returns a new object of class '<em>Provider</em>'.
@@ -74,15 +83,6 @@ public interface ScenarioDiagramFactory extends EFactory {
 	 * @generated
 	 */
 	ServiceOffer createServiceOffer();
-
-	/**
-	 * Returns a new object of class '<em>Service Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Configuration</em>'.
-	 * @generated
-	 */
-	ServiceConfiguration createServiceConfiguration();
 
 	/**
 	 * Returns a new object of class '<em>Agreement Link</em>'.

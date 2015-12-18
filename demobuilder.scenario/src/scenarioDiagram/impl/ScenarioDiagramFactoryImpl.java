@@ -59,11 +59,11 @@ public class ScenarioDiagramFactoryImpl extends EFactoryImpl implements Scenario
 		switch (eClass.getClassifierID()) {
 			case ScenarioDiagramPackage.SCENARIO: return createScenario();
 			case ScenarioDiagramPackage.CONSUMER: return createConsumer();
-			case ScenarioDiagramPackage.GUARANTEE_TERM: return createGuaranteeTerm();
+			case ScenarioDiagramPackage.PRICING_PLAN: return createPricingPlan();
+			case ScenarioDiagramPackage.PRICING_PLAN_ELEMENT: return createPricingPlanElement();
 			case ScenarioDiagramPackage.PROVIDER: return createProvider();
 			case ScenarioDiagramPackage.SERVICE_NEED: return createServiceNeed();
 			case ScenarioDiagramPackage.SERVICE_OFFER: return createServiceOffer();
-			case ScenarioDiagramPackage.SERVICE_CONFIGURATION: return createServiceConfiguration();
 			case ScenarioDiagramPackage.AGREEMENT_LINK: return createAgreementLink();
 			case ScenarioDiagramPackage.SERVICE_LINK: return createServiceLink();
 			case ScenarioDiagramPackage.SCENARIO_ELEMENT: return createScenarioElement();
@@ -137,9 +137,19 @@ public class ScenarioDiagramFactoryImpl extends EFactoryImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GuaranteeTerm createGuaranteeTerm() {
-		GuaranteeTermImpl guaranteeTerm = new GuaranteeTermImpl();
-		return guaranteeTerm;
+	public PricingPlan createPricingPlan() {
+		PricingPlanImpl pricingPlan = new PricingPlanImpl();
+		return pricingPlan;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PricingPlanElement createPricingPlanElement() {
+		PricingPlanElementImpl pricingPlanElement = new PricingPlanElementImpl();
+		return pricingPlanElement;
 	}
 
 	/**
@@ -170,16 +180,6 @@ public class ScenarioDiagramFactoryImpl extends EFactoryImpl implements Scenario
 	public ServiceOffer createServiceOffer() {
 		ServiceOfferImpl serviceOffer = new ServiceOfferImpl();
 		return serviceOffer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceConfiguration createServiceConfiguration() {
-		ServiceConfigurationImpl serviceConfiguration = new ServiceConfigurationImpl();
-		return serviceConfiguration;
 	}
 
 	/**

@@ -2,6 +2,7 @@
  */
 package scenarioDiagram;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package scenarioDiagram;
  * @model annotation="gmf.link source='actor' target='serviceElement' label.placement='none' width='2' style='solid' tool.name='Service Link' tool.description='Creates a service link' color='0,0,0'"
  * @generated
  */
-public interface ServiceLink extends ScenarioElement {
+public interface ServiceLink extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Actor</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link scenarioDiagram.Actor#getServiceLinks <em>Service Links</em>}'.
@@ -51,7 +52,7 @@ public interface ServiceLink extends ScenarioElement {
 
 	/**
 	 * Returns the value of the '<em><b>Service Element</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link scenarioDiagram.ServiceElement#getServiceLinks <em>Service Links</em>}'.
+	 * It is bidirectional and its opposite is '{@link scenarioDiagram.ServiceElement#getServiceLink <em>Service Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Service Element</em>' reference isn't clear,
@@ -61,8 +62,8 @@ public interface ServiceLink extends ScenarioElement {
 	 * @return the value of the '<em>Service Element</em>' reference.
 	 * @see #setServiceElement(ServiceElement)
 	 * @see scenarioDiagram.ScenarioDiagramPackage#getServiceLink_ServiceElement()
-	 * @see scenarioDiagram.ServiceElement#getServiceLinks
-	 * @model opposite="serviceLinks"
+	 * @see scenarioDiagram.ServiceElement#getServiceLink
+	 * @model opposite="serviceLink"
 	 * @generated
 	 */
 	ServiceElement getServiceElement();

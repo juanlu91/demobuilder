@@ -8,7 +8,7 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="MMScenario.ecore#//Scenario/scenarioElement"/>
+        href="MMScenario.ecore#//Scenario/scenarioElements"/>
     <ownedChild>
       <domainMetaElement
           href="MMScenario.ecore#//Consumer"/>
@@ -21,14 +21,14 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="MMScenario.gmftool#//@palette/@tools.0/@tools.0"/>
+          href="MMScenario.gmftool#//@palette/@tools.1/@tools.0"/>
       <diagramNode
           href="MMScenario.gmfgraph#Consumer"/>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
-        href="MMScenario.ecore#//Scenario/scenarioElement"/>
+        href="MMScenario.ecore#//Scenario/scenarioElements"/>
     <ownedChild>
       <domainMetaElement
           href="MMScenario.ecore#//Provider"/>
@@ -41,14 +41,14 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="MMScenario.gmftool#//@palette/@tools.0/@tools.2"/>
+          href="MMScenario.gmftool#//@palette/@tools.1/@tools.1"/>
       <diagramNode
           href="MMScenario.gmfgraph#Provider"/>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
-        href="MMScenario.ecore#//Scenario/scenarioElement"/>
+        href="MMScenario.ecore#//Scenario/scenarioElements"/>
     <ownedChild>
       <domainMetaElement
           href="MMScenario.ecore#//ServiceNeed"/>
@@ -61,15 +61,16 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="MMScenario.gmftool#//@palette/@tools.0/@tools.4"/>
+          href="MMScenario.gmftool#//@palette/@tools.2/@tools.0"/>
       <diagramNode
           href="MMScenario.gmfgraph#ServiceNeed"/>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
-        href="MMScenario.ecore#//Scenario/scenarioElement"/>
-    <ownedChild>
+        href="MMScenario.ecore#//Scenario/scenarioElements"/>
+    <ownedChild
+        relatedDiagrams="//@diagram">
       <domainMetaElement
           href="MMScenario.ecore#//ServiceOffer"/>
       <labelMappings
@@ -81,45 +82,62 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="MMScenario.gmftool#//@palette/@tools.0/@tools.5"/>
+          href="MMScenario.gmftool#//@palette/@tools.2/@tools.1"/>
       <diagramNode
           href="MMScenario.gmfgraph#ServiceOffer"/>
       <children
-          referencedChild="//@nodes.5/@ownedChild">
+          compartment="//@nodes.3/@ownedChild/@compartments.0">
         <containmentFeature
-            href="MMScenario.ecore#//ServiceOffer/serviceConfiguration"/>
+            href="MMScenario.ecore#//ServiceOffer/guaranteeTerms"/>
+        <ownedChild
+            relatedDiagrams="//@diagram">
+          <domainMetaElement
+              href="MMScenario.ecore#//PricingPlan"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="MMScenario.gmfgraph#PricingPlanLabel"/>
+            <features
+                href="MMScenario.ecore#//PricingPlan/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="MMScenario.gmftool#//@palette/@tools.3/@tools.0"/>
+          <diagramNode
+              href="MMScenario.gmfgraph#PricingPlan"/>
+          <children
+              compartment="//@nodes.3/@ownedChild/@children.0/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="MMScenario.ecore#//PricingPlan/pricingPlanElements"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="MMScenario.ecore#//PricingPlanElement"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="MMScenario.gmfgraph#PricingPlanElementLabel"/>
+                <features
+                    href="MMScenario.ecore#//PricingPlanElement/SLOExpression"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="MMScenario.gmftool#//@palette/@tools.3/@tools.1"/>
+              <diagramNode
+                  href="MMScenario.gmfgraph#PricingPlanElement"/>
+            </ownedChild>
+          </children>
+          <compartments
+              children="//@nodes.3/@ownedChild/@children.0/@ownedChild/@children.0">
+            <compartment
+                href="MMScenario.gmfgraph#PricingPlanPricingPlanElementsCompartment"/>
+          </compartments>
+        </ownedChild>
       </children>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
-        href="MMScenario.ecore#//Scenario/scenarioElement"/>
-    <ownedChild>
-      <domainMetaElement
-          href="MMScenario.ecore#//GuaranteeTerm"/>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="MMScenario.gmftool#//@palette/@tools.0/@tools.1"/>
-      <diagramNode
-          href="MMScenario.gmfgraph#GuaranteeTerm"/>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
-        href="MMScenario.ecore#//Scenario/scenarioElement"/>
-    <ownedChild>
-      <domainMetaElement
-          href="MMScenario.ecore#//ServiceConfiguration"/>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="MMScenario.gmftool#//@palette/@tools.0/@tools.3"/>
-      <diagramNode
-          href="MMScenario.gmfgraph#ServiceConfiguration"/>
-      <children
-          referencedChild="//@nodes.4/@ownedChild">
-        <containmentFeature
-            href="MMScenario.ecore#//ServiceConfiguration/guaranteTerms"/>
-      </children>
+      <compartments
+          children="//@nodes.3/@ownedChild/@children.0">
+        <compartment
+            href="MMScenario.gmfgraph#ServiceOfferGuaranteeTermsCompartment"/>
+      </compartments>
     </ownedChild>
   </nodes>
   <links>
@@ -130,13 +148,13 @@
       <diagramLabel
           href="MMScenario.gmfgraph#AgreementLinkLabel"/>
       <features
-          href="MMScenario.ecore#//ScenarioElement/name"/>
+          href="MMScenario.ecore#//AgreementLink/name"/>
     </labelMappings>
     <containmentFeature
-        href="MMScenario.ecore#//Scenario/scenarioElement"/>
+        href="MMScenario.ecore#//Scenario/agreementLinks"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="MMScenario.gmftool#//@palette/@tools.1/@tools.0"/>
+        href="MMScenario.gmftool#//@palette/@tools.0/@tools.0"/>
     <diagramLink
         href="MMScenario.gmfgraph#AgreementLink"/>
     <sourceMetaFeature
@@ -150,10 +168,10 @@
     <domainMetaElement
         href="MMScenario.ecore#//ServiceLink"/>
     <containmentFeature
-        href="MMScenario.ecore#//Scenario/scenarioElement"/>
+        href="MMScenario.ecore#//Scenario/serviceLinks"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="MMScenario.gmftool#//@palette/@tools.1/@tools.1"/>
+        href="MMScenario.gmftool#//@palette/@tools.0/@tools.1"/>
     <diagramLink
         href="MMScenario.gmfgraph#ServiceLink"/>
     <sourceMetaFeature

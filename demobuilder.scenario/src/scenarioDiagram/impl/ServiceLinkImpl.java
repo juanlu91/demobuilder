@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import scenarioDiagram.Actor;
 import scenarioDiagram.ScenarioDiagramPackage;
@@ -29,7 +30,7 @@ import scenarioDiagram.ServiceLink;
  *
  * @generated
  */
-public class ServiceLinkImpl extends ScenarioElementImpl implements ServiceLink {
+public class ServiceLinkImpl extends EObjectImpl implements ServiceLink {
 	/**
 	 * The cached value of the '{@link #getActor() <em>Actor</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -179,9 +180,9 @@ public class ServiceLinkImpl extends ScenarioElementImpl implements ServiceLink 
 		if (newServiceElement != serviceElement) {
 			NotificationChain msgs = null;
 			if (serviceElement != null)
-				msgs = ((InternalEObject)serviceElement).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_ELEMENT__SERVICE_LINKS, ServiceElement.class, msgs);
+				msgs = ((InternalEObject)serviceElement).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_ELEMENT__SERVICE_LINK, ServiceElement.class, msgs);
 			if (newServiceElement != null)
-				msgs = ((InternalEObject)newServiceElement).eInverseAdd(this, ScenarioDiagramPackage.SERVICE_ELEMENT__SERVICE_LINKS, ServiceElement.class, msgs);
+				msgs = ((InternalEObject)newServiceElement).eInverseAdd(this, ScenarioDiagramPackage.SERVICE_ELEMENT__SERVICE_LINK, ServiceElement.class, msgs);
 			msgs = basicSetServiceElement(newServiceElement, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -203,7 +204,7 @@ public class ServiceLinkImpl extends ScenarioElementImpl implements ServiceLink 
 				return basicSetActor((Actor)otherEnd, msgs);
 			case ScenarioDiagramPackage.SERVICE_LINK__SERVICE_ELEMENT:
 				if (serviceElement != null)
-					msgs = ((InternalEObject)serviceElement).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_ELEMENT__SERVICE_LINKS, ServiceElement.class, msgs);
+					msgs = ((InternalEObject)serviceElement).eInverseRemove(this, ScenarioDiagramPackage.SERVICE_ELEMENT__SERVICE_LINK, ServiceElement.class, msgs);
 				return basicSetServiceElement((ServiceElement)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);

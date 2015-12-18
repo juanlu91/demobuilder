@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see scenarioDiagram.ScenarioDiagramFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface ScenarioDiagramPackage extends EPackage {
@@ -67,13 +68,31 @@ public interface ScenarioDiagramPackage extends EPackage {
 	int SCENARIO = 0;
 
 	/**
-	 * The feature id for the '<em><b>Scenario Element</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Scenario Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__SCENARIO_ELEMENT = 0;
+	int SCENARIO__SCENARIO_ELEMENTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Agreement Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__AGREEMENT_LINKS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Service Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__SERVICE_LINKS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
@@ -82,7 +101,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = 1;
+	int SCENARIO_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link scenarioDiagram.impl.ScenarioElementImpl <em>Scenario Element</em>}' class.
@@ -113,6 +132,43 @@ public interface ScenarioDiagramPackage extends EPackage {
 	int SCENARIO_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link scenarioDiagram.impl.ActorImpl <em>Actor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see scenarioDiagram.impl.ActorImpl
+	 * @see scenarioDiagram.impl.ScenarioDiagramPackageImpl#getActor()
+	 * @generated
+	 */
+	int ACTOR = 11;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__NAME = SCENARIO_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Service Links</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__SERVICE_LINKS = SCENARIO_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Actor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR_FEATURE_COUNT = SCENARIO_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link scenarioDiagram.impl.ConsumerImpl <em>Consumer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,7 +185,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSUMER__NAME = SCENARIO_ELEMENT__NAME;
+	int CONSUMER__NAME = ACTOR__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Service Links</b></em>' reference list.
@@ -138,7 +194,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSUMER__SERVICE_LINKS = SCENARIO_ELEMENT_FEATURE_COUNT + 0;
+	int CONSUMER__SERVICE_LINKS = ACTOR__SERVICE_LINKS;
 
 	/**
 	 * The number of structural features of the '<em>Consumer</em>' class.
@@ -147,17 +203,44 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSUMER_FEATURE_COUNT = SCENARIO_ELEMENT_FEATURE_COUNT + 1;
+	int CONSUMER_FEATURE_COUNT = ACTOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link scenarioDiagram.impl.GuaranteeTermImpl <em>Guarantee Term</em>}' class.
+	 * The meta object id for the '{@link scenarioDiagram.impl.PricingPlanImpl <em>Pricing Plan</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see scenarioDiagram.impl.GuaranteeTermImpl
-	 * @see scenarioDiagram.impl.ScenarioDiagramPackageImpl#getGuaranteeTerm()
+	 * @see scenarioDiagram.impl.PricingPlanImpl
+	 * @see scenarioDiagram.impl.ScenarioDiagramPackageImpl#getPricingPlan()
 	 * @generated
 	 */
-	int GUARANTEE_TERM = 2;
+	int PRICING_PLAN = 2;
+
+	/**
+	 * The feature id for the '<em><b>Pricing Plan Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRICING_PLAN__PRICING_PLAN_ELEMENTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Agreement Link</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRICING_PLAN__AGREEMENT_LINK = 1;
+
+	/**
+	 * The feature id for the '<em><b>Service Offer</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRICING_PLAN__SERVICE_OFFER = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -166,25 +249,44 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARANTEE_TERM__NAME = SCENARIO_ELEMENT__NAME;
+	int PRICING_PLAN__NAME = 3;
 
 	/**
-	 * The feature id for the '<em><b>Expression</b></em>' attribute.
+	 * The number of structural features of the '<em>Pricing Plan</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUARANTEE_TERM__EXPRESSION = SCENARIO_ELEMENT_FEATURE_COUNT + 0;
+	int PRICING_PLAN_FEATURE_COUNT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * The meta object id for the '{@link scenarioDiagram.impl.PricingPlanElementImpl <em>Pricing Plan Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see scenarioDiagram.impl.PricingPlanElementImpl
+	 * @see scenarioDiagram.impl.ScenarioDiagramPackageImpl#getPricingPlanElement()
+	 * @generated
+	 */
+	int PRICING_PLAN_ELEMENT = 3;
+
+	/**
+	 * The feature id for the '<em><b>SLO Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUARANTEE_TERM__CONDITION = SCENARIO_ELEMENT_FEATURE_COUNT + 1;
+	int PRICING_PLAN_ELEMENT__SLO_EXPRESSION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Qualifying Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRICING_PLAN_ELEMENT__QUALIFYING_CONDITION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Compensation Interval</b></em>' attribute.
@@ -193,7 +295,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARANTEE_TERM__COMPENSATION_INTERVAL = SCENARIO_ELEMENT_FEATURE_COUNT + 2;
+	int PRICING_PLAN_ELEMENT__COMPENSATION_INTERVAL = 2;
 
 	/**
 	 * The feature id for the '<em><b>Compensation Type</b></em>' attribute.
@@ -202,7 +304,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARANTEE_TERM__COMPENSATION_TYPE = SCENARIO_ELEMENT_FEATURE_COUNT + 3;
+	int PRICING_PLAN_ELEMENT__COMPENSATION_TYPE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Compensation Expression</b></em>' attribute.
@@ -211,7 +313,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARANTEE_TERM__COMPENSATION_EXPRESSION = SCENARIO_ELEMENT_FEATURE_COUNT + 4;
+	int PRICING_PLAN_ELEMENT__COMPENSATION_EXPRESSION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Compensation Condition</b></em>' attribute.
@@ -220,16 +322,16 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARANTEE_TERM__COMPENSATION_CONDITION = SCENARIO_ELEMENT_FEATURE_COUNT + 5;
+	int PRICING_PLAN_ELEMENT__COMPENSATION_CONDITION = 5;
 
 	/**
-	 * The number of structural features of the '<em>Guarantee Term</em>' class.
+	 * The number of structural features of the '<em>Pricing Plan Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUARANTEE_TERM_FEATURE_COUNT = SCENARIO_ELEMENT_FEATURE_COUNT + 6;
+	int PRICING_PLAN_ELEMENT_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link scenarioDiagram.impl.ProviderImpl <em>Provider</em>}' class.
@@ -239,7 +341,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @see scenarioDiagram.impl.ScenarioDiagramPackageImpl#getProvider()
 	 * @generated
 	 */
-	int PROVIDER = 3;
+	int PROVIDER = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -248,7 +350,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER__NAME = SCENARIO_ELEMENT__NAME;
+	int PROVIDER__NAME = ACTOR__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Service Links</b></em>' reference list.
@@ -257,7 +359,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER__SERVICE_LINKS = SCENARIO_ELEMENT_FEATURE_COUNT + 0;
+	int PROVIDER__SERVICE_LINKS = ACTOR__SERVICE_LINKS;
 
 	/**
 	 * The number of structural features of the '<em>Provider</em>' class.
@@ -266,7 +368,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER_FEATURE_COUNT = SCENARIO_ELEMENT_FEATURE_COUNT + 1;
+	int PROVIDER_FEATURE_COUNT = ACTOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link scenarioDiagram.impl.ServiceElementImpl <em>Service Element</em>}' class.
@@ -279,13 +381,13 @@ public interface ScenarioDiagramPackage extends EPackage {
 	int SERVICE_ELEMENT = 10;
 
 	/**
-	 * The feature id for the '<em><b>Service Links</b></em>' reference list.
+	 * The feature id for the '<em><b>Service Link</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ELEMENT__SERVICE_LINKS = 0;
+	int SERVICE_ELEMENT__SERVICE_LINK = 0;
 
 	/**
 	 * The number of structural features of the '<em>Service Element</em>' class.
@@ -304,16 +406,16 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @see scenarioDiagram.impl.ScenarioDiagramPackageImpl#getServiceNeed()
 	 * @generated
 	 */
-	int SERVICE_NEED = 4;
+	int SERVICE_NEED = 5;
 
 	/**
-	 * The feature id for the '<em><b>Service Links</b></em>' reference list.
+	 * The feature id for the '<em><b>Service Link</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_NEED__SERVICE_LINKS = SERVICE_ELEMENT__SERVICE_LINKS;
+	int SERVICE_NEED__SERVICE_LINK = SERVICE_ELEMENT__SERVICE_LINK;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -350,16 +452,16 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @see scenarioDiagram.impl.ScenarioDiagramPackageImpl#getServiceOffer()
 	 * @generated
 	 */
-	int SERVICE_OFFER = 5;
+	int SERVICE_OFFER = 6;
 
 	/**
-	 * The feature id for the '<em><b>Service Links</b></em>' reference list.
+	 * The feature id for the '<em><b>Service Link</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_OFFER__SERVICE_LINKS = SERVICE_ELEMENT__SERVICE_LINKS;
+	int SERVICE_OFFER__SERVICE_LINK = SERVICE_ELEMENT__SERVICE_LINK;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -371,22 +473,22 @@ public interface ScenarioDiagramPackage extends EPackage {
 	int SERVICE_OFFER__NAME = SERVICE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Service Configuration</b></em>' containment reference.
+	 * The feature id for the '<em><b>Endpoint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_OFFER__SERVICE_CONFIGURATION = SERVICE_ELEMENT_FEATURE_COUNT + 1;
+	int SERVICE_OFFER__ENDPOINT = SERVICE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Agreement Link</b></em>' reference.
+	 * The feature id for the '<em><b>Guarantee Terms</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_OFFER__AGREEMENT_LINK = SERVICE_ELEMENT_FEATURE_COUNT + 2;
+	int SERVICE_OFFER__GUARANTEE_TERMS = SERVICE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Service Offer</em>' class.
@@ -396,79 +498,6 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_OFFER_FEATURE_COUNT = SERVICE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The meta object id for the '{@link scenarioDiagram.impl.ServiceConfigurationImpl <em>Service Configuration</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see scenarioDiagram.impl.ServiceConfigurationImpl
-	 * @see scenarioDiagram.impl.ScenarioDiagramPackageImpl#getServiceConfiguration()
-	 * @generated
-	 */
-	int SERVICE_CONFIGURATION = 6;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_CONFIGURATION__NAME = SCENARIO_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Endpoint Reference</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_CONFIGURATION__ENDPOINT_REFERENCE = SCENARIO_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Definition Reference</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_CONFIGURATION__DEFINITION_REFERENCE = SCENARIO_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Monitor Reference</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_CONFIGURATION__MONITOR_REFERENCE = SCENARIO_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Service Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_CONFIGURATION__SERVICE_NAME = SCENARIO_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Guarante Terms</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_CONFIGURATION__GUARANTE_TERMS = SCENARIO_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of structural features of the '<em>Service Configuration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_CONFIGURATION_FEATURE_COUNT = SCENARIO_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link scenarioDiagram.impl.AgreementLinkImpl <em>Agreement Link</em>}' class.
@@ -481,22 +510,13 @@ public interface ScenarioDiagramPackage extends EPackage {
 	int AGREEMENT_LINK = 7;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGREEMENT_LINK__NAME = SCENARIO_ELEMENT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_LINK__SOURCE = SCENARIO_ELEMENT_FEATURE_COUNT + 0;
+	int AGREEMENT_LINK__SOURCE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -505,7 +525,16 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_LINK__TARGET = SCENARIO_ELEMENT_FEATURE_COUNT + 1;
+	int AGREEMENT_LINK__TARGET = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGREEMENT_LINK__NAME = 2;
 
 	/**
 	 * The number of structural features of the '<em>Agreement Link</em>' class.
@@ -514,7 +543,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_LINK_FEATURE_COUNT = SCENARIO_ELEMENT_FEATURE_COUNT + 2;
+	int AGREEMENT_LINK_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link scenarioDiagram.impl.ServiceLinkImpl <em>Service Link</em>}' class.
@@ -527,22 +556,13 @@ public interface ScenarioDiagramPackage extends EPackage {
 	int SERVICE_LINK = 8;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_LINK__NAME = SCENARIO_ELEMENT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Actor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_LINK__ACTOR = SCENARIO_ELEMENT_FEATURE_COUNT + 0;
+	int SERVICE_LINK__ACTOR = 0;
 
 	/**
 	 * The feature id for the '<em><b>Service Element</b></em>' reference.
@@ -551,7 +571,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_LINK__SERVICE_ELEMENT = SCENARIO_ELEMENT_FEATURE_COUNT + 1;
+	int SERVICE_LINK__SERVICE_ELEMENT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Service Link</em>' class.
@@ -560,35 +580,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_LINK_FEATURE_COUNT = SCENARIO_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link scenarioDiagram.impl.ActorImpl <em>Actor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see scenarioDiagram.impl.ActorImpl
-	 * @see scenarioDiagram.impl.ScenarioDiagramPackageImpl#getActor()
-	 * @generated
-	 */
-	int ACTOR = 11;
-
-	/**
-	 * The feature id for the '<em><b>Service Links</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTOR__SERVICE_LINKS = 0;
-
-	/**
-	 * The number of structural features of the '<em>Actor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTOR_FEATURE_COUNT = 1;
+	int SERVICE_LINK_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link scenarioDiagram.Role <em>Role</em>}' enum.
@@ -632,15 +624,37 @@ public interface ScenarioDiagramPackage extends EPackage {
 	EClass getScenario();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link scenarioDiagram.Scenario#getScenarioElement <em>Scenario Element</em>}'.
+	 * Returns the meta object for the containment reference list '{@link scenarioDiagram.Scenario#getScenarioElements <em>Scenario Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Scenario Element</em>'.
-	 * @see scenarioDiagram.Scenario#getScenarioElement()
+	 * @return the meta object for the containment reference list '<em>Scenario Elements</em>'.
+	 * @see scenarioDiagram.Scenario#getScenarioElements()
 	 * @see #getScenario()
 	 * @generated
 	 */
-	EReference getScenario_ScenarioElement();
+	EReference getScenario_ScenarioElements();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link scenarioDiagram.Scenario#getAgreementLinks <em>Agreement Links</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Agreement Links</em>'.
+	 * @see scenarioDiagram.Scenario#getAgreementLinks()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EReference getScenario_AgreementLinks();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link scenarioDiagram.Scenario#getServiceLinks <em>Service Links</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Service Links</em>'.
+	 * @see scenarioDiagram.Scenario#getServiceLinks()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EReference getScenario_ServiceLinks();
 
 	/**
 	 * Returns the meta object for class '{@link scenarioDiagram.Consumer <em>Consumer</em>}'.
@@ -653,80 +667,134 @@ public interface ScenarioDiagramPackage extends EPackage {
 	EClass getConsumer();
 
 	/**
-	 * Returns the meta object for class '{@link scenarioDiagram.GuaranteeTerm <em>Guarantee Term</em>}'.
+	 * Returns the meta object for class '{@link scenarioDiagram.PricingPlan <em>Pricing Plan</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Guarantee Term</em>'.
-	 * @see scenarioDiagram.GuaranteeTerm
+	 * @return the meta object for class '<em>Pricing Plan</em>'.
+	 * @see scenarioDiagram.PricingPlan
 	 * @generated
 	 */
-	EClass getGuaranteeTerm();
+	EClass getPricingPlan();
 
 	/**
-	 * Returns the meta object for the attribute '{@link scenarioDiagram.GuaranteeTerm#getExpression <em>Expression</em>}'.
+	 * Returns the meta object for the containment reference list '{@link scenarioDiagram.PricingPlan#getPricingPlanElements <em>Pricing Plan Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Expression</em>'.
-	 * @see scenarioDiagram.GuaranteeTerm#getExpression()
-	 * @see #getGuaranteeTerm()
+	 * @return the meta object for the containment reference list '<em>Pricing Plan Elements</em>'.
+	 * @see scenarioDiagram.PricingPlan#getPricingPlanElements()
+	 * @see #getPricingPlan()
 	 * @generated
 	 */
-	EAttribute getGuaranteeTerm_Expression();
+	EReference getPricingPlan_PricingPlanElements();
 
 	/**
-	 * Returns the meta object for the attribute '{@link scenarioDiagram.GuaranteeTerm#getCondition <em>Condition</em>}'.
+	 * Returns the meta object for the reference '{@link scenarioDiagram.PricingPlan#getAgreementLink <em>Agreement Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Condition</em>'.
-	 * @see scenarioDiagram.GuaranteeTerm#getCondition()
-	 * @see #getGuaranteeTerm()
+	 * @return the meta object for the reference '<em>Agreement Link</em>'.
+	 * @see scenarioDiagram.PricingPlan#getAgreementLink()
+	 * @see #getPricingPlan()
 	 * @generated
 	 */
-	EAttribute getGuaranteeTerm_Condition();
+	EReference getPricingPlan_AgreementLink();
 
 	/**
-	 * Returns the meta object for the attribute '{@link scenarioDiagram.GuaranteeTerm#getCompensationInterval <em>Compensation Interval</em>}'.
+	 * Returns the meta object for the container reference '{@link scenarioDiagram.PricingPlan#getServiceOffer <em>Service Offer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Service Offer</em>'.
+	 * @see scenarioDiagram.PricingPlan#getServiceOffer()
+	 * @see #getPricingPlan()
+	 * @generated
+	 */
+	EReference getPricingPlan_ServiceOffer();
+
+	/**
+	 * Returns the meta object for the attribute '{@link scenarioDiagram.PricingPlan#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see scenarioDiagram.PricingPlan#getName()
+	 * @see #getPricingPlan()
+	 * @generated
+	 */
+	EAttribute getPricingPlan_Name();
+
+	/**
+	 * Returns the meta object for class '{@link scenarioDiagram.PricingPlanElement <em>Pricing Plan Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Pricing Plan Element</em>'.
+	 * @see scenarioDiagram.PricingPlanElement
+	 * @generated
+	 */
+	EClass getPricingPlanElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link scenarioDiagram.PricingPlanElement#getSLOExpression <em>SLO Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>SLO Expression</em>'.
+	 * @see scenarioDiagram.PricingPlanElement#getSLOExpression()
+	 * @see #getPricingPlanElement()
+	 * @generated
+	 */
+	EAttribute getPricingPlanElement_SLOExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link scenarioDiagram.PricingPlanElement#getQualifyingCondition <em>Qualifying Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Qualifying Condition</em>'.
+	 * @see scenarioDiagram.PricingPlanElement#getQualifyingCondition()
+	 * @see #getPricingPlanElement()
+	 * @generated
+	 */
+	EAttribute getPricingPlanElement_QualifyingCondition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link scenarioDiagram.PricingPlanElement#getCompensationInterval <em>Compensation Interval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Compensation Interval</em>'.
-	 * @see scenarioDiagram.GuaranteeTerm#getCompensationInterval()
-	 * @see #getGuaranteeTerm()
+	 * @see scenarioDiagram.PricingPlanElement#getCompensationInterval()
+	 * @see #getPricingPlanElement()
 	 * @generated
 	 */
-	EAttribute getGuaranteeTerm_CompensationInterval();
+	EAttribute getPricingPlanElement_CompensationInterval();
 
 	/**
-	 * Returns the meta object for the attribute '{@link scenarioDiagram.GuaranteeTerm#getCompensationType <em>Compensation Type</em>}'.
+	 * Returns the meta object for the attribute '{@link scenarioDiagram.PricingPlanElement#getCompensationType <em>Compensation Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Compensation Type</em>'.
-	 * @see scenarioDiagram.GuaranteeTerm#getCompensationType()
-	 * @see #getGuaranteeTerm()
+	 * @see scenarioDiagram.PricingPlanElement#getCompensationType()
+	 * @see #getPricingPlanElement()
 	 * @generated
 	 */
-	EAttribute getGuaranteeTerm_CompensationType();
+	EAttribute getPricingPlanElement_CompensationType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link scenarioDiagram.GuaranteeTerm#getCompensationExpression <em>Compensation Expression</em>}'.
+	 * Returns the meta object for the attribute '{@link scenarioDiagram.PricingPlanElement#getCompensationExpression <em>Compensation Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Compensation Expression</em>'.
-	 * @see scenarioDiagram.GuaranteeTerm#getCompensationExpression()
-	 * @see #getGuaranteeTerm()
+	 * @see scenarioDiagram.PricingPlanElement#getCompensationExpression()
+	 * @see #getPricingPlanElement()
 	 * @generated
 	 */
-	EAttribute getGuaranteeTerm_CompensationExpression();
+	EAttribute getPricingPlanElement_CompensationExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link scenarioDiagram.GuaranteeTerm#getCompensationCondition <em>Compensation Condition</em>}'.
+	 * Returns the meta object for the attribute '{@link scenarioDiagram.PricingPlanElement#getCompensationCondition <em>Compensation Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Compensation Condition</em>'.
-	 * @see scenarioDiagram.GuaranteeTerm#getCompensationCondition()
-	 * @see #getGuaranteeTerm()
+	 * @see scenarioDiagram.PricingPlanElement#getCompensationCondition()
+	 * @see #getPricingPlanElement()
 	 * @generated
 	 */
-	EAttribute getGuaranteeTerm_CompensationCondition();
+	EAttribute getPricingPlanElement_CompensationCondition();
 
 	/**
 	 * Returns the meta object for class '{@link scenarioDiagram.Provider <em>Provider</em>}'.
@@ -770,91 +838,26 @@ public interface ScenarioDiagramPackage extends EPackage {
 	EClass getServiceOffer();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link scenarioDiagram.ServiceOffer#getServiceConfiguration <em>Service Configuration</em>}'.
+	 * Returns the meta object for the attribute '{@link scenarioDiagram.ServiceOffer#getEndpoint <em>Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Service Configuration</em>'.
-	 * @see scenarioDiagram.ServiceOffer#getServiceConfiguration()
+	 * @return the meta object for the attribute '<em>Endpoint</em>'.
+	 * @see scenarioDiagram.ServiceOffer#getEndpoint()
 	 * @see #getServiceOffer()
 	 * @generated
 	 */
-	EReference getServiceOffer_ServiceConfiguration();
+	EAttribute getServiceOffer_Endpoint();
 
 	/**
-	 * Returns the meta object for the reference '{@link scenarioDiagram.ServiceOffer#getAgreementLink <em>Agreement Link</em>}'.
+	 * Returns the meta object for the containment reference list '{@link scenarioDiagram.ServiceOffer#getGuaranteeTerms <em>Guarantee Terms</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Agreement Link</em>'.
-	 * @see scenarioDiagram.ServiceOffer#getAgreementLink()
+	 * @return the meta object for the containment reference list '<em>Guarantee Terms</em>'.
+	 * @see scenarioDiagram.ServiceOffer#getGuaranteeTerms()
 	 * @see #getServiceOffer()
 	 * @generated
 	 */
-	EReference getServiceOffer_AgreementLink();
-
-	/**
-	 * Returns the meta object for class '{@link scenarioDiagram.ServiceConfiguration <em>Service Configuration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Configuration</em>'.
-	 * @see scenarioDiagram.ServiceConfiguration
-	 * @generated
-	 */
-	EClass getServiceConfiguration();
-
-	/**
-	 * Returns the meta object for the attribute '{@link scenarioDiagram.ServiceConfiguration#getEndpointReference <em>Endpoint Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Endpoint Reference</em>'.
-	 * @see scenarioDiagram.ServiceConfiguration#getEndpointReference()
-	 * @see #getServiceConfiguration()
-	 * @generated
-	 */
-	EAttribute getServiceConfiguration_EndpointReference();
-
-	/**
-	 * Returns the meta object for the attribute '{@link scenarioDiagram.ServiceConfiguration#getDefinitionReference <em>Definition Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Definition Reference</em>'.
-	 * @see scenarioDiagram.ServiceConfiguration#getDefinitionReference()
-	 * @see #getServiceConfiguration()
-	 * @generated
-	 */
-	EAttribute getServiceConfiguration_DefinitionReference();
-
-	/**
-	 * Returns the meta object for the attribute '{@link scenarioDiagram.ServiceConfiguration#getMonitorReference <em>Monitor Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Monitor Reference</em>'.
-	 * @see scenarioDiagram.ServiceConfiguration#getMonitorReference()
-	 * @see #getServiceConfiguration()
-	 * @generated
-	 */
-	EAttribute getServiceConfiguration_MonitorReference();
-
-	/**
-	 * Returns the meta object for the attribute '{@link scenarioDiagram.ServiceConfiguration#getServiceName <em>Service Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Service Name</em>'.
-	 * @see scenarioDiagram.ServiceConfiguration#getServiceName()
-	 * @see #getServiceConfiguration()
-	 * @generated
-	 */
-	EAttribute getServiceConfiguration_ServiceName();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link scenarioDiagram.ServiceConfiguration#getGuaranteTerms <em>Guarante Terms</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Guarante Terms</em>'.
-	 * @see scenarioDiagram.ServiceConfiguration#getGuaranteTerms()
-	 * @see #getServiceConfiguration()
-	 * @generated
-	 */
-	EReference getServiceConfiguration_GuaranteTerms();
+	EReference getServiceOffer_GuaranteeTerms();
 
 	/**
 	 * Returns the meta object for class '{@link scenarioDiagram.AgreementLink <em>Agreement Link</em>}'.
@@ -887,6 +890,17 @@ public interface ScenarioDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAgreementLink_Target();
+
+	/**
+	 * Returns the meta object for the attribute '{@link scenarioDiagram.AgreementLink#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see scenarioDiagram.AgreementLink#getName()
+	 * @see #getAgreementLink()
+	 * @generated
+	 */
+	EAttribute getAgreementLink_Name();
 
 	/**
 	 * Returns the meta object for class '{@link scenarioDiagram.ServiceLink <em>Service Link</em>}'.
@@ -952,15 +966,15 @@ public interface ScenarioDiagramPackage extends EPackage {
 	EClass getServiceElement();
 
 	/**
-	 * Returns the meta object for the reference list '{@link scenarioDiagram.ServiceElement#getServiceLinks <em>Service Links</em>}'.
+	 * Returns the meta object for the reference '{@link scenarioDiagram.ServiceElement#getServiceLink <em>Service Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Service Links</em>'.
-	 * @see scenarioDiagram.ServiceElement#getServiceLinks()
+	 * @return the meta object for the reference '<em>Service Link</em>'.
+	 * @see scenarioDiagram.ServiceElement#getServiceLink()
 	 * @see #getServiceElement()
 	 * @generated
 	 */
-	EReference getServiceElement_ServiceLinks();
+	EReference getServiceElement_ServiceLink();
 
 	/**
 	 * Returns the meta object for class '{@link scenarioDiagram.Actor <em>Actor</em>}'.
@@ -1046,12 +1060,28 @@ public interface ScenarioDiagramPackage extends EPackage {
 		EClass SCENARIO = eINSTANCE.getScenario();
 
 		/**
-		 * The meta object literal for the '<em><b>Scenario Element</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Scenario Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCENARIO__SCENARIO_ELEMENT = eINSTANCE.getScenario_ScenarioElement();
+		EReference SCENARIO__SCENARIO_ELEMENTS = eINSTANCE.getScenario_ScenarioElements();
+
+		/**
+		 * The meta object literal for the '<em><b>Agreement Links</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCENARIO__AGREEMENT_LINKS = eINSTANCE.getScenario_AgreementLinks();
+
+		/**
+		 * The meta object literal for the '<em><b>Service Links</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCENARIO__SERVICE_LINKS = eINSTANCE.getScenario_ServiceLinks();
 
 		/**
 		 * The meta object literal for the '{@link scenarioDiagram.impl.ConsumerImpl <em>Consumer</em>}' class.
@@ -1064,30 +1094,72 @@ public interface ScenarioDiagramPackage extends EPackage {
 		EClass CONSUMER = eINSTANCE.getConsumer();
 
 		/**
-		 * The meta object literal for the '{@link scenarioDiagram.impl.GuaranteeTermImpl <em>Guarantee Term</em>}' class.
+		 * The meta object literal for the '{@link scenarioDiagram.impl.PricingPlanImpl <em>Pricing Plan</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see scenarioDiagram.impl.GuaranteeTermImpl
-		 * @see scenarioDiagram.impl.ScenarioDiagramPackageImpl#getGuaranteeTerm()
+		 * @see scenarioDiagram.impl.PricingPlanImpl
+		 * @see scenarioDiagram.impl.ScenarioDiagramPackageImpl#getPricingPlan()
 		 * @generated
 		 */
-		EClass GUARANTEE_TERM = eINSTANCE.getGuaranteeTerm();
+		EClass PRICING_PLAN = eINSTANCE.getPricingPlan();
 
 		/**
-		 * The meta object literal for the '<em><b>Expression</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Pricing Plan Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GUARANTEE_TERM__EXPRESSION = eINSTANCE.getGuaranteeTerm_Expression();
+		EReference PRICING_PLAN__PRICING_PLAN_ELEMENTS = eINSTANCE.getPricingPlan_PricingPlanElements();
 
 		/**
-		 * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Agreement Link</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GUARANTEE_TERM__CONDITION = eINSTANCE.getGuaranteeTerm_Condition();
+		EReference PRICING_PLAN__AGREEMENT_LINK = eINSTANCE.getPricingPlan_AgreementLink();
+
+		/**
+		 * The meta object literal for the '<em><b>Service Offer</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRICING_PLAN__SERVICE_OFFER = eINSTANCE.getPricingPlan_ServiceOffer();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PRICING_PLAN__NAME = eINSTANCE.getPricingPlan_Name();
+
+		/**
+		 * The meta object literal for the '{@link scenarioDiagram.impl.PricingPlanElementImpl <em>Pricing Plan Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see scenarioDiagram.impl.PricingPlanElementImpl
+		 * @see scenarioDiagram.impl.ScenarioDiagramPackageImpl#getPricingPlanElement()
+		 * @generated
+		 */
+		EClass PRICING_PLAN_ELEMENT = eINSTANCE.getPricingPlanElement();
+
+		/**
+		 * The meta object literal for the '<em><b>SLO Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PRICING_PLAN_ELEMENT__SLO_EXPRESSION = eINSTANCE.getPricingPlanElement_SLOExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Qualifying Condition</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PRICING_PLAN_ELEMENT__QUALIFYING_CONDITION = eINSTANCE.getPricingPlanElement_QualifyingCondition();
 
 		/**
 		 * The meta object literal for the '<em><b>Compensation Interval</b></em>' attribute feature.
@@ -1095,7 +1167,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GUARANTEE_TERM__COMPENSATION_INTERVAL = eINSTANCE.getGuaranteeTerm_CompensationInterval();
+		EAttribute PRICING_PLAN_ELEMENT__COMPENSATION_INTERVAL = eINSTANCE.getPricingPlanElement_CompensationInterval();
 
 		/**
 		 * The meta object literal for the '<em><b>Compensation Type</b></em>' attribute feature.
@@ -1103,7 +1175,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GUARANTEE_TERM__COMPENSATION_TYPE = eINSTANCE.getGuaranteeTerm_CompensationType();
+		EAttribute PRICING_PLAN_ELEMENT__COMPENSATION_TYPE = eINSTANCE.getPricingPlanElement_CompensationType();
 
 		/**
 		 * The meta object literal for the '<em><b>Compensation Expression</b></em>' attribute feature.
@@ -1111,7 +1183,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GUARANTEE_TERM__COMPENSATION_EXPRESSION = eINSTANCE.getGuaranteeTerm_CompensationExpression();
+		EAttribute PRICING_PLAN_ELEMENT__COMPENSATION_EXPRESSION = eINSTANCE.getPricingPlanElement_CompensationExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Compensation Condition</b></em>' attribute feature.
@@ -1119,7 +1191,7 @@ public interface ScenarioDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GUARANTEE_TERM__COMPENSATION_CONDITION = eINSTANCE.getGuaranteeTerm_CompensationCondition();
+		EAttribute PRICING_PLAN_ELEMENT__COMPENSATION_CONDITION = eINSTANCE.getPricingPlanElement_CompensationCondition();
 
 		/**
 		 * The meta object literal for the '{@link scenarioDiagram.impl.ProviderImpl <em>Provider</em>}' class.
@@ -1160,70 +1232,20 @@ public interface ScenarioDiagramPackage extends EPackage {
 		EClass SERVICE_OFFER = eINSTANCE.getServiceOffer();
 
 		/**
-		 * The meta object literal for the '<em><b>Service Configuration</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Endpoint</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SERVICE_OFFER__SERVICE_CONFIGURATION = eINSTANCE.getServiceOffer_ServiceConfiguration();
+		EAttribute SERVICE_OFFER__ENDPOINT = eINSTANCE.getServiceOffer_Endpoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Agreement Link</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Guarantee Terms</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SERVICE_OFFER__AGREEMENT_LINK = eINSTANCE.getServiceOffer_AgreementLink();
-
-		/**
-		 * The meta object literal for the '{@link scenarioDiagram.impl.ServiceConfigurationImpl <em>Service Configuration</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see scenarioDiagram.impl.ServiceConfigurationImpl
-		 * @see scenarioDiagram.impl.ScenarioDiagramPackageImpl#getServiceConfiguration()
-		 * @generated
-		 */
-		EClass SERVICE_CONFIGURATION = eINSTANCE.getServiceConfiguration();
-
-		/**
-		 * The meta object literal for the '<em><b>Endpoint Reference</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_CONFIGURATION__ENDPOINT_REFERENCE = eINSTANCE.getServiceConfiguration_EndpointReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Definition Reference</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_CONFIGURATION__DEFINITION_REFERENCE = eINSTANCE.getServiceConfiguration_DefinitionReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Monitor Reference</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_CONFIGURATION__MONITOR_REFERENCE = eINSTANCE.getServiceConfiguration_MonitorReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Service Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_CONFIGURATION__SERVICE_NAME = eINSTANCE.getServiceConfiguration_ServiceName();
-
-		/**
-		 * The meta object literal for the '<em><b>Guarante Terms</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE_CONFIGURATION__GUARANTE_TERMS = eINSTANCE.getServiceConfiguration_GuaranteTerms();
+		EReference SERVICE_OFFER__GUARANTEE_TERMS = eINSTANCE.getServiceOffer_GuaranteeTerms();
 
 		/**
 		 * The meta object literal for the '{@link scenarioDiagram.impl.AgreementLinkImpl <em>Agreement Link</em>}' class.
@@ -1250,6 +1272,14 @@ public interface ScenarioDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference AGREEMENT_LINK__TARGET = eINSTANCE.getAgreementLink_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AGREEMENT_LINK__NAME = eINSTANCE.getAgreementLink_Name();
 
 		/**
 		 * The meta object literal for the '{@link scenarioDiagram.impl.ServiceLinkImpl <em>Service Link</em>}' class.
@@ -1306,12 +1336,12 @@ public interface ScenarioDiagramPackage extends EPackage {
 		EClass SERVICE_ELEMENT = eINSTANCE.getServiceElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Service Links</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Service Link</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SERVICE_ELEMENT__SERVICE_LINKS = eINSTANCE.getServiceElement_ServiceLinks();
+		EReference SERVICE_ELEMENT__SERVICE_LINK = eINSTANCE.getServiceElement_ServiceLink();
 
 		/**
 		 * The meta object literal for the '{@link scenarioDiagram.impl.ActorImpl <em>Actor</em>}' class.

@@ -2,7 +2,7 @@
  */
 package scenarioDiagram;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link scenarioDiagram.AgreementLink#getSource <em>Source</em>}</li>
  *   <li>{@link scenarioDiagram.AgreementLink#getTarget <em>Target</em>}</li>
+ *   <li>{@link scenarioDiagram.AgreementLink#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -21,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="gmf.link source='source' target='target' label='name' width='1' style='dash' tool.name='Agreement Link' tool.description='Creates an agreement link' color='0,0,0'"
  * @generated
  */
-public interface AgreementLink extends ScenarioElement {
+public interface AgreementLink extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link scenarioDiagram.ServiceNeed#getAgreementLink <em>Agreement Link</em>}'.
@@ -52,7 +53,7 @@ public interface AgreementLink extends ScenarioElement {
 
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link scenarioDiagram.ServiceOffer#getAgreementLink <em>Agreement Link</em>}'.
+	 * It is bidirectional and its opposite is '{@link scenarioDiagram.PricingPlan#getAgreementLink <em>Agreement Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Target</em>' reference isn't clear,
@@ -60,13 +61,13 @@ public interface AgreementLink extends ScenarioElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
-	 * @see #setTarget(ServiceOffer)
+	 * @see #setTarget(PricingPlan)
 	 * @see scenarioDiagram.ScenarioDiagramPackage#getAgreementLink_Target()
-	 * @see scenarioDiagram.ServiceOffer#getAgreementLink
+	 * @see scenarioDiagram.PricingPlan#getAgreementLink
 	 * @model opposite="agreementLink"
 	 * @generated
 	 */
-	ServiceOffer getTarget();
+	PricingPlan getTarget();
 
 	/**
 	 * Sets the value of the '{@link scenarioDiagram.AgreementLink#getTarget <em>Target</em>}' reference.
@@ -76,6 +77,22 @@ public interface AgreementLink extends ScenarioElement {
 	 * @see #getTarget()
 	 * @generated
 	 */
-	void setTarget(ServiceOffer value);
+	void setTarget(PricingPlan value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see scenarioDiagram.ScenarioDiagramPackage#getAgreementLink_Name()
+	 * @model changeable="false" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot derivation='self.target.serviceOffer.serviceLink.actor.name.concat(\'_\').concat(self.target.name).concat(\'-\').concat(self.source.serviceLink.actor.name)'"
+	 * @generated
+	 */
+	String getName();
 
 } // AgreementLink

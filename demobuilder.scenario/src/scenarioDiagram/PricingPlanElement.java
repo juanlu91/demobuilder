@@ -2,80 +2,81 @@
  */
 package scenarioDiagram;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Guarantee Term</b></em>'.
+ * A representation of the model object '<em><b>Pricing Plan Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link scenarioDiagram.GuaranteeTerm#getExpression <em>Expression</em>}</li>
- *   <li>{@link scenarioDiagram.GuaranteeTerm#getCondition <em>Condition</em>}</li>
- *   <li>{@link scenarioDiagram.GuaranteeTerm#getCompensationInterval <em>Compensation Interval</em>}</li>
- *   <li>{@link scenarioDiagram.GuaranteeTerm#getCompensationType <em>Compensation Type</em>}</li>
- *   <li>{@link scenarioDiagram.GuaranteeTerm#getCompensationExpression <em>Compensation Expression</em>}</li>
- *   <li>{@link scenarioDiagram.GuaranteeTerm#getCompensationCondition <em>Compensation Condition</em>}</li>
+ *   <li>{@link scenarioDiagram.PricingPlanElement#getSLOExpression <em>SLO Expression</em>}</li>
+ *   <li>{@link scenarioDiagram.PricingPlanElement#getQualifyingCondition <em>Qualifying Condition</em>}</li>
+ *   <li>{@link scenarioDiagram.PricingPlanElement#getCompensationInterval <em>Compensation Interval</em>}</li>
+ *   <li>{@link scenarioDiagram.PricingPlanElement#getCompensationType <em>Compensation Type</em>}</li>
+ *   <li>{@link scenarioDiagram.PricingPlanElement#getCompensationExpression <em>Compensation Expression</em>}</li>
+ *   <li>{@link scenarioDiagram.PricingPlanElement#getCompensationCondition <em>Compensation Condition</em>}</li>
  * </ul>
  * </p>
  *
- * @see scenarioDiagram.ScenarioDiagramPackage#getGuaranteeTerm()
- * @model annotation="gmf.node label.placement='none' label.icon='false' figure='svg' svg.uri='platform:/plugin/demobuilder.scenario/icons/GuaranteeTerm.svg' tool.name='Guarantee Term' tool.description='Creates a new guarantee term' tool.small.bundle='demobuilder.scenario.edit' tool.small.path='/icons/full/obj16/GuaranteeTerm.gif' tool.large.bundle='demobuilder.scenario.edit' tool.large.path='/icons/full/obj32/GuaranteeTerm.gif'"
+ * @see scenarioDiagram.ScenarioDiagramPackage#getPricingPlanElement()
+ * @model annotation="gmf.node label='SLOExpression' label.icon='false' border.color='0,0,0' figure='rectangle' border.width='1' border.style='dot' tool.name='Pricing Plan Element' tool.description='Creates a new pricing plan' tool.small.bundle='demobuilder.scenario.edit' tool.small.path='/icons/full/obj16/PricingPlanElement.gif' tool.large.bundle='demobuilder.scenario.edit' tool.large.path='/icons/full/obj32/PricingPlanElement.gif'"
  * @generated
  */
-public interface GuaranteeTerm extends ScenarioElement {
+public interface PricingPlanElement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Expression</b></em>' attribute.
+	 * Returns the value of the '<em><b>SLO Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Expression</em>' attribute isn't clear,
+	 * If the meaning of the '<em>SLO Expression</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Expression</em>' attribute.
-	 * @see #setExpression(String)
-	 * @see scenarioDiagram.ScenarioDiagramPackage#getGuaranteeTerm_Expression()
+	 * @return the value of the '<em>SLO Expression</em>' attribute.
+	 * @see #setSLOExpression(String)
+	 * @see scenarioDiagram.ScenarioDiagramPackage#getPricingPlanElement_SLOExpression()
 	 * @model
 	 * @generated
 	 */
-	String getExpression();
+	String getSLOExpression();
 
 	/**
-	 * Sets the value of the '{@link scenarioDiagram.GuaranteeTerm#getExpression <em>Expression</em>}' attribute.
+	 * Sets the value of the '{@link scenarioDiagram.PricingPlanElement#getSLOExpression <em>SLO Expression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Expression</em>' attribute.
-	 * @see #getExpression()
+	 * @param value the new value of the '<em>SLO Expression</em>' attribute.
+	 * @see #getSLOExpression()
 	 * @generated
 	 */
-	void setExpression(String value);
+	void setSLOExpression(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Condition</b></em>' attribute.
+	 * Returns the value of the '<em><b>Qualifying Condition</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Condition</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Qualifying Condition</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Condition</em>' attribute.
-	 * @see #setCondition(String)
-	 * @see scenarioDiagram.ScenarioDiagramPackage#getGuaranteeTerm_Condition()
+	 * @return the value of the '<em>Qualifying Condition</em>' attribute.
+	 * @see #setQualifyingCondition(String)
+	 * @see scenarioDiagram.ScenarioDiagramPackage#getPricingPlanElement_QualifyingCondition()
 	 * @model
 	 * @generated
 	 */
-	String getCondition();
+	String getQualifyingCondition();
 
 	/**
-	 * Sets the value of the '{@link scenarioDiagram.GuaranteeTerm#getCondition <em>Condition</em>}' attribute.
+	 * Sets the value of the '{@link scenarioDiagram.PricingPlanElement#getQualifyingCondition <em>Qualifying Condition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Condition</em>' attribute.
-	 * @see #getCondition()
+	 * @param value the new value of the '<em>Qualifying Condition</em>' attribute.
+	 * @see #getQualifyingCondition()
 	 * @generated
 	 */
-	void setCondition(String value);
+	void setQualifyingCondition(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Compensation Interval</b></em>' attribute.
@@ -90,14 +91,14 @@ public interface GuaranteeTerm extends ScenarioElement {
 	 * @return the value of the '<em>Compensation Interval</em>' attribute.
 	 * @see scenarioDiagram.AssessmentInterval
 	 * @see #setCompensationInterval(AssessmentInterval)
-	 * @see scenarioDiagram.ScenarioDiagramPackage#getGuaranteeTerm_CompensationInterval()
+	 * @see scenarioDiagram.ScenarioDiagramPackage#getPricingPlanElement_CompensationInterval()
 	 * @model default="MONTHLY"
 	 * @generated
 	 */
 	AssessmentInterval getCompensationInterval();
 
 	/**
-	 * Sets the value of the '{@link scenarioDiagram.GuaranteeTerm#getCompensationInterval <em>Compensation Interval</em>}' attribute.
+	 * Sets the value of the '{@link scenarioDiagram.PricingPlanElement#getCompensationInterval <em>Compensation Interval</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Compensation Interval</em>' attribute.
@@ -120,14 +121,14 @@ public interface GuaranteeTerm extends ScenarioElement {
 	 * @return the value of the '<em>Compensation Type</em>' attribute.
 	 * @see scenarioDiagram.CompensationType
 	 * @see #setCompensationType(CompensationType)
-	 * @see scenarioDiagram.ScenarioDiagramPackage#getGuaranteeTerm_CompensationType()
+	 * @see scenarioDiagram.ScenarioDiagramPackage#getPricingPlanElement_CompensationType()
 	 * @model default="REWARD"
 	 * @generated
 	 */
 	CompensationType getCompensationType();
 
 	/**
-	 * Sets the value of the '{@link scenarioDiagram.GuaranteeTerm#getCompensationType <em>Compensation Type</em>}' attribute.
+	 * Sets the value of the '{@link scenarioDiagram.PricingPlanElement#getCompensationType <em>Compensation Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Compensation Type</em>' attribute.
@@ -147,14 +148,14 @@ public interface GuaranteeTerm extends ScenarioElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Compensation Expression</em>' attribute.
 	 * @see #setCompensationExpression(String)
-	 * @see scenarioDiagram.ScenarioDiagramPackage#getGuaranteeTerm_CompensationExpression()
+	 * @see scenarioDiagram.ScenarioDiagramPackage#getPricingPlanElement_CompensationExpression()
 	 * @model
 	 * @generated
 	 */
 	String getCompensationExpression();
 
 	/**
-	 * Sets the value of the '{@link scenarioDiagram.GuaranteeTerm#getCompensationExpression <em>Compensation Expression</em>}' attribute.
+	 * Sets the value of the '{@link scenarioDiagram.PricingPlanElement#getCompensationExpression <em>Compensation Expression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Compensation Expression</em>' attribute.
@@ -173,14 +174,14 @@ public interface GuaranteeTerm extends ScenarioElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Compensation Condition</em>' attribute.
 	 * @see #setCompensationCondition(String)
-	 * @see scenarioDiagram.ScenarioDiagramPackage#getGuaranteeTerm_CompensationCondition()
+	 * @see scenarioDiagram.ScenarioDiagramPackage#getPricingPlanElement_CompensationCondition()
 	 * @model
 	 * @generated
 	 */
 	String getCompensationCondition();
 
 	/**
-	 * Sets the value of the '{@link scenarioDiagram.GuaranteeTerm#getCompensationCondition <em>Compensation Condition</em>}' attribute.
+	 * Sets the value of the '{@link scenarioDiagram.PricingPlanElement#getCompensationCondition <em>Compensation Condition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Compensation Condition</em>' attribute.
@@ -189,4 +190,4 @@ public interface GuaranteeTerm extends ScenarioElement {
 	 */
 	void setCompensationCondition(String value);
 
-} // GuaranteeTerm
+} // PricingPlanElement

@@ -2,6 +2,7 @@
  */
 package scenarioDiagram;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,68 +12,58 @@ package scenarioDiagram;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link scenarioDiagram.ServiceOffer#getServiceConfiguration <em>Service Configuration</em>}</li>
- *   <li>{@link scenarioDiagram.ServiceOffer#getAgreementLink <em>Agreement Link</em>}</li>
+ *   <li>{@link scenarioDiagram.ServiceOffer#getEndpoint <em>Endpoint</em>}</li>
+ *   <li>{@link scenarioDiagram.ServiceOffer#getGuaranteeTerms <em>Guarantee Terms</em>}</li>
  * </ul>
  * </p>
  *
  * @see scenarioDiagram.ScenarioDiagramPackage#getServiceOffer()
- * @model annotation="gmf.node figure='svg' svg.uri='platform:/plugin/demobuilder.scenario/icons/serviceOffer.svg' label='name' label.placement='external' label.icon='false' tool.name='Service Offer' tool.description='Creates a service offer' size='50,50' tool.small.bundle='demobuilder.scenario.edit' tool.small.path='/icons/full/obj16/ServiceOffer.gif' tool.large.bundle='demobuilder.scenario.edit' tool.large.path='/icons/full/obj32/ServiceOffer.gif'"
+ * @model annotation="gmf.node figure='rectangle' border.color='0,0,0' border.width='2' border.style='solid' size='50,50' label='name' label.icon='false' tool.name='Service Offer' tool.description='Creates a service offer' tool.small.bundle='demobuilder.scenario.edit' tool.small.path='/icons/full/obj16/ServiceOffer.gif' tool.large.bundle='demobuilder.scenario.edit' tool.large.path='/icons/full/obj32/ServiceOffer.gif'"
  * @generated
  */
 public interface ServiceOffer extends ServiceElement, ScenarioElement {
 	/**
-	 * Returns the value of the '<em><b>Service Configuration</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Endpoint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Service Configuration</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Endpoint</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Service Configuration</em>' containment reference.
-	 * @see #setServiceConfiguration(ServiceConfiguration)
-	 * @see scenarioDiagram.ScenarioDiagramPackage#getServiceOffer_ServiceConfiguration()
-	 * @model containment="true"
+	 * @return the value of the '<em>Endpoint</em>' attribute.
+	 * @see #setEndpoint(String)
+	 * @see scenarioDiagram.ScenarioDiagramPackage#getServiceOffer_Endpoint()
+	 * @model
 	 * @generated
 	 */
-	ServiceConfiguration getServiceConfiguration();
+	String getEndpoint();
 
 	/**
-	 * Sets the value of the '{@link scenarioDiagram.ServiceOffer#getServiceConfiguration <em>Service Configuration</em>}' containment reference.
+	 * Sets the value of the '{@link scenarioDiagram.ServiceOffer#getEndpoint <em>Endpoint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Service Configuration</em>' containment reference.
-	 * @see #getServiceConfiguration()
+	 * @param value the new value of the '<em>Endpoint</em>' attribute.
+	 * @see #getEndpoint()
 	 * @generated
 	 */
-	void setServiceConfiguration(ServiceConfiguration value);
+	void setEndpoint(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Link</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link scenarioDiagram.AgreementLink#getTarget <em>Target</em>}'.
+	 * Returns the value of the '<em><b>Guarantee Terms</b></em>' containment reference list.
+	 * The list contents are of type {@link scenarioDiagram.PricingPlan}.
+	 * It is bidirectional and its opposite is '{@link scenarioDiagram.PricingPlan#getServiceOffer <em>Service Offer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Agreement Link</em>' reference isn't clear,
+	 * If the meaning of the '<em>Guarantee Terms</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Link</em>' reference.
-	 * @see #setAgreementLink(AgreementLink)
-	 * @see scenarioDiagram.ScenarioDiagramPackage#getServiceOffer_AgreementLink()
-	 * @see scenarioDiagram.AgreementLink#getTarget
-	 * @model opposite="target"
+	 * @return the value of the '<em>Guarantee Terms</em>' containment reference list.
+	 * @see scenarioDiagram.ScenarioDiagramPackage#getServiceOffer_GuaranteeTerms()
+	 * @see scenarioDiagram.PricingPlan#getServiceOffer
+	 * @model opposite="serviceOffer" containment="true"
 	 * @generated
 	 */
-	AgreementLink getAgreementLink();
-
-	/**
-	 * Sets the value of the '{@link scenarioDiagram.ServiceOffer#getAgreementLink <em>Agreement Link</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Agreement Link</em>' reference.
-	 * @see #getAgreementLink()
-	 * @generated
-	 */
-	void setAgreementLink(AgreementLink value);
+	EList<PricingPlan> getGuaranteeTerms();
 
 } // ServiceOffer
