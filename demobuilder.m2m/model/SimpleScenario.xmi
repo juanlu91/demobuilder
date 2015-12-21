@@ -4,9 +4,6 @@
     <guaranteeTerms name="ProPlan">
       <pricingPlanElements SLOExpression="Requests&lt;=1000" qualifyingCondition="ONLYIF AVGRESPONSE&lt;=500" compensationExpression="CREDITS = 10" compensationCondition="AVGRESPONSE>5000"/>
     </guaranteeTerms>
-    <guaranteeTerms name="MediumPlan">
-      <pricingPlanElements SLOExpression="Requests&lt;=10000" qualifyingCondition="ONLYIF AVGRESPONSE&lt;=5000" compensationInterval="HOURLY" compensationType="PENALTY" compensationExpression="CREDITS = 50" compensationCondition="AVGRESPONSE>1000"/>
-    </guaranteeTerms>
   </scenarioElements>
   <scenarioElements xsi:type="es.us.lsi.sma.demobuilder.scenario:Provider" name="Amazon" serviceLinks="//@serviceLinks.0"/>
   <serviceLinks actor="//@scenarioElements.1" serviceElement="//@scenarioElements.0"/>

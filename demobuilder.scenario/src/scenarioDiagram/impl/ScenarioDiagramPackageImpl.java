@@ -395,7 +395,7 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getServiceOffer_Endpoint() {
+	public EAttribute getServiceOffer_ServiceEndpoint() {
 		return (EAttribute)serviceOfferEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -607,7 +607,7 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 		createEReference(serviceNeedEClass, SERVICE_NEED__AGREEMENT_LINK);
 
 		serviceOfferEClass = createEClass(SERVICE_OFFER);
-		createEAttribute(serviceOfferEClass, SERVICE_OFFER__ENDPOINT);
+		createEAttribute(serviceOfferEClass, SERVICE_OFFER__SERVICE_ENDPOINT);
 		createEReference(serviceOfferEClass, SERVICE_OFFER__GUARANTEE_TERMS);
 
 		agreementLinkEClass = createEClass(AGREEMENT_LINK);
@@ -698,7 +698,7 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 		initEReference(getServiceNeed_AgreementLink(), this.getAgreementLink(), this.getAgreementLink_Source(), "agreementLink", null, 0, 1, ServiceNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceOfferEClass, ServiceOffer.class, "ServiceOffer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceOffer_Endpoint(), ecorePackage.getEString(), "endpoint", null, 0, 1, ServiceOffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceOffer_ServiceEndpoint(), ecorePackage.getEString(), "serviceEndpoint", null, 0, 1, ServiceOffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getServiceOffer_GuaranteeTerms(), this.getPricingPlan(), this.getPricingPlan_ServiceOffer(), "guaranteeTerms", null, 0, -1, ServiceOffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(agreementLinkEClass, AgreementLink.class, "AgreementLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

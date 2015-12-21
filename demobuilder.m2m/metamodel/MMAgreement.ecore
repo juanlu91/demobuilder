@@ -19,7 +19,7 @@
       <details key="tool.name" value="Context"/>
       <details key="tool.description" value="Creates a new context section"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actors" lowerBound="2"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actors" lowerBound="1"
         upperBound="2" eType="#//Actor" containment="true">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>

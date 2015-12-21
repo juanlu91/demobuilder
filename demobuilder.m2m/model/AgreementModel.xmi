@@ -7,7 +7,6 @@
     xsi:schemaLocation="http://agreement.metamodel/1.0 /demobuilder.m2m/metamodel/MMAgreement.ecore">
   <context>
     <actors/>
-    <actors/>
     <metrics>
       <domain
           xsi:type="mmag:Range"/>

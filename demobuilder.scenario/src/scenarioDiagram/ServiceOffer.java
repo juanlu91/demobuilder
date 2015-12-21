@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link scenarioDiagram.ServiceOffer#getEndpoint <em>Endpoint</em>}</li>
+ *   <li>{@link scenarioDiagram.ServiceOffer#getServiceEndpoint <em>Service Endpoint</em>}</li>
  *   <li>{@link scenarioDiagram.ServiceOffer#getGuaranteeTerms <em>Guarantee Terms</em>}</li>
  * </ul>
  * </p>
@@ -23,30 +23,30 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ServiceOffer extends ServiceElement, ScenarioElement {
 	/**
-	 * Returns the value of the '<em><b>Endpoint</b></em>' attribute.
+	 * Returns the value of the '<em><b>Service Endpoint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Endpoint</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Service Endpoint</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Endpoint</em>' attribute.
-	 * @see #setEndpoint(String)
-	 * @see scenarioDiagram.ScenarioDiagramPackage#getServiceOffer_Endpoint()
+	 * @return the value of the '<em>Service Endpoint</em>' attribute.
+	 * @see #setServiceEndpoint(String)
+	 * @see scenarioDiagram.ScenarioDiagramPackage#getServiceOffer_ServiceEndpoint()
 	 * @model
 	 * @generated
 	 */
-	String getEndpoint();
+	String getServiceEndpoint();
 
 	/**
-	 * Sets the value of the '{@link scenarioDiagram.ServiceOffer#getEndpoint <em>Endpoint</em>}' attribute.
+	 * Sets the value of the '{@link scenarioDiagram.ServiceOffer#getServiceEndpoint <em>Service Endpoint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Endpoint</em>' attribute.
-	 * @see #getEndpoint()
+	 * @param value the new value of the '<em>Service Endpoint</em>' attribute.
+	 * @see #getServiceEndpoint()
 	 * @generated
 	 */
-	void setEndpoint(String value);
+	void setServiceEndpoint(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Guarantee Terms</b></em>' containment reference list.

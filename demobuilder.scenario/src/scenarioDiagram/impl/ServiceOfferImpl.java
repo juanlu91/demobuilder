@@ -30,7 +30,7 @@ import scenarioDiagram.ServiceOffer;
  * The following features are implemented:
  * <ul>
  *   <li>{@link scenarioDiagram.impl.ServiceOfferImpl#getName <em>Name</em>}</li>
- *   <li>{@link scenarioDiagram.impl.ServiceOfferImpl#getEndpoint <em>Endpoint</em>}</li>
+ *   <li>{@link scenarioDiagram.impl.ServiceOfferImpl#getServiceEndpoint <em>Service Endpoint</em>}</li>
  *   <li>{@link scenarioDiagram.impl.ServiceOfferImpl#getGuaranteeTerms <em>Guarantee Terms</em>}</li>
  * </ul>
  * </p>
@@ -59,24 +59,24 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getEndpoint() <em>Endpoint</em>}' attribute.
+	 * The default value of the '{@link #getServiceEndpoint() <em>Service Endpoint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEndpoint()
+	 * @see #getServiceEndpoint()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ENDPOINT_EDEFAULT = null;
+	protected static final String SERVICE_ENDPOINT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getEndpoint() <em>Endpoint</em>}' attribute.
+	 * The cached value of the '{@link #getServiceEndpoint() <em>Service Endpoint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEndpoint()
+	 * @see #getServiceEndpoint()
 	 * @generated
 	 * @ordered
 	 */
-	protected String endpoint = ENDPOINT_EDEFAULT;
+	protected String serviceEndpoint = SERVICE_ENDPOINT_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getGuaranteeTerms() <em>Guarantee Terms</em>}' containment reference list.
@@ -133,8 +133,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getEndpoint() {
-		return endpoint;
+	public String getServiceEndpoint() {
+		return serviceEndpoint;
 	}
 
 	/**
@@ -142,11 +142,11 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEndpoint(String newEndpoint) {
-		String oldEndpoint = endpoint;
-		endpoint = newEndpoint;
+	public void setServiceEndpoint(String newServiceEndpoint) {
+		String oldServiceEndpoint = serviceEndpoint;
+		serviceEndpoint = newServiceEndpoint;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.SERVICE_OFFER__ENDPOINT, oldEndpoint, endpoint));
+			eNotify(new ENotificationImpl(this, Notification.SET, ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_ENDPOINT, oldServiceEndpoint, serviceEndpoint));
 	}
 
 	/**
@@ -200,8 +200,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 		switch (featureID) {
 			case ScenarioDiagramPackage.SERVICE_OFFER__NAME:
 				return getName();
-			case ScenarioDiagramPackage.SERVICE_OFFER__ENDPOINT:
-				return getEndpoint();
+			case ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_ENDPOINT:
+				return getServiceEndpoint();
 			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
 				return getGuaranteeTerms();
 		}
@@ -220,8 +220,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 			case ScenarioDiagramPackage.SERVICE_OFFER__NAME:
 				setName((String)newValue);
 				return;
-			case ScenarioDiagramPackage.SERVICE_OFFER__ENDPOINT:
-				setEndpoint((String)newValue);
+			case ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_ENDPOINT:
+				setServiceEndpoint((String)newValue);
 				return;
 			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
 				getGuaranteeTerms().clear();
@@ -242,8 +242,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 			case ScenarioDiagramPackage.SERVICE_OFFER__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ScenarioDiagramPackage.SERVICE_OFFER__ENDPOINT:
-				setEndpoint(ENDPOINT_EDEFAULT);
+			case ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_ENDPOINT:
+				setServiceEndpoint(SERVICE_ENDPOINT_EDEFAULT);
 				return;
 			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
 				getGuaranteeTerms().clear();
@@ -262,8 +262,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 		switch (featureID) {
 			case ScenarioDiagramPackage.SERVICE_OFFER__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ScenarioDiagramPackage.SERVICE_OFFER__ENDPOINT:
-				return ENDPOINT_EDEFAULT == null ? endpoint != null : !ENDPOINT_EDEFAULT.equals(endpoint);
+			case ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_ENDPOINT:
+				return SERVICE_ENDPOINT_EDEFAULT == null ? serviceEndpoint != null : !SERVICE_ENDPOINT_EDEFAULT.equals(serviceEndpoint);
 			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
 				return guaranteeTerms != null && !guaranteeTerms.isEmpty();
 		}
@@ -314,8 +314,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", endpoint: ");
-		result.append(endpoint);
+		result.append(", serviceEndpoint: ");
+		result.append(serviceEndpoint);
 		result.append(')');
 		return result.toString();
 	}

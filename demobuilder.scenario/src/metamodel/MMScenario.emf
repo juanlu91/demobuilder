@@ -63,7 +63,7 @@ class ServiceNeed extends ServiceElement, ScenarioElement {
 
 @gmf.node(figure="rectangle", border.color="0,0,0", border.width="2", border.style="solid", size="50,50", label="name", label.icon="false", tool.name="Service Offer", tool.description="Creates a service offer", tool.small.bundle="demobuilder.scenario.edit", tool.small.path="/icons/full/obj16/ServiceOffer.gif", tool.large.bundle="demobuilder.scenario.edit", tool.large.path="/icons/full/obj32/ServiceOffer.gif")
 class ServiceOffer extends ServiceElement, ScenarioElement {
-  attr String endpoint;
+  attr String serviceEndpoint;
 
   @gmf.compartment
   val PricingPlan[*]#serviceOffer guaranteeTerms;

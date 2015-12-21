@@ -256,7 +256,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_i53zSaW7EeWvLbxIyzoasg"/>
     </children>
     <element xmi:type="ecore:EClass" href="MMScenario.ecore#//PricingPlanElement"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i53MMaW7EeWvLbxIyzoasg" x="830" y="750"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i53MMaW7EeWvLbxIyzoasg" x="705" y="765"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_pZ5AwZkwEeWigsoefI2FRg"/>
   <element xmi:type="ecore:EPackage" href="MMScenario.ecore#/"/>
@@ -406,7 +406,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_i58EtKW7EeWvLbxIyzoasg" y="40"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_i58EtaW7EeWvLbxIyzoasg" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_i58EtqW7EeWvLbxIyzoasg" y="60"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_i58EtqW7EeWvLbxIyzoasg" x="17" y="28"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_i58EsaW7EeWvLbxIyzoasg" fontName="Segoe UI"/>
     <element xmi:type="ecore:EReference" href="MMScenario.ecore#//PricingPlan/pricingPlanElements"/>

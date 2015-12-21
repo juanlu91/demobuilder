@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/demobuilder.scenario/src" modelPluginID="demobuilder.scenario"
     modelName="ScenarioDiagram" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
     copyrightFields="false">
-  <foreignModel>MMScenario.ecore</foreignModel>
+  <foreignModel>MMScenario.emf</foreignModel>
   <genPackages prefix="ScenarioDiagram" disposableProviderFactory="true" ecorePackage="MMScenario.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="MMScenario.ecore#//Role">
       <genEnumLiterals ecoreEnumLiteral="MMScenario.ecore#//Role/PROVIDER"/>
@@ -45,7 +45,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MMScenario.ecore#//ServiceNeed/agreementLink"/>
     </genClasses>
     <genClasses ecoreClass="MMScenario.ecore#//ServiceOffer">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//ServiceOffer/endpoint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMScenario.ecore#//ServiceOffer/serviceEndpoint"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMScenario.ecore#//ServiceOffer/guaranteeTerms"/>
     </genClasses>
     <genClasses ecoreClass="MMScenario.ecore#//AgreementLink">

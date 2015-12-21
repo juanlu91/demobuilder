@@ -473,13 +473,13 @@ public interface ScenarioDiagramPackage extends EPackage {
 	int SERVICE_OFFER__NAME = SERVICE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Endpoint</b></em>' attribute.
+	 * The feature id for the '<em><b>Service Endpoint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_OFFER__ENDPOINT = SERVICE_ELEMENT_FEATURE_COUNT + 1;
+	int SERVICE_OFFER__SERVICE_ENDPOINT = SERVICE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Guarantee Terms</b></em>' containment reference list.
@@ -838,15 +838,15 @@ public interface ScenarioDiagramPackage extends EPackage {
 	EClass getServiceOffer();
 
 	/**
-	 * Returns the meta object for the attribute '{@link scenarioDiagram.ServiceOffer#getEndpoint <em>Endpoint</em>}'.
+	 * Returns the meta object for the attribute '{@link scenarioDiagram.ServiceOffer#getServiceEndpoint <em>Service Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Endpoint</em>'.
-	 * @see scenarioDiagram.ServiceOffer#getEndpoint()
+	 * @return the meta object for the attribute '<em>Service Endpoint</em>'.
+	 * @see scenarioDiagram.ServiceOffer#getServiceEndpoint()
 	 * @see #getServiceOffer()
 	 * @generated
 	 */
-	EAttribute getServiceOffer_Endpoint();
+	EAttribute getServiceOffer_ServiceEndpoint();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link scenarioDiagram.ServiceOffer#getGuaranteeTerms <em>Guarantee Terms</em>}'.
@@ -1232,12 +1232,12 @@ public interface ScenarioDiagramPackage extends EPackage {
 		EClass SERVICE_OFFER = eINSTANCE.getServiceOffer();
 
 		/**
-		 * The meta object literal for the '<em><b>Endpoint</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Service Endpoint</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SERVICE_OFFER__ENDPOINT = eINSTANCE.getServiceOffer_Endpoint();
+		EAttribute SERVICE_OFFER__SERVICE_ENDPOINT = eINSTANCE.getServiceOffer_ServiceEndpoint();
 
 		/**
 		 * The meta object literal for the '<em><b>Guarantee Terms</b></em>' containment reference list feature.

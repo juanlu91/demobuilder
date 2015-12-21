@@ -20,6 +20,9 @@ helper def: providerActor_var: AGREEMENT!Actor =
 helper def: consumerActor_var: AGREEMENT!Actor =
 	OclUndefined;
 
+helper def: SLO_var: AGREEMENT!SLO =
+	OclUndefined;
+
 rule PricingPlanElement2GuaranteeTerm {
 	from
 		IN: SCENARIO!PricingPlanElement
@@ -43,6 +46,7 @@ rule PricingPlanElement2GuaranteeTerm {
 		)
 	do {
 		thisModule.guaranteeTerm_var<-guaranteeTerm;
+		thisModule.SLO_var <- guaranteeTerm.slo;
 	}
 }
 
@@ -65,7 +69,7 @@ rule ServiceOffer2ServiceConfiguration {
 			features <- OclUndefined,
 			--agConfigurationProperty.features -> including(agFeature),
 			id <- OclUndefined,
-			metric <- agMetric,
+			--metric <- agMetric,
 			scope <- OclUndefined
 		),
 		agFeature: AGREEMENT!Feature (
@@ -75,17 +79,12 @@ rule ServiceOffer2ServiceConfiguration {
 		agParameter: AGREEMENT!Parameter (
 			name <- OclUndefined
 		),
-		agMetric: AGREEMENT!Metric (
-			domain <- OclUndefined,
-			id <- OclUndefined,
-			type <- OclUndefined
-		),
 		monitorableProperties: AGREEMENT!MonitorableProperty (
 			definitionReference <- OclUndefined,
 			expression <- OclUndefined,
 			features <- agFeature,
 			id <- OclUndefined,
-			metric <- agMetric,
+			--metric <- agMetric,
 			monitorReference <- OclUndefined,
 			scope <- OclUndefined
 		),
@@ -93,7 +92,12 @@ rule ServiceOffer2ServiceConfiguration {
 			id <- IN.serviceLink.actor.name,
 			role <- #PROVIDER,
 			roleType <- #RESPONDER
-		)
+		) --agMetric: AGREEMENT!Metric (
+		--	domain <- OclUndefined,
+		--	id <- 'hola',
+		--	type <- OclUndefined
+		--)
+	
 	do {
 		thisModule.serviceConfigurarion_var<-serviceConfiguration;
 		thisModule.monitorableProperties_var<-monitorableProperties;
@@ -108,27 +112,32 @@ rule PricingPlan2AgreementModel {
 		agModel: AGREEMENT!AgreementModel (
 			id <- IN.name,
 			version <- 1,
-			context <- agContext,
+			"context" <- agContext,
 			agTerm <- agTerm
 		),
 		agTerm: AGREEMENT!AgreementTerm (
 			guaranteeTerms <- thisModule.guaranteeTerm_var,
-			monitorableProperties <- thisModule.monitorableProperties_var,
+			monitorableProperties <- if thisModule.SLO_var.oclIsUndefined() then OclUndefined else thisModule.monitorableProperties_var endif,
 			serviceConfigurarion <- thisModule.serviceConfigurarion_var
 		),
 		agContext: AGREEMENT!Context (
-			actors <- agContext.actors -> including(agMetric),
+			actors <- thisModule.providerActor_var,
+			--agContext.actors -> including(agActor),
 			metrics <- agContext.metrics -> including(agMetric)
 		),
-		agActor: AGREEMENT!Actor (
-			id <- OclUndefined,
-			role <- OclUndefined,
-			roleType <- OclUndefined
-		),
+		--agActor: AGREEMENT!Actor (
+		--	id <- OclUndefined,
+		--	role <- OclUndefined,
+		--	roleType <- OclUndefined
+		--),
 		agMetric: AGREEMENT!Metric (
-			domain <- OclUndefined,
-			id <- OclUndefined,
-			type <- OclUndefined
+			domain <- agMetricDomain,
+			id <- 'int',
+			type <- #INTEGER
+		),
+		agMetricDomain: AGREEMENT!Range(
+			min <- -9999999,
+			max <- 9999999
 		)
 	do {
 	}
