@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="scenarioDiagram" nsURI="es.us.lsi.sma.demobuilder.scenario"
+    nsPrefix="es.us.lsi.sma.demobuilder.scenario">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Scenario">
+    <eAnnotations source="gmf"/>
+    <eAnnotations source="gmf.diagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenarioElements" upperBound="-1"
+        eType="#//ScenarioElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agreementLinks" upperBound="-1"
+        eType="#//AgreementLink" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceLinks" upperBound="-1"
+        eType="#//ServiceLink" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Consumer" eSuperTypes="#//Actor">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="svg.uri" value="platform:/plugin/demobuilder.scenario/icons/Consumer.svg"/>
+      <details key="label" value="name"/>
+      <details key="tool.name" value="Consumer"/>
+      <details key="tool.description" value="Creates a consumer"/>
+      <details key="label.placement" value="external"/>
+      <details key="label.icon" value="false"/>
+      <details key="size" value="100,100"/>
+      <details key="tool.small.bundle" value="demobuilder.scenario.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/Consumer.gif"/>
+      <details key="tool.large.bundle" value="demobuilder.scenario.edit"/>
+      <details key="tool.large.path" value="/icons/full/obj32/Consumer.gif"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Role">
+    <eLiterals name="PROVIDER"/>
+    <eLiterals name="CONSUMER" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AssessmentInterval">
+    <eLiterals name="YEARLY"/>
+    <eLiterals name="MONTHLY" value="1"/>
+    <eLiterals name="WEEKLY" value="2"/>
+    <eLiterals name="DAILY" value="3"/>
+    <eLiterals name="HOURLY" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CompensationType">
+    <eLiterals name="PENALTY"/>
+    <eLiterals name="REWARD" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PricingPlan">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="border.color" value="0,0,0"/>
+      <details key="border.width" value="1"/>
+      <details key="border.style" value="solid"/>
+      <details key="label.icon" value="false"/>
+      <details key="figure" value="rectangle"/>
+      <details key="tool.name" value="Pricing Plan"/>
+      <details key="tool.description" value="Creates a new pricing plan"/>
+      <details key="tool.small.bundle" value="demobuilder.scenario.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/PricingPlan.gif"/>
+      <details key="tool.large.bundle" value="demobuilder.scenario.edit"/>
+      <details key="tool.large.path" value="/icons/full/obj32/PricingPlan.gif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pricingPlanElements" upperBound="-1"
+        eType="#//PricingPlanElement" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agreementLink" eType="#//AgreementLink"
+        eOpposite="#//AgreementLink/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceOffer" eType="#//ServiceOffer"
+        eOpposite="#//ServiceOffer/guaranteeTerms"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PricingPlanElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="SLOExpression"/>
+      <details key="label.icon" value="false"/>
+      <details key="border.color" value="0,0,0"/>
+      <details key="figure" value="rectangle"/>
+      <details key="border.width" value="1"/>
+      <details key="border.style" value="dot"/>
+      <details key="tool.name" value="Pricing Plan Element"/>
+      <details key="tool.description" value="Creates a new pricing plan"/>
+      <details key="tool.small.bundle" value="demobuilder.scenario.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/PricingPlanElement.gif"/>
+      <details key="tool.large.bundle" value="demobuilder.scenario.edit"/>
+      <details key="tool.large.path" value="/icons/full/obj32/PricingPlanElement.gif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SLOExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifyingCondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compensationInterval" eType="#//AssessmentInterval"
+        defaultValueLiteral="MONTHLY"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compensationType" eType="#//CompensationType"
+        defaultValueLiteral="REWARD"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compensationExpression"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compensationCondition"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Provider" eSuperTypes="#//Actor">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="svg.uri" value="platform:/plugin/demobuilder.scenario/icons/Provider.svg"/>
+      <details key="label" value="name"/>
+      <details key="tool.name" value="Provider"/>
+      <details key="tool.description" value="Creates a provider"/>
+      <details key="label.placement" value="external"/>
+      <details key="label.icon" value="false"/>
+      <details key="size" value="100,100"/>
+      <details key="tool.small.bundle" value="demobuilder.scenario.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/Provider.gif"/>
+      <details key="tool.large.bundle" value="demobuilder.scenario.edit"/>
+      <details key="tool.large.path" value="/icons/full/obj32/Provider.gif"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceNeed" eSuperTypes="#//ServiceElement #//ScenarioElement">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="svg.uri" value="platform:/plugin/demobuilder.scenario/icons/serviceNeed.svg"/>
+      <details key="label" value="name"/>
+      <details key="label.placement" value="external"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.name" value="Service Need"/>
+      <details key="tool.description" value="Creates a service need"/>
+      <details key="size" value="50,50"/>
+      <details key="tool.small.bundle" value="demobuilder.scenario.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/ServiceNeed.gif"/>
+      <details key="tool.large.bundle" value="demobuilder.scenario.edit"/>
+      <details key="tool.large.path" value="/icons/full/obj32/ServiceNeed.gif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agreementLink" eType="#//AgreementLink"
+        eOpposite="#//AgreementLink/source"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceOffer" eSuperTypes="#//ServiceElement #//ScenarioElement">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="border.color" value="0,0,0"/>
+      <details key="border.width" value="2"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="50,50"/>
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="tool.name" value="Service Offer"/>
+      <details key="tool.description" value="Creates a service offer"/>
+      <details key="tool.small.bundle" value="demobuilder.scenario.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/ServiceOffer.gif"/>
+      <details key="tool.large.bundle" value="demobuilder.scenario.edit"/>
+      <details key="tool.large.path" value="/icons/full/obj32/ServiceOffer.gif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceEndpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guaranteeTerms" upperBound="-1"
+        eType="#//PricingPlan" containment="true" eOpposite="#//PricingPlan/serviceOffer">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AgreementLink">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="source"/>
+      <details key="target" value="target"/>
+      <details key="label" value="name"/>
+      <details key="width" value="1"/>
+      <details key="style" value="dash"/>
+      <details key="tool.name" value="Agreement Link"/>
+      <details key="tool.description" value="Creates an agreement link"/>
+      <details key="color" value="0,0,0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//ServiceNeed"
+        eOpposite="#//ServiceNeed/agreementLink"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//PricingPlan"
+        eOpposite="#//PricingPlan/agreementLink"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.target.serviceOffer.serviceLink.actor.name.concat('_').concat(self.target.name).concat('-').concat(self.source.serviceLink.actor.name)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceLink">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="actor"/>
+      <details key="target" value="serviceElement"/>
+      <details key="label.placement" value="none"/>
+      <details key="width" value="2"/>
+      <details key="style" value="solid"/>
+      <details key="tool.name" value="Service Link"/>
+      <details key="tool.description" value="Creates a service link"/>
+      <details key="color" value="0,0,0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actor" eType="#//Actor"
+        eOpposite="#//Actor/serviceLinks"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceElement" eType="#//ServiceElement"
+        eOpposite="#//ServiceElement/serviceLink"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScenarioElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceLink" eType="#//ServiceLink"
+        eOpposite="#//ServiceLink/serviceElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//ScenarioElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceLinks" upperBound="-1"
+        eType="#//ServiceLink" eOpposite="#//ServiceLink/actor"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,135 @@
+-- @nsURI SCENARIO=es.us.lsi.sma.demobuilder.scenario
+-- @nsURI AGREEMENT=http://agreement.metamodel/1.0
+
+
+module scenario2agreement;
+create OUT: AGREEMENT from IN: SCENARIO;
+
+helper def: guaranteeTerm_var: AGREEMENT!GuaranteeTerm =
+	OclUndefined;
+
+helper def: monitorableProperties_var: AGREEMENT!MonitorableProperty =
+	OclUndefined;
+
+helper def: serviceConfigurarion_var: AGREEMENT!ServiceConfiguration =
+	OclUndefined;
+
+helper def: providerActor_var: AGREEMENT!Actor =
+	OclUndefined;
+
+helper def: consumerActor_var: AGREEMENT!Actor =
+	OclUndefined;
+
+rule PricingPlanElement2GuaranteeTerm {
+	from
+		IN: SCENARIO!PricingPlanElement
+	to
+		guaranteeTerm: AGREEMENT!GuaranteeTerm (
+			id <- OclUndefined,
+			qualifyingCondition <- agQualifyingCondition,
+			role <- OclUndefined,
+			slo <- agSLO,
+			compensations <- guaranteeTerm.compensations -> including(compensationElement)
+		),
+		compensationElement: AGREEMENT!CompensationElement (
+			condition <- IN.compensationCondition,
+			expression <- IN.compensationExpression
+		),
+		agQualifyingCondition: AGREEMENT!QualifyingCondition (
+			expression <- IN.qualifyingCondition
+		),
+		agSLO: AGREEMENT!SLO (
+			expression <- IN.SLOExpression
+		)
+	do {
+		thisModule.guaranteeTerm_var<-guaranteeTerm;
+	}
+}
+
+rule ServiceOffer2ServiceConfiguration {
+	from
+		IN: SCENARIO!ServiceOffer
+	to
+		serviceConfiguration: AGREEMENT!ServiceConfiguration (
+			configurationProperties <- serviceConfiguration.configurationProperties ->
+					including(agConfigurationProperty),
+			definitionReference <- OclUndefined,
+			endpointReference <- IN.serviceEndpoint,
+			features <- serviceConfiguration.features -> including(agFeature),
+			monitorReference <- OclUndefined,
+			serviceName <- IN.name
+		),
+		agConfigurationProperty: AGREEMENT!ConfigurationProperty (
+			definitionReference <- OclUndefined,
+			expression <- OclUndefined,
+			features <- OclUndefined,
+			--agConfigurationProperty.features -> including(agFeature),
+			id <- OclUndefined,
+			metric <- agMetric,
+			scope <- OclUndefined
+		),
+		agFeature: AGREEMENT!Feature (
+			id <- OclUndefined,
+			parameters <- agFeature.parameters -> including(agParameter)
+		),
+		agParameter: AGREEMENT!Parameter (
+			name <- OclUndefined
+		),
+		agMetric: AGREEMENT!Metric (
+			domain <- OclUndefined,
+			id <- OclUndefined,
+			type <- OclUndefined
+		),
+		monitorableProperties: AGREEMENT!MonitorableProperty (
+			definitionReference <- OclUndefined,
+			expression <- OclUndefined,
+			features <- agFeature,
+			id <- OclUndefined,
+			metric <- agMetric,
+			monitorReference <- OclUndefined,
+			scope <- OclUndefined
+		),
+		agActor: AGREEMENT!Actor (
+			id <- IN.serviceLink.actor.name,
+			role <- #PROVIDER,
+			roleType <- #RESPONDER
+		)
+	do {
+		thisModule.serviceConfigurarion_var<-serviceConfiguration;
+		thisModule.monitorableProperties_var<-monitorableProperties;
+		thisModule.providerActor_var<-agActor;
+	}
+}
+
+rule PricingPlan2AgreementModel {
+	from
+		IN: SCENARIO!PricingPlan
+	to
+		agModel: AGREEMENT!AgreementModel (
+			id <- IN.name,
+			version <- 1,
+			context <- agContext,
+			agTerm <- agTerm
+		),
+		agTerm: AGREEMENT!AgreementTerm (
+			guaranteeTerms <- thisModule.guaranteeTerm_var,
+			monitorableProperties <- thisModule.monitorableProperties_var,
+			serviceConfigurarion <- thisModule.serviceConfigurarion_var
+		),
+		agContext: AGREEMENT!Context (
+			actors <- agContext.actors -> including(agMetric),
+			metrics <- agContext.metrics -> including(agMetric)
+		),
+		agActor: AGREEMENT!Actor (
+			id <- OclUndefined,
+			role <- OclUndefined,
+			roleType <- OclUndefined
+		),
+		agMetric: AGREEMENT!Metric (
+			domain <- OclUndefined,
+			id <- OclUndefined,
+			type <- OclUndefined
+		)
+	do {
+	}
+}

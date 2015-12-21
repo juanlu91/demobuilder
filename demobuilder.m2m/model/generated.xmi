@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmag="http://agreement.metamodel/1.0">
+  <mmag:Metric/>
+  <mmag:Actor id="Amazon"/>
+  <mmag:AgreementModel id="ProPlan" version="1.0">
+    <context>
+      <metrics/>
+    </context>
+    <agTerm>
+      <serviceConfigurarion endpointReference="s3.amazon.com" serviceName="S3">
+        <features>
+          <parameters/>
+        </features>
+        <configurationProperties metric="/0"/>
+      </serviceConfigurarion>
+      <monitorableProperties features="/2/@agTerm/@serviceConfigurarion/@features.0" metric="/0"/>
+      <guaranteeTerms>
+        <slo expression="Requests&lt;=1000"/>
+        <qualifyingCondition expression="ONLYIF AVGRESPONSE&lt;=500"/>
+        <compensations xsi:type="mmag:CompensationElement" expression="CREDITS = 10" condition="AVGRESPONSE>5000"/>
+      </guaranteeTerms>
+    </agTerm>
+  </mmag:AgreementModel>
+  <mmag:Actor/>
+</xmi:XMI>
