@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="AgreementMetamodel" nsURI="http://agreement.metamodel/1.0" nsPrefix="mmag">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="AgreementMetamodel" nsURI="http://demobuilder.agreement.metamodel"
+    nsPrefix="mmag">
   <eAnnotations source="gmf"/>
   <eClassifiers xsi:type="ecore:EClass" name="AgreementModel">
     <eAnnotations source="gmf.diagram"/>
@@ -46,7 +47,7 @@
     <eLiterals name="CONSUMER" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RoleType">
-    <eLiterals name="INITITATOR"/>
+    <eLiterals name="INITIATOR" literal="INITIATOR"/>
     <eLiterals name="RESPONDER" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Datatype">
@@ -69,8 +70,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Datatype"
         defaultValueLiteral="INTEGER"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" lowerBound="1"
-        eType="#//Domain" containment="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" eType="#//Domain"
+        containment="true">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -84,9 +85,9 @@
       <details key="tool.name" value="Range"/>
       <details key="tool.description" value="Creates a range domain"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         defaultValueLiteral="1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         defaultValueLiteral="100"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Enumerated" eSuperTypes="#//Domain">
