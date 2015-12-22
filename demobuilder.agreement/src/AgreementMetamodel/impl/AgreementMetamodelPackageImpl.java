@@ -1126,8 +1126,8 @@ public class AgreementMetamodelPackageImpl extends EPackageImpl implements Agree
 		initEClass(domainEClass, Domain.class, "Domain", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(rangeEClass, Range.class, "Range", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRange_Min(), ecorePackage.getEDouble(), "min", "1", 0, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRange_Max(), ecorePackage.getEDouble(), "max", "100", 0, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRange_Min(), ecorePackage.getEIntegerObject(), "min", "1", 0, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRange_Max(), ecorePackage.getEIntegerObject(), "max", "100", 0, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(enumeratedEClass, Enumerated.class, "Enumerated", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEnumerated_Values(), this.getValue(), null, "values", null, 0, -1, Enumerated.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1196,7 +1196,7 @@ public class AgreementMetamodelPackageImpl extends EPackageImpl implements Agree
 		addEEnumLiteral(roleEEnum, Role.CONSUMER);
 
 		initEEnum(roleTypeEEnum, RoleType.class, "RoleType");
-		addEEnumLiteral(roleTypeEEnum, RoleType.INITITATOR);
+		addEEnumLiteral(roleTypeEEnum, RoleType.INITIATOR);
 		addEEnumLiteral(roleTypeEEnum, RoleType.RESPONDER);
 
 		initEEnum(datatypeEEnum, Datatype.class, "Datatype");

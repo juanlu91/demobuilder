@@ -1,0 +1,51 @@
+«IMPORT AgreementMetamodel»
+«EXTENSION template::Utils»
+
+«REM»Plantilla raiz«ENDREM»
+«DEFINE main FOR AgreementModel-»
+	«FILE this.id + '.opl'-»
+using CP;
+
+«FOREACH this.context.metrics AS metric-»
+	«IF metric.domain != null-»
+		«IF metric.domain.metaType.isAssignableFrom(Range)-»
+range range_«metric.id» = «((Range)metric.domain).min»..«((Range)metric.domain).max»;
+		«ELSEIF metric.domain.metaType.isAssignableFrom(Enumerated)-»
+{string} domain_«metric.id» = {«FOREACH ((Enumerated)metric.domain).values AS val SEPARATOR ','-»"«val.id»"«ENDFOREACH»};
+int enum_«metric.id»[domain_«metric.id»] = [«FOREACH ((Enumerated)metric.domain).values AS val ITERATOR it SEPARATOR ', '»«it.counter0»«ENDFOREACH»];
+		«ENDIF-»
+	«ENDIF-»
+«ENDFOREACH»
+
+«FOREACH this.agTerm.serviceConfigurarion.configurationProperties.addAll(this.agTerm.monitorableProperties) AS prop-»
+	«IF prop.metric.domain.metaType.isAssignableFrom(Enumerated)-»
+dvar «oplType(prop.metric)» «prop.id» in 0..«((Enumerated)prop.metric.domain).values.size - 1»;
+	«ELSE-»
+dvar «oplType(prop.metric)» «prop.id» in range_«prop.metric.id»;
+	«ENDIF-»
+«ENDFOREACH-»
+
+subject to {
+«FOREACH this.agTerm.guaranteeTerms AS guaranteeTerm-»
+	«IF guaranteeTerm.qualifyingCondition != null-»
+		«FOREACH this.agTerm.serviceConfigurarion.configurationProperties.addAll(this.agTerm.monitorableProperties) AS prop-»
+			«IF guaranteeTerm.qualifyingCondition.expression.contains(prop.id)-»
+				«IF prop.metric.domain.metaType.isAssignableFrom(Enumerated)-»
+					«LET guaranteeTerm.qualifyingCondition.expression.split("==") AS arrayExp-»
+						«IF arrayExp.get(0).trim() != prop.id-»
+	«guaranteeTerm.id»: «prop.id» == enum_«prop.metric.id»[«arrayExp.get(0).trim()»] => «guaranteeTerm.slo.expression»;
+						«ELSEIF arrayExp.get(1).trim() != prop.id-»
+	«guaranteeTerm.id»: «prop.id» == enum_«prop.metric.id»[«arrayExp.get(1).trim()»] => «guaranteeTerm.slo.expression»;
+						«ENDIF-»
+					«ENDLET-»
+				«ELSE-»
+	«guaranteeTerm.id»: «guaranteeTerm.qualifyingCondition.expression» => «guaranteeTerm.slo.expression»;
+				«ENDIF-»
+			«ENDIF-»
+		«ENDFOREACH-»
+	«ELSE-»
+	«guaranteeTerm.id»: «guaranteeTerm.slo.expression»;
+	«ENDIF-»
+«ENDFOREACH-»
+}«ENDFILE»
+«ENDDEFINE»

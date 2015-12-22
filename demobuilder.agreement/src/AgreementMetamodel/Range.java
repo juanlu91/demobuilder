@@ -31,12 +31,12 @@ public interface Range extends Domain {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Min</em>' attribute.
-	 * @see #setMin(double)
+	 * @see #setMin(Integer)
 	 * @see AgreementMetamodel.AgreementMetamodelPackage#getRange_Min()
 	 * @model default="1"
 	 * @generated
 	 */
-	double getMin();
+	Integer getMin();
 
 	/**
 	 * Sets the value of the '{@link AgreementMetamodel.Range#getMin <em>Min</em>}' attribute.
@@ -46,7 +46,7 @@ public interface Range extends Domain {
 	 * @see #getMin()
 	 * @generated
 	 */
-	void setMin(double value);
+	void setMin(Integer value);
 
 	/**
 	 * Returns the value of the '<em><b>Max</b></em>' attribute.
@@ -58,12 +58,12 @@ public interface Range extends Domain {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Max</em>' attribute.
-	 * @see #setMax(double)
+	 * @see #setMax(Integer)
 	 * @see AgreementMetamodel.AgreementMetamodelPackage#getRange_Max()
 	 * @model default="100"
 	 * @generated
 	 */
-	double getMax();
+	Integer getMax();
 
 	/**
 	 * Sets the value of the '{@link AgreementMetamodel.Range#getMax <em>Max</em>}' attribute.
@@ -73,6 +73,6 @@ public interface Range extends Domain {
 	 * @see #getMax()
 	 * @generated
 	 */
-	void setMax(double value);
+	void setMax(Integer value);
 
 } // Range

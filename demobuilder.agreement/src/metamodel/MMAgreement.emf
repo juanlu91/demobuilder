@@ -1,5 +1,5 @@
 @gmf
-@namespace(uri="http://agreement.metamodel/1.0", prefix="mmag")
+@namespace(uri="http://demobuilder.agreement.metamodel", prefix="mmag")
 package AgreementMetamodel;
 
 @gmf.diagram
@@ -33,7 +33,7 @@ enum Role {
 }
 
 enum RoleType {
-  INITITATOR = 0;
+  INITIATOR = 0;
   RESPONDER = 1;
 }
 
@@ -53,7 +53,7 @@ class Metric {
   attr String ~id;
 
   @gmf.compartment
-  val Domain[1] domain;
+  val Domain domain;
 }
 
 abstract class Domain {
@@ -61,8 +61,8 @@ abstract class Domain {
 
 @gmf.node(label="min,max", label.pattern="[{0}..{1}]", label.icon="false", figure="rectangle", tool.name="Range", tool.description="Creates a range domain")
 class Range extends Domain {
-  attr double min = "1";
-  attr double max = "100";
+  attr Integer min = "1";
+  attr Integer max = "100";
 }
 
 @gmf.node(label.placement="none", label.icon="false", figure="rectangle", tool.name="Enumerated", tool.description="Creates an enumerated domain")

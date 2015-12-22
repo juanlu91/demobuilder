@@ -1,3 +1,6 @@
+
+// PALETTE
+
 var palette := GmfTool!Palette.all.first();
 
 var toolGroupObjects = GmfTool!ToolGroup.all.selectOne(r|r.title = 'Objects');
@@ -92,3 +95,38 @@ toolEntry = toolGroupObjects.tools.selectOne(r|r.title = 'Parameter');
 toolGroupUtils.tools.add(toolEntry);
 
 delete toolGroupObjects;
+
+
+// Compartments layout
+
+for (figure in GmfGraph!Rectangle.all) {
+
+	if(figure.name.contains('CompartmentFigure')) {
+	
+		-- Find the compartment figure
+		var compartmentFigure = GmfGraph!Rectangle.all.selectOne(r|r.name = figure.name);
+		
+		-- ... and add a stack layout to it
+		compartmentFigure.layout = new GmfGraph!StackLayout;
+	
+	}
+	/* 
+	else if(figure.name.contains('Figure')){
+	
+		-- Find the attribute figure
+		var attributeFigure = GmfGraph!Rectangle.all.selectOne(r|r.name = figure.name);
+		
+		-- ... delete its border
+		delete attributeFigure.border;
+		
+		-- ... set its outline to false
+		attributeFigure.outline = false;
+		
+		-- ... and add a preferred size to it
+		var preferredSize = new GmfGraph!Dimension;
+		preferredSize.dx = 100;
+		preferredSize.dy = 16;
+		attributeFigure.preferredSize = preferredSize;
+	}
+	*/
+}

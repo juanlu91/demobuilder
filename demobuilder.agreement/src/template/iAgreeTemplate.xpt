@@ -1,0 +1,86 @@
+«IMPORT AgreementMetamodel»
+«EXTENSION template::Utils»
+
+«REM»Plantilla raiz«ENDREM»
+«DEFINE main FOR AgreementModel-»
+	«FILE this.id + '.at'-»
+Template «this.id» version «this.version-»
+		«EXPAND setContext FOR context-»
+		«EXPAND setAgreementTerms FOR agTerm-»
+EndTemplate«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE setContext FOR Context»
+«FOREACH this.actors AS actor-»
+	«camelCase(actor.role.toString())» "«actor.id»" as «actor.roleType.toString().toLowerCase().toFirstUpper()»;
+«ENDFOREACH»
+	Metrics:
+«FOREACH this.metrics AS metric-»
+	«IF metric.domain != null-»
+		«IF metric.domain.metaType.isAssignableFrom(Range)-»
+		«metric.id»: «metric.type.toString().toLowerCase()» [«((Range)metric.domain).min»..«((Range)metric.domain).max»];
+		«ELSEIF metric.domain.metaType.isAssignableFrom(Enumerated)-»
+		«metric.id»: «metric.type.toString().toLowerCase()» {«FOREACH ((Enumerated)metric.domain).values AS val SEPARATOR ','-»«val.id»«ENDFOREACH»};
+		«ENDIF-»
+	«ENDIF-»
+«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE setAgreementTerms FOR AgreementTerm-»	
+	AgreementTerms«EXPAND setServiceConfiguration FOR serviceConfigurarion»
+		MonitorableProperties
+			global:
+«FOREACH monitorableProperties AS monitProp-»
+	«IF monitProp.scope == Scope::GLOBAL-»
+				«printProperty(monitProp)»
+	«ENDIF-»
+«ENDFOREACH-»
+«FOREACH this.serviceConfigurarion.features AS feature-»
+	«FOREACH monitorableProperties AS monitProp-»
+		«IF monitProp.features == feature-»
+			for «feature.id»:
+			«IF monitProp.scope == Scope::LOCAL-»
+				«printProperty(monitProp)»
+			«ENDIF-»
+		«ENDIF-»
+	«ENDFOREACH-»
+«ENDFOREACH»
+		GuaranteeTerms
+«FOREACH guaranteeTerms AS guaranteeTerm-»
+			«guaranteeTerm.id»: «camelCase(guaranteeTerm.role.toString())» guarantees «guaranteeTerm.slo.expression»;
+	«IF guaranteeTerm.qualifyingCondition.expression.length > 0-»
+				onlyIf(«guaranteeTerm.qualifyingCondition.expression»);
+	«ENDIF-»
+	«IF guaranteeTerm.compensations.size > 0-»
+		«FOREACH guaranteeTerm.compensations AS compensation-»
+				with «compensation.interval.toString().toLowerCase()» «compensation.type.toString().toLowerCase()»
+			«FOREACH compensation.compensationElements AS compElement-»
+					of «compElement.expression» if «compElement.condition»;
+			«ENDFOREACH-»
+				end
+		«ENDFOREACH-»
+	«ENDIF-»
+«ENDFOREACH-»
+«ENDDEFINE-»
+
+«DEFINE setServiceConfiguration FOR ServiceConfiguration»
+		Service «this.serviceName» availableAt "«this.definitionReference»"
+			Features: «FOREACH features AS feature SEPARATOR ', '-»
+«IF feature.parameters.size > 0-»«feature.id»(«FOREACH feature.parameters AS param SEPARATOR ', '»«param.name»«ENDFOREACH»)«ELSE-»«feature.id-»«ENDIF-»«ENDFOREACH-»;
+			GlobalDescription
+«FOREACH configurationProperties AS confProp-»
+	«IF confProp.scope == Scope::GLOBAL-»
+				«printProperty(confProp)»
+	«ENDIF-»
+«ENDFOREACH-»
+«FOREACH features AS feature-»
+	«FOREACH configurationProperties AS confProp-»
+		«IF confProp.features == feature-»
+			Description for «feature.id-»:
+			«IF confProp.scope == Scope::LOCAL-»
+				«printProperty(confProp)»
+			«ENDIF-»
+		«ENDIF-»
+	«ENDFOREACH-»
+«ENDFOREACH-»
+«ENDDEFINE»

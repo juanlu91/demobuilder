@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated MMAgreement -->
       <package
-            uri="http://agreement.metamodel/1.0"
+            uri="http://demobuilder.agreement.metamodel"
             class="AgreementMetamodel.AgreementMetamodelPackage"/>
    </extension>
 

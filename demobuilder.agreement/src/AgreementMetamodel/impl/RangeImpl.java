@@ -34,7 +34,7 @@ public class RangeImpl extends DomainImpl implements Range {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double MIN_EDEFAULT = 1.0;
+	protected static final Integer MIN_EDEFAULT = new Integer(1);
 
 	/**
 	 * The cached value of the '{@link #getMin() <em>Min</em>}' attribute.
@@ -44,7 +44,7 @@ public class RangeImpl extends DomainImpl implements Range {
 	 * @generated
 	 * @ordered
 	 */
-	protected double min = MIN_EDEFAULT;
+	protected Integer min = MIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
@@ -54,7 +54,7 @@ public class RangeImpl extends DomainImpl implements Range {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double MAX_EDEFAULT = 100.0;
+	protected static final Integer MAX_EDEFAULT = new Integer(100);
 
 	/**
 	 * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
@@ -64,7 +64,7 @@ public class RangeImpl extends DomainImpl implements Range {
 	 * @generated
 	 * @ordered
 	 */
-	protected double max = MAX_EDEFAULT;
+	protected Integer max = MAX_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,7 +90,7 @@ public class RangeImpl extends DomainImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double getMin() {
+	public Integer getMin() {
 		return min;
 	}
 
@@ -99,8 +99,8 @@ public class RangeImpl extends DomainImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMin(double newMin) {
-		double oldMin = min;
+	public void setMin(Integer newMin) {
+		Integer oldMin = min;
 		min = newMin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementMetamodelPackage.RANGE__MIN, oldMin, min));
@@ -111,7 +111,7 @@ public class RangeImpl extends DomainImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double getMax() {
+	public Integer getMax() {
 		return max;
 	}
 
@@ -120,8 +120,8 @@ public class RangeImpl extends DomainImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMax(double newMax) {
-		double oldMax = max;
+	public void setMax(Integer newMax) {
+		Integer oldMax = max;
 		max = newMax;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementMetamodelPackage.RANGE__MAX, oldMax, max));
@@ -152,10 +152,10 @@ public class RangeImpl extends DomainImpl implements Range {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case AgreementMetamodelPackage.RANGE__MIN:
-				setMin((Double)newValue);
+				setMin((Integer)newValue);
 				return;
 			case AgreementMetamodelPackage.RANGE__MAX:
-				setMax((Double)newValue);
+				setMax((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -188,9 +188,9 @@ public class RangeImpl extends DomainImpl implements Range {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case AgreementMetamodelPackage.RANGE__MIN:
-				return min != MIN_EDEFAULT;
+				return MIN_EDEFAULT == null ? min != null : !MIN_EDEFAULT.equals(min);
 			case AgreementMetamodelPackage.RANGE__MAX:
-				return max != MAX_EDEFAULT;
+				return MAX_EDEFAULT == null ? max != null : !MAX_EDEFAULT.equals(max);
 		}
 		return super.eIsSet(featureID);
 	}

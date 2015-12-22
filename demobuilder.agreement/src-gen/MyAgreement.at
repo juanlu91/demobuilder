@@ -1,0 +1,33 @@
+Template MyAgreement version 1.0		
+	Provider "Amazon" as Responder;
+	Consumer "Customer1" as Initiator;
+
+	Metrics:
+		percent: integer [1..100];
+		time: integer [1..1000];
+		planTypes: enum {basic,medium,pro};
+
+	AgreementTerms
+		Service StorageService availableAt "http://service.com/storage"
+			Features: getData, setData(content);
+			GlobalDescription
+				SCP: percent;
+				planType: planTypes = "basic";
+
+		MonitorableProperties
+			global:
+				MUP: percent;
+			for getData:
+				responseTimeGetData: time;
+			for setData:
+				responseTimeSetData: time;
+
+		GuaranteeTerms
+			G1: Provider guarantees responseTimeGetData < 150;
+				onlyIf(planType == "basic");
+				with monthly penalty
+					of SCP = 10 if MUP < 99;
+				end
+			G2: Provider guarantees responseTimeSetData < 200;
+				onlyIf(MUP > 99);
+EndTemplate
