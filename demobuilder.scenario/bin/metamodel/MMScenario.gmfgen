@@ -4,9 +4,9 @@
     <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
     <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ScenarioEditHelper"/>
     <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
-    <containsShortcutsTo>scenarioDiagram</containsShortcutsTo>
-    <shortcutsProvidedFor>scenarioDiagram</shortcutsProvidedFor>
-    <domainDiagramElement href="MMScenario.genmodel#//scenarioDiagram/Scenario"/>
+    <containsShortcutsTo>ScenarioMetamodel</containsShortcutsTo>
+    <shortcutsProvidedFor>ScenarioMetamodel</shortcutsProvidedFor>
+    <domainDiagramElement href="MMScenario.genmodel#//ScenarioMetamodel/Scenario"/>
     <childNodes visualID="3001" editPartClassName="PricingPlanEditPart" itemSemanticEditPolicyClassName="PricingPlanItemSemanticEditPolicy" canonicalEditPolicyClassName="PricingPlanCanonicalEditPolicy" compartments="//@diagram/@compartments.1" graphicalNodeEditPolicyClassName="PricingPlanGraphicalNodeEditPolicy" createCommandClassName="PricingPlanCreateCommand" containers="//@diagram/@compartments.0">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="PricingPlanEditHelper"/>
@@ -15,15 +15,15 @@
       </viewmap>
       <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
       <modelFacet>
-        <metaClass href="MMScenario.genmodel#//scenarioDiagram/PricingPlan"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/ServiceOffer/pricingPlans"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/ServiceOffer/pricingPlans"/>
+        <metaClass href="MMScenario.genmodel#//ScenarioMetamodel/PricingPlan"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/ServiceOffer/pricingPlans"/>
+        <childMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/ServiceOffer/pricingPlans"/>
       </modelFacet>
       <labels visualID="5005" editPartClassName="PricingPlanNameEditPart" itemSemanticEditPolicyClassName="PricingPlanNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigurePricingPlanLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="MMScenario.genmodel#//scenarioDiagram/PricingPlan/name"/>
+          <metaFeatures href="MMScenario.genmodel#//ScenarioMetamodel/PricingPlan/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -34,15 +34,15 @@
         <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
       </viewmap>
       <modelFacet>
-        <metaClass href="MMScenario.genmodel#//scenarioDiagram/PricingPlanElement"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/PricingPlan/pricingPlanElements"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/PricingPlan/pricingPlanElements"/>
+        <metaClass href="MMScenario.genmodel#//ScenarioMetamodel/PricingPlanElement"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/PricingPlan/pricingPlanElements"/>
+        <childMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/PricingPlan/pricingPlanElements"/>
       </modelFacet>
       <labels visualID="5004" editPartClassName="PricingPlanElementSLOExpressionEditPart" itemSemanticEditPolicyClassName="PricingPlanElementSLOExpressionItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigurePricingPlanElementLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="MMScenario.genmodel#//scenarioDiagram/PricingPlanElement/SLOExpression"/>
+          <metaFeatures href="MMScenario.genmodel#//ScenarioMetamodel/PricingPlanElement/SLOExpression"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -53,15 +53,15 @@
         <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="100" height="100"/>
       </viewmap>
       <modelFacet>
-        <metaClass href="MMScenario.genmodel#//scenarioDiagram/Consumer"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
+        <metaClass href="MMScenario.genmodel#//ScenarioMetamodel/Consumer"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/Scenario/scenarioElements"/>
+        <childMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/Scenario/scenarioElements"/>
       </modelFacet>
       <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5001" editPartClassName="ConsumerNameEditPart" itemSemanticEditPolicyClassName="ConsumerNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ConsumerLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ConsumerLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ConsumerLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Consumer&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="MMScenario.genmodel#//scenarioDiagram/ScenarioElement/name"/>
+          <metaFeatures href="MMScenario.genmodel#//ScenarioMetamodel/ScenarioElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -72,15 +72,15 @@
         <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="100" height="100"/>
       </viewmap>
       <modelFacet>
-        <metaClass href="MMScenario.genmodel#//scenarioDiagram/Provider"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
+        <metaClass href="MMScenario.genmodel#//ScenarioMetamodel/Provider"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/Scenario/scenarioElements"/>
+        <childMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/Scenario/scenarioElements"/>
       </modelFacet>
       <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5002" editPartClassName="ProviderNameEditPart" itemSemanticEditPolicyClassName="ProviderNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ProviderLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ProviderLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ProviderLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Provider&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="MMScenario.genmodel#//scenarioDiagram/ScenarioElement/name"/>
+          <metaFeatures href="MMScenario.genmodel#//ScenarioMetamodel/ScenarioElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -91,15 +91,15 @@
         <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="50" height="50"/>
       </viewmap>
       <modelFacet>
-        <metaClass href="MMScenario.genmodel#//scenarioDiagram/ServiceNeed"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
+        <metaClass href="MMScenario.genmodel#//ScenarioMetamodel/ServiceNeed"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/Scenario/scenarioElements"/>
+        <childMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/Scenario/scenarioElements"/>
       </modelFacet>
       <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5003" editPartClassName="ServiceNeedNameEditPart" itemSemanticEditPolicyClassName="ServiceNeedNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ServiceNeedLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ServiceNeedLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ServiceNeedLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;ServiceNeed&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="MMScenario.genmodel#//scenarioDiagram/ScenarioElement/name"/>
+          <metaFeatures href="MMScenario.genmodel#//ScenarioMetamodel/ScenarioElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -112,15 +112,15 @@
       </viewmap>
       <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
       <modelFacet>
-        <metaClass href="MMScenario.genmodel#//scenarioDiagram/ServiceOffer"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/scenarioElements"/>
+        <metaClass href="MMScenario.genmodel#//ScenarioMetamodel/ServiceOffer"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/Scenario/scenarioElements"/>
+        <childMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/Scenario/scenarioElements"/>
       </modelFacet>
       <labels visualID="5006" editPartClassName="ServiceOfferNameEditPart" itemSemanticEditPolicyClassName="ServiceOfferNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureServiceOfferLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="MMScenario.genmodel#//scenarioDiagram/ScenarioElement/name"/>
+          <metaFeatures href="MMScenario.genmodel#//ScenarioMetamodel/ScenarioElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -131,11 +131,11 @@
         <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
       </viewmap>
       <modelFacet xsi:type="gmfgen:TypeLinkModelFacet">
-        <metaClass href="MMScenario.genmodel#//scenarioDiagram/AgreementLink"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/agreementLinks"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/agreementLinks"/>
-        <sourceMetaFeature href="MMScenario.genmodel#//scenarioDiagram/AgreementLink/source"/>
-        <targetMetaFeature href="MMScenario.genmodel#//scenarioDiagram/AgreementLink/target"/>
+        <metaClass href="MMScenario.genmodel#//ScenarioMetamodel/AgreementLink"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/Scenario/agreementLinks"/>
+        <childMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/Scenario/agreementLinks"/>
+        <sourceMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/AgreementLink/source"/>
+        <targetMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/AgreementLink/target"/>
       </modelFacet>
       <labels visualID="6001" editPartClassName="AgreementLinkNameEditPart" itemSemanticEditPolicyClassName="AgreementLinkNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -143,7 +143,7 @@
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
         </viewmap>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="MMScenario.genmodel#//scenarioDiagram/AgreementLink/name"/>
+          <metaFeatures href="MMScenario.genmodel#//ScenarioMetamodel/AgreementLink/name"/>
         </modelFacet>
       </labels>
     </links>
@@ -154,11 +154,11 @@
         <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
       </viewmap>
       <modelFacet xsi:type="gmfgen:TypeLinkModelFacet">
-        <metaClass href="MMScenario.genmodel#//scenarioDiagram/ServiceLink"/>
-        <containmentMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/serviceLinks"/>
-        <childMetaFeature href="MMScenario.genmodel#//scenarioDiagram/Scenario/serviceLinks"/>
-        <sourceMetaFeature href="MMScenario.genmodel#//scenarioDiagram/ServiceLink/actor"/>
-        <targetMetaFeature href="MMScenario.genmodel#//scenarioDiagram/ServiceLink/serviceElement"/>
+        <metaClass href="MMScenario.genmodel#//ScenarioMetamodel/ServiceLink"/>
+        <containmentMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/Scenario/serviceLinks"/>
+        <childMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/Scenario/serviceLinks"/>
+        <sourceMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/ServiceLink/actor"/>
+        <targetMetaFeature href="MMScenario.genmodel#//ScenarioMetamodel/ServiceLink/serviceElement"/>
       </modelFacet>
     </links>
     <compartments visualID="7001" editPartClassName="ServiceOfferServiceOfferPricingPlansCompartmentEditPart" itemSemanticEditPolicyClassName="ServiceOfferServiceOfferPricingPlansCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ServiceOfferServiceOfferPricingPlansCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="ServiceOfferPricingPlansCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.3" listLayout="false">
@@ -187,7 +187,7 @@
         <entries xsi:type="gmfgen:ToolEntry" title="Pricing Plan Element" description="Creates a new pricing plan" largeIconPath="/demobuilder.scenario.edit/icons/full/obj32/PricingPlanElement.gif" smallIconPath="/demobuilder.scenario.edit/icons/full/obj16/PricingPlanElement.gif" genNodes="//@diagram/@childNodes.1"/>
       </groups>
     </palette>
-    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="demobuilder.scenario.diagram.general" name="ScenarioDiagram Diagram">
+    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="demobuilder.scenario.diagram.general" name="ScenarioMetamodel Diagram">
       <children xsi:type="gmfgen:GenStandardPreferencePage" iD="demobuilder.scenario.diagram.appearance" name="Appearance" kind="Appearance"/>
       <children xsi:type="gmfgen:GenStandardPreferencePage" iD="demobuilder.scenario.diagram.connections" name="Connections" kind="Connections"/>
       <children xsi:type="gmfgen:GenStandardPreferencePage" iD="demobuilder.scenario.diagram.printing" name="Printing" kind="Printing"/>

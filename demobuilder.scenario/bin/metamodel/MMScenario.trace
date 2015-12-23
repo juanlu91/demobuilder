@@ -5,28 +5,28 @@
     xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
   <nodeTraces
       visualID="2001"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'Consumer') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'Scenario') and _containmentMF_.name = 'scenarioElements')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'Consumer') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'Scenario') and _containmentMF_.name = 'scenarioElements')">
     <nodeLabelTraces
         visualID="5001"
         queryText="true"/>
   </nodeTraces>
   <nodeTraces
       visualID="2002"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'Provider') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'Scenario') and _containmentMF_.name = 'scenarioElements')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'Provider') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'Scenario') and _containmentMF_.name = 'scenarioElements')">
     <nodeLabelTraces
         visualID="5002"
         queryText="true"/>
   </nodeTraces>
   <nodeTraces
       visualID="2003"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'ServiceNeed') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'Scenario') and _containmentMF_.name = 'scenarioElements')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'ServiceNeed') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'Scenario') and _containmentMF_.name = 'scenarioElements')">
     <nodeLabelTraces
         visualID="5003"
         queryText="true"/>
   </nodeTraces>
   <nodeTraces
       visualID="2004"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'ServiceOffer') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'Scenario') and _containmentMF_.name = 'scenarioElements')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'ServiceOffer') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'Scenario') and _containmentMF_.name = 'scenarioElements')">
     <nodeLabelTraces
         visualID="5006"
         queryText="true"/>
@@ -36,7 +36,7 @@
   </nodeTraces>
   <childNodeTraces
       visualID="3001"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'PricingPlan') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'ServiceOffer') and _containmentMF_.name = 'pricingPlans')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'PricingPlan') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'ServiceOffer') and _containmentMF_.name = 'pricingPlans')">
     <nodeLabelTraces
         visualID="5005"
         queryText="true"/>
@@ -46,19 +46,19 @@
   </childNodeTraces>
   <childNodeTraces
       visualID="3002"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'PricingPlanElement') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'PricingPlan') and _containmentMF_.name = 'pricingPlanElements')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'PricingPlanElement') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'PricingPlan') and _containmentMF_.name = 'pricingPlanElements')">
     <nodeLabelTraces
         visualID="5004"
         queryText="true"/>
   </childNodeTraces>
   <linkTraces
       visualID="4001"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'AgreementLink')">
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'AgreementLink')">
     <linkLabelTraces
         visualID="6001"
         queryText="true"/>
   </linkTraces>
   <linkTraces
       visualID="4002"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'es.us.lsi.sma.demobuilder.scenario' and _eClass_.name = 'ServiceLink')"/>
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://demobuilder.scenario.metamodel' and _eClass_.name = 'ServiceLink')"/>
 </trace:TraceModel>

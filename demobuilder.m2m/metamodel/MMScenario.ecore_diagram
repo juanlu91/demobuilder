@@ -356,7 +356,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_lAUvAaTiEeWvLbxIyzoasg" x="-21" y="-28"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_lAUvAqTiEeWvLbxIyzoasg" type="6003">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_lAUvA6TiEeWvLbxIyzoasg" y="60"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_lAUvA6TiEeWvLbxIyzoasg" x="2" y="-16"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_lAUH8aTiEeWvLbxIyzoasg" fontName="Segoe UI"/>
     <element xmi:type="ecore:EReference" href="MMScenario.ecore#//AgreementLink/target"/>

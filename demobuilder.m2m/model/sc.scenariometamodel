@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmsc:Scenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmsc="http://demobuilder.scenario.metamodel">
+  <scenarioElements xsi:type="mmsc:Provider" name="Amazon" serviceLinks="//@serviceLinks.0"/>
+  <scenarioElements xsi:type="mmsc:ServiceOffer" serviceLink="//@serviceLinks.0" name="S3" serviceEndpoint="s3.amazon.com">
+    <pricingPlans name="Basic"/>
+    <pricingPlans name="Medium">
+      <pricingPlanElements SLOExpression="m1" qualifyingCondition="i" compensationExpression="h" compensationCondition="g"/>
+      <pricingPlanElements SLOExpression="m1" qualifyingCondition="l" compensationExpression="k" compensationCondition="j"/>
+    </pricingPlans>
+    <pricingPlans name="Pro">
+      <pricingPlanElements SLOExpression="p1" qualifyingCondition="o" compensationExpression="n" compensationCondition="m"/>
+      <pricingPlanElements SLOExpression="p2" qualifyingCondition="r" compensationExpression="q" compensationCondition="p"/>
+    </pricingPlans>
+  </scenarioElements>
+  <serviceLinks actor="//@scenarioElements.0" serviceElement="//@scenarioElements.1"/>
+</mmsc:Scenario>

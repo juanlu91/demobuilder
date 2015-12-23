@@ -1,50 +1,36 @@
--- @nsURI SCENARIO=es.us.lsi.sma.demobuilder.scenario
--- @nsURI AGREEMENT=http://agreement.metamodel/1.0
+-- @nsURI SCENARIO=http://demobuilder.scenario.metamodel
+-- @nsURI AGREEMENT=http://demobuilder.agreement.metamodel
 
 
 module scenario2agreement;
-
-create OUT: AGREEMENT, OUT2: AGREEMENT from IN: SCENARIO;
+create OUT: AGREEMENT from IN: SCENARIO;
 
 -- HELPERS
-helper def: guaranteeTerm_var: AGREEMENT!GuaranteeTerm =
-	OclUndefined;
-
-helper def: monitorableProperties_var: AGREEMENT!MonitorableProperty =
-	OclUndefined;
-
-helper def: serviceConfigurarion_var: AGREEMENT!ServiceConfiguration =
-	OclUndefined;
-
-helper def: providerActor_var: AGREEMENT!Actor =
-	OclUndefined;
-
-helper def: consumerActor_var: AGREEMENT!Actor =
-	OclUndefined;
 
 helper def: SLO_var: AGREEMENT!SLO =
 	OclUndefined;
 
-helper def: actors: AGREEMENT!Actor =
-	OclUndefined;
-
-
- --helper context OclAny def : random() : String =
--- 	"#native"!"java::util::UUID".refInvokeStaticOperation('randomUUID', Sequence{}).toString();
-
+--helper context OclAny def : random() : String =
+-- 	"#native"!"java::util::UUID".refInvokeStaticOperation('randomUUID',
+-- Sequence{}).toString();
 -- LAZY RULES
 lazy rule PricingPlanElement2GuaranteeTerm {
 	from
 		IN: SCENARIO!PricingPlanElement
 	to
-		guaranteeTerm: AGREEMENT!GuaranteeTerm (
+		agGuaranteeTerm: AGREEMENT!GuaranteeTerm (
 			id <- 'G_',
 			qualifyingCondition <- agQualifyingCondition,
 			role <- OclUndefined,
 			slo <- agSLO,
-			compensations <- guaranteeTerm.compensations -> including(compensationElement)
+			compensations <- agCompensation
 		),
-		compensationElement: AGREEMENT!CompensationElement (
+		agCompensation: AGREEMENT!Compensation (
+			interval <- IN.compensationInterval,
+			type <- IN.compensationType,
+			compensationElements <- agCompensationElement
+		),
+		agCompensationElement: AGREEMENT!CompensationElement (
 			condition <- IN.compensationCondition,
 			expression <- IN.compensationExpression
 		),
@@ -55,8 +41,7 @@ lazy rule PricingPlanElement2GuaranteeTerm {
 			expression <- IN.SLOExpression
 		)
 	do {
-		thisModule.guaranteeTerm_var<-guaranteeTerm;
-		thisModule.SLO_var <- guaranteeTerm.slo;
+		thisModule.SLO_var <- agGuaranteeTerm.slo;
 	}
 }
 
@@ -64,13 +49,12 @@ lazy rule ServiceOffer2ServiceConfiguration {
 	from
 		IN: SCENARIO!ServiceOffer
 	to
-		serviceConfiguration: AGREEMENT!ServiceConfiguration (
-			configurationProperties <- serviceConfiguration.configurationProperties ->
+		agServiceConfiguration: AGREEMENT!ServiceConfiguration (
+			configurationProperties <- agServiceConfiguration.configurationProperties ->
 					including(agConfigurationProperty),
 			definitionReference <- OclUndefined,
 			endpointReference <- IN.serviceEndpoint,
 			features <- OclUndefined,
-			--thisModule.ServiceOffer2Feature(IN),
 			monitorReference <- OclUndefined,
 			serviceName <- IN.name
 		),
@@ -78,7 +62,6 @@ lazy rule ServiceOffer2ServiceConfiguration {
 			definitionReference <- OclUndefined,
 			expression <- OclUndefined,
 			features <- OclUndefined,
-			--thisModule.ServiceOffer2Feature(IN),
 			id <- OclUndefined,
 			scope <- OclUndefined
 		)
@@ -94,8 +77,7 @@ lazy rule ServiceOffer2MonitorableProperty {
 			definitionReference <- OclUndefined,
 			expression <- OclUndefined,
 			features <- OclUndefined,
-			--thisModule.ServiceOffer2Feature(IN),
-			id <- OclUndefined,
+			id <- 'M_',
 			monitorReference <- OclUndefined,
 			scope <- OclUndefined
 		)
@@ -103,7 +85,7 @@ lazy rule ServiceOffer2MonitorableProperty {
 	}
 }
 
-lazy rule ServiceOffer2Actor {
+lazy rule ServiceOffer2ActorProvider {
 	from
 		IN: SCENARIO!ServiceOffer
 	to
@@ -140,18 +122,17 @@ rule PricingPlan2AgreementModel {
 			id <- IN.name,
 			version <- 1,
 			"context" <- agContext,
-			agTerm <- agTerm
+			agTerm <- agTerm 
 		),
 		agTerm: AGREEMENT!AgreementTerm (
-			guaranteeTerms <- IN.pricingPlanElements -> collect(pe | thisModule.
-					PricingPlanElement2GuaranteeTerm(pe)),
+			guaranteeTerms <- IN.pricingPlanElements -> collect(pe | if not pe.SLOExpression.oclIsUndefined() then thisModule.PricingPlanElement2GuaranteeTerm(pe) else OclUndefined endif),
 			monitorableProperties <- thisModule.ServiceOffer2MonitorableProperty(IN.
 					serviceOffer),
 			serviceConfigurarion <- thisModule.ServiceOffer2ServiceConfiguration(IN.
 					serviceOffer)
 		),
 		agContext: AGREEMENT!Context (
-			actors <- thisModule.ServiceOffer2Actor(IN.serviceOffer),
+			actors <- thisModule.ServiceOffer2ActorProvider(IN.serviceOffer),
 			metrics <- agContext.metrics -> including(agMetric_boolean) ->
 					including(agMetric_int) -> including(agMetric_float) ->
 					including(agMetric_natural)

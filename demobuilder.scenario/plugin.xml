@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated MMScenario -->
       <package
-            uri="es.us.lsi.sma.demobuilder.scenario"
-            class="scenarioDiagram.ScenarioDiagramPackage"/>
+            uri="http://demobuilder.scenario.metamodel"
+            class="ScenarioMetamodel.ScenarioMetamodelPackage"/>
    </extension>
 
 </plugin>

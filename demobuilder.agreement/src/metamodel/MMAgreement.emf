@@ -14,7 +14,7 @@ class AgreementModel {
 class Context {
 
   @gmf.compartment
-  val Actor[2] actors;
+  val Actor[1..2] actors;
 
   @gmf.compartment
   val Metric[*] metrics;

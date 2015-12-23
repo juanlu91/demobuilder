@@ -1,6 +1,6 @@
-demobuilder.scenario.diagram/bin/
-demobuilder.agreement.diagram/
-demobuilder.scenario.diagram/
-demobuilder.agreement/bin/
-demobuilder.m2m/.gitignore
+
 demobuilder.scenario/bin/
+demobuilder.scenario/src/
+demobuilder.agreement/bin/
+demobuilder.agreement/src/
+.gitignore

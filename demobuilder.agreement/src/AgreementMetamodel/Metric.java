@@ -90,7 +90,7 @@ public interface Metric extends EObject {
 	 * @return the value of the '<em>Domain</em>' containment reference.
 	 * @see #setDomain(Domain)
 	 * @see AgreementMetamodel.AgreementMetamodelPackage#getMetric_Domain()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Domain getDomain();

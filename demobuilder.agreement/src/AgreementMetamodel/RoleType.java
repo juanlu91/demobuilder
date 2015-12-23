@@ -26,7 +26,9 @@ public enum RoleType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INITIATOR(0, "INITIATOR", "INITIATOR"), /**
+	INITIATOR(0, "INITIATOR", "INITIATOR"),
+
+	/**
 	 * The '<em><b>RESPONDER</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

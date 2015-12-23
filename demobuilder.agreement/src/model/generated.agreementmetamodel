@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmag="http://demobuilder.agreement.metamodel">
+  <mmag:AgreementModel id="Basic" version="1.0">
+    <context>
+      <actors id="Amazon"/>
+      <metrics type="BOOLEAN" id="boolean"/>
+      <metrics id="int">
+        <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
+      </metrics>
+      <metrics type="FLOAT" id="float">
+        <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
+      </metrics>
+      <metrics type="NATURAL" id="natural">
+        <domain xsi:type="mmag:Range" min="0" max="9999999"/>
+      </metrics>
+    </context>
+    <agTerm>
+      <serviceConfigurarion endpointReference="s3.amazon.com" serviceName="S3">
+        <configurationProperties/>
+      </serviceConfigurarion>
+      <monitorableProperties id="M_"/>
+    </agTerm>
+  </mmag:AgreementModel>
+  <mmag:AgreementModel id="Medium" version="1.0">
+    <context>
+      <actors id="Amazon"/>
+      <metrics type="BOOLEAN" id="boolean"/>
+      <metrics id="int">
+        <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
+      </metrics>
+      <metrics type="FLOAT" id="float">
+        <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
+      </metrics>
+      <metrics type="NATURAL" id="natural">
+        <domain xsi:type="mmag:Range" min="0" max="9999999"/>
+      </metrics>
+    </context>
+    <agTerm>
+      <serviceConfigurarion endpointReference="s3.amazon.com" serviceName="S3">
+        <configurationProperties/>
+      </serviceConfigurarion>
+      <monitorableProperties id="M_"/>
+      <guaranteeTerms id="G_">
+        <slo expression="m1"/>
+        <qualifyingCondition expression="i"/>
+        <compensations>
+          <compensationElements expression="h" condition="g"/>
+        </compensations>
+      </guaranteeTerms>
+      <guaranteeTerms id="G_">
+        <slo expression="m1"/>
+        <qualifyingCondition expression="l"/>
+        <compensations>
+          <compensationElements expression="k" condition="j"/>
+        </compensations>
+      </guaranteeTerms>
+    </agTerm>
+  </mmag:AgreementModel>
+  <mmag:AgreementModel id="Pro" version="1.0">
+    <context>
+      <actors id="Amazon"/>
+      <metrics type="BOOLEAN" id="boolean"/>
+      <metrics id="int">
+        <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
+      </metrics>
+      <metrics type="FLOAT" id="float">
+        <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
+      </metrics>
+      <metrics type="NATURAL" id="natural">
+        <domain xsi:type="mmag:Range" min="0" max="9999999"/>
+      </metrics>
+    </context>
+    <agTerm>
+      <serviceConfigurarion endpointReference="s3.amazon.com" serviceName="S3">
+        <configurationProperties/>
+      </serviceConfigurarion>
+      <monitorableProperties id="M_"/>
+      <guaranteeTerms id="G_">
+        <slo expression="p1"/>
+        <qualifyingCondition expression="o"/>
+        <compensations>
+          <compensationElements expression="n" condition="m"/>
+        </compensations>
+      </guaranteeTerms>
+      <guaranteeTerms id="G_">
+        <slo expression="p2"/>
+        <qualifyingCondition expression="r"/>
+        <compensations>
+          <compensationElements expression="q" condition="p"/>
+        </compensations>
+      </guaranteeTerms>
+    </agTerm>
+  </mmag:AgreementModel>
+</xmi:XMI>

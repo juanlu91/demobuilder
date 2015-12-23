@@ -183,7 +183,7 @@
   </links>
   <diagram>
     <diagramCanvas
-        href="MMScenario.gmfgraph#scenarioDiagram"/>
+        href="MMScenario.gmfgraph#ScenarioMetamodel"/>
     <domainModel
         href="MMScenario.ecore#/"/>
     <domainMetaElement

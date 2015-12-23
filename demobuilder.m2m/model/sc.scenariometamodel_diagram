@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mmsc="http://demobuilder.scenario.metamodel" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_qvMTwKlrEeWLx74uPenAvQ" type="ScenarioMetamodel" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_qx63oKlrEeWLx74uPenAvQ" type="2002" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qx8FwKlrEeWLx74uPenAvQ" type="5002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qx8s0KlrEeWLx74uPenAvQ" y="5"/>
+    </children>
+    <element xmi:type="mmsc:Provider" href="sc.scenariometamodel#//@scenarioElements.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qx63oalrEeWLx74uPenAvQ" x="685" y="90"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_qx968KlrEeWLx74uPenAvQ" type="2004">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qx969qlrEeWLx74uPenAvQ" type="5006"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_qx-iAKlrEeWLx74uPenAvQ" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_qzTXsKlrEeWLx74uPenAvQ" type="3001">
+        <children xmi:type="notation:DecorationNode" xmi:id="_qzTXtqlrEeWLx74uPenAvQ" type="5005"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_qzTXt6lrEeWLx74uPenAvQ" type="7002"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_qzTXsalrEeWLx74uPenAvQ"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_qzTXsqlrEeWLx74uPenAvQ" fontName="Segoe UI"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_qzTXs6lrEeWLx74uPenAvQ"/>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_qzTXtKlrEeWLx74uPenAvQ"/>
+        <element xmi:type="mmsc:PricingPlan" href="sc.scenariometamodel#//@scenarioElements.1/@pricingPlans.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qzTXtalrEeWLx74uPenAvQ" width="411"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_qzT-wKlrEeWLx74uPenAvQ" type="3001">
+        <children xmi:type="notation:DecorationNode" xmi:id="_qzT-xqlrEeWLx74uPenAvQ" type="5005"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_qzT-x6lrEeWLx74uPenAvQ" type="7002">
+          <children xmi:type="notation:Node" xmi:id="_LibgUKlsEeWLx74uPenAvQ" type="3002">
+            <children xmi:type="notation:DecorationNode" xmi:id="_LicHYKlsEeWLx74uPenAvQ" type="5004"/>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_LibgUalsEeWLx74uPenAvQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_LibgUqlsEeWLx74uPenAvQ" fontName="Segoe UI"/>
+            <styles xmi:type="notation:FillStyle" xmi:id="_LibgU6lsEeWLx74uPenAvQ"/>
+            <element xmi:type="mmsc:PricingPlanElement" href="sc.scenariometamodel#//@scenarioElements.1/@pricingPlans.1/@pricingPlanElements.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LibgVKlsEeWLx74uPenAvQ"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_LicHYalsEeWLx74uPenAvQ" type="3002">
+            <children xmi:type="notation:DecorationNode" xmi:id="_LicHZqlsEeWLx74uPenAvQ" type="5004"/>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_LicHYqlsEeWLx74uPenAvQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_LicHY6lsEeWLx74uPenAvQ" fontName="Segoe UI"/>
+            <styles xmi:type="notation:FillStyle" xmi:id="_LicHZKlsEeWLx74uPenAvQ"/>
+            <element xmi:type="mmsc:PricingPlanElement" href="sc.scenariometamodel#//@scenarioElements.1/@pricingPlans.1/@pricingPlanElements.1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LicHZalsEeWLx74uPenAvQ" x="190" y="-1"/>
+          </children>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_qzT-walrEeWLx74uPenAvQ"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_qzT-wqlrEeWLx74uPenAvQ" fontName="Segoe UI"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_qzT-w6lrEeWLx74uPenAvQ"/>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_qzT-xKlrEeWLx74uPenAvQ"/>
+        <element xmi:type="mmsc:PricingPlan" href="sc.scenariometamodel#//@scenarioElements.1/@pricingPlans.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qzT-xalrEeWLx74uPenAvQ" y="89" width="411"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_qzT-yKlrEeWLx74uPenAvQ" type="3001">
+        <children xmi:type="notation:DecorationNode" xmi:id="_qzT-zqlrEeWLx74uPenAvQ" type="5005"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_qzT-z6lrEeWLx74uPenAvQ" type="7002">
+          <children xmi:type="notation:Node" xmi:id="_LifxwKlsEeWLx74uPenAvQ" type="3002">
+            <children xmi:type="notation:DecorationNode" xmi:id="_LifxxalsEeWLx74uPenAvQ" type="5004"/>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_LifxwalsEeWLx74uPenAvQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_LifxwqlsEeWLx74uPenAvQ" fontName="Segoe UI"/>
+            <styles xmi:type="notation:FillStyle" xmi:id="_Lifxw6lsEeWLx74uPenAvQ"/>
+            <element xmi:type="mmsc:PricingPlanElement" href="sc.scenariometamodel#//@scenarioElements.1/@pricingPlans.2/@pricingPlanElements.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LifxxKlsEeWLx74uPenAvQ"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_LifxxqlsEeWLx74uPenAvQ" type="3002">
+            <children xmi:type="notation:DecorationNode" xmi:id="_Lifxy6lsEeWLx74uPenAvQ" type="5004"/>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_Lifxx6lsEeWLx74uPenAvQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_LifxyKlsEeWLx74uPenAvQ" fontName="Segoe UI"/>
+            <styles xmi:type="notation:FillStyle" xmi:id="_LifxyalsEeWLx74uPenAvQ"/>
+            <element xmi:type="mmsc:PricingPlanElement" href="sc.scenariometamodel#//@scenarioElements.1/@pricingPlans.2/@pricingPlanElements.1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LifxyqlsEeWLx74uPenAvQ" x="220" y="8"/>
+          </children>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_qzT-yalrEeWLx74uPenAvQ"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_qzT-yqlrEeWLx74uPenAvQ" fontName="Segoe UI"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_qzT-y6lrEeWLx74uPenAvQ"/>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_qzT-zKlrEeWLx74uPenAvQ"/>
+        <element xmi:type="mmsc:PricingPlan" href="sc.scenariometamodel#//@scenarioElements.1/@pricingPlans.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qzT-zalrEeWLx74uPenAvQ" y="175" width="411"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_qx968alrEeWLx74uPenAvQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_qx968qlrEeWLx74uPenAvQ" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_qx9686lrEeWLx74uPenAvQ"/>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_qx969KlrEeWLx74uPenAvQ"/>
+    <element xmi:type="mmsc:ServiceOffer" href="sc.scenariometamodel#//@scenarioElements.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qx969alrEeWLx74uPenAvQ" x="345" y="240" width="496" height="321"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_qvMTwalrEeWLx74uPenAvQ"/>
+  <element xmi:type="mmsc:Scenario" href="sc.scenariometamodel#/"/>
+</notation:Diagram>

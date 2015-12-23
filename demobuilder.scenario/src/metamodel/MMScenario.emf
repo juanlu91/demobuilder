@@ -1,6 +1,6 @@
 @Ecore(invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot")
-@namespace(uri="es.us.lsi.sma.demobuilder.scenario", prefix="es.us.lsi.sma.demobuilder.scenario")
-package scenarioDiagram;
+@namespace(uri="http://demobuilder.scenario.metamodel", prefix="mmsc")
+package ScenarioMetamodel;
 
 @gmf
 @gmf.diagram
