@@ -7,8 +7,12 @@
           <border xsi:type="gmfgraph:MarginBorder">
             <insets top="5" left="5" bottom="5" right="5"/>
           </border>
-          <children xsi:type="gmfgraph:Rectangle" name="ContextActorsCompartmentFigure" outline="false"/>
-          <children xsi:type="gmfgraph:Rectangle" name="ContextMetricsCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="ContextActorsCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="ContextMetricsCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
         </actualFigure>
         <accessors accessor="getContextActorsCompartmentFigure" figure="/0/@figures.0/@descriptors.0/@actualFigure/@children.0"/>
         <accessors accessor="getContextMetricsCompartmentFigure" figure="/0/@figures.0/@descriptors.0/@actualFigure/@children.1"/>
@@ -30,7 +34,9 @@
           <children xsi:type="gmfgraph:Label" name="MetricLabelFigure" text="Metric">
             <maximumSize dx="10000" dy="50"/>
           </children>
-          <children xsi:type="gmfgraph:Rectangle" name="MetricDomainCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="MetricDomainCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
         </actualFigure>
         <accessors accessor="getFigureMetricLabelFigure" figure="/0/@figures.0/@descriptors.2/@actualFigure/@children.0"/>
         <accessors accessor="getMetricDomainCompartmentFigure" figure="/0/@figures.0/@descriptors.2/@actualFigure/@children.1"/>
@@ -49,7 +55,9 @@
           <border xsi:type="gmfgraph:MarginBorder">
             <insets top="5" left="5" bottom="5" right="5"/>
           </border>
-          <children xsi:type="gmfgraph:Rectangle" name="EnumeratedValuesCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="EnumeratedValuesCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
         </actualFigure>
         <accessors accessor="getEnumeratedValuesCompartmentFigure" figure="/0/@figures.0/@descriptors.4/@actualFigure/@children.0"/>
       </descriptors>
@@ -58,9 +66,15 @@
           <border xsi:type="gmfgraph:MarginBorder">
             <insets top="5" left="5" bottom="5" right="5"/>
           </border>
-          <children xsi:type="gmfgraph:Rectangle" name="AgreementTermServiceConfigurarionCompartmentFigure" outline="false"/>
-          <children xsi:type="gmfgraph:Rectangle" name="AgreementTermMonitorablePropertiesCompartmentFigure" outline="false"/>
-          <children xsi:type="gmfgraph:Rectangle" name="AgreementTermGuaranteeTermsCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="AgreementTermServiceConfigurarionCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="AgreementTermMonitorablePropertiesCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="AgreementTermGuaranteeTermsCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
         </actualFigure>
         <accessors accessor="getAgreementTermServiceConfigurarionCompartmentFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.0"/>
         <accessors accessor="getAgreementTermMonitorablePropertiesCompartmentFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.1"/>
@@ -74,8 +88,12 @@
           <children xsi:type="gmfgraph:Label" name="ServiceConfigurationLabelFigure" text="ServiceConfiguration">
             <maximumSize dx="10000" dy="50"/>
           </children>
-          <children xsi:type="gmfgraph:Rectangle" name="ServiceConfigurationFeaturesCompartmentFigure" outline="false"/>
-          <children xsi:type="gmfgraph:Rectangle" name="ServiceConfigurationConfigurationPropertiesCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="ServiceConfigurationFeaturesCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="ServiceConfigurationConfigurationPropertiesCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
         </actualFigure>
         <accessors accessor="getFigureServiceConfigurationLabelFigure" figure="/0/@figures.0/@descriptors.6/@actualFigure/@children.0"/>
         <accessors accessor="getServiceConfigurationFeaturesCompartmentFigure" figure="/0/@figures.0/@descriptors.6/@actualFigure/@children.1"/>
@@ -89,9 +107,15 @@
           <children xsi:type="gmfgraph:Label" name="GuaranteeTermLabelFigure" text="GuaranteeTerm">
             <maximumSize dx="10000" dy="50"/>
           </children>
-          <children xsi:type="gmfgraph:Rectangle" name="GuaranteeTermSloCompartmentFigure" outline="false"/>
-          <children xsi:type="gmfgraph:Rectangle" name="GuaranteeTermQualifyingConditionCompartmentFigure" outline="false"/>
-          <children xsi:type="gmfgraph:Rectangle" name="GuaranteeTermCompensationsCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="GuaranteeTermSloCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="GuaranteeTermQualifyingConditionCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="GuaranteeTermCompensationsCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
         </actualFigure>
         <accessors accessor="getFigureGuaranteeTermLabelFigure" figure="/0/@figures.0/@descriptors.7/@actualFigure/@children.0"/>
         <accessors accessor="getGuaranteeTermSloCompartmentFigure" figure="/0/@figures.0/@descriptors.7/@actualFigure/@children.1"/>
@@ -106,7 +130,9 @@
           <children xsi:type="gmfgraph:Label" name="FeatureLabelFigure" text="Feature">
             <maximumSize dx="10000" dy="50"/>
           </children>
-          <children xsi:type="gmfgraph:Rectangle" name="FeatureParametersCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="FeatureParametersCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
         </actualFigure>
         <accessors accessor="getFigureFeatureLabelFigure" figure="/0/@figures.0/@descriptors.8/@actualFigure/@children.0"/>
         <accessors accessor="getFeatureParametersCompartmentFigure" figure="/0/@figures.0/@descriptors.8/@actualFigure/@children.1"/>
@@ -146,7 +172,9 @@
           <children xsi:type="gmfgraph:Label" name="CompensationLabelFigure" text="Compensation">
             <maximumSize dx="10000" dy="50"/>
           </children>
-          <children xsi:type="gmfgraph:Rectangle" name="CompensationCompensationElementsCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="CompensationCompensationElementsCompartmentFigure" outline="false">
+            <layout xsi:type="gmfgraph:StackLayout"/>
+          </children>
         </actualFigure>
         <accessors accessor="getFigureCompensationLabelFigure" figure="/0/@figures.0/@descriptors.12/@actualFigure/@children.0"/>
         <accessors accessor="getCompensationCompensationElementsCompartmentFigure" figure="/0/@figures.0/@descriptors.12/@actualFigure/@children.1"/>

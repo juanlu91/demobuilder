@@ -1,0 +1,18 @@
+using CP;
+
+range range_percent = 1..100;
+range range_time = 1..1000;
+{string} domain_planTypes = {"basic","medium","pro"};
+int enum_planTypes[domain_planTypes] = [0, 1, 2];
+
+
+dvar int SCP in range_percent;
+dvar int planType in 0..2;
+dvar int responseTimeGetData in range_time;
+dvar int responseTimeSetData in range_time;
+dvar int MUP in range_percent;
+
+subject to {
+	G1: planType == enum_planTypes["basic"] => responseTimeGetData < 150;
+	G2: MUP > 99 => responseTimeSetData < 200;
+}

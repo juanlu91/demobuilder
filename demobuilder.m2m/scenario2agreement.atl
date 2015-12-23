@@ -3,7 +3,8 @@
 
 
 module scenario2agreement;
-create OUT: AGREEMENT from IN: SCENARIO;
+
+create OUT: AGREEMENT, OUT2: AGREEMENT from IN: SCENARIO;
 
 -- HELPERS
 helper def: guaranteeTerm_var: AGREEMENT!GuaranteeTerm =

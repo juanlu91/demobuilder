@@ -1,0 +1,24 @@
+import AgreementMetamodel;
+	
+
+String printProperty(Property property):
+	if(property.expression.length > 0) then (
+		if(property.metric.domain.metaType.isAssignableFrom(Enumerated)) then
+			property.id + ': ' + property.metric.id + ' = \"' + property.expression + '\";'
+		else
+			property.id + ': ' + property.metric.id + ' = ' + property.expression + ';'
+	)
+	else
+		property.id + ': ' + property.metric.id + ';'
+	;
+	
+String camelCase(String str):
+	str.toLowerCase().toFirstUpper();
+	
+String oplType(Metric metric):
+	switch(metric.type){
+		case Datatype::INTEGER:'int'
+		case Datatype::FLOAT:'int'
+		default: 'int'
+	}
+	;

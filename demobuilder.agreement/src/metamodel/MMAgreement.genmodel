@@ -10,7 +10,7 @@
       <genEnumLiterals ecoreEnumLiteral="MMAgreement.ecore#//Role/CONSUMER"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="MMAgreement.ecore#//RoleType">
-      <genEnumLiterals ecoreEnumLiteral="MMAgreement.ecore#//RoleType/INITITATOR"/>
+      <genEnumLiterals ecoreEnumLiteral="MMAgreement.ecore#//RoleType/INITIATOR"/>
       <genEnumLiterals ecoreEnumLiteral="MMAgreement.ecore#//RoleType/RESPONDER"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="MMAgreement.ecore#//Datatype">

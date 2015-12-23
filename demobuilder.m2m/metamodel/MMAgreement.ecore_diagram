@@ -99,7 +99,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_aOpJIpkxEeWSRPbtIi21Ow" type="5005"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_aOpJI5kxEeWSRPbtIi21Ow" type="7011">
       <children xmi:type="notation:Node" xmi:id="_dXQf4JkxEeWSRPbtIi21Ow" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="MMAgreement.ecore#//RoleType/INITITATOR"/>
+        <element xmi:type="ecore:EEnumLiteral" href="MMAgreement.ecore#//RoleType/INITIATOR"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_dXQf4ZkxEeWSRPbtIi21Ow"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_iSQaQJkxEeWSRPbtIi21Ow" type="3009">

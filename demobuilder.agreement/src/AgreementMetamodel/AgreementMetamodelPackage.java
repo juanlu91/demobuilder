@@ -38,7 +38,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://agreement.metamodel/1.0";
+	String eNS_URI = "http://demobuilder.agreement.metamodel";
 
 	/**
 	 * The package namespace name.

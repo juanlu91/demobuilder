@@ -19,16 +19,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum RoleType implements Enumerator {
 	/**
-	 * The '<em><b>INITITATOR</b></em>' literal object.
+	 * The '<em><b>INITIATOR</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #INITITATOR_VALUE
+	 * @see #INITIATOR_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	INITITATOR(0, "INITITATOR", "INITITATOR"),
-
-	/**
+	INITIATOR(0, "INITIATOR", "INITIATOR"), /**
 	 * The '<em><b>RESPONDER</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -39,19 +37,19 @@ public enum RoleType implements Enumerator {
 	RESPONDER(1, "RESPONDER", "RESPONDER");
 
 	/**
-	 * The '<em><b>INITITATOR</b></em>' literal value.
+	 * The '<em><b>INITIATOR</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>INITITATOR</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>INITIATOR</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #INITITATOR
+	 * @see #INITIATOR
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INITITATOR_VALUE = 0;
+	public static final int INITIATOR_VALUE = 0;
 
 	/**
 	 * The '<em><b>RESPONDER</b></em>' literal value.
@@ -76,7 +74,7 @@ public enum RoleType implements Enumerator {
 	 */
 	private static final RoleType[] VALUES_ARRAY =
 		new RoleType[] {
-			INITITATOR,
+			INITIATOR,
 			RESPONDER,
 		};
 
@@ -128,7 +126,7 @@ public enum RoleType implements Enumerator {
 	 */
 	public static RoleType get(int value) {
 		switch (value) {
-			case INITITATOR_VALUE: return INITITATOR;
+			case INITIATOR_VALUE: return INITIATOR;
 			case RESPONDER_VALUE: return RESPONDER;
 		}
 		return null;
