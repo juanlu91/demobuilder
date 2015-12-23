@@ -35,7 +35,7 @@ public interface Context extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Actors</em>' containment reference list.
 	 * @see AgreementMetamodel.AgreementMetamodelPackage#getContext_Actors()
-	 * @model containment="true" lower="2" upper="2"
+	 * @model containment="true" required="true" upper="2"
 	 * @generated
 	 */
 	EList<Actor> getActors();

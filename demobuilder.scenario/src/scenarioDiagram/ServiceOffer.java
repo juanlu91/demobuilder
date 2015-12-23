@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link scenarioDiagram.ServiceOffer#getServiceEndpoint <em>Service Endpoint</em>}</li>
- *   <li>{@link scenarioDiagram.ServiceOffer#getGuaranteeTerms <em>Guarantee Terms</em>}</li>
+ *   <li>{@link scenarioDiagram.ServiceOffer#getPricingPlans <em>Pricing Plans</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,21 +49,21 @@ public interface ServiceOffer extends ServiceElement, ScenarioElement {
 	void setServiceEndpoint(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Guarantee Terms</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Pricing Plans</b></em>' containment reference list.
 	 * The list contents are of type {@link scenarioDiagram.PricingPlan}.
 	 * It is bidirectional and its opposite is '{@link scenarioDiagram.PricingPlan#getServiceOffer <em>Service Offer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Guarantee Terms</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Pricing Plans</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Guarantee Terms</em>' containment reference list.
-	 * @see scenarioDiagram.ScenarioDiagramPackage#getServiceOffer_GuaranteeTerms()
+	 * @return the value of the '<em>Pricing Plans</em>' containment reference list.
+	 * @see scenarioDiagram.ScenarioDiagramPackage#getServiceOffer_PricingPlans()
 	 * @see scenarioDiagram.PricingPlan#getServiceOffer
 	 * @model opposite="serviceOffer" containment="true"
 	 * @generated
 	 */
-	EList<PricingPlan> getGuaranteeTerms();
+	EList<PricingPlan> getPricingPlans();
 
 } // ServiceOffer

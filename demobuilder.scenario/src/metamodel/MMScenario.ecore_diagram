@@ -397,7 +397,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_FiLV9qW6EeWvLbxIyzoasg" x="13" y="25"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_FiLV8aW6EeWvLbxIyzoasg" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="MMScenario.ecore#//ServiceOffer/guaranteeTerms"/>
+    <element xmi:type="ecore:EReference" href="MMScenario.ecore#//ServiceOffer/pricingPlans"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FiLV8qW6EeWvLbxIyzoasg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xoDe8KW7EeWvLbxIyzoasg" id="(0.021052631578947368,0.2318840579710145)"/>
   </edges>

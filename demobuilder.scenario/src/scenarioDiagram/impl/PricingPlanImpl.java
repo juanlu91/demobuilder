@@ -206,7 +206,7 @@ public class PricingPlanImpl extends EObjectImpl implements PricingPlan {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newServiceOffer != null)
-				msgs = ((InternalEObject)newServiceOffer).eInverseAdd(this, ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS, ServiceOffer.class, msgs);
+				msgs = ((InternalEObject)newServiceOffer).eInverseAdd(this, ScenarioDiagramPackage.SERVICE_OFFER__PRICING_PLANS, ServiceOffer.class, msgs);
 			msgs = basicSetServiceOffer(newServiceOffer, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -282,7 +282,7 @@ public class PricingPlanImpl extends EObjectImpl implements PricingPlan {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ScenarioDiagramPackage.PRICING_PLAN__SERVICE_OFFER:
-				return eInternalContainer().eInverseRemove(this, ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS, ServiceOffer.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ScenarioDiagramPackage.SERVICE_OFFER__PRICING_PLANS, ServiceOffer.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

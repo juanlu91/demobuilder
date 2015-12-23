@@ -88,7 +88,7 @@
       <children
           compartment="//@nodes.3/@ownedChild/@compartments.0">
         <containmentFeature
-            href="MMScenario.ecore#//ServiceOffer/guaranteeTerms"/>
+            href="MMScenario.ecore#//ServiceOffer/pricingPlans"/>
         <ownedChild
             relatedDiagrams="//@diagram">
           <domainMetaElement
@@ -136,7 +136,7 @@
       <compartments
           children="//@nodes.3/@ownedChild/@children.0">
         <compartment
-            href="MMScenario.gmfgraph#ServiceOfferGuaranteeTermsCompartment"/>
+            href="MMScenario.gmfgraph#ServiceOfferPricingPlansCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>

@@ -68,10 +68,10 @@
         <children xsi:type="gmfgraph:Label" name="ServiceOfferLabelFigure" text="ServiceOffer">
           <maximumSize dx="10000" dy="50"/>
         </children>
-        <children xsi:type="gmfgraph:Rectangle" name="ServiceOfferGuaranteeTermsCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ServiceOfferPricingPlansCompartmentFigure" outline="false"/>
       </actualFigure>
       <accessors accessor="getFigureServiceOfferLabelFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
-      <accessors accessor="getServiceOfferGuaranteeTermsCompartmentFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
+      <accessors accessor="getServiceOfferPricingPlansCompartmentFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors name="AgreementLinkFigure">
       <actualFigure xsi:type="gmfgraph:PolylineConnection" name="AgreementLinkFigure" lineKind="LINE_DASH">
@@ -112,7 +112,7 @@
   <connections name="AgreementLink" figure="AgreementLinkFigure"/>
   <connections name="ServiceLink" figure="ServiceLinkFigure"/>
   <compartments name="PricingPlanPricingPlanElementsCompartment" figure="PricingPlanFigure" collapsible="true" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
-  <compartments name="ServiceOfferGuaranteeTermsCompartment" figure="ServiceOfferFigure" collapsible="true" accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+  <compartments name="ServiceOfferPricingPlansCompartment" figure="ServiceOfferFigure" collapsible="true" accessor="//@figures.0/@descriptors.8/@accessors.1"/>
   <labels name="ConsumerLabel" figure="ConsumerLabelFigure" elementIcon="false"/>
   <labels name="PricingPlanLabel" figure="PricingPlanFigure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels name="PricingPlanElementLabel" figure="PricingPlanElementFigure" elementIcon="false" accessor="//@figures.0/@descriptors.3/@accessors.0"/>

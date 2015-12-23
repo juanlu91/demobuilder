@@ -31,7 +31,7 @@ import scenarioDiagram.ServiceOffer;
  * <ul>
  *   <li>{@link scenarioDiagram.impl.ServiceOfferImpl#getName <em>Name</em>}</li>
  *   <li>{@link scenarioDiagram.impl.ServiceOfferImpl#getServiceEndpoint <em>Service Endpoint</em>}</li>
- *   <li>{@link scenarioDiagram.impl.ServiceOfferImpl#getGuaranteeTerms <em>Guarantee Terms</em>}</li>
+ *   <li>{@link scenarioDiagram.impl.ServiceOfferImpl#getPricingPlans <em>Pricing Plans</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,14 +79,14 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 	protected String serviceEndpoint = SERVICE_ENDPOINT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGuaranteeTerms() <em>Guarantee Terms</em>}' containment reference list.
+	 * The cached value of the '{@link #getPricingPlans() <em>Pricing Plans</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGuaranteeTerms()
+	 * @see #getPricingPlans()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PricingPlan> guaranteeTerms;
+	protected EList<PricingPlan> pricingPlans;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,11 +154,11 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PricingPlan> getGuaranteeTerms() {
-		if (guaranteeTerms == null) {
-			guaranteeTerms = new EObjectContainmentWithInverseEList<PricingPlan>(PricingPlan.class, this, ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS, ScenarioDiagramPackage.PRICING_PLAN__SERVICE_OFFER);
+	public EList<PricingPlan> getPricingPlans() {
+		if (pricingPlans == null) {
+			pricingPlans = new EObjectContainmentWithInverseEList<PricingPlan>(PricingPlan.class, this, ScenarioDiagramPackage.SERVICE_OFFER__PRICING_PLANS, ScenarioDiagramPackage.PRICING_PLAN__SERVICE_OFFER);
 		}
-		return guaranteeTerms;
+		return pricingPlans;
 	}
 
 	/**
@@ -170,8 +170,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getGuaranteeTerms()).basicAdd(otherEnd, msgs);
+			case ScenarioDiagramPackage.SERVICE_OFFER__PRICING_PLANS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPricingPlans()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -184,8 +184,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
-				return ((InternalEList<?>)getGuaranteeTerms()).basicRemove(otherEnd, msgs);
+			case ScenarioDiagramPackage.SERVICE_OFFER__PRICING_PLANS:
+				return ((InternalEList<?>)getPricingPlans()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -202,8 +202,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 				return getName();
 			case ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_ENDPOINT:
 				return getServiceEndpoint();
-			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
-				return getGuaranteeTerms();
+			case ScenarioDiagramPackage.SERVICE_OFFER__PRICING_PLANS:
+				return getPricingPlans();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -223,9 +223,9 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 			case ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_ENDPOINT:
 				setServiceEndpoint((String)newValue);
 				return;
-			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
-				getGuaranteeTerms().clear();
-				getGuaranteeTerms().addAll((Collection<? extends PricingPlan>)newValue);
+			case ScenarioDiagramPackage.SERVICE_OFFER__PRICING_PLANS:
+				getPricingPlans().clear();
+				getPricingPlans().addAll((Collection<? extends PricingPlan>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -245,8 +245,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 			case ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_ENDPOINT:
 				setServiceEndpoint(SERVICE_ENDPOINT_EDEFAULT);
 				return;
-			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
-				getGuaranteeTerms().clear();
+			case ScenarioDiagramPackage.SERVICE_OFFER__PRICING_PLANS:
+				getPricingPlans().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -264,8 +264,8 @@ public class ServiceOfferImpl extends ServiceElementImpl implements ServiceOffer
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ScenarioDiagramPackage.SERVICE_OFFER__SERVICE_ENDPOINT:
 				return SERVICE_ENDPOINT_EDEFAULT == null ? serviceEndpoint != null : !SERVICE_ENDPOINT_EDEFAULT.equals(serviceEndpoint);
-			case ScenarioDiagramPackage.SERVICE_OFFER__GUARANTEE_TERMS:
-				return guaranteeTerms != null && !guaranteeTerms.isEmpty();
+			case ScenarioDiagramPackage.SERVICE_OFFER__PRICING_PLANS:
+				return pricingPlans != null && !pricingPlans.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

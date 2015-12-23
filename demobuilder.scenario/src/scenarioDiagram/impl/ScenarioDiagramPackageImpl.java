@@ -404,7 +404,7 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getServiceOffer_GuaranteeTerms() {
+	public EReference getServiceOffer_PricingPlans() {
 		return (EReference)serviceOfferEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -608,7 +608,7 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 
 		serviceOfferEClass = createEClass(SERVICE_OFFER);
 		createEAttribute(serviceOfferEClass, SERVICE_OFFER__SERVICE_ENDPOINT);
-		createEReference(serviceOfferEClass, SERVICE_OFFER__GUARANTEE_TERMS);
+		createEReference(serviceOfferEClass, SERVICE_OFFER__PRICING_PLANS);
 
 		agreementLinkEClass = createEClass(AGREEMENT_LINK);
 		createEReference(agreementLinkEClass, AGREEMENT_LINK__SOURCE);
@@ -681,7 +681,7 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 		initEClass(pricingPlanEClass, PricingPlan.class, "PricingPlan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPricingPlan_PricingPlanElements(), this.getPricingPlanElement(), null, "pricingPlanElements", null, 0, -1, PricingPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPricingPlan_AgreementLink(), this.getAgreementLink(), this.getAgreementLink_Target(), "agreementLink", null, 0, 1, PricingPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPricingPlan_ServiceOffer(), this.getServiceOffer(), this.getServiceOffer_GuaranteeTerms(), "serviceOffer", null, 0, 1, PricingPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPricingPlan_ServiceOffer(), this.getServiceOffer(), this.getServiceOffer_PricingPlans(), "serviceOffer", null, 0, 1, PricingPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPricingPlan_Name(), ecorePackage.getEString(), "name", null, 0, 1, PricingPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pricingPlanElementEClass, PricingPlanElement.class, "PricingPlanElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -699,7 +699,7 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 
 		initEClass(serviceOfferEClass, ServiceOffer.class, "ServiceOffer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceOffer_ServiceEndpoint(), ecorePackage.getEString(), "serviceEndpoint", null, 0, 1, ServiceOffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServiceOffer_GuaranteeTerms(), this.getPricingPlan(), this.getPricingPlan_ServiceOffer(), "guaranteeTerms", null, 0, -1, ServiceOffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceOffer_PricingPlans(), this.getPricingPlan(), this.getPricingPlan_ServiceOffer(), "pricingPlans", null, 0, -1, ServiceOffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(agreementLinkEClass, AgreementLink.class, "AgreementLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAgreementLink_Source(), this.getServiceNeed(), this.getServiceNeed_AgreementLink(), "source", null, 0, 1, AgreementLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -930,7 +930,7 @@ public class ScenarioDiagramPackageImpl extends EPackageImpl implements Scenario
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getServiceOffer_GuaranteeTerms(), 
+		  (getServiceOffer_PricingPlans(), 
 		   source, 
 		   new String[] {
 		   });

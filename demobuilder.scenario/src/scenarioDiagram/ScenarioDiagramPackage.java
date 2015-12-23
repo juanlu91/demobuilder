@@ -482,13 +482,13 @@ public interface ScenarioDiagramPackage extends EPackage {
 	int SERVICE_OFFER__SERVICE_ENDPOINT = SERVICE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Guarantee Terms</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Pricing Plans</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_OFFER__GUARANTEE_TERMS = SERVICE_ELEMENT_FEATURE_COUNT + 2;
+	int SERVICE_OFFER__PRICING_PLANS = SERVICE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Service Offer</em>' class.
@@ -849,15 +849,15 @@ public interface ScenarioDiagramPackage extends EPackage {
 	EAttribute getServiceOffer_ServiceEndpoint();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link scenarioDiagram.ServiceOffer#getGuaranteeTerms <em>Guarantee Terms</em>}'.
+	 * Returns the meta object for the containment reference list '{@link scenarioDiagram.ServiceOffer#getPricingPlans <em>Pricing Plans</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Guarantee Terms</em>'.
-	 * @see scenarioDiagram.ServiceOffer#getGuaranteeTerms()
+	 * @return the meta object for the containment reference list '<em>Pricing Plans</em>'.
+	 * @see scenarioDiagram.ServiceOffer#getPricingPlans()
 	 * @see #getServiceOffer()
 	 * @generated
 	 */
-	EReference getServiceOffer_GuaranteeTerms();
+	EReference getServiceOffer_PricingPlans();
 
 	/**
 	 * Returns the meta object for class '{@link scenarioDiagram.AgreementLink <em>Agreement Link</em>}'.
@@ -1240,12 +1240,12 @@ public interface ScenarioDiagramPackage extends EPackage {
 		EAttribute SERVICE_OFFER__SERVICE_ENDPOINT = eINSTANCE.getServiceOffer_ServiceEndpoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Guarantee Terms</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Pricing Plans</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SERVICE_OFFER__GUARANTEE_TERMS = eINSTANCE.getServiceOffer_GuaranteeTerms();
+		EReference SERVICE_OFFER__PRICING_PLANS = eINSTANCE.getServiceOffer_PricingPlans();
 
 		/**
 		 * The meta object literal for the '{@link scenarioDiagram.impl.AgreementLinkImpl <em>Agreement Link</em>}' class.

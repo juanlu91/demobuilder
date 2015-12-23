@@ -5,6 +5,7 @@
 module scenario2agreement;
 create OUT: AGREEMENT from IN: SCENARIO;
 
+-- HELPERS
 helper def: guaranteeTerm_var: AGREEMENT!GuaranteeTerm =
 	OclUndefined;
 
@@ -23,12 +24,20 @@ helper def: consumerActor_var: AGREEMENT!Actor =
 helper def: SLO_var: AGREEMENT!SLO =
 	OclUndefined;
 
-rule PricingPlanElement2GuaranteeTerm {
+helper def: actors: AGREEMENT!Actor =
+	OclUndefined;
+
+
+ --helper context OclAny def : random() : String =
+-- 	"#native"!"java::util::UUID".refInvokeStaticOperation('randomUUID', Sequence{}).toString();
+
+-- LAZY RULES
+lazy rule PricingPlanElement2GuaranteeTerm {
 	from
 		IN: SCENARIO!PricingPlanElement
 	to
 		guaranteeTerm: AGREEMENT!GuaranteeTerm (
-			id <- OclUndefined,
+			id <- 'G_',
 			qualifyingCondition <- agQualifyingCondition,
 			role <- OclUndefined,
 			slo <- agSLO,
@@ -50,7 +59,7 @@ rule PricingPlanElement2GuaranteeTerm {
 	}
 }
 
-rule ServiceOffer2ServiceConfiguration {
+lazy rule ServiceOffer2ServiceConfiguration {
 	from
 		IN: SCENARIO!ServiceOffer
 	to
@@ -59,7 +68,8 @@ rule ServiceOffer2ServiceConfiguration {
 					including(agConfigurationProperty),
 			definitionReference <- OclUndefined,
 			endpointReference <- IN.serviceEndpoint,
-			features <- serviceConfiguration.features -> including(agFeature),
+			features <- OclUndefined,
+			--thisModule.ServiceOffer2Feature(IN),
 			monitorReference <- OclUndefined,
 			serviceName <- IN.name
 		),
@@ -67,44 +77,60 @@ rule ServiceOffer2ServiceConfiguration {
 			definitionReference <- OclUndefined,
 			expression <- OclUndefined,
 			features <- OclUndefined,
-			--agConfigurationProperty.features -> including(agFeature),
+			--thisModule.ServiceOffer2Feature(IN),
 			id <- OclUndefined,
-			--metric <- agMetric,
 			scope <- OclUndefined
-		),
+		)
+	do {
+	}
+}
+
+lazy rule ServiceOffer2MonitorableProperty {
+	from
+		IN: SCENARIO!ServiceOffer
+	to
+		monitorableProperties: AGREEMENT!MonitorableProperty (
+			definitionReference <- OclUndefined,
+			expression <- OclUndefined,
+			features <- OclUndefined,
+			--thisModule.ServiceOffer2Feature(IN),
+			id <- OclUndefined,
+			monitorReference <- OclUndefined,
+			scope <- OclUndefined
+		)
+	do {
+	}
+}
+
+lazy rule ServiceOffer2Actor {
+	from
+		IN: SCENARIO!ServiceOffer
+	to
+		agActor: AGREEMENT!Actor (
+			id <- IN.serviceLink.actor.name,
+			role <- #PROVIDER,
+			roleType <- #RESPONDER
+		)
+	do {
+	}
+}
+
+lazy rule ServiceOffer2Feature {
+	from
+		IN: SCENARIO!ServiceOffer
+	to
 		agFeature: AGREEMENT!Feature (
 			id <- OclUndefined,
 			parameters <- agFeature.parameters -> including(agParameter)
 		),
 		agParameter: AGREEMENT!Parameter (
 			name <- OclUndefined
-		),
-		monitorableProperties: AGREEMENT!MonitorableProperty (
-			definitionReference <- OclUndefined,
-			expression <- OclUndefined,
-			features <- agFeature,
-			id <- OclUndefined,
-			--metric <- agMetric,
-			monitorReference <- OclUndefined,
-			scope <- OclUndefined
-		),
-		agActor: AGREEMENT!Actor (
-			id <- IN.serviceLink.actor.name,
-			role <- #PROVIDER,
-			roleType <- #RESPONDER
-		) --agMetric: AGREEMENT!Metric (
-		--	domain <- OclUndefined,
-		--	id <- 'hola',
-		--	type <- OclUndefined
-		--)
-	
+		)
 	do {
-		thisModule.serviceConfigurarion_var<-serviceConfiguration;
-		thisModule.monitorableProperties_var<-monitorableProperties;
-		thisModule.providerActor_var<-agActor;
 	}
 }
 
+-- RULES
 rule PricingPlan2AgreementModel {
 	from
 		IN: SCENARIO!PricingPlan
@@ -116,27 +142,49 @@ rule PricingPlan2AgreementModel {
 			agTerm <- agTerm
 		),
 		agTerm: AGREEMENT!AgreementTerm (
-			guaranteeTerms <- thisModule.guaranteeTerm_var,
-			monitorableProperties <- if thisModule.SLO_var.oclIsUndefined() then OclUndefined else thisModule.monitorableProperties_var endif,
-			serviceConfigurarion <- thisModule.serviceConfigurarion_var
+			guaranteeTerms <- IN.pricingPlanElements -> collect(pe | thisModule.
+					PricingPlanElement2GuaranteeTerm(pe)),
+			monitorableProperties <- thisModule.ServiceOffer2MonitorableProperty(IN.
+					serviceOffer),
+			serviceConfigurarion <- thisModule.ServiceOffer2ServiceConfiguration(IN.
+					serviceOffer)
 		),
 		agContext: AGREEMENT!Context (
-			actors <- thisModule.providerActor_var,
-			--agContext.actors -> including(agActor),
-			metrics <- agContext.metrics -> including(agMetric)
+			actors <- thisModule.ServiceOffer2Actor(IN.serviceOffer),
+			metrics <- agContext.metrics -> including(agMetric_boolean) ->
+					including(agMetric_int) -> including(agMetric_float) ->
+					including(agMetric_natural)
 		),
-		--agActor: AGREEMENT!Actor (
-		--	id <- OclUndefined,
-		--	role <- OclUndefined,
-		--	roleType <- OclUndefined
-		--),
-		agMetric: AGREEMENT!Metric (
-			domain <- agMetricDomain,
+		agMetric_boolean: AGREEMENT!Metric (
+			domain <- OclUndefined,
+			id <- 'boolean',
+			type <- #BOOLEAN
+		),
+		agMetric_int: AGREEMENT!Metric (
+			domain <- agMetricDomain_int,
 			id <- 'int',
 			type <- #INTEGER
 		),
-		agMetricDomain: AGREEMENT!Range(
+		agMetric_float: AGREEMENT!Metric (
+			domain <- agMetricDomain_float,
+			id <- 'float',
+			type <- #FLOAT
+		),
+		agMetric_natural: AGREEMENT!Metric (
+			domain <- agMetricDomain_natural,
+			id <- 'natural',
+			type <- #NATURAL
+		),
+		agMetricDomain_int: AGREEMENT!Range (
 			min <- -9999999,
+			max <- 9999999
+		),
+		agMetricDomain_float: AGREEMENT!Range (
+			min <- -9999999,
+			max <- 9999999
+		),
+		agMetricDomain_natural: AGREEMENT!Range (
+			min <- 0,
 			max <- 9999999
 		)
 	do {

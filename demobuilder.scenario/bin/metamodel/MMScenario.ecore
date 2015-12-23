@@ -70,7 +70,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="agreementLink" eType="#//AgreementLink"
         eOpposite="#//AgreementLink/target"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceOffer" eType="#//ServiceOffer"
-        eOpposite="#//ServiceOffer/guaranteeTerms"/>
+        eOpposite="#//ServiceOffer/pricingPlans"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PricingPlanElement">
@@ -150,7 +150,7 @@
       <details key="tool.large.path" value="/icons/full/obj32/ServiceOffer.gif"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceEndpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="guaranteeTerms" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pricingPlans" upperBound="-1"
         eType="#//PricingPlan" containment="true" eOpposite="#//PricingPlan/serviceOffer">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>

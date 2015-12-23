@@ -72,7 +72,7 @@ public interface PricingPlan extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Service Offer</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link scenarioDiagram.ServiceOffer#getGuaranteeTerms <em>Guarantee Terms</em>}'.
+	 * It is bidirectional and its opposite is '{@link scenarioDiagram.ServiceOffer#getPricingPlans <em>Pricing Plans</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Service Offer</em>' container reference isn't clear,
@@ -82,8 +82,8 @@ public interface PricingPlan extends EObject {
 	 * @return the value of the '<em>Service Offer</em>' container reference.
 	 * @see #setServiceOffer(ServiceOffer)
 	 * @see scenarioDiagram.ScenarioDiagramPackage#getPricingPlan_ServiceOffer()
-	 * @see scenarioDiagram.ServiceOffer#getGuaranteeTerms
-	 * @model opposite="guaranteeTerms" transient="false"
+	 * @see scenarioDiagram.ServiceOffer#getPricingPlans
+	 * @model opposite="pricingPlans" transient="false"
 	 * @generated
 	 */
 	ServiceOffer getServiceOffer();

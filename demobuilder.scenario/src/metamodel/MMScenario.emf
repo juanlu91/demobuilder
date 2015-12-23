@@ -38,7 +38,7 @@ class PricingPlan {
   @gmf.compartment
   val PricingPlanElement[*] pricingPlanElements;
   ref AgreementLink#target agreementLink;
-  ref ServiceOffer#guaranteeTerms serviceOffer;
+  ref ServiceOffer#pricingPlans serviceOffer;
   attr String name;
 }
 
@@ -66,7 +66,7 @@ class ServiceOffer extends ServiceElement, ScenarioElement {
   attr String serviceEndpoint;
 
   @gmf.compartment
-  val PricingPlan[*]#serviceOffer guaranteeTerms;
+  val PricingPlan[*]#serviceOffer pricingPlans;
 }
 
 @gmf.link(source="source", target="target", label="name", width="1", style="dash", tool.name="Agreement Link", tool.description="Creates an agreement link", color="0,0,0")
