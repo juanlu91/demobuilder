@@ -18,11 +18,13 @@ int enum_«metric.id»[domain_«metric.id»] = [«FOREACH ((Enumerated)metric.domain)
 «ENDFOREACH»
 
 «FOREACH this.agTerm.serviceConfigurarion.configurationProperties.addAll(this.agTerm.monitorableProperties) AS prop-»
-	«IF prop.metric.domain.metaType.isAssignableFrom(Enumerated)-»
+	«IF prop.metric.domain != null-»
+		«IF prop.metric.domain.metaType.isAssignableFrom(Enumerated)-»
 dvar «oplType(prop.metric)» «prop.id» in 0..«((Enumerated)prop.metric.domain).values.size - 1»;
-	«ELSE-»
+		«ELSE-»
 dvar «oplType(prop.metric)» «prop.id» in range_«prop.metric.id»;
-	«ENDIF-»
+		«ENDIF-»
+	«ENDIF»
 «ENDFOREACH-»
 
 subject to {
