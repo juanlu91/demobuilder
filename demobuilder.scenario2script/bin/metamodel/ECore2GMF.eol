@@ -1,0 +1,48 @@
+var palette := GmfTool!Palette.all.first();
+
+var toolGroupObjects = GmfTool!ToolGroup.all.selectOne(r|r.title = 'Objects');
+var toolGroupConnections = GmfTool!ToolGroup.all.selectOne(r|r.title = 'Connections');
+
+var toolEntry;
+
+// ToolGroup: Actors
+
+var toolGroupAgContext = new GmfTool!ToolGroup;
+toolGroupAgContext.title := 'Actors';
+toolGroupAgContext.collapsible := true;
+palette.tools.add(toolGroupAgContext);
+
+toolEntry = toolGroupObjects.tools.selectOne(r|r.title = 'Consumer');
+toolGroupAgContext.tools.add(toolEntry);
+
+toolEntry = toolGroupObjects.tools.selectOne(r|r.title = 'Provider');
+toolGroupAgContext.tools.add(toolEntry);
+
+// ToolGroup: Agreement Terms
+
+var toolGroupAgTerms = new GmfTool!ToolGroup;
+toolGroupAgTerms.title := 'Services';
+toolGroupAgTerms.collapsible := true;
+palette.tools.add(toolGroupAgTerms);
+
+toolEntry = toolGroupObjects.tools.selectOne(r|r.title = 'Service Need');
+toolGroupAgTerms.tools.add(toolEntry);
+
+toolEntry = toolGroupObjects.tools.selectOne(r|r.title = 'Service Offer');
+toolGroupAgTerms.tools.add(toolEntry);
+
+// ToolGroup: Pricing plans
+
+var toolGroupGuaranteeTerms = new GmfTool!ToolGroup;
+toolGroupGuaranteeTerms.title := 'Pricing plans';
+toolGroupGuaranteeTerms.collapsible := true;
+palette.tools.add(toolGroupGuaranteeTerms);
+
+toolEntry = toolGroupObjects.tools.selectOne(r|r.title = 'Pricing Plan');
+toolGroupGuaranteeTerms.tools.add(toolEntry);
+
+toolEntry = toolGroupObjects.tools.selectOne(r|r.title = 'Pricing Plan Element');
+toolGroupGuaranteeTerms.tools.add(toolEntry);
+
+delete toolGroupObjects;
+//delete toolGroupConnections;
