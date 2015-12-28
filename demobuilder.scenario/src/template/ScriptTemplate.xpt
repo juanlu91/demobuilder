@@ -30,9 +30,15 @@ curl -k -basic -u $USER:$PASS https://localhost:8181/IDEAS/file/createProject?pr
 «ENDDEFINE-»
 
 «DEFINE setFile FOR Scenario»
-	«FOREACH this.agreementLinks AS agLink-»
-FILE_URI="$WORKSPACE_NAME/$PROJECT_NAME/«agLink.target.name.toFirstLower()».at"
+	«FOREACH this.scenarioElements AS scenarioElem-»
+		«IF scenarioElem.metaType.isAssignableFrom(ServiceOffer)-»
+			«LET ((ServiceOffer)scenarioElem) AS serviceOffer-»
+				«FOREACH serviceOffer.pricingPlans AS pricingPlan»
+FILE_URI="$WORKSPACE_NAME/$PROJECT_NAME/«pricingPlan.name.toFirstLower()».at"
 curl -k -basic -u $USER:$PASS -H "Accept: application/json" -H "Content-Type:application/json" https://localhost:8181/IDEAS/file/createFile?fileUri=$FILE_URI
 curl -k -u $USER:$PASS -X POST -d "fileUri=$FILE_URI" -d "fileContent=$(cat $fileName)" https://localhost:8181/IDEAS/file/setFileContent
+				«ENDFOREACH»
+			«ENDLET-»
+		«ENDIF-»
 	«ENDFOREACH-»
 «ENDDEFINE»
