@@ -35,4 +35,39 @@
       </guaranteeTerms>
     </agTerm>
   </agreements>
+  <agreements id="PlanMedium" version="1.0">
+    <context>
+      <actors id="Amazon"/>
+      <metrics type="BOOLEAN" id="boolean"/>
+      <metrics id="int">
+        <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
+      </metrics>
+      <metrics type="FLOAT" id="float">
+        <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
+      </metrics>
+      <metrics type="NATURAL" id="natural">
+        <domain xsi:type="mmag:Range" min="0" max="9999999"/>
+      </metrics>
+    </context>
+    <agTerm>
+      <serviceConfigurarion>
+        <configurationProperties/>
+      </serviceConfigurarion>
+      <monitorableProperties id="M_"/>
+      <guaranteeTerms id="G_">
+        <slo expression="m1"/>
+        <qualifyingCondition/>
+        <compensations>
+          <compensationElements/>
+        </compensations>
+      </guaranteeTerms>
+      <guaranteeTerms id="G_">
+        <slo expression="m2"/>
+        <qualifyingCondition/>
+        <compensations>
+          <compensationElements/>
+        </compensations>
+      </guaranteeTerms>
+    </agTerm>
+  </agreements>
 </mmag:AgreementCompositor>

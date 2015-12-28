@@ -14,8 +14,8 @@ rule Scenario2AgreementCompositor {
 		scenario: SCENARIO!Scenario
 	to
 		agCompositor: AGREEMENT!AgreementCompositor (
-			agreements <- scenario.agreementLinks -> collect(agLink | thisModule.
-					pricingPlan2AgreementModel(agLink.target))
+			agreements <- SCENARIO!PricingPlan.allInstances() -> collect(pricingPlan | thisModule.
+					pricingPlan2AgreementModel(pricingPlan))
 		)
 }
 
