@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mmsc="http://demobuilder.scenario.metamodel" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_4z4iIK1_EeW219GTOcO2EA" type="ScenarioMetamodel" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_MHlAYK2AEeW219GTOcO2EA" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_MHlAYq2AEeW219GTOcO2EA" type="5001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_MHlAY62AEeW219GTOcO2EA" y="5"/>
+    </children>
+    <element xmi:type="mmsc:Consumer" href="Scenario.scenariometamodel#//@scenarioElements.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MHlAYa2AEeW219GTOcO2EA"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_MHlncK2AEeW219GTOcO2EA" type="2002" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_MHlncq2AEeW219GTOcO2EA" type="5002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_MHlnc62AEeW219GTOcO2EA" y="5"/>
+    </children>
+    <element xmi:type="mmsc:Provider" href="Scenario.scenariometamodel#//@scenarioElements.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MHlnca2AEeW219GTOcO2EA" x="160"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_MHlndK2AEeW219GTOcO2EA" type="2004">
+    <children xmi:type="notation:DecorationNode" xmi:id="_MHlneq2AEeW219GTOcO2EA" type="5006"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_MHlne62AEeW219GTOcO2EA" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_MHm1kK2AEeW219GTOcO2EA" type="3001">
+        <children xmi:type="notation:DecorationNode" xmi:id="_MHm1lq2AEeW219GTOcO2EA" type="5005"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_MHm1l62AEeW219GTOcO2EA" type="7002"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_MHm1ka2AEeW219GTOcO2EA"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_MHm1kq2AEeW219GTOcO2EA" fontName="Segoe UI"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_MHm1k62AEeW219GTOcO2EA"/>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_MHm1lK2AEeW219GTOcO2EA"/>
+        <element xmi:type="mmsc:PricingPlan" href="Scenario.scenariometamodel#//@scenarioElements.2/@pricingPlans.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MHm1la2AEeW219GTOcO2EA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_MHm1mK2AEeW219GTOcO2EA" type="3001">
+        <children xmi:type="notation:DecorationNode" xmi:id="_MHm1nq2AEeW219GTOcO2EA" type="5005"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_MHm1n62AEeW219GTOcO2EA" type="7002"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_MHm1ma2AEeW219GTOcO2EA"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_MHm1mq2AEeW219GTOcO2EA" fontName="Segoe UI"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_MHm1m62AEeW219GTOcO2EA"/>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_MHm1nK2AEeW219GTOcO2EA"/>
+        <element xmi:type="mmsc:PricingPlan" href="Scenario.scenariometamodel#//@scenarioElements.2/@pricingPlans.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MHm1na2AEeW219GTOcO2EA" y="84"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_MHlnda2AEeW219GTOcO2EA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_MHlndq2AEeW219GTOcO2EA" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_MHlnd62AEeW219GTOcO2EA"/>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_MHlneK2AEeW219GTOcO2EA"/>
+    <element xmi:type="mmsc:ServiceOffer" href="Scenario.scenariometamodel#//@scenarioElements.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MHlnea2AEeW219GTOcO2EA" x="185" y="160" width="191" height="211"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_MHlnfK2AEeW219GTOcO2EA" type="2003" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_MHlnfq2AEeW219GTOcO2EA" type="5003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_MHlnf62AEeW219GTOcO2EA" y="5"/>
+    </children>
+    <element xmi:type="mmsc:ServiceNeed" href="Scenario.scenariometamodel#//@scenarioElements.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MHlnfa2AEeW219GTOcO2EA" x="25" y="160"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_4z4iIa1_EeW219GTOcO2EA"/>
+  <element xmi:type="mmsc:Scenario" href="Scenario.scenariometamodel#/"/>
+</notation:Diagram>
