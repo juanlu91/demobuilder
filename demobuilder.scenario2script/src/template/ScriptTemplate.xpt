@@ -5,7 +5,6 @@
 «EXPAND setHeaderScript FOR this-»
 «EXPAND setWorkspace FOR this-»
 «EXPAND setProject FOR this-»
-«EXPAND setFile FOR this-»
 «ENDFILE»
 «ENDDEFINE»
 
@@ -14,7 +13,6 @@
 USER="DemoMaster"
 PASS="DemoMaster"
 WORKSPACE_NAME="Workspace"
-PROJECT_NAME="Project"
 «ENDDEFINE-»
 
 «DEFINE setWorkspace FOR Scenario-»
@@ -22,13 +20,19 @@ curl -k -basic -u $USER:$PASS https://localhost:8181/IDEAS/file/createWorkspace?
 «ENDDEFINE-»
 
 «DEFINE setProject FOR Scenario-»
+	«FOREACH this.serviceLinks AS srvLink-»
+		«IF srvLink.actor.metaType.isAssignableFrom(Provider)-»
+PROJECT_NAME="«srvLink.actor.name»"
 curl -k -basic -u $USER:$PASS https://localhost:8181/IDEAS/file/createProject?projectUri=$WORKSPACE_NAME/$PROJECT_NAME
+			«EXPAND setFile FOR this-»
+		«ENDIF-»
+	«ENDFOREACH-»
 «ENDDEFINE-»
 
 «DEFINE setFile FOR Scenario»
-«FOREACH this.agreementLinks AS agLink-»
+	«FOREACH this.agreementLinks AS agLink-»
 FILE_URI="$WORKSPACE_NAME/$PROJECT_NAME/«agLink.target.name.toFirstLower()».at"
 curl -k -basic -u $USER:$PASS -H "Accept: application/json" -H "Content-Type:application/json" https://localhost:8181/IDEAS/file/createFile?fileUri=$FILE_URI
 curl -k -u $USER:$PASS -X POST -d "fileUri=$FILE_URI" -d "fileContent=$(cat $fileName)" https://localhost:8181/IDEAS/file/setFileContent
-«ENDFOREACH-»
+	«ENDFOREACH-»
 «ENDDEFINE»
