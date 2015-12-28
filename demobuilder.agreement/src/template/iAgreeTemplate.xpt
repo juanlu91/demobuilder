@@ -2,12 +2,14 @@
 «EXTENSION template::Utils»
 
 «REM»Plantilla raiz«ENDREM»
-«DEFINE main FOR AgreementModel-»
-	«FILE this.id + '.at'-»
-Template «this.id» version «this.version-»
-		«EXPAND setContext FOR context-»
-		«EXPAND setAgreementTerms FOR agTerm-»
+«DEFINE main FOR AgreementCompositor-»
+	«FOREACH this.agreements AS agModel»
+		«FILE agModel.id + '.at'-»
+Template «agModel.id» version «agModel.version-»
+			«EXPAND setContext FOR agModel.context-»
+			«EXPAND setAgreementTerms FOR agModel.agTerm-»
 EndTemplate«ENDFILE»
+	«ENDFOREACH»
 «ENDDEFINE»
 
 «DEFINE setContext FOR Context»

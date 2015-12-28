@@ -1,0 +1,16 @@
+using CP;
+
+range range_int = 1..10000;
+range range_price = 0..500;
+
+
+dvar int planPrice in range_price;
+dvar int requests in range_int;
+dvar int avgResponseTime in range_int;
+dvar int analyticsRequests in range_int;
+
+subject to {
+	RequestTerm: requests <= 10;
+	TimeTerm: avgResponseTime <= 1000;
+	AnalyticsRequestTerm: analyticsRequests <= 5;
+}

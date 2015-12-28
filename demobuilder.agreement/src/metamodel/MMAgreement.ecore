@@ -3,14 +3,31 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="AgreementMetamodel" nsURI="http://demobuilder.agreement.metamodel"
     nsPrefix="mmag">
   <eAnnotations source="gmf"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AgreementModel">
+  <eClassifiers xsi:type="ecore:EClass" name="AgreementCompositor">
     <eAnnotations source="gmf.diagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agreements" upperBound="-1"
+        eType="#//AgreementModel" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AgreementModel">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="id"/>
+      <details key="label.icon" value="false"/>
+      <details key="figure" value="rectangle"/>
+      <details key="tool.name" value="Agreement"/>
+      <details key="tool.description" value="Creates a new agreement"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
-        eType="#//Context" containment="true"/>
+        eType="#//Context" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="agTerm" lowerBound="1"
-        eType="#//AgreementTerm" containment="true"/>
+        eType="#//AgreementTerm" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Context">
     <eAnnotations source="gmf.node">
@@ -47,7 +64,7 @@
     <eLiterals name="CONSUMER" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RoleType">
-    <eLiterals name="INITIATOR" literal="INITIATOR"/>
+    <eLiterals name="INITIATOR"/>
     <eLiterals name="RESPONDER" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Datatype">

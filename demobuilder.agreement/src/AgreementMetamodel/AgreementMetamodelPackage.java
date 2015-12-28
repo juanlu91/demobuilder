@@ -57,6 +57,34 @@ public interface AgreementMetamodelPackage extends EPackage {
 	AgreementMetamodelPackage eINSTANCE = AgreementMetamodel.impl.AgreementMetamodelPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link AgreementMetamodel.impl.AgreementCompositorImpl <em>Agreement Compositor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AgreementMetamodel.impl.AgreementCompositorImpl
+	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getAgreementCompositor()
+	 * @generated
+	 */
+	int AGREEMENT_COMPOSITOR = 0;
+
+	/**
+	 * The feature id for the '<em><b>Agreements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGREEMENT_COMPOSITOR__AGREEMENTS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Agreement Compositor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGREEMENT_COMPOSITOR_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link AgreementMetamodel.impl.AgreementModelImpl <em>Agreement Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,7 +92,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getAgreementModel()
 	 * @generated
 	 */
-	int AGREEMENT_MODEL = 0;
+	int AGREEMENT_MODEL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -119,7 +147,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getContext()
 	 * @generated
 	 */
-	int CONTEXT = 1;
+	int CONTEXT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Actors</b></em>' containment reference list.
@@ -156,7 +184,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getActor()
 	 * @generated
 	 */
-	int ACTOR = 2;
+	int ACTOR = 3;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -202,7 +230,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getMetric()
 	 * @generated
 	 */
-	int METRIC = 3;
+	int METRIC = 4;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -248,7 +276,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getDomain()
 	 * @generated
 	 */
-	int DOMAIN = 4;
+	int DOMAIN = 5;
 
 	/**
 	 * The number of structural features of the '<em>Domain</em>' class.
@@ -267,7 +295,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getRange()
 	 * @generated
 	 */
-	int RANGE = 5;
+	int RANGE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' attribute.
@@ -304,7 +332,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getEnumerated()
 	 * @generated
 	 */
-	int ENUMERATED = 6;
+	int ENUMERATED = 7;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -332,7 +360,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getAgreementTerm()
 	 * @generated
 	 */
-	int AGREEMENT_TERM = 7;
+	int AGREEMENT_TERM = 8;
 
 	/**
 	 * The feature id for the '<em><b>Service Configurarion</b></em>' containment reference.
@@ -378,7 +406,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getServiceConfiguration()
 	 * @generated
 	 */
-	int SERVICE_CONFIGURATION = 8;
+	int SERVICE_CONFIGURATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Endpoint Reference</b></em>' attribute.
@@ -451,7 +479,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getGuaranteeTerm()
 	 * @generated
 	 */
-	int GUARANTEE_TERM = 9;
+	int GUARANTEE_TERM = 10;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -515,7 +543,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getFeature()
 	 * @generated
 	 */
-	int FEATURE = 10;
+	int FEATURE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -552,7 +580,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getProperty()
 	 * @generated
 	 */
-	int PROPERTY = 11;
+	int PROPERTY = 12;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -625,7 +653,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getConfigurationProperty()
 	 * @generated
 	 */
-	int CONFIGURATION_PROPERTY = 12;
+	int CONFIGURATION_PROPERTY = 13;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -698,7 +726,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getMonitorableProperty()
 	 * @generated
 	 */
-	int MONITORABLE_PROPERTY = 13;
+	int MONITORABLE_PROPERTY = 14;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -780,7 +808,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getSLO()
 	 * @generated
 	 */
-	int SLO = 14;
+	int SLO = 15;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -808,7 +836,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getCompensation()
 	 * @generated
 	 */
-	int COMPENSATION = 15;
+	int COMPENSATION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Interval</b></em>' attribute.
@@ -854,7 +882,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getQualifyingCondition()
 	 * @generated
 	 */
-	int QUALIFYING_CONDITION = 16;
+	int QUALIFYING_CONDITION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -882,7 +910,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getCompensationElement()
 	 * @generated
 	 */
-	int COMPENSATION_ELEMENT = 17;
+	int COMPENSATION_ELEMENT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -919,7 +947,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 18;
+	int PARAMETER = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -947,7 +975,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getValue()
 	 * @generated
 	 */
-	int VALUE = 19;
+	int VALUE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -975,7 +1003,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getRole()
 	 * @generated
 	 */
-	int ROLE = 20;
+	int ROLE = 21;
 
 	/**
 	 * The meta object id for the '{@link AgreementMetamodel.RoleType <em>Role Type</em>}' enum.
@@ -985,7 +1013,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getRoleType()
 	 * @generated
 	 */
-	int ROLE_TYPE = 21;
+	int ROLE_TYPE = 22;
 
 	/**
 	 * The meta object id for the '{@link AgreementMetamodel.Datatype <em>Datatype</em>}' enum.
@@ -995,7 +1023,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getDatatype()
 	 * @generated
 	 */
-	int DATATYPE = 22;
+	int DATATYPE = 23;
 
 	/**
 	 * The meta object id for the '{@link AgreementMetamodel.Scope <em>Scope</em>}' enum.
@@ -1005,7 +1033,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getScope()
 	 * @generated
 	 */
-	int SCOPE = 23;
+	int SCOPE = 24;
 
 	/**
 	 * The meta object id for the '{@link AgreementMetamodel.AssessmentInterval <em>Assessment Interval</em>}' enum.
@@ -1015,7 +1043,7 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getAssessmentInterval()
 	 * @generated
 	 */
-	int ASSESSMENT_INTERVAL = 24;
+	int ASSESSMENT_INTERVAL = 25;
 
 	/**
 	 * The meta object id for the '{@link AgreementMetamodel.CompensationType <em>Compensation Type</em>}' enum.
@@ -1025,8 +1053,29 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getCompensationType()
 	 * @generated
 	 */
-	int COMPENSATION_TYPE = 25;
+	int COMPENSATION_TYPE = 26;
 
+
+	/**
+	 * Returns the meta object for class '{@link AgreementMetamodel.AgreementCompositor <em>Agreement Compositor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Agreement Compositor</em>'.
+	 * @see AgreementMetamodel.AgreementCompositor
+	 * @generated
+	 */
+	EClass getAgreementCompositor();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link AgreementMetamodel.AgreementCompositor#getAgreements <em>Agreements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Agreements</em>'.
+	 * @see AgreementMetamodel.AgreementCompositor#getAgreements()
+	 * @see #getAgreementCompositor()
+	 * @generated
+	 */
+	EReference getAgreementCompositor_Agreements();
 
 	/**
 	 * Returns the meta object for class '{@link AgreementMetamodel.AgreementModel <em>Agreement Model</em>}'.
@@ -1827,6 +1876,24 @@ public interface AgreementMetamodelPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link AgreementMetamodel.impl.AgreementCompositorImpl <em>Agreement Compositor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AgreementMetamodel.impl.AgreementCompositorImpl
+		 * @see AgreementMetamodel.impl.AgreementMetamodelPackageImpl#getAgreementCompositor()
+		 * @generated
+		 */
+		EClass AGREEMENT_COMPOSITOR = eINSTANCE.getAgreementCompositor();
+
+		/**
+		 * The meta object literal for the '<em><b>Agreements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AGREEMENT_COMPOSITOR__AGREEMENTS = eINSTANCE.getAgreementCompositor_Agreements();
+
 		/**
 		 * The meta object literal for the '{@link AgreementMetamodel.impl.AgreementModelImpl <em>Agreement Model</em>}' class.
 		 * <!-- begin-user-doc -->

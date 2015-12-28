@@ -3,6 +3,7 @@
 package AgreementMetamodel.impl;
 
 import AgreementMetamodel.Actor;
+import AgreementMetamodel.AgreementCompositor;
 import AgreementMetamodel.AgreementMetamodelFactory;
 import AgreementMetamodel.AgreementMetamodelPackage;
 import AgreementMetamodel.AgreementModel;
@@ -45,6 +46,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class AgreementMetamodelPackageImpl extends EPackageImpl implements AgreementMetamodelPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass agreementCompositorEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -286,6 +294,24 @@ public class AgreementMetamodelPackageImpl extends EPackageImpl implements Agree
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(AgreementMetamodelPackage.eNS_URI, theAgreementMetamodelPackage);
 		return theAgreementMetamodelPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAgreementCompositor() {
+		return agreementCompositorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAgreementCompositor_Agreements() {
+		return (EReference)agreementCompositorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -973,6 +999,9 @@ public class AgreementMetamodelPackageImpl extends EPackageImpl implements Agree
 		isCreated = true;
 
 		// Create classes and their features
+		agreementCompositorEClass = createEClass(AGREEMENT_COMPOSITOR);
+		createEReference(agreementCompositorEClass, AGREEMENT_COMPOSITOR__AGREEMENTS);
+
 		agreementModelEClass = createEClass(AGREEMENT_MODEL);
 		createEAttribute(agreementModelEClass, AGREEMENT_MODEL__ID);
 		createEAttribute(agreementModelEClass, AGREEMENT_MODEL__VERSION);
@@ -1103,6 +1132,9 @@ public class AgreementMetamodelPackageImpl extends EPackageImpl implements Agree
 		monitorablePropertyEClass.getESuperTypes().add(this.getProperty());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(agreementCompositorEClass, AgreementCompositor.class, "AgreementCompositor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAgreementCompositor_Agreements(), this.getAgreementModel(), null, "agreements", null, 0, -1, AgreementCompositor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(agreementModelEClass, AgreementModel.class, "AgreementModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementModel_Id(), ecorePackage.getEString(), "id", null, 0, 1, AgreementModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementModel_Version(), ecorePackage.getEDouble(), "version", null, 0, 1, AgreementModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1231,9 +1263,9 @@ public class AgreementMetamodelPackageImpl extends EPackageImpl implements Agree
 		createGmfAnnotations();
 		// gmf.diagram
 		createGmf_1Annotations();
-		// gmf.node
-		createGmf_2Annotations();
 		// gmf.compartment
+		createGmf_2Annotations();
+		// gmf.node
 		createGmf_3Annotations();
 		// gmf.link
 		createGmf_4Annotations();
@@ -1263,7 +1295,102 @@ public class AgreementMetamodelPackageImpl extends EPackageImpl implements Agree
 	protected void createGmf_1Annotations() {
 		String source = "gmf.diagram";	
 		addAnnotation
-		  (agreementModelEClass, 
+		  (agreementCompositorEClass, 
+		   source, 
+		   new String[] {
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.compartment</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_2Annotations() {
+		String source = "gmf.compartment";	
+		addAnnotation
+		  (getAgreementCompositor_Agreements(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getAgreementModel_Context(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getAgreementModel_AgTerm(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext_Actors(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext_Metrics(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getMetric_Domain(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getEnumerated_Values(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getAgreementTerm_ServiceConfigurarion(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getAgreementTerm_MonitorableProperties(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getAgreementTerm_GuaranteeTerms(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getServiceConfiguration_Features(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getServiceConfiguration_ConfigurationProperties(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getGuaranteeTerm_Slo(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getGuaranteeTerm_QualifyingCondition(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getGuaranteeTerm_Compensations(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getFeature_Parameters(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getCompensation_CompensationElements(), 
 		   source, 
 		   new String[] {
 		   });
@@ -1275,8 +1402,18 @@ public class AgreementMetamodelPackageImpl extends EPackageImpl implements Agree
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createGmf_2Annotations() {
+	protected void createGmf_3Annotations() {
 		String source = "gmf.node";	
+		addAnnotation
+		  (agreementModelEClass, 
+		   source, 
+		   new String[] {
+			 "label", "id",
+			 "label.icon", "false",
+			 "figure", "rectangle",
+			 "tool.name", "Agreement",
+			 "tool.description", "Creates a new agreement"
+		   });	
 		addAnnotation
 		  (contextEClass, 
 		   source, 
@@ -1451,86 +1588,6 @@ public class AgreementMetamodelPackageImpl extends EPackageImpl implements Agree
 			 "figure", "rectangle",
 			 "tool.name", "Value",
 			 "tool.description", "Creates a new value"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>gmf.compartment</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createGmf_3Annotations() {
-		String source = "gmf.compartment";	
-		addAnnotation
-		  (getContext_Actors(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getContext_Metrics(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getMetric_Domain(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getEnumerated_Values(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getAgreementTerm_ServiceConfigurarion(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getAgreementTerm_MonitorableProperties(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getAgreementTerm_GuaranteeTerms(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getServiceConfiguration_Features(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getServiceConfiguration_ConfigurationProperties(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getGuaranteeTerm_Slo(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getGuaranteeTerm_QualifyingCondition(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getGuaranteeTerm_Compensations(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getFeature_Parameters(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getCompensation_CompensationElements(), 
-		   source, 
-		   new String[] {
 		   });
 	}
 

@@ -8,436 +8,469 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="MMAgreement.ecore#//AgreementModel/context"/>
+        href="MMAgreement.ecore#//AgreementCompositor/agreements"/>
     <ownedChild
         relatedDiagrams="//@diagram">
       <domainMetaElement
-          href="MMAgreement.ecore#//Context"/>
+          href="MMAgreement.ecore#//AgreementModel"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="MMAgreement.gmfgraph#AgreementModelLabel"/>
+        <features
+            href="MMAgreement.ecore#//AgreementModel/id"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="MMAgreement.gmftool#//@palette/@tools.1/@tools.1"/>
+          href="MMAgreement.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode
-          href="MMAgreement.gmfgraph#Context"/>
+          href="MMAgreement.gmfgraph#AgreementModel"/>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="MMAgreement.ecore#//Context/actors"/>
-        <ownedChild>
+            href="MMAgreement.ecore#//AgreementModel/context"/>
+        <ownedChild
+            relatedDiagrams="//@diagram">
           <domainMetaElement
-              href="MMAgreement.ecore#//Actor"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="MMAgreement.gmfgraph#ActorLabel"/>
-            <features
-                href="MMAgreement.ecore#//Actor/id"/>
-          </labelMappings>
+              href="MMAgreement.ecore#//Context"/>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="MMAgreement.gmftool#//@palette/@tools.1/@tools.0"/>
+              href="MMAgreement.gmftool#//@palette/@tools.0/@tools.6"/>
           <diagramNode
-              href="MMAgreement.gmfgraph#Actor"/>
+              href="MMAgreement.gmfgraph#Context"/>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="MMAgreement.ecore#//Context/actors"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="MMAgreement.ecore#//Actor"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="MMAgreement.gmfgraph#ActorLabel"/>
+                <features
+                    href="MMAgreement.ecore#//Actor/id"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="MMAgreement.gmftool#//@palette/@tools.0/@tools.0"/>
+              <diagramNode
+                  href="MMAgreement.gmfgraph#Actor"/>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.1">
+            <containmentFeature
+                href="MMAgreement.ecore#//Context/metrics"/>
+            <ownedChild
+                relatedDiagrams="//@diagram">
+              <domainMetaElement
+                  href="MMAgreement.ecore#//Metric"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="MMAgreement.gmfgraph#MetricLabel"/>
+                <features
+                    href="MMAgreement.ecore#//Metric/id"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="MMAgreement.gmftool#//@palette/@tools.0/@tools.10"/>
+              <diagramNode
+                  href="MMAgreement.gmfgraph#Metric"/>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="MMAgreement.ecore#//Metric/domain"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="MMAgreement.ecore#//Range"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping"
+                      viewPattern="[{0}..{1}]"
+                      editorPattern="[{0}..{1}]"
+                      editPattern="[{0}..{1}]">
+                    <diagramLabel
+                        href="MMAgreement.gmfgraph#RangeLabel"/>
+                    <features
+                        href="MMAgreement.ecore#//Range/min"/>
+                    <features
+                        href="MMAgreement.ecore#//Range/max"/>
+                  </labelMappings>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="MMAgreement.gmftool#//@palette/@tools.0/@tools.14"/>
+                  <diagramNode
+                      href="MMAgreement.gmfgraph#Range"/>
+                </ownedChild>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="MMAgreement.ecore#//Metric/domain"/>
+                <ownedChild
+                    relatedDiagrams="//@diagram">
+                  <domainMetaElement
+                      href="MMAgreement.ecore#//Enumerated"/>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="MMAgreement.gmftool#//@palette/@tools.0/@tools.7"/>
+                  <diagramNode
+                      href="MMAgreement.gmfgraph#Enumerated"/>
+                  <children
+                      compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                    <containmentFeature
+                        href="MMAgreement.ecore#//Enumerated/values"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="MMAgreement.ecore#//Value"/>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping">
+                        <diagramLabel
+                            href="MMAgreement.gmfgraph#ValueLabel"/>
+                        <features
+                            href="MMAgreement.ecore#//Value/id"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="MMAgreement.gmftool#//@palette/@tools.0/@tools.17"/>
+                      <diagramNode
+                          href="MMAgreement.gmfgraph#Value"/>
+                    </ownedChild>
+                  </children>
+                  <compartments
+                      children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0">
+                    <compartment
+                        href="MMAgreement.gmfgraph#EnumeratedValuesCompartment"/>
+                  </compartments>
+                </ownedChild>
+              </children>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1">
+                <compartment
+                    href="MMAgreement.gmfgraph#MetricDomainCompartment"/>
+              </compartments>
+            </ownedChild>
+          </children>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0">
+            <compartment
+                href="MMAgreement.gmfgraph#ContextActorsCompartment"/>
+          </compartments>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1">
+            <compartment
+                href="MMAgreement.gmfgraph#ContextMetricsCompartment"/>
+          </compartments>
         </ownedChild>
       </children>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.1">
         <containmentFeature
-            href="MMAgreement.ecore#//Context/metrics"/>
+            href="MMAgreement.ecore#//AgreementModel/agTerm"/>
         <ownedChild
             relatedDiagrams="//@diagram">
           <domainMetaElement
-              href="MMAgreement.ecore#//Metric"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="MMAgreement.gmfgraph#MetricLabel"/>
-            <features
-                href="MMAgreement.ecore#//Metric/id"/>
-          </labelMappings>
+              href="MMAgreement.ecore#//AgreementTerm"/>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="MMAgreement.gmftool#//@palette/@tools.6/@tools.0"/>
+              href="MMAgreement.gmftool#//@palette/@tools.0/@tools.2"/>
           <diagramNode
-              href="MMAgreement.gmfgraph#Metric"/>
+              href="MMAgreement.gmfgraph#AgreementTerm"/>
           <children
-              compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
+              compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@compartments.1">
             <containmentFeature
-                href="MMAgreement.ecore#//Metric/domain"/>
+                href="MMAgreement.ecore#//AgreementTerm/monitorableProperties"/>
             <ownedChild>
               <domainMetaElement
-                  href="MMAgreement.ecore#//Range"/>
+                  href="MMAgreement.ecore#//MonitorableProperty"/>
               <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping"
-                  viewPattern="[{0}..{1}]"
-                  editorPattern="[{0}..{1}]"
-                  editPattern="[{0}..{1}]">
+                  xsi:type="gmfmap:FeatureLabelMapping">
                 <diagramLabel
-                    href="MMAgreement.gmfgraph#RangeLabel"/>
+                    href="MMAgreement.gmfgraph#MonitorablePropertyLabel"/>
                 <features
-                    href="MMAgreement.ecore#//Range/min"/>
-                <features
-                    href="MMAgreement.ecore#//Range/max"/>
+                    href="MMAgreement.ecore#//Property/id"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.5/@tools.1"/>
+                  href="MMAgreement.gmftool#//@palette/@tools.0/@tools.11"/>
               <diagramNode
-                  href="MMAgreement.gmfgraph#Range"/>
+                  href="MMAgreement.gmfgraph#MonitorableProperty"/>
             </ownedChild>
           </children>
           <children
               compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
             <containmentFeature
-                href="MMAgreement.ecore#//Metric/domain"/>
+                href="MMAgreement.ecore#//AgreementTerm/serviceConfigurarion"/>
             <ownedChild
                 relatedDiagrams="//@diagram">
               <domainMetaElement
-                  href="MMAgreement.ecore#//Enumerated"/>
+                  href="MMAgreement.ecore#//ServiceConfiguration"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="MMAgreement.gmfgraph#ServiceConfigurationLabel"/>
+                <features
+                    href="MMAgreement.ecore#//ServiceConfiguration/serviceName"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.5/@tools.0"/>
+                  href="MMAgreement.gmftool#//@palette/@tools.0/@tools.16"/>
               <diagramNode
-                  href="MMAgreement.gmfgraph#Enumerated"/>
+                  href="MMAgreement.gmfgraph#ServiceConfiguration"/>
               <children
-                  compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                  compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.1">
                 <containmentFeature
-                    href="MMAgreement.ecore#//Enumerated/values"/>
+                    href="MMAgreement.ecore#//ServiceConfiguration/configurationProperties"/>
                 <ownedChild>
                   <domainMetaElement
-                      href="MMAgreement.ecore#//Value"/>
+                      href="MMAgreement.ecore#//ConfigurationProperty"/>
                   <labelMappings
                       xsi:type="gmfmap:FeatureLabelMapping">
                     <diagramLabel
-                        href="MMAgreement.gmfgraph#ValueLabel"/>
+                        href="MMAgreement.gmfgraph#ConfigurationPropertyLabel"/>
                     <features
-                        href="MMAgreement.ecore#//Value/id"/>
+                        href="MMAgreement.ecore#//Property/id"/>
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
-                      href="MMAgreement.gmftool#//@palette/@tools.6/@tools.2"/>
+                      href="MMAgreement.gmftool#//@palette/@tools.0/@tools.5"/>
                   <diagramNode
-                      href="MMAgreement.gmfgraph#Value"/>
+                      href="MMAgreement.gmfgraph#ConfigurationProperty"/>
+                </ownedChild>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="MMAgreement.ecore#//ServiceConfiguration/features"/>
+                <ownedChild
+                    relatedDiagrams="//@diagram">
+                  <domainMetaElement
+                      href="MMAgreement.ecore#//Feature"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping">
+                    <diagramLabel
+                        href="MMAgreement.gmfgraph#FeatureLabel"/>
+                    <features
+                        href="MMAgreement.ecore#//Feature/id"/>
+                  </labelMappings>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="MMAgreement.gmftool#//@palette/@tools.0/@tools.8"/>
+                  <diagramNode
+                      href="MMAgreement.gmfgraph#Feature"/>
+                  <children
+                      compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                    <containmentFeature
+                        href="MMAgreement.ecore#//Feature/parameters"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="MMAgreement.ecore#//Parameter"/>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping">
+                        <diagramLabel
+                            href="MMAgreement.gmfgraph#ParameterLabel"/>
+                        <features
+                            href="MMAgreement.ecore#//Parameter/name"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="MMAgreement.gmftool#//@palette/@tools.0/@tools.12"/>
+                      <diagramNode
+                          href="MMAgreement.gmfgraph#Parameter"/>
+                    </ownedChild>
+                  </children>
+                  <compartments
+                      children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0">
+                    <compartment
+                        href="MMAgreement.gmfgraph#FeatureParametersCompartment"/>
+                  </compartments>
                 </ownedChild>
               </children>
               <compartments
+                  children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
+                <compartment
+                    href="MMAgreement.gmfgraph#ServiceConfigurationFeaturesCompartment"/>
+              </compartments>
+              <compartments
                   children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0">
                 <compartment
-                    href="MMAgreement.gmfgraph#EnumeratedValuesCompartment"/>
+                    href="MMAgreement.gmfgraph#ServiceConfigurationConfigurationPropertiesCompartment"/>
+              </compartments>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@compartments.2">
+            <containmentFeature
+                href="MMAgreement.ecore#//AgreementTerm/guaranteeTerms"/>
+            <ownedChild
+                relatedDiagrams="//@diagram">
+              <domainMetaElement
+                  href="MMAgreement.ecore#//GuaranteeTerm"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  viewPattern="{0} - {1}"
+                  editorPattern="{0} - {1}"
+                  editPattern="{0} - {1}">
+                <diagramLabel
+                    href="MMAgreement.gmfgraph#GuaranteeTermLabel"/>
+                <features
+                    href="MMAgreement.ecore#//GuaranteeTerm/id"/>
+                <features
+                    href="MMAgreement.ecore#//GuaranteeTerm/role"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="MMAgreement.gmftool#//@palette/@tools.0/@tools.9"/>
+              <diagramNode
+                  href="MMAgreement.gmfgraph#GuaranteeTerm"/>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.2/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="MMAgreement.ecore#//GuaranteeTerm/slo"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="MMAgreement.ecore#//SLO"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping">
+                    <diagramLabel
+                        href="MMAgreement.gmfgraph#SLOLabel"/>
+                    <features
+                        href="MMAgreement.ecore#//SLO/expression"/>
+                  </labelMappings>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="MMAgreement.gmftool#//@palette/@tools.0/@tools.15"/>
+                  <diagramNode
+                      href="MMAgreement.gmfgraph#SLO"/>
+                </ownedChild>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.2/@ownedChild/@compartments.1">
+                <containmentFeature
+                    href="MMAgreement.ecore#//GuaranteeTerm/qualifyingCondition"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="MMAgreement.ecore#//QualifyingCondition"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping"
+                      viewPattern="onlyIf({0})"
+                      editorPattern="onlyIf({0})"
+                      editPattern="onlyIf({0})">
+                    <diagramLabel
+                        href="MMAgreement.gmfgraph#QualifyingConditionLabel"/>
+                    <features
+                        href="MMAgreement.ecore#//QualifyingCondition/expression"/>
+                  </labelMappings>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="MMAgreement.gmftool#//@palette/@tools.0/@tools.13"/>
+                  <diagramNode
+                      href="MMAgreement.gmfgraph#QualifyingCondition"/>
+                </ownedChild>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.2/@ownedChild/@compartments.2">
+                <containmentFeature
+                    href="MMAgreement.ecore#//GuaranteeTerm/compensations"/>
+                <ownedChild
+                    relatedDiagrams="//@diagram">
+                  <domainMetaElement
+                      href="MMAgreement.ecore#//Compensation"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping"
+                      viewPattern="with {0} {1}"
+                      editorPattern="with {0} {1}"
+                      editPattern="with {0} {1}">
+                    <diagramLabel
+                        href="MMAgreement.gmfgraph#CompensationLabel"/>
+                    <features
+                        href="MMAgreement.ecore#//Compensation/interval"/>
+                    <features
+                        href="MMAgreement.ecore#//Compensation/type"/>
+                  </labelMappings>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="MMAgreement.gmftool#//@palette/@tools.0/@tools.3"/>
+                  <diagramNode
+                      href="MMAgreement.gmfgraph#Compensation"/>
+                  <children
+                      compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.2/@ownedChild/@children.2/@ownedChild/@compartments.0">
+                    <containmentFeature
+                        href="MMAgreement.ecore#//Compensation/compensationElements"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="MMAgreement.ecore#//CompensationElement"/>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping"
+                          viewPattern="of {1} if {0}"
+                          editorPattern="of {1} if {0}"
+                          editPattern="of {1} if {0}">
+                        <diagramLabel
+                            href="MMAgreement.gmfgraph#CompensationElementLabel"/>
+                        <features
+                            href="MMAgreement.ecore#//CompensationElement/expression"/>
+                        <features
+                            href="MMAgreement.ecore#//CompensationElement/condition"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="MMAgreement.gmftool#//@palette/@tools.0/@tools.4"/>
+                      <diagramNode
+                          href="MMAgreement.gmfgraph#CompensationElement"/>
+                    </ownedChild>
+                  </children>
+                  <compartments
+                      children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.2/@ownedChild/@children.2/@ownedChild/@children.0">
+                    <compartment
+                        href="MMAgreement.gmfgraph#CompensationCompensationElementsCompartment"/>
+                  </compartments>
+                </ownedChild>
+              </children>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.2/@ownedChild/@children.0">
+                <compartment
+                    href="MMAgreement.gmfgraph#GuaranteeTermSloCompartment"/>
+              </compartments>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.2/@ownedChild/@children.1">
+                <compartment
+                    href="MMAgreement.gmfgraph#GuaranteeTermQualifyingConditionCompartment"/>
+              </compartments>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.2/@ownedChild/@children.2">
+                <compartment
+                    href="MMAgreement.gmfgraph#GuaranteeTermCompensationsCompartment"/>
               </compartments>
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1/@ownedChild/@children.1">
+              children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.1">
             <compartment
-                href="MMAgreement.gmfgraph#MetricDomainCompartment"/>
+                href="MMAgreement.gmfgraph#AgreementTermServiceConfigurarionCompartment"/>
+          </compartments>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.0">
+            <compartment
+                href="MMAgreement.gmfgraph#AgreementTermMonitorablePropertiesCompartment"/>
+          </compartments>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.2">
+            <compartment
+                href="MMAgreement.gmfgraph#AgreementTermGuaranteeTermsCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0">
         <compartment
-            href="MMAgreement.gmfgraph#ContextActorsCompartment"/>
+            href="MMAgreement.gmfgraph#AgreementModelContextCompartment"/>
       </compartments>
       <compartments
           children="//@nodes.0/@ownedChild/@children.1">
         <compartment
-            href="MMAgreement.gmfgraph#ContextMetricsCompartment"/>
-      </compartments>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
-        href="MMAgreement.ecore#//AgreementModel/agTerm"/>
-    <ownedChild
-        relatedDiagrams="//@diagram">
-      <domainMetaElement
-          href="MMAgreement.ecore#//AgreementTerm"/>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="MMAgreement.gmftool#//@palette/@tools.2/@tools.0"/>
-      <diagramNode
-          href="MMAgreement.gmfgraph#AgreementTerm"/>
-      <children
-          compartment="//@nodes.1/@ownedChild/@compartments.1">
-        <containmentFeature
-            href="MMAgreement.ecore#//AgreementTerm/monitorableProperties"/>
-        <ownedChild>
-          <domainMetaElement
-              href="MMAgreement.ecore#//MonitorableProperty"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="MMAgreement.gmfgraph#MonitorablePropertyLabel"/>
-            <features
-                href="MMAgreement.ecore#//Property/id"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="MMAgreement.gmftool#//@palette/@tools.4/@tools.1"/>
-          <diagramNode
-              href="MMAgreement.gmfgraph#MonitorableProperty"/>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.1/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="MMAgreement.ecore#//AgreementTerm/serviceConfigurarion"/>
-        <ownedChild
-            relatedDiagrams="//@diagram">
-          <domainMetaElement
-              href="MMAgreement.ecore#//ServiceConfiguration"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="MMAgreement.gmfgraph#ServiceConfigurationLabel"/>
-            <features
-                href="MMAgreement.ecore#//ServiceConfiguration/serviceName"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="MMAgreement.gmftool#//@palette/@tools.2/@tools.1"/>
-          <diagramNode
-              href="MMAgreement.gmfgraph#ServiceConfiguration"/>
-          <children
-              compartment="//@nodes.1/@ownedChild/@children.1/@ownedChild/@compartments.1">
-            <containmentFeature
-                href="MMAgreement.ecore#//ServiceConfiguration/configurationProperties"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="MMAgreement.ecore#//ConfigurationProperty"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="MMAgreement.gmfgraph#ConfigurationPropertyLabel"/>
-                <features
-                    href="MMAgreement.ecore#//Property/id"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.4/@tools.0"/>
-              <diagramNode
-                  href="MMAgreement.gmfgraph#ConfigurationProperty"/>
-            </ownedChild>
-          </children>
-          <children
-              compartment="//@nodes.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="MMAgreement.ecore#//ServiceConfiguration/features"/>
-            <ownedChild
-                relatedDiagrams="//@diagram">
-              <domainMetaElement
-                  href="MMAgreement.ecore#//Feature"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="MMAgreement.gmfgraph#FeatureLabel"/>
-                <features
-                    href="MMAgreement.ecore#//Feature/id"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.6/@tools.1"/>
-              <diagramNode
-                  href="MMAgreement.gmfgraph#Feature"/>
-              <children
-                  compartment="//@nodes.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                <containmentFeature
-                    href="MMAgreement.ecore#//Feature/parameters"/>
-                <ownedChild>
-                  <domainMetaElement
-                      href="MMAgreement.ecore#//Parameter"/>
-                  <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping">
-                    <diagramLabel
-                        href="MMAgreement.gmfgraph#ParameterLabel"/>
-                    <features
-                        href="MMAgreement.ecore#//Parameter/name"/>
-                  </labelMappings>
-                  <tool
-                      xsi:type="gmftool:CreationTool"
-                      href="MMAgreement.gmftool#//@palette/@tools.6/@tools.3"/>
-                  <diagramNode
-                      href="MMAgreement.gmfgraph#Parameter"/>
-                </ownedChild>
-              </children>
-              <compartments
-                  children="//@nodes.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0">
-                <compartment
-                    href="MMAgreement.gmfgraph#FeatureParametersCompartment"/>
-              </compartments>
-            </ownedChild>
-          </children>
-          <compartments
-              children="//@nodes.1/@ownedChild/@children.1/@ownedChild/@children.1">
-            <compartment
-                href="MMAgreement.gmfgraph#ServiceConfigurationFeaturesCompartment"/>
-          </compartments>
-          <compartments
-              children="//@nodes.1/@ownedChild/@children.1/@ownedChild/@children.0">
-            <compartment
-                href="MMAgreement.gmfgraph#ServiceConfigurationConfigurationPropertiesCompartment"/>
-          </compartments>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.1/@ownedChild/@compartments.2">
-        <containmentFeature
-            href="MMAgreement.ecore#//AgreementTerm/guaranteeTerms"/>
-        <ownedChild
-            relatedDiagrams="//@diagram">
-          <domainMetaElement
-              href="MMAgreement.ecore#//GuaranteeTerm"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} - {1}"
-              editorPattern="{0} - {1}"
-              editPattern="{0} - {1}">
-            <diagramLabel
-                href="MMAgreement.gmfgraph#GuaranteeTermLabel"/>
-            <features
-                href="MMAgreement.ecore#//GuaranteeTerm/id"/>
-            <features
-                href="MMAgreement.ecore#//GuaranteeTerm/role"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="MMAgreement.gmftool#//@palette/@tools.3/@tools.0"/>
-          <diagramNode
-              href="MMAgreement.gmfgraph#GuaranteeTerm"/>
-          <children
-              compartment="//@nodes.1/@ownedChild/@children.2/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="MMAgreement.ecore#//GuaranteeTerm/slo"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="MMAgreement.ecore#//SLO"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="MMAgreement.gmfgraph#SLOLabel"/>
-                <features
-                    href="MMAgreement.ecore#//SLO/expression"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.3/@tools.1"/>
-              <diagramNode
-                  href="MMAgreement.gmfgraph#SLO"/>
-            </ownedChild>
-          </children>
-          <children
-              compartment="//@nodes.1/@ownedChild/@children.2/@ownedChild/@compartments.1">
-            <containmentFeature
-                href="MMAgreement.ecore#//GuaranteeTerm/qualifyingCondition"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="MMAgreement.ecore#//QualifyingCondition"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping"
-                  viewPattern="onlyIf({0})"
-                  editorPattern="onlyIf({0})"
-                  editPattern="onlyIf({0})">
-                <diagramLabel
-                    href="MMAgreement.gmfgraph#QualifyingConditionLabel"/>
-                <features
-                    href="MMAgreement.ecore#//QualifyingCondition/expression"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.3/@tools.2"/>
-              <diagramNode
-                  href="MMAgreement.gmfgraph#QualifyingCondition"/>
-            </ownedChild>
-          </children>
-          <children
-              compartment="//@nodes.1/@ownedChild/@children.2/@ownedChild/@compartments.2">
-            <containmentFeature
-                href="MMAgreement.ecore#//GuaranteeTerm/compensations"/>
-            <ownedChild
-                relatedDiagrams="//@diagram">
-              <domainMetaElement
-                  href="MMAgreement.ecore#//Compensation"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping"
-                  viewPattern="with {0} {1}"
-                  editorPattern="with {0} {1}"
-                  editPattern="with {0} {1}">
-                <diagramLabel
-                    href="MMAgreement.gmfgraph#CompensationLabel"/>
-                <features
-                    href="MMAgreement.ecore#//Compensation/interval"/>
-                <features
-                    href="MMAgreement.ecore#//Compensation/type"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="MMAgreement.gmftool#//@palette/@tools.3/@tools.3"/>
-              <diagramNode
-                  href="MMAgreement.gmfgraph#Compensation"/>
-              <children
-                  compartment="//@nodes.1/@ownedChild/@children.2/@ownedChild/@children.2/@ownedChild/@compartments.0">
-                <containmentFeature
-                    href="MMAgreement.ecore#//Compensation/compensationElements"/>
-                <ownedChild>
-                  <domainMetaElement
-                      href="MMAgreement.ecore#//CompensationElement"/>
-                  <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping"
-                      viewPattern="of {1} if {0}"
-                      editorPattern="of {1} if {0}"
-                      editPattern="of {1} if {0}">
-                    <diagramLabel
-                        href="MMAgreement.gmfgraph#CompensationElementLabel"/>
-                    <features
-                        href="MMAgreement.ecore#//CompensationElement/expression"/>
-                    <features
-                        href="MMAgreement.ecore#//CompensationElement/condition"/>
-                  </labelMappings>
-                  <tool
-                      xsi:type="gmftool:CreationTool"
-                      href="MMAgreement.gmftool#//@palette/@tools.3/@tools.4"/>
-                  <diagramNode
-                      href="MMAgreement.gmfgraph#CompensationElement"/>
-                </ownedChild>
-              </children>
-              <compartments
-                  children="//@nodes.1/@ownedChild/@children.2/@ownedChild/@children.2/@ownedChild/@children.0">
-                <compartment
-                    href="MMAgreement.gmfgraph#CompensationCompensationElementsCompartment"/>
-              </compartments>
-            </ownedChild>
-          </children>
-          <compartments
-              children="//@nodes.1/@ownedChild/@children.2/@ownedChild/@children.0">
-            <compartment
-                href="MMAgreement.gmfgraph#GuaranteeTermSloCompartment"/>
-          </compartments>
-          <compartments
-              children="//@nodes.1/@ownedChild/@children.2/@ownedChild/@children.1">
-            <compartment
-                href="MMAgreement.gmfgraph#GuaranteeTermQualifyingConditionCompartment"/>
-          </compartments>
-          <compartments
-              children="//@nodes.1/@ownedChild/@children.2/@ownedChild/@children.2">
-            <compartment
-                href="MMAgreement.gmfgraph#GuaranteeTermCompensationsCompartment"/>
-          </compartments>
-        </ownedChild>
-      </children>
-      <compartments
-          children="//@nodes.1/@ownedChild/@children.1">
-        <compartment
-            href="MMAgreement.gmfgraph#AgreementTermServiceConfigurarionCompartment"/>
-      </compartments>
-      <compartments
-          children="//@nodes.1/@ownedChild/@children.0">
-        <compartment
-            href="MMAgreement.gmfgraph#AgreementTermMonitorablePropertiesCompartment"/>
-      </compartments>
-      <compartments
-          children="//@nodes.1/@ownedChild/@children.2">
-        <compartment
-            href="MMAgreement.gmfgraph#AgreementTermGuaranteeTermsCompartment"/>
+            href="MMAgreement.gmfgraph#AgreementModelAgTermCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -450,7 +483,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="MMAgreement.gmftool#//@palette/@tools.0/@tools.0"/>
+        href="MMAgreement.gmftool#//@palette/@tools.1/@tools.0"/>
     <diagramLink
         href="MMAgreement.gmfgraph#PropertyFeatures"/>
     <linkMetaFeature
@@ -466,7 +499,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="MMAgreement.gmftool#//@palette/@tools.0/@tools.1"/>
+        href="MMAgreement.gmftool#//@palette/@tools.1/@tools.1"/>
     <diagramLink
         href="MMAgreement.gmfgraph#PropertyMetric"/>
     <linkMetaFeature
@@ -479,7 +512,7 @@
     <domainModel
         href="MMAgreement.ecore#/"/>
     <domainMetaElement
-        href="MMAgreement.ecore#//AgreementModel"/>
+        href="MMAgreement.ecore#//AgreementCompositor"/>
     <palette
         href="MMAgreement.gmftool#//@palette"/>
   </diagram>
