@@ -1,8 +1,19 @@
 
 demobuilder.scenario/bin/
-demobuilder.scenario/src/
+demobuilder.scenario/src/ScenarioMetamodel/
 demobuilder.agreement/bin/
-demobuilder.agreement/src/
+demobuilder.agreement/src/AgreementMetamodel/
 .gitignore
 demobuilder.scenario.diagram/
 demobuilder.agreement.diagram/
+demobuilder.agreement/.settings/org.eclipse.core.resources.prefs
+demobuilder.agreement/src/metamodel/MMAgreement.genmodel
+demobuilder.agreement/src/metamodel/MMAgreement.gmfgen
+demobuilder.agreement/src/metamodel/MMAgreement.gmfgraph
+demobuilder.agreement/src/metamodel/MMAgreement.gmfmap
+demobuilder.agreement/src/metamodel/MMAgreement.gmftool
+demobuilder.scenario/src/metamodel/MMScenario.gmfgen
+demobuilder.scenario/src/metamodel/MMScenario.gmfgraph
+demobuilder.scenario/src/metamodel/MMScenario.gmfmap
+demobuilder.scenario/src/metamodel/MMScenario.gmftool
+demobuilder.scenario/src/metamodel/MMScenario.genmodel
