@@ -2,17 +2,88 @@
 -- @nsURI AGREEMENT=http://demobuilder.agreement.metamodel
 
 
-module scenario2agreement;
+module scenario2agreementCompositor;
 create OUT: AGREEMENT from IN: SCENARIO;
 
 -- HELPERS
-
 helper def: SLO_var: AGREEMENT!SLO =
 	OclUndefined;
 
---helper context OclAny def : random() : String =
--- 	"#native"!"java::util::UUID".refInvokeStaticOperation('randomUUID',
--- Sequence{}).toString();
+rule Scenario2AgreementCompositor {
+	from
+		scenario: SCENARIO!Scenario
+	to
+		agCompositor: AGREEMENT!AgreementCompositor (
+			agreements <- SCENARIO!PricingPlan.allInstances() -> collect(pricingPlan | thisModule.
+					pricingPlan2AgreementModel(pricingPlan))
+		)
+}
+
+lazy rule pricingPlan2AgreementModel {
+	from
+		IN: SCENARIO!PricingPlan
+	to
+		agModel: AGREEMENT!AgreementModel (
+			id <- IN.name,
+			version <- 1,
+			"context" <- agContext,
+			agTerm <- agTerm
+		),
+		agContext: AGREEMENT!Context (
+			actors <- thisModule.ServiceOffer2ActorProvider(IN.serviceOffer),
+			metrics <- agContext.metrics -> including(agMetric_boolean) ->
+					including(agMetric_int) -> including(agMetric_float) ->
+					including(agMetric_natural)
+		),
+		agTerm: AGREEMENT!AgreementTerm (
+			guaranteeTerms <- IN.pricingPlanElements -> collect(pe | if not pe.
+					SLOExpression.oclIsUndefined() then
+						thisModule.PricingPlanElement2GuaranteeTerm(pe)
+					else
+						OclUndefined
+					endif),
+			monitorableProperties <- thisModule.ServiceOffer2MonitorableProperty(IN.
+					serviceOffer),
+			serviceConfigurarion <- thisModule.ServiceOffer2ServiceConfiguration(IN.
+					serviceOffer)
+		),
+		agMetric_boolean: AGREEMENT!Metric (
+			domain <- OclUndefined,
+			id <- 'boolean',
+			type <- #BOOLEAN
+		),
+		agMetric_int: AGREEMENT!Metric (
+			domain <- agMetricDomain_int,
+			id <- 'int',
+			type <- #INTEGER
+		),
+		agMetric_float: AGREEMENT!Metric (
+			domain <- agMetricDomain_float,
+			id <- 'float',
+			type <- #FLOAT
+		),
+		agMetric_natural: AGREEMENT!Metric (
+			domain <- agMetricDomain_natural,
+			id <- 'natural',
+			type <- #NATURAL
+		),
+		agMetricDomain_int: AGREEMENT!Range (
+			min <- -9999999,
+			max <- 9999999
+		),
+		agMetricDomain_float: AGREEMENT!Range (
+			min <- -9999999,
+			max <- 9999999
+		),
+		agMetricDomain_natural: AGREEMENT!Range (
+			min <- 0,
+			max <- 9999999
+		)
+	do {
+		Sequence{agModel}; 
+	}
+}
+
 -- LAZY RULES
 lazy rule PricingPlanElement2GuaranteeTerm {
 	from
@@ -108,66 +179,6 @@ lazy rule ServiceOffer2Feature {
 		),
 		agParameter: AGREEMENT!Parameter (
 			name <- OclUndefined
-		)
-	do {
-	}
-}
-
--- RULES
-rule PricingPlan2AgreementModel {
-	from
-		IN: SCENARIO!PricingPlan
-	to
-		agModel: AGREEMENT!AgreementModel (
-			id <- IN.name,
-			version <- 1,
-			"context" <- agContext,
-			agTerm <- agTerm 
-		),
-		agTerm: AGREEMENT!AgreementTerm (
-			guaranteeTerms <- IN.pricingPlanElements -> collect(pe | if not pe.SLOExpression.oclIsUndefined() then thisModule.PricingPlanElement2GuaranteeTerm(pe) else OclUndefined endif),
-			monitorableProperties <- thisModule.ServiceOffer2MonitorableProperty(IN.
-					serviceOffer),
-			serviceConfigurarion <- thisModule.ServiceOffer2ServiceConfiguration(IN.
-					serviceOffer)
-		),
-		agContext: AGREEMENT!Context (
-			actors <- thisModule.ServiceOffer2ActorProvider(IN.serviceOffer),
-			metrics <- agContext.metrics -> including(agMetric_boolean) ->
-					including(agMetric_int) -> including(agMetric_float) ->
-					including(agMetric_natural)
-		),
-		agMetric_boolean: AGREEMENT!Metric (
-			domain <- OclUndefined,
-			id <- 'boolean',
-			type <- #BOOLEAN
-		),
-		agMetric_int: AGREEMENT!Metric (
-			domain <- agMetricDomain_int,
-			id <- 'int',
-			type <- #INTEGER
-		),
-		agMetric_float: AGREEMENT!Metric (
-			domain <- agMetricDomain_float,
-			id <- 'float',
-			type <- #FLOAT
-		),
-		agMetric_natural: AGREEMENT!Metric (
-			domain <- agMetricDomain_natural,
-			id <- 'natural',
-			type <- #NATURAL
-		),
-		agMetricDomain_int: AGREEMENT!Range (
-			min <- -9999999,
-			max <- 9999999
-		),
-		agMetricDomain_float: AGREEMENT!Range (
-			min <- -9999999,
-			max <- 9999999
-		),
-		agMetricDomain_natural: AGREEMENT!Range (
-			min <- 0,
-			max <- 9999999
 		)
 	do {
 	}

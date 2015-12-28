@@ -37,6 +37,9 @@
       <genEnumLiterals ecoreEnumLiteral="MMAgreement.ecore#//CompensationType/PENALTY"/>
       <genEnumLiterals ecoreEnumLiteral="MMAgreement.ecore#//CompensationType/REWARD"/>
     </genEnums>
+    <genClasses ecoreClass="MMAgreement.ecore#//AgreementCompositor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMAgreement.ecore#//AgreementCompositor/agreements"/>
+    </genClasses>
     <genClasses ecoreClass="MMAgreement.ecore#//AgreementModel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMAgreement.ecore#//AgreementModel/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMAgreement.ecore#//AgreementModel/version"/>

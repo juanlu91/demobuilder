@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<mmag:AgreementModel
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:mmag="http://demobuilder.agreement.metamodel"
-    xsi:schemaLocation="http://demobuilder.agreement.metamodel ../metamodel/MMAgreement.ecore"
-    id="MyAgreement"
-    version="1.0"/>

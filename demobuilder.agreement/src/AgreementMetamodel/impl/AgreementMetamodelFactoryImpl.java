@@ -57,6 +57,7 @@ public class AgreementMetamodelFactoryImpl extends EFactoryImpl implements Agree
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case AgreementMetamodelPackage.AGREEMENT_COMPOSITOR: return createAgreementCompositor();
 			case AgreementMetamodelPackage.AGREEMENT_MODEL: return createAgreementModel();
 			case AgreementMetamodelPackage.CONTEXT: return createContext();
 			case AgreementMetamodelPackage.ACTOR: return createActor();
@@ -128,6 +129,16 @@ public class AgreementMetamodelFactoryImpl extends EFactoryImpl implements Agree
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AgreementCompositor createAgreementCompositor() {
+		AgreementCompositorImpl agreementCompositor = new AgreementCompositorImpl();
+		return agreementCompositor;
 	}
 
 	/**

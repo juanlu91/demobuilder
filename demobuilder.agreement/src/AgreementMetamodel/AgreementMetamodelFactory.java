@@ -22,6 +22,15 @@ public interface AgreementMetamodelFactory extends EFactory {
 	AgreementMetamodelFactory eINSTANCE = AgreementMetamodel.impl.AgreementMetamodelFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Agreement Compositor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Agreement Compositor</em>'.
+	 * @generated
+	 */
+	AgreementCompositor createAgreementCompositor();
+
+	/**
 	 * Returns a new object of class '<em>Agreement Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

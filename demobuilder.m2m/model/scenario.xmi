@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mmsc:Scenario
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mmsc="http://demobuilder.scenario.metamodel">
+  <scenarioElements
+      xsi:type="mmsc:Consumer"
+      name="SAS"
+      serviceLinks="//@serviceLinks.0"/>
+  <scenarioElements
+      xsi:type="mmsc:Provider"
+      name="Amazon"
+      serviceLinks="//@serviceLinks.1"/>
+  <scenarioElements
+      xsi:type="mmsc:ServiceOffer"
+      serviceLink="//@serviceLinks.1">
+    <pricingPlans
+        agreementLink="//@agreementLinks.0"
+        name="PlanBasic">
+      <pricingPlanElements
+          SLOExpression="b1"/>
+      <pricingPlanElements
+          SLOExpression="b2"/>
+    </pricingPlans>
+    <pricingPlans
+        name="PlanMedium">
+      <pricingPlanElements
+          SLOExpression="m1"/>
+      <pricingPlanElements
+          SLOExpression="m2"/>
+    </pricingPlans>
+  </scenarioElements>
+  <scenarioElements
+      xsi:type="mmsc:ServiceNeed"
+      serviceLink="//@serviceLinks.0"
+      name="Online storage"
+      agreementLink="//@agreementLinks.0"/>
+  <agreementLinks
+      source="//@scenarioElements.3"
+      target="//@scenarioElements.2/@pricingPlans.0"/>
+  <serviceLinks
+      actor="//@scenarioElements.0"
+      serviceElement="//@scenarioElements.3"/>
+  <serviceLinks
+      actor="//@scenarioElements.1"
+      serviceElement="//@scenarioElements.2"/>
+</mmsc:Scenario>

@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see AgreementMetamodel.AgreementMetamodelPackage#getAgreementModel()
- * @model
+ * @model annotation="gmf.node label='id' label.icon='false' figure='rectangle' tool.name='Agreement' tool.description='Creates a new agreement'"
  * @generated
  */
 public interface AgreementModel extends EObject {

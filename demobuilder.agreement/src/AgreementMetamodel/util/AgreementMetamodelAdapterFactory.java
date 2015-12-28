@@ -68,6 +68,10 @@ public class AgreementMetamodelAdapterFactory extends AdapterFactoryImpl {
 	protected AgreementMetamodelSwitch<Adapter> modelSwitch =
 		new AgreementMetamodelSwitch<Adapter>() {
 			@Override
+			public Adapter caseAgreementCompositor(AgreementCompositor object) {
+				return createAgreementCompositorAdapter();
+			}
+			@Override
 			public Adapter caseAgreementModel(AgreementModel object) {
 				return createAgreementModelAdapter();
 			}
@@ -166,6 +170,20 @@ public class AgreementMetamodelAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AgreementMetamodel.AgreementCompositor <em>Agreement Compositor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AgreementMetamodel.AgreementCompositor
+	 * @generated
+	 */
+	public Adapter createAgreementCompositorAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link AgreementMetamodel.AgreementModel <em>Agreement Model</em>}'.

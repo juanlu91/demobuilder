@@ -1,0 +1,12 @@
+using CP;
+
+range range_int = 1..10000;
+range range_price = 0..500;
+
+
+dvar int planPrice in range_price;
+dvar int avgResponseTime in range_int;
+
+subject to {
+	TimeTerm: avgResponseTime <= 500;
+}

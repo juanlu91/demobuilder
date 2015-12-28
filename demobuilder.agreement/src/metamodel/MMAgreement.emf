@@ -3,10 +3,21 @@
 package AgreementMetamodel;
 
 @gmf.diagram
+class AgreementCompositor {
+
+  @gmf.compartment
+  val AgreementModel[*] agreements;
+}
+
+@gmf.node(label="id", label.icon="false", figure="rectangle", tool.name="Agreement", tool.description="Creates a new agreement")
 class AgreementModel {
   attr String ~id;
   attr double version;
+
+  @gmf.compartment
   val Context[1] context;
+
+  @gmf.compartment
   val AgreementTerm[1] agTerm;
 }
 

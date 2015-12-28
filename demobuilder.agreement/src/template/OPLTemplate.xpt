@@ -2,11 +2,12 @@
 «EXTENSION template::Utils»
 
 «REM»Plantilla raiz«ENDREM»
-«DEFINE main FOR AgreementModel-»
-	«FILE this.id + '.opl'-»
+«DEFINE main FOR AgreementCompositor-»
+«FOREACH this.agreements AS agModel»
+	«FILE agModel.id + '.opl'-»
 using CP;
 
-«FOREACH this.context.metrics AS metric-»
+«FOREACH agModel.context.metrics AS metric-»
 	«IF metric.domain != null-»
 		«IF metric.domain.metaType.isAssignableFrom(Range)-»
 range range_«metric.id» = «((Range)metric.domain).min»..«((Range)metric.domain).max»;
@@ -17,31 +18,33 @@ int enum_«metric.id»[domain_«metric.id»] = [«FOREACH ((Enumerated)metric.domain)
 	«ENDIF-»
 «ENDFOREACH»
 
-«FOREACH this.agTerm.serviceConfigurarion.configurationProperties.addAll(this.agTerm.monitorableProperties) AS prop-»
+«FOREACH agModel.agTerm.serviceConfigurarion.configurationProperties.addAll(agModel.agTerm.monitorableProperties) AS prop-»
 	«IF prop.metric.domain != null-»
 		«IF prop.metric.domain.metaType.isAssignableFrom(Enumerated)-»
 dvar «oplType(prop.metric)» «prop.id» in 0..«((Enumerated)prop.metric.domain).values.size - 1»;
 		«ELSE-»
 dvar «oplType(prop.metric)» «prop.id» in range_«prop.metric.id»;
 		«ENDIF-»
-	«ENDIF»
+	«ENDIF-»
 «ENDFOREACH-»
 
 subject to {
-«FOREACH this.agTerm.guaranteeTerms AS guaranteeTerm-»
+«FOREACH agModel.agTerm.guaranteeTerms AS guaranteeTerm-»
 	«IF guaranteeTerm.qualifyingCondition != null-»
-		«FOREACH this.agTerm.serviceConfigurarion.configurationProperties.addAll(this.agTerm.monitorableProperties) AS prop-»
-			«IF guaranteeTerm.qualifyingCondition.expression.contains(prop.id)-»
-				«IF prop.metric.domain.metaType.isAssignableFrom(Enumerated)-»
-					«LET guaranteeTerm.qualifyingCondition.expression.split("==") AS arrayExp-»
-						«IF arrayExp.get(0).trim() != prop.id-»
+		«FOREACH agModel.agTerm.serviceConfigurarion.configurationProperties.addAll(agModel.agTerm.monitorableProperties) AS prop-»
+			«IF guaranteeTerm.qualifyingCondition.expression != null-»
+				«IF guaranteeTerm.qualifyingCondition.expression.contains(prop.id)-»
+					«IF prop.metric.domain.metaType.isAssignableFrom(Enumerated)-»
+						«LET guaranteeTerm.qualifyingCondition.expression.split("==") AS arrayExp-»
+							«IF arrayExp.get(0).trim() != prop.id-»
 	«guaranteeTerm.id»: «prop.id» == enum_«prop.metric.id»[«arrayExp.get(0).trim()»] => «guaranteeTerm.slo.expression»;
-						«ELSEIF arrayExp.get(1).trim() != prop.id-»
+							«ELSEIF arrayExp.get(1).trim() != prop.id-»
 	«guaranteeTerm.id»: «prop.id» == enum_«prop.metric.id»[«arrayExp.get(1).trim()»] => «guaranteeTerm.slo.expression»;
-						«ENDIF-»
-					«ENDLET-»
-				«ELSE-»
+							«ENDIF-»
+						«ENDLET-»
+					«ELSE-»
 	«guaranteeTerm.id»: «guaranteeTerm.qualifyingCondition.expression» => «guaranteeTerm.slo.expression»;
+					«ENDIF-»
 				«ENDIF-»
 			«ENDIF-»
 		«ENDFOREACH-»
@@ -50,4 +53,5 @@ subject to {
 	«ENDIF-»
 «ENDFOREACH-»
 }«ENDFILE»
+«ENDFOREACH»
 «ENDDEFINE»

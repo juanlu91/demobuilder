@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mmag:AgreementCompositor xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmag="http://demobuilder.agreement.metamodel">
+  <agreements id="PlanBasic" version="1.0">
+    <context>
+      <actors id="Amazon"/>
+      <metrics type="BOOLEAN" id="boolean"/>
+      <metrics id="int">
+        <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
+      </metrics>
+      <metrics type="FLOAT" id="float">
+        <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
+      </metrics>
+      <metrics type="NATURAL" id="natural">
+        <domain xsi:type="mmag:Range" min="0" max="9999999"/>
+      </metrics>
+    </context>
+    <agTerm>
+      <serviceConfigurarion>
+        <configurationProperties/>
+      </serviceConfigurarion>
+      <monitorableProperties id="M_"/>
+      <guaranteeTerms id="G_">
+        <slo expression="b1"/>
+        <qualifyingCondition/>
+        <compensations>
+          <compensationElements/>
+        </compensations>
+      </guaranteeTerms>
+      <guaranteeTerms id="G_">
+        <slo expression="b2"/>
+        <qualifyingCondition/>
+        <compensations>
+          <compensationElements/>
+        </compensations>
+      </guaranteeTerms>
+    </agTerm>
+  </agreements>
+  <agreements id="PlanMedium" version="1.0">
+    <context>
+      <actors id="Amazon"/>
+      <metrics type="BOOLEAN" id="boolean"/>
+      <metrics id="int">
+        <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
+      </metrics>
+      <metrics type="FLOAT" id="float">
+        <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
+      </metrics>
+      <metrics type="NATURAL" id="natural">
+        <domain xsi:type="mmag:Range" min="0" max="9999999"/>
+      </metrics>
+    </context>
+    <agTerm>
+      <serviceConfigurarion>
+        <configurationProperties/>
+      </serviceConfigurarion>
+      <monitorableProperties id="M_"/>
+      <guaranteeTerms id="G_">
+        <slo expression="m1"/>
+        <qualifyingCondition/>
+        <compensations>
+          <compensationElements/>
+        </compensations>
+      </guaranteeTerms>
+      <guaranteeTerms id="G_">
+        <slo expression="m2"/>
+        <qualifyingCondition/>
+        <compensations>
+          <compensationElements/>
+        </compensations>
+      </guaranteeTerms>
+    </agTerm>
+  </agreements>
+</mmag:AgreementCompositor>
