@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mmag="http://demobuilder.agreement.metamodel" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_wGQngK17EeW4KLxO33QU2g" type="AgreementMetamodel" measurementUnit="Pixel">
-  <styles xmi:type="notation:DiagramStyle" xmi:id="_wGQnga17EeW4KLxO33QU2g"/>
-  <element xmi:type="mmag:AgreementCompositor" href="AgreementCompositor.agreementmetamodel#/"/>
-</notation:Diagram>

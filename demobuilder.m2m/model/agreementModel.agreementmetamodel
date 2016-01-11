@@ -1,61 +1,67 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <mmag:AgreementCompositor xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmag="http://demobuilder.agreement.metamodel">
-  <agreements id="PlanBasic" version="1.0">
+  <agreements id="BasicPlan" version="1.0">
     <context>
       <actors id="Amazon"/>
-      <metrics type="BOOLEAN" id="PlanBasic_boolean">
+      <metrics type="BOOLEAN" id="BasicPlan_boolean">
         <domain xsi:type="mmag:Range" min="0" max="1"/>
       </metrics>
-      <metrics id="PlanBasic_int">
+      <metrics id="BasicPlan_int">
         <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
       </metrics>
-      <metrics type="FLOAT" id="PlanBasic_float">
+      <metrics type="FLOAT" id="BasicPlan_float">
         <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
       </metrics>
-      <metrics type="NATURAL" id="PlanBasic_natural">
+      <metrics type="NATURAL" id="BasicPlan_natural">
         <domain xsi:type="mmag:Range" min="0" max="9999999"/>
+      </metrics>
+      <metrics type="FLOAT" id="BasicPlan_percent">
+        <domain xsi:type="mmag:Range" min="0"/>
       </metrics>
     </context>
     <agTerm>
-      <serviceConfigurarion>
-        <configurationProperties id="CP_" metric="//@agreements.0/@context/@metrics.0"/>
+      <serviceConfigurarion endpointReference="http://aws.amazon.com/s3/" serviceName="S3">
+        <configurationProperties id="CP_"/>
       </serviceConfigurarion>
-      <monitorableProperties id="qual" metric="//@agreements.0/@context/@metrics.1"/>
+      <monitorableProperties id="M_"/>
       <guaranteeTerms id="G_">
-        <slo expression="qual==1"/>
-        <qualifyingCondition expression="qual==1"/>
-        <compensations>
-          <compensationElements expression="qual==1" condition="qual==1"/>
+        <slo expression="MUP>=99.95"/>
+        <qualifyingCondition expression="RegionUnits==2"/>
+        <compensations type="PENALTY">
+          <compensationElements expression="SCP==30" condition="MUP>99"/>
         </compensations>
       </guaranteeTerms>
     </agTerm>
   </agreements>
-  <agreements id="PlanMedium" version="1.0">
+  <agreements id="MediumPlan" version="1.0">
     <context>
       <actors id="Amazon"/>
-      <metrics type="BOOLEAN" id="PlanMedium_boolean">
+      <metrics type="BOOLEAN" id="MediumPlan_boolean">
         <domain xsi:type="mmag:Range" min="0" max="1"/>
       </metrics>
-      <metrics id="PlanMedium_int">
+      <metrics id="MediumPlan_int">
         <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
       </metrics>
-      <metrics type="FLOAT" id="PlanMedium_float">
+      <metrics type="FLOAT" id="MediumPlan_float">
         <domain xsi:type="mmag:Range" min="-9999999" max="9999999"/>
       </metrics>
-      <metrics type="NATURAL" id="PlanMedium_natural">
+      <metrics type="NATURAL" id="MediumPlan_natural">
         <domain xsi:type="mmag:Range" min="0" max="9999999"/>
+      </metrics>
+      <metrics type="FLOAT" id="MediumPlan_percent">
+        <domain xsi:type="mmag:Range" min="0"/>
       </metrics>
     </context>
     <agTerm>
-      <serviceConfigurarion>
-        <configurationProperties id="qual" metric="//@agreements.1/@context/@metrics.3"/>
+      <serviceConfigurarion endpointReference="http://aws.amazon.com/s3/" serviceName="S3">
+        <configurationProperties id="CP_"/>
       </serviceConfigurarion>
-      <monitorableProperties expression="" id="qual" metric="//@agreements.1/@context/@metrics.1"/>
+      <monitorableProperties id="M_"/>
       <guaranteeTerms id="G_">
-        <slo expression="qual==1"/>
-        <qualifyingCondition expression="qual==1"/>
-        <compensations>
-          <compensationElements expression="qual==1" condition="qual==1"/>
+        <slo expression="MUP>=99.95"/>
+        <qualifyingCondition expression="RegionUnits==2"/>
+        <compensations type="PENALTY">
+          <compensationElements expression="SCP==10" condition="MUP>99"/>
         </compensations>
       </guaranteeTerms>
     </agTerm>

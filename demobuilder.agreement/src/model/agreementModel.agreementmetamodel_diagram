@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mmag="http://demobuilder.agreement.metamodel" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_O_imULiUEeWxx7a2AQuMgA" type="AgreementMetamodel" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_w_WTsLiUEeWJVvorlayjkQ" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_w_WTs7iUEeWJVvorlayjkQ" type="5015"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_w_WTtLiUEeWJVvorlayjkQ" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_w_YI4LiUEeWJVvorlayjkQ" type="3001" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_w_Yv8LiUEeWJVvorlayjkQ" type="7003"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_w_Yv8biUEeWJVvorlayjkQ" type="7004">
+          <children xmi:type="notation:Shape" xmi:id="_w_bMMLiUEeWJVvorlayjkQ" type="3003" fontName="Segoe UI">
+            <children xmi:type="notation:DecorationNode" xmi:id="_w_bMM7iUEeWJVvorlayjkQ" type="5004"/>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_w_bMNLiUEeWJVvorlayjkQ" type="7005"/>
+            <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_w_bMMbiUEeWJVvorlayjkQ"/>
+            <element xmi:type="mmag:Metric" href="agreementModel.agreementmetamodel#//@agreements.0/@context/@metrics.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w_bMMriUEeWJVvorlayjkQ"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_w_bMNbiUEeWJVvorlayjkQ" type="3003" fontName="Segoe UI">
+            <children xmi:type="notation:DecorationNode" xmi:id="_w_bzQLiUEeWJVvorlayjkQ" type="5004"/>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_w_bzQbiUEeWJVvorlayjkQ" type="7005"/>
+            <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_w_bMNriUEeWJVvorlayjkQ"/>
+            <element xmi:type="mmag:Metric" href="agreementModel.agreementmetamodel#//@agreements.0/@context/@metrics.1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w_bMN7iUEeWJVvorlayjkQ" x="255" y="4" width="92"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_w_bzQriUEeWJVvorlayjkQ" type="3003" fontName="Segoe UI">
+            <children xmi:type="notation:DecorationNode" xmi:id="_w_bzRbiUEeWJVvorlayjkQ" type="5004"/>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_w_bzRriUEeWJVvorlayjkQ" type="7005"/>
+            <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_w_bzQ7iUEeWJVvorlayjkQ"/>
+            <element xmi:type="mmag:Metric" href="agreementModel.agreementmetamodel#//@agreements.0/@context/@metrics.2"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w_bzRLiUEeWJVvorlayjkQ" x="374"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_w_bzR7iUEeWJVvorlayjkQ" type="3003" fontName="Segoe UI">
+            <children xmi:type="notation:DecorationNode" xmi:id="_w_bzSriUEeWJVvorlayjkQ" type="5004"/>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_w_bzS7iUEeWJVvorlayjkQ" type="7005"/>
+            <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_w_bzSLiUEeWJVvorlayjkQ"/>
+            <element xmi:type="mmag:Metric" href="agreementModel.agreementmetamodel#//@agreements.0/@context/@metrics.3"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w_bzSbiUEeWJVvorlayjkQ" x="580"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_HSnhcLiVEeWJVvorlayjkQ" type="3003" fontName="Segoe UI">
+            <children xmi:type="notation:DecorationNode" xmi:id="_HSnhc7iVEeWJVvorlayjkQ" type="5004"/>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_HSnhdLiVEeWJVvorlayjkQ" type="7005">
+              <children xmi:type="notation:Shape" xmi:id="_JV5n0LiVEeWJVvorlayjkQ" type="3004" fontName="Segoe UI">
+                <children xmi:type="notation:DecorationNode" xmi:id="_JV5n0riVEeWJVvorlayjkQ" type="5002"/>
+                <element xmi:type="mmag:Range" href="agreementModel.agreementmetamodel#//@agreements.0/@context/@metrics.4/@domain"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JV5n0biVEeWJVvorlayjkQ" y="-7"/>
+              </children>
+            </children>
+            <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_HSnhcbiVEeWJVvorlayjkQ"/>
+            <element xmi:type="mmag:Metric" href="agreementModel.agreementmetamodel#//@agreements.0/@context/@metrics.4"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSnhcriVEeWJVvorlayjkQ" x="125" y="1"/>
+          </children>
+        </children>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_w_YI4biUEeWJVvorlayjkQ"/>
+        <element xmi:type="mmag:Context" href="agreementModel.agreementmetamodel#//@agreements.0/@context"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w_YI4riUEeWJVvorlayjkQ"/>
+      </children>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_w_WTtbiUEeWJVvorlayjkQ" type="7002">
+      <children xmi:type="notation:Shape" xmi:id="_w_zmsLiUEeWJVvorlayjkQ" type="3007" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_w_zms7iUEeWJVvorlayjkQ" type="7007">
+          <children xmi:type="notation:Shape" xmi:id="_w_1b4LiUEeWJVvorlayjkQ" type="3009" fontName="Segoe UI">
+            <children xmi:type="notation:DecorationNode" xmi:id="_w_1b47iUEeWJVvorlayjkQ" type="5009"/>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_w_1b5LiUEeWJVvorlayjkQ" type="7010"/>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_w_1b5biUEeWJVvorlayjkQ" type="7011">
+              <children xmi:type="notation:Shape" xmi:id="_w_3RELiUEeWJVvorlayjkQ" type="3010" fontName="Segoe UI">
+                <children xmi:type="notation:DecorationNode" xmi:id="_w_3REriUEeWJVvorlayjkQ" type="5006"/>
+                <element xmi:type="mmag:ConfigurationProperty" href="agreementModel.agreementmetamodel#//@agreements.0/@agTerm/@serviceConfigurarion/@configurationProperties.0"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w_3REbiUEeWJVvorlayjkQ"/>
+              </children>
+              <children xmi:type="notation:Shape" xmi:id="_UajWILiXEeWf9Yqr-Oia8g" type="3010" fontName="Segoe UI">
+                <children xmi:type="notation:DecorationNode" xmi:id="_Uaj9MLiXEeWf9Yqr-Oia8g" type="5006"/>
+                <element xmi:type="mmag:ConfigurationProperty" href="agreementModel.agreementmetamodel#//@agreements.0/@agTerm/@serviceConfigurarion/@configurationProperties.1"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UajWIbiXEeWf9Yqr-Oia8g" x="56" y="-3" width="85"/>
+              </children>
+            </children>
+            <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_w_1b4biUEeWJVvorlayjkQ"/>
+            <element xmi:type="mmag:ServiceConfiguration" href="agreementModel.agreementmetamodel#//@agreements.0/@agTerm/@serviceConfigurarion"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w_1b4riUEeWJVvorlayjkQ"/>
+          </children>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_w_zmtLiUEeWJVvorlayjkQ" type="7008">
+          <children xmi:type="notation:Shape" xmi:id="_w_34ILiUEeWJVvorlayjkQ" type="3008" fontName="Segoe UI">
+            <children xmi:type="notation:DecorationNode" xmi:id="_w_4fMLiUEeWJVvorlayjkQ" type="5005"/>
+            <element xmi:type="mmag:MonitorableProperty" href="agreementModel.agreementmetamodel#//@agreements.0/@agTerm/@monitorableProperties.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w_34IbiUEeWJVvorlayjkQ"/>
+          </children>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_w_zmtbiUEeWJVvorlayjkQ" type="7009"/>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_w_zmsbiUEeWJVvorlayjkQ"/>
+        <element xmi:type="mmag:AgreementTerm" href="agreementModel.agreementmetamodel#//@agreements.0/@agTerm"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w_zmsriUEeWJVvorlayjkQ"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_w_WTsbiUEeWJVvorlayjkQ"/>
+    <element xmi:type="mmag:AgreementModel" href="agreementModel.agreementmetamodel#//@agreements.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w_WTsriUEeWJVvorlayjkQ" y="-5"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_O_imUbiUEeWxx7a2AQuMgA"/>
+  <element xmi:type="mmag:AgreementCompositor" href="agreementModel.agreementmetamodel#/"/>
+</notation:Diagram>

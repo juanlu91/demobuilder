@@ -1,0 +1,28 @@
+Template BasicPlan version 1.0			
+	Provider "Amazon" as Responder;
+
+	Metrics:
+		BasicPlan_boolean: boolean [0..1];
+		BasicPlan_int: integer [-9999999..9999999];
+		BasicPlan_float: float [-9999999..9999999];
+		BasicPlan_natural: natural [0..9999999];
+		BasicPlan_percent: float [0..100];
+
+	AgreementTerms
+		Service S3 availableAt "http://aws.amazon.com/s3/"
+		
+			GlobalDescription
+				SCP: BasicPlan_percent;
+				RegionUnits: BasicPlan_int;
+
+		MonitorableProperties
+			global:
+				MUP: BasicPlan_percent;
+
+		GuaranteeTerms
+			G_: Provider guarantees MUP>99.95;
+				onlyIf(RegionUnits==2);
+				with monthly penalty
+					of SCP==30 if MUP>99;
+				end
+EndTemplate

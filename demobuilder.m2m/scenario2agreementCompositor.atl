@@ -38,7 +38,7 @@ lazy rule pricingPlan2AgreementModel {
 			actors <- thisModule.ServiceOffer2ActorProvider(IN.serviceOffer),
 			metrics <- agContext.metrics -> including(agMetric_boolean) ->
 					including(agMetric_int) -> including(agMetric_float) ->
-					including(agMetric_natural)
+					including(agMetric_natural) -> including(agMetric_percent)
 		),
 		agTerm: AGREEMENT!AgreementTerm (
 			guaranteeTerms <- IN.pricingPlanElements -> collect(pe | if not pe.
@@ -56,6 +56,11 @@ lazy rule pricingPlan2AgreementModel {
 			domain <- agMetricDomain_boolean,
 			id <- agModel.id + '_boolean',
 			type <- #BOOLEAN
+		),
+		agMetric_percent: AGREEMENT!Metric (
+			domain <- agMetricDomain_percent,
+			id <- agModel.id + '_percent',
+			type <- #FLOAT
 		),
 		agMetric_int: AGREEMENT!Metric (
 			domain <- agMetricDomain_int,
@@ -75,6 +80,10 @@ lazy rule pricingPlan2AgreementModel {
 		agMetricDomain_boolean: AGREEMENT!Range (
 			min <- 0,
 			max <- 1
+		),
+		agMetricDomain_percent: AGREEMENT!Range (
+			min <- 0,
+			max <-100 
 		),
 		agMetricDomain_int: AGREEMENT!Range (
 			min <- -9999999,

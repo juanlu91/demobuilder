@@ -66,9 +66,11 @@ EndTemplate«ENDFILE»
 «ENDDEFINE-»
 
 «DEFINE setServiceConfiguration FOR ServiceConfiguration»
-		Service «this.serviceName» availableAt "«this.definitionReference»"
-			Features: «FOREACH features AS feature SEPARATOR ', '-»
+		Service «this.serviceName» availableAt "«this.endpointReference»"
+		«IF features.size>0-»
+		Features: «FOREACH features AS feature SEPARATOR ', '-»
 «IF feature.parameters.size > 0-»«feature.id»(«FOREACH feature.parameters AS param SEPARATOR ', '»«param.name»«ENDFOREACH»)«ELSE-»«feature.id-»«ENDIF-»«ENDFOREACH-»;
+		«ENDIF»
 			GlobalDescription
 «FOREACH configurationProperties AS confProp-»
 	«IF confProp.scope == Scope::GLOBAL-»
