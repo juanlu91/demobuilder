@@ -1,0 +1,14 @@
+using CP;
+
+range range_PlanBasic_boolean = 0..1;
+range range_PlanBasic_int = -9999999..9999999;
+range range_PlanBasic_float = -9999999..9999999;
+range range_PlanBasic_natural = 0..9999999;
+
+
+dvar int CP_ in range_PlanBasic_boolean;
+dvar int qual in range_PlanBasic_int;
+
+subject to {
+	G_: qual==1 => qual==1;
+}

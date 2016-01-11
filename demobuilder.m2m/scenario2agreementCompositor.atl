@@ -9,13 +9,18 @@ create OUT: AGREEMENT from IN: SCENARIO;
 helper def: SLO_var: AGREEMENT!SLO =
 	OclUndefined;
 
+--- Returns a random UUID for the given object.
+helper context OclAny def: randomInt: String =
+	"#native"!"java::util::Random".refInvokeStaticOperation('nextDouble', Sequence{}).
+			toString();
+
 rule Scenario2AgreementCompositor {
 	from
 		scenario: SCENARIO!Scenario
 	to
 		agCompositor: AGREEMENT!AgreementCompositor (
-			agreements <- SCENARIO!PricingPlan.allInstances() -> collect(pricingPlan | thisModule.
-					pricingPlan2AgreementModel(pricingPlan))
+			agreements <- SCENARIO!PricingPlan.allInstances() -> collect(pricingPlan |
+					thisModule.pricingPlan2AgreementModel(pricingPlan))
 		)
 }
 
@@ -48,24 +53,28 @@ lazy rule pricingPlan2AgreementModel {
 					serviceOffer)
 		),
 		agMetric_boolean: AGREEMENT!Metric (
-			domain <- OclUndefined,
-			id <- 'boolean',
+			domain <- agMetricDomain_boolean,
+			id <- agModel.id + '_boolean',
 			type <- #BOOLEAN
 		),
 		agMetric_int: AGREEMENT!Metric (
 			domain <- agMetricDomain_int,
-			id <- 'int',
+			id <- agModel.id + '_int',
 			type <- #INTEGER
 		),
 		agMetric_float: AGREEMENT!Metric (
 			domain <- agMetricDomain_float,
-			id <- 'float',
+			id <- agModel.id + '_float',
 			type <- #FLOAT
 		),
 		agMetric_natural: AGREEMENT!Metric (
 			domain <- agMetricDomain_natural,
-			id <- 'natural',
+			id <- agModel.id + '_natural',
 			type <- #NATURAL
+		),
+		agMetricDomain_boolean: AGREEMENT!Range (
+			min <- 0,
+			max <- 1
 		),
 		agMetricDomain_int: AGREEMENT!Range (
 			min <- -9999999,
@@ -133,8 +142,9 @@ lazy rule ServiceOffer2ServiceConfiguration {
 			definitionReference <- OclUndefined,
 			expression <- OclUndefined,
 			features <- OclUndefined,
-			id <- OclUndefined,
-			scope <- OclUndefined
+			id <- 'CP_',
+			scope <- OclUndefined,
+			metric <- OclUndefined
 		)
 	do {
 	}

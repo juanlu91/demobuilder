@@ -43,7 +43,7 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_MHlnd62AEeW219GTOcO2EA"/>
     <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_MHlneK2AEeW219GTOcO2EA"/>
     <element xmi:type="mmsc:ServiceOffer" href="Scenario.scenariometamodel#//@scenarioElements.2"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MHlnea2AEeW219GTOcO2EA" x="185" y="160" width="191" height="211"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MHlnea2AEeW219GTOcO2EA" x="425" y="150" width="191" height="211"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_MHlnfK2AEeW219GTOcO2EA" type="2003" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_MHlnfq2AEeW219GTOcO2EA" type="5003">

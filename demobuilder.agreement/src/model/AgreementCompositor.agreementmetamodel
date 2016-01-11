@@ -1,162 +1,82 @@
-<?xml version="1.0" encoding="ASCII"?>
-<mmag:AgreementCompositor
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:mmag="http://demobuilder.agreement.metamodel"
-    xsi:schemaLocation="http://demobuilder.agreement.metamodel ../metamodel/MMAgreement.ecore">
-  <agreements
-      id="BasicPlan"
-      version="1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<mmag:AgreementCompositor xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmag="http://demobuilder.agreement.metamodel" xsi:schemaLocation="http://demobuilder.agreement.metamodel ../metamodel/MMAgreement.ecore">
+  <agreements id="BasicPlan" version="1.0">
     <context>
-      <actors
-          id="Papamoscas SL"/>
-      <metrics
-          id="int">
-        <domain
-            xsi:type="mmag:Range"
-            max="10000"/>
+      <actors id="Papamoscas SL"/>
+      <metrics id="int">
+        <domain xsi:type="mmag:Range" max="10000"/>
       </metrics>
-      <metrics
-          id="price">
-        <domain
-            xsi:type="mmag:Range"
-            min="0"
-            max="500"/>
+      <metrics id="price">
+        <domain xsi:type="mmag:Range" min="0" max="500"/>
       </metrics>
     </context>
     <agTerm>
-      <serviceConfigurarion
-          definitionReference="http://papamoscas-isa.appspot.com/api/v4/birds"
-          serviceName="BirdAPI">
-        <configurationProperties
-            expression="9"
-            id="planPrice"
-            metric="//@agreements.0/@context/@metrics.1"/>
+      <serviceConfigurarion definitionReference="http://papamoscas-isa.appspot.com/api/v4/birds" serviceName="BirdAPI">
+        <configurationProperties expression="9" id="planPrice" metric="//@agreements.0/@context/@metrics.1"/>
       </serviceConfigurarion>
-      <monitorableProperties
-          expression=""
-          id="requests"
-          metric="//@agreements.0/@context/@metrics.0"/>
-      <monitorableProperties
-          id="avgResponseTime"
-          metric="//@agreements.0/@context/@metrics.0"/>
-      <monitorableProperties
-          id="analyticsRequests"
-          metric="//@agreements.0/@context/@metrics.0"/>
-      <guaranteeTerms
-          id="RequestTerm"
-          role="CONSUMER">
-        <slo
-            expression="requests &lt;= 10"/>
+      <monitorableProperties expression="" id="requests" metric="//@agreements.0/@context/@metrics.0"/>
+      <monitorableProperties id="avgResponseTime" metric="//@agreements.0/@context/@metrics.0"/>
+      <monitorableProperties id="analyticsRequests" metric="//@agreements.0/@context/@metrics.0"/>
+      <guaranteeTerms id="RequestTerm" role="CONSUMER">
+        <slo expression="requests &lt;= 10"/>
       </guaranteeTerms>
-      <guaranteeTerms
-          id="TimeTerm">
-        <slo
-            expression="avgResponseTime &lt;= 1000"/>
+      <guaranteeTerms id="TimeTerm">
+        <slo expression="avgResponseTime &lt;= 1000"/>
       </guaranteeTerms>
-      <guaranteeTerms
-          id="AnalyticsRequestTerm"
-          role="CONSUMER">
-        <slo
-            expression="analyticsRequests &lt;= 5"/>
+      <guaranteeTerms id="AnalyticsRequestTerm" role="CONSUMER">
+        <slo expression="analyticsRequests &lt;= 5"/>
+        <qualifyingCondition expression="aas = 10"/>
+        <compensations>
+          <compensationElements/>
+        </compensations>
       </guaranteeTerms>
     </agTerm>
   </agreements>
-  <agreements
-      id="MediumPlan"
-      version="1.0">
+  <agreements id="MediumPlan" version="1.0">
     <context>
-      <actors
-          id="Papamoscas SL"/>
-      <metrics
-          id="int">
-        <domain
-            xsi:type="mmag:Range"
-            max="10000"/>
+      <actors id="Papamoscas SL"/>
+      <metrics id="int">
+        <domain xsi:type="mmag:Range" max="10000"/>
       </metrics>
-      <metrics
-          id="price">
-        <domain
-            xsi:type="mmag:Range"
-            min="0"
-            max="500"/>
+      <metrics id="price">
+        <domain xsi:type="mmag:Range" min="0" max="500"/>
       </metrics>
     </context>
     <agTerm>
-      <serviceConfigurarion
-          definitionReference="http://papamoscas-isa.appspot.com/api/v4/birds"
-          serviceName="BirdAPI">
-        <configurationProperties
-            expression="99"
-            id="planPrice"
-            metric="//@agreements.1/@context/@metrics.1"/>
+      <serviceConfigurarion definitionReference="http://papamoscas-isa.appspot.com/api/v4/birds" serviceName="BirdAPI">
+        <configurationProperties expression="99" id="planPrice" metric="//@agreements.1/@context/@metrics.1"/>
       </serviceConfigurarion>
-      <monitorableProperties
-          expression=""
-          id="requests"
-          metric="//@agreements.1/@context/@metrics.0"/>
-      <monitorableProperties
-          id="avgResponseTime"
-          metric="//@agreements.1/@context/@metrics.0"/>
-      <monitorableProperties
-          id="analyticsRequests"
-          metric="//@agreements.1/@context/@metrics.0"/>
-      <guaranteeTerms
-          id="RequestTerm"
-          role="CONSUMER">
-        <slo
-            expression="requests &lt;= 100"/>
+      <monitorableProperties expression="" id="requests" metric="//@agreements.1/@context/@metrics.0"/>
+      <monitorableProperties id="avgResponseTime" metric="//@agreements.1/@context/@metrics.0"/>
+      <monitorableProperties id="analyticsRequests" metric="//@agreements.1/@context/@metrics.0"/>
+      <guaranteeTerms id="RequestTerm" role="CONSUMER">
+        <slo expression="requests &lt;= 100"/>
       </guaranteeTerms>
-      <guaranteeTerms
-          id="TimeTerm">
-        <slo
-            expression="avgResponseTime &lt;= 800"/>
+      <guaranteeTerms id="TimeTerm">
+        <slo expression="avgResponseTime &lt;= 800"/>
       </guaranteeTerms>
-      <guaranteeTerms
-          id="AnalyticsRequestTerm"
-          role="CONSUMER">
-        <slo
-            expression="analyticsRequests &lt;= 50"/>
+      <guaranteeTerms id="AnalyticsRequestTerm" role="CONSUMER">
+        <slo expression="analyticsRequests &lt;= 50"/>
       </guaranteeTerms>
     </agTerm>
   </agreements>
-  <agreements
-      id="ProPlan"
-      version="1.0">
+  <agreements id="ProPlan" version="1.0">
     <context>
-      <actors
-          id="Papamoscas SL"/>
-      <metrics
-          id="int">
-        <domain
-            xsi:type="mmag:Range"
-            max="10000"/>
+      <actors id="Papamoscas SL"/>
+      <metrics id="int">
+        <domain xsi:type="mmag:Range" max="10000"/>
       </metrics>
-      <metrics
-          id="price">
-        <domain
-            xsi:type="mmag:Range"
-            min="0"
-            max="500"/>
+      <metrics id="price">
+        <domain xsi:type="mmag:Range" min="0" max="500"/>
       </metrics>
     </context>
     <agTerm>
-      <serviceConfigurarion
-          definitionReference="http://papamoscas-isa.appspot.com/api/v4/birds"
-          serviceName="BirdAPI">
-        <configurationProperties
-            expression="999"
-            id="planPrice"
-            metric="//@agreements.2/@context/@metrics.1"/>
+      <serviceConfigurarion definitionReference="http://papamoscas-isa.appspot.com/api/v4/birds" serviceName="BirdAPI">
+        <configurationProperties expression="999" id="planPrice" metric="//@agreements.2/@context/@metrics.1"/>
       </serviceConfigurarion>
-      <monitorableProperties
-          id="avgResponseTime"
-          metric="//@agreements.2/@context/@metrics.0"/>
-      <guaranteeTerms
-          id="TimeTerm">
-        <slo
-            expression="avgResponseTime &lt;= 500"/>
+      <monitorableProperties id="avgResponseTime" metric="//@agreements.2/@context/@metrics.0"/>
+      <guaranteeTerms id="TimeTerm">
+        <slo expression="avgResponseTime &lt;= 500"/>
       </guaranteeTerms>
     </agTerm>
   </agreements>

@@ -1,0 +1,26 @@
+Template PlanBasic version 1.0			
+	Provider "Amazon" as Responder;
+
+	Metrics:
+		PlanBasic_boolean: boolean [0..1];
+		PlanBasic_int: integer [-9999999..9999999];
+		PlanBasic_float: float [-9999999..9999999];
+		PlanBasic_natural: natural [0..9999999];
+
+	AgreementTerms
+		Service  availableAt ""
+			Features: ;
+			GlobalDescription
+				CP_: PlanBasic_boolean;
+
+		MonitorableProperties
+			global:
+				qual: PlanBasic_int;
+
+		GuaranteeTerms
+			G_: Provider guarantees qual==1;
+				onlyIf(qual==1);
+				with monthly reward
+					of qual==1 if qual==1;
+				end
+EndTemplate

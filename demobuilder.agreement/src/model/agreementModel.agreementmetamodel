@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<mmag:AgreementCompositor xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmag="http://demobuilder.agreement.metamodel">
+<mmag:AgreementCompositor xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmag="http://demobuilder.agreement.metamodel" xsi:schemaLocation="http://demobuilder.agreement.metamodel ../metamodel/MMAgreement.ecore">
   <agreements id="PlanBasic" version="1.0">
     <context>
       <actors id="Amazon"/>

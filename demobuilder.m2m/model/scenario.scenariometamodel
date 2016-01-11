@@ -4,12 +4,10 @@
   <scenarioElements xsi:type="mmsc:Provider" name="Amazon" serviceLinks="//@serviceLinks.1"/>
   <scenarioElements xsi:type="mmsc:ServiceOffer" serviceLink="//@serviceLinks.1">
     <pricingPlans agreementLink="//@agreementLinks.0" name="PlanBasic">
-      <pricingPlanElements SLOExpression="b1"/>
-      <pricingPlanElements SLOExpression="b2"/>
+      <pricingPlanElements SLOExpression="b2" qualifyingCondition="qual==1" compensationExpression="tickets==3" compensationCondition="time==133"/>
     </pricingPlans>
     <pricingPlans name="PlanMedium">
-      <pricingPlanElements SLOExpression="m1"/>
-      <pricingPlanElements SLOExpression="m2"/>
+      <pricingPlanElements SLOExpression="b1" qualifyingCondition="qual==1" compensationExpression="tickets==3" compensationCondition="time==133"/>
     </pricingPlans>
   </scenarioElements>
   <scenarioElements xsi:type="mmsc:ServiceNeed" serviceLink="//@serviceLinks.0" name="Online storage" agreementLink="//@agreementLinks.0"/>
