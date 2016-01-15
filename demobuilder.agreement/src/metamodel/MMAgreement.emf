@@ -1,4 +1,6 @@
 @gmf
+@"http://www.eclipse.org/OCL/Import"(ecore="http://www.eclipse.org/emf/2002/Ecore")
+@Ecore(invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot")
 @namespace(uri="http://demobuilder.agreement.metamodel", prefix="mmag")
 package AgreementMetamodel;
 
@@ -22,6 +24,13 @@ class AgreementModel {
 }
 
 @gmf.node(label.placement="none", label.icon="false", figure="rectangle", tool.name="Context", tool.description="Creates a new context section")
+@Ecore(constraints="ProviderAndConsumer")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(ProviderAndConsumer="
+			let hasProvider : Boolean = actors->exists(a : Actor | a.role = Role::PROVIDER) in
+			let hasConsumer : Boolean = actors->exists(a : Actor | a.role = Role::CONSUMER) in 
+				actors ->size() < 3 and 
+				(actors->size() = 1 implies hasProvider) and 
+				(actors->size() = 2 implies hasProvider and hasConsumer)")
 class Context {
 
   @gmf.compartment
