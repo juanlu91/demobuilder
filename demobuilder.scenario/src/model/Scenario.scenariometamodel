@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mmsc:Scenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmsc="http://demobuilder.scenario.metamodel" xsi:schemaLocation="http://demobuilder.scenario.metamodel ../metamodel/MMScenario.ecore">
+<mmsc:Scenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmsc="http://demobuilder.scenario.metamodel">
   <scenarioElements xsi:type="mmsc:Consumer" name="SAS" serviceLinks="//@serviceLinks.0"/>
   <scenarioElements xsi:type="mmsc:Provider" name="Amazon" serviceLinks="//@serviceLinks.1"/>
   <scenarioElements xsi:type="mmsc:ServiceOffer" serviceLink="//@serviceLinks.1" name="S3" serviceEndpoint="http://aws.amazon.com/s3/">
@@ -8,9 +8,13 @@
     </pricingPlans>
     <pricingPlans name="MediumPlan">
       <pricingPlanElements SLOExpression="MUP>=99.95" qualifyingCondition="RegionUnits==2" compensationType="PENALTY" compensationExpression="SCP==10" compensationCondition="MUP>99"/>
+      <pricingPlanElements SLOExpression="MUP>=99.95"/>
     </pricingPlans>
   </scenarioElements>
   <scenarioElements xsi:type="mmsc:ServiceNeed" serviceLink="//@serviceLinks.0" name="Online storage" agreementLink="//@agreementLinks.0"/>
+  <scenarioElements xsi:type="mmsc:ServiceOffer">
+    <pricingPlans/>
+  </scenarioElements>
   <agreementLinks source="//@scenarioElements.3" target="//@scenarioElements.2/@pricingPlans.0"/>
   <serviceLinks actor="//@scenarioElements.0" serviceElement="//@scenarioElements.3"/>
   <serviceLinks actor="//@scenarioElements.1" serviceElement="//@scenarioElements.2"/>
