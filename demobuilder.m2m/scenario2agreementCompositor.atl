@@ -83,7 +83,7 @@ lazy rule pricingPlan2AgreementModel {
 		),
 		agMetricDomain_percent: AGREEMENT!Range (
 			min <- 0,
-			max <-100 
+			max <- 100
 		),
 		agMetricDomain_int: AGREEMENT!Range (
 			min <- -9999999,
@@ -109,11 +109,41 @@ lazy rule PricingPlanElement2GuaranteeTerm {
 	to
 		agGuaranteeTerm: AGREEMENT!GuaranteeTerm (
 			id <- 'G_',
-			qualifyingCondition <- agQualifyingCondition,
+			qualifyingCondition <- if IN.qualifyingCondition -> oclIsUndefined() then
+					OclUndefined
+				else
+					thisModule.PricingPlanElement2QualifyingCondition(IN)
+				endif,
 			role <- OclUndefined,
 			slo <- agSLO,
-			compensations <- agCompensation
+			compensations <- if (IN.compensationCondition -> oclIsUndefined() or IN.
+					compensationExpression -> oclIsUndefined()) then
+					OclUndefined
+				else
+					thisModule.PricingPlanElement2Compensations(IN)
+				endif
 		),
+		agSLO: AGREEMENT!SLO (
+			expression <- IN.SLOExpression
+		)
+	do {
+thisModule.SLO_var <- agGuaranteeTerm.slo;
+}
+}
+
+lazy rule PricingPlanElement2QualifyingCondition {
+	from
+		IN: SCENARIO!PricingPlanElement
+	to
+		agQualifyingCondition: AGREEMENT!QualifyingCondition (
+			expression <- IN.qualifyingCondition
+		)
+}
+
+lazy rule PricingPlanElement2Compensations {
+	from
+		IN: SCENARIO!PricingPlanElement
+	to
 		agCompensation: AGREEMENT!Compensation (
 			interval <- IN.compensationInterval,
 			type <- IN.compensationType,
@@ -122,16 +152,7 @@ lazy rule PricingPlanElement2GuaranteeTerm {
 		agCompensationElement: AGREEMENT!CompensationElement (
 			condition <- IN.compensationCondition,
 			expression <- IN.compensationExpression
-		),
-		agQualifyingCondition: AGREEMENT!QualifyingCondition (
-			expression <- IN.qualifyingCondition
-		),
-		agSLO: AGREEMENT!SLO (
-			expression <- IN.SLOExpression
 		)
-	do {
-		thisModule.SLO_var <- agGuaranteeTerm.slo;
-	}
 }
 
 lazy rule ServiceOffer2ServiceConfiguration {

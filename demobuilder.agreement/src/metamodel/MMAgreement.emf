@@ -12,6 +12,10 @@ class AgreementCompositor {
 }
 
 @gmf.node(label="id", label.icon="false", figure="rectangle", tool.name="Agreement", tool.description="Creates a new agreement")
+@Ecore(constraints="metricProperty")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(metricProperty="
+			self._context.metrics -> includesAll(self.agTerm.monitorableProperties.metric -> 
+				union(self.agTerm.serviceConfigurarion.configurationProperties.metric))")
 class AgreementModel {
   attr String ~id;
   attr double version;
@@ -24,13 +28,16 @@ class AgreementModel {
 }
 
 @gmf.node(label.placement="none", label.icon="false", figure="rectangle", tool.name="Context", tool.description="Creates a new context section")
-@Ecore(constraints="ProviderAndConsumer")
-@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(ProviderAndConsumer="
-			let hasProvider : Boolean = actors->exists(a : Actor | a.role = Role::PROVIDER) in
-			let hasConsumer : Boolean = actors->exists(a : Actor | a.role = Role::CONSUMER) in 
-				actors ->size() < 3 and 
-				(actors->size() = 1 implies hasProvider) and 
-				(actors->size() = 2 implies hasProvider and hasConsumer)")
+@Ecore(constraints="providerAndConsumer")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(providerAndConsumer="let hasProvider : Boolean = actors
+			->exists(a : Actor | a.role = Role::PROVIDER)
+		in
+		let hasConsumer : Boolean = actors
+			->exists(a : Actor | a.role = Role::CONSUMER)
+		in actors
+			->size() < 3 and (actors
+			->size() = 1 implies hasProvider) and (actors
+			->size() = 2 implies hasProvider and hasConsumer)")
 class Context {
 
   @gmf.compartment
@@ -142,6 +149,10 @@ class Feature {
   val Parameter[*] parameters;
 }
 
+@Ecore(constraints="idNotEmpty metricProperty")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(idNotEmpty="id
+			->notEmpty()", metricProperty="metric
+			->notEmpty()")
 abstract class Property {
   attr String expression;
   attr Scope scope = "GLOBAL";
