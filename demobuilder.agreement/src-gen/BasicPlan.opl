@@ -7,10 +7,10 @@ range range_BasicPlan_natural = 0..9999999;
 range range_BasicPlan_percent = 0..100;
 
 
-dvar int SCP in range_BasicPlan_percent;
-dvar int RegionUnits in range_BasicPlan_int;
-dvar int MUP in range_BasicPlan_percent;
+dvar int CP_ in range_BasicPlan_boolean;
+dvar int M_ in range_BasicPlan_int;
 
 subject to {
-	G_: RegionUnits==2 => MUP>99.95;
+	G_: Requests<10;
+	G_: Price==10;
 }

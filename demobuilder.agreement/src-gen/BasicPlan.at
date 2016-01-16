@@ -12,17 +12,18 @@ Template BasicPlan version 1.0
 		Service S3 availableAt "http://aws.amazon.com/s3/"
 		
 			GlobalDescription
-				SCP: BasicPlan_percent;
-				RegionUnits: BasicPlan_int;
+				CP_: BasicPlan_boolean;
 
 		MonitorableProperties
 			global:
-				MUP: BasicPlan_percent;
+				M_: BasicPlan_int;
 
 		GuaranteeTerms
-			G_: Provider guarantees MUP>99.95;
+			G_: Provider guarantees MUP>=95.95;
 				onlyIf(RegionUnits==2);
 				with monthly penalty
 					of SCP==30 if MUP>99;
 				end
+			G_: Provider guarantees Requests<10;
+			G_: Provider guarantees Price==10;
 EndTemplate

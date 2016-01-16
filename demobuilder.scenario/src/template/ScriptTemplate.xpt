@@ -43,6 +43,7 @@ echo
 			«LET ((ServiceOffer)scenarioElem) AS serviceOffer-»
 				«FOREACH serviceOffer.pricingPlans AS pricingPlan»
 FILE_NAME="«pricingPlan.name.toFirstLower()».at"
+FILE_NAME_URI="«pricingPlan.name».at"
 FILE_URI="$WORKSPACE_NAME/$PROJECT_NAME/$FILE_NAME"
 echo
 echo
@@ -51,9 +52,10 @@ curl -k -basic -u $USER:$PASS -H "Accept: application/json" -H "Content-Type:app
 echo
 echo
 echo "Loading content to $FILE_URI..."
-curl -k -u $USER:$PASS -X POST -d "fileUri=$FILE_URI" -d "fileContent=$(cat $FILE_NAME)" https://antgamdiapc.lsi.us.es:9191/IDEAS/file/setFileContent
+curl -k -u $USER:$PASS -X POST -d "fileUri=$FILE_URI" -d "fileContent=$(cat $FILE_NAME_URI)" https://antgamdiapc.lsi.us.es:9191/IDEAS/file/setFileContent
 
 FILE_NAME="«pricingPlan.name.toFirstLower()».opl"
+FILE_NAME_URI="«pricingPlan.name».opl"
 FILE_URI="$WORKSPACE_NAME/$PROJECT_NAME/$FILE_NAME"
 echo
 echo
@@ -62,7 +64,7 @@ curl -k -basic -u $USER:$PASS -H "Accept: application/json" -H "Content-Type:app
 echo
 echo
 echo "Loading content to $FILE_URI..."
-curl -k -u $USER:$PASS -X POST -d "fileUri=$FILE_URI" -d "fileContent=$(cat $FILE_NAME)" https://antgamdiapc.lsi.us.es:9191/IDEAS/file/setFileContent
+curl -k -u $USER:$PASS -X POST -d "fileUri=$FILE_URI" -d "fileContent=$(cat $FILE_NAME_URI)" https://antgamdiapc.lsi.us.es:9191/IDEAS/file/setFileContent
 				«ENDFOREACH»
 			«ENDLET-»
 		«ENDIF-»

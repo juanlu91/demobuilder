@@ -1,0 +1,25 @@
+Template ProPlan version 1.0			
+	Provider "Amazon" as Responder;
+
+	Metrics:
+		ProPlan_boolean: boolean [0..1];
+		ProPlan_int: integer [-9999999..9999999];
+		ProPlan_float: float [-9999999..9999999];
+		ProPlan_natural: natural [0..9999999];
+		ProPlan_percent: float [0..100];
+
+	AgreementTerms
+		Service S3 availableAt "http://aws.amazon.com/s3/"
+		
+			GlobalDescription
+				CP_: ProPlan_int;
+
+		MonitorableProperties
+			global:
+				M_: ProPlan_int;
+
+		GuaranteeTerms
+			G_: Provider guarantees MUP>=99.95;
+			G_: Provider guarantees Requests<1000;
+			G_: Provider guarantees Price==100;
+EndTemplate

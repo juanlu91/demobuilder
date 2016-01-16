@@ -1,0 +1,15 @@
+using CP;
+
+range range_SinglePlan_boolean = 0..1;
+range range_SinglePlan_int = -9999999..9999999;
+range range_SinglePlan_float = -9999999..9999999;
+range range_SinglePlan_natural = 0..9999999;
+range range_SinglePlan_percent = 0..100;
+
+
+dvar int CP_ in range_SinglePlan_int;
+dvar int M_ in range_SinglePlan_float;
+
+subject to {
+	G_: MUP>=99.99;
+}

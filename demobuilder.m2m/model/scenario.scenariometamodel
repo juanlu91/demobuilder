@@ -8,11 +8,6 @@
       <pricingPlanElements SLOExpression="Requests&lt;10"/>
       <pricingPlanElements SLOExpression="Price==10"/>
     </pricingPlans>
-    <pricingPlans name="MediumPlan">
-      <pricingPlanElements SLOExpression="MUP>=99.95" qualifyingCondition="RegionUnits==2" compensationType="PENALTY" compensationExpression="SCP==10" compensationCondition="MUP>99"/>
-      <pricingPlanElements SLOExpression="Requests&lt;500"/>
-      <pricingPlanElements SLOExpression="Price==50"/>
-    </pricingPlans>
     <pricingPlans name="ProPlan">
       <pricingPlanElements SLOExpression="MUP>=99.95" qualifyingCondition=""/>
       <pricingPlanElements SLOExpression="Requests&lt;1000"/>

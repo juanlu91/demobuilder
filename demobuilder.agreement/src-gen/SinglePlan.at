@@ -1,0 +1,23 @@
+Template SinglePlan version 1.0			
+	Provider "Amazon" as Responder;
+
+	Metrics:
+		SinglePlan_boolean: boolean [0..1];
+		SinglePlan_int: integer [-9999999..9999999];
+		SinglePlan_float: float [-9999999..9999999];
+		SinglePlan_natural: natural [0..9999999];
+		SinglePlan_percent: float [0..100];
+
+	AgreementTerms
+		Service Route53 availableAt ""
+		
+			GlobalDescription
+				CP_: SinglePlan_int;
+
+		MonitorableProperties
+			global:
+				M_: SinglePlan_float;
+
+		GuaranteeTerms
+			G_: Provider guarantees MUP>=99.99;
+EndTemplate
