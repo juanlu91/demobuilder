@@ -1,0 +1,1 @@
+xsi:schemaLocation="http://demobuilder.agreement.metamodel ../metamodel/MMAgreement.ecore">
