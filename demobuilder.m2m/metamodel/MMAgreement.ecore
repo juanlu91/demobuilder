@@ -3,6 +3,14 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="AgreementMetamodel" nsURI="http://demobuilder.agreement.metamodel"
     nsPrefix="mmag">
   <eAnnotations source="gmf"/>
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="AgreementCompositor">
     <eAnnotations source="gmf.diagram"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="agreements" upperBound="-1"
@@ -17,6 +25,12 @@
       <details key="figure" value="rectangle"/>
       <details key="tool.name" value="Agreement"/>
       <details key="tool.description" value="Creates a new agreement"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="metricProperty"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="metricProperty" value="&#xA;&#x9;&#x9;&#x9;self._context.metrics -> includesAll(self.agTerm.monitorableProperties.metric -> &#xA;&#x9;&#x9;&#x9;&#x9;union(self.agTerm.serviceConfigurarion.configurationProperties.metric))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
@@ -36,6 +50,12 @@
       <details key="figure" value="rectangle"/>
       <details key="tool.name" value="Context"/>
       <details key="tool.description" value="Creates a new context section"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="providerAndConsumer"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="providerAndConsumer" value="let hasProvider : Boolean = actors&#xA;&#x9;&#x9;&#x9;->exists(a : Actor | a.role = Role::PROVIDER)&#xA;&#x9;&#x9;in&#xA;&#x9;&#x9;let hasConsumer : Boolean = actors&#xA;&#x9;&#x9;&#x9;->exists(a : Actor | a.role = Role::CONSUMER)&#xA;&#x9;&#x9;in actors&#xA;&#x9;&#x9;&#x9;->size() &lt; 3 and (actors&#xA;&#x9;&#x9;&#x9;->size() = 1 implies hasProvider) and (actors&#xA;&#x9;&#x9;&#x9;->size() = 2 implies hasProvider and hasConsumer)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actors" lowerBound="1"
         upperBound="2" eType="#//Actor" containment="true">
@@ -201,6 +221,13 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Property" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="idNotEmpty metricProperty"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="idNotEmpty" value="id&#xA;&#x9;&#x9;&#x9;->notEmpty()"/>
+      <details key="metricProperty" value="metric&#xA;&#x9;&#x9;&#x9;->notEmpty()"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scope" eType="#//Scope"
         defaultValueLiteral="GLOBAL"/>
